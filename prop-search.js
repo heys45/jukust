@@ -32,7 +32,9 @@ groups.forEach(element =>{
     var id = element.getElementsByTagName("span")[1].innerHTML;
     element.setAttribute("id",id);
 });
-document.getElementById(prop_object["教室ID"]).style.display = "block" ;
+var test = document.getElementById(prop_object["教室ID"]);
+console.log(test);
+test.style.display = "block" ;
 
 
 
