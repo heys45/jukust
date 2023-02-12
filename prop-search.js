@@ -17,4 +17,4 @@ console.log(prop_object);
 
 const sc_form = document.getElementById("schedule-form");
 
-sc_form.style.display = 'inline-block !important';
+sc_form.style.display = 'none';
