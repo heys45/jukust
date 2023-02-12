@@ -14,7 +14,7 @@ console.log(prop_object);
 
 ///ページ名によって読み込むHTML要素とJSを切り替える
 
-if(prop_object["ページ表示名"]==="スケジュール提出"){
+if(prop_object["ページ表示名"]==="スケジュール提"){
 const sc_form = document.getElementById("schedule-form");
 sc_form.style.display = 'inline-block';
 }
