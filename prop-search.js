@@ -27,15 +27,16 @@ console.log(prop_object);
 
 // 教室or講師IDによるDBフィルタ
 // 前提：データベースはグループ化しておく
-const groups = document.querySelectorAll('.notion-collection-group__section');
-groups.forEach(element =>{
-    var id = element.getElementsByTagName("span")[1].innerHTML;
-    element.setAttribute("id",id);
-});
-console.log(prop_object["講師ID"]);
-var test = document.getElementById(prop_object["講師ID"]);
-console.log(test);
-test.style.display = "block" ;
+
+// const groups = document.querySelectorAll('.notion-collection-group__section');
+// groups.forEach(element =>{
+//     var id = element.getElementsByTagName("span")[1].innerHTML;
+//     element.setAttribute("id",id);
+// });
+// console.log(prop_object["講師ID"]);
+// var test = document.getElementById(prop_object["講師ID"]);
+// console.log(test);
+// test.style.display = "block" ;
 
 
 
