@@ -4,3 +4,7 @@ form{
 .select-term{
     display: none;
 }
+
+..notion-collection-group__section{
+    display: none;
+}
