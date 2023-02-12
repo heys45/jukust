@@ -1,17 +1,16 @@
 
 //プロパティ格納divに名前をつける
 
-
-const prop_wrap = document.querySelectorAll('.notion-page__property-name');
+var prop_object = {};
+const prop_wrap = document.querySelectorAll('.notion-page__property');
 prop_wrap.forEach(element => {
-    console.log(element);
-    const page_name = element.getElementsByTagName("span")[0].innerHTML;
-    console.log(page_name); 
+    const prop_name = element.getElementsByTagName("span")[0].innerHTML;
+    const prop_value = element.getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
+    console.log(prop_name); 
+    console.log(prop_value); 
+    prop_object.prop_name = prop_value;
 });
 
-
-//var span2 = pageproperty.getElementsByTagName("span")[1];
-//var span3 = span2.getElementsByTagName("span")[0].innerHTML;
-//console.log(span3);
+console.log(prop_object);
 
 
