@@ -12,4 +12,5 @@ prop_wrap.forEach(element => {
 console.log(prop_object);
 
 
-///ページ名によって読み込むJSを切り替える
+///ページ名によって読み込むHTML要素とJSを切り替える
+
