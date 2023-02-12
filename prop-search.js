@@ -1,4 +1,4 @@
-function prop-search(){
+function prop_search(){
 //プロパティ格納divに名前をつける
 const prop_wrap = document.querySelectorAll('.notion-page__property-name');
 
