@@ -5,7 +5,7 @@
 const prop_wrap = document.querySelectorAll('.notion-page__property-name');
 prop_wrap.forEach(element => {
     console.log(element);
-    const page_name = element.getElementsByTagName("span").innerHTML;
+    const page_name = element.getElementsByTagName("span")[0].innerHTML;
     console.log(page_name); 
 });
 
