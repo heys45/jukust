@@ -1,0 +1,14 @@
+https://heys45.github.io/jukust/shift-form
+
+
+プロパティ名取得用関数
+https://heys45.github.io/jukust/prop-search.js
+
+
+
+-------------------------
+ターミナルのコマンド
+-------------------------
+
+ファイル名の変更
+git mv shift-form.html super-raw.html
