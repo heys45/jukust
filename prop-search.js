@@ -14,10 +14,11 @@ console.log(prop_object);
 
 ///ページ名によって読み込むHTML要素とJSを切り替える
 
+
 if(prop_object["ページ表示名"]==="スケジュール提出"){
+// シフトフォームの表示
 const sc_form = document.getElementById("schedule-form");
 sc_form.style.display = 'inline-block';
-
 const select_term = document.getElementsByClassName("select-term")[0];
 select_term.style.display = 'inline-block';
 }
