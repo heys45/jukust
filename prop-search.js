@@ -14,3 +14,7 @@ console.log(prop_object);
 
 ///ページ名によって読み込むHTML要素とJSを切り替える
 
+
+const sc_form = document.getElementById("schedule-form");
+
+sc_form.style.display = 'inline-block !important';
