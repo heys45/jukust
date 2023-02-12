@@ -1,9 +1,9 @@
 
 //プロパティ格納divに名前をつける
-const prop_wrap = document.querySelectorAll('.notion-page__property-name');
 
-prop_wrap.forEach(index,element => {
-    console.log(index);
+
+const prop_wrap = document.querySelectorAll('.notion-page__property-name');
+prop_wrap.forEach(element => {
     console.log(element);
     
 });
