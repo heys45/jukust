@@ -16,16 +16,16 @@ console.log(prop_object);
 
 
 // テキストブロックの連想配列を作成する。
-var tblock_object = {};
-const tblock_wrap = document.querySelectorAll('.notion-text');
-tblock_wrap.forEach(element => {
-    const tblock_name = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-    const tblock_value = element;
-    console.log(tblock_name); 
-    console.log(tblock_value); 
-    tblock_object[tblock_name] = tblock_value;
+var qblock_object = {};
+const qblock_wrap = document.querySelectorAll('.notion-quote');
+qblock_wrap.forEach(element => {
+    const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
+    const qblock_value = element;
+    console.log(qblock_name); 
+    console.log(qblock_value); 
+    qblock_object[qblock_name] = qblock_value;
 });
-console.log(tblock_object);
+console.log(qblock_object);
 
 
 
