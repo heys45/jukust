@@ -12,8 +12,17 @@ prop_wrap.forEach(element => {
 console.log(prop_object);
 
 
-
-
+// テキストブロックの連想配列を作成する。
+var tblock_object = {};
+const tblock_wrap = document.querySelectorAll('.notion-text');
+tblock_wrap.forEach(element => {
+    const tblock_name = element.getElementsByTagName("span")[0].innerHTML;
+    const tblock_value = element;
+    console.log(tblock_name); 
+    console.log(tblock_value); 
+    prop_object[tblock_name] = tblock_value;
+});
+console.log(tblock_object);
 
 
 
