@@ -35,21 +35,8 @@ for (let i=0; i< qblock_wrap.length; i++){
     console.log(qblock_name); 
     console.log(qblock_value); 
     qblock_object[qblock_name] = qblock_value;
-
-
-    test = document.getElementById('ttt');
-    console.log(test)
 }
-
-
 console.log(qblock_object);
-
-var testw = "提出スケジュールの現状ステータス"; 
-test = document.getElementById(testw);
-console.log(test);
-
-
-select_form = document.getElementById('select-term-button').value;
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
