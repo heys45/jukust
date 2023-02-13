@@ -43,9 +43,9 @@ for (let i=0; i< qblock_wrap.length; i++){
 
 
 console.log(qblock_object);
-var test = document.getElementById("シフト申請はこちら");
 function delay(){
-console.log(test)
+var test = document.getElementById("シフト申請はこちら");
+console.log(test);
 }
 setTimeout(delay, 2000); 
 
