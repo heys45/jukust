@@ -47,18 +47,18 @@ console.log(prop_object);
 
 // フォーム共通の処理
 function viewChange(){
-    form = document.getElementById('select-term-button').value;
-    console.log(rorm);
-    if(id == '１週間分'){
+    select_form = document.getElementById('select-term-button').value;
+    console.log(select_form);
+    if(select_form == '１週間分'){
         document.getElementById('Box1').style.display = "";
         document.getElementById('Box2').style.display = "none";
         document.getElementById('Box3').style.display = "none";
-    }else if(id == '2週間分'){
+    }else if(select_form == '2週間分'){
         document.getElementById('Box1').style.display = "";
         document.getElementById('Box2').style.display = "";
         document.getElementById('Box3').style.display = "none";
     }
-    else if(id == '1ヶ月分'){
+    else if(select_form == '1ヶ月分'){
         document.getElementById('Box1').style.display = "";
         document.getElementById('Box2').style.display = "";
         document.getElementById('Box3').style.display = "";
