@@ -10,6 +10,8 @@ prop_wrap.forEach(element => {
     prop_object[prop_name] = prop_value;
 });
 console.log(prop_object);
+console.log(prop_object);
+console.log(prop_object);
 
 
 // テキストブロックの連想配列を作成する。
