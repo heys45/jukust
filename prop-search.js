@@ -46,6 +46,28 @@ console.log(prop_object);
 
 
 // フォーム共通の処理
+function viewChange(){
+    id = document.getElementById('select-term-button').value;
+    console.log(id);
+    if(id == '１週間分'){
+        document.getElementById('Box1').style.display = "";
+        document.getElementById('Box2').style.display = "none";
+        document.getElementById('Box3').style.display = "none";
+    }else if(id == '2週間分'){
+        document.getElementById('Box1').style.display = "";
+        document.getElementById('Box2').style.display = "";
+        document.getElementById('Box3').style.display = "none";
+    }
+    else if(id == '1ヶ月分'){
+        document.getElementById('Box1').style.display = "";
+        document.getElementById('Box2').style.display = "";
+        document.getElementById('Box3').style.display = "";
+    }
+}
+
+var trigger = document.getElementById('sample');
+trigger.onchange=viewChange;
+
 
 
 // フォーム＝スケジュールの時
@@ -62,14 +84,37 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 // シフトフォームの表示
 const sc_form = document.getElementById("schedule-form");
-sc_form.style.display = 'inline-block';
+sc_form.style.display = 'block';
 const select_term = document.getElementsByClassName("select-term")[0];
-select_term.style.display = 'inline-block';
+select_term.style.display = 'block';
 }
 
 
 
 //フォームのプルダウン値設定
+//日付部分
+const formdays = document.querySelectorAll('.fd');
+//グループごとにidにプロパティ名を設定
+formdays.forEach(function(formday,index){
+  var date=new Date();
+  date.setDate(date.getDate() + 1+index);
+  var year = date.getFullYear();
+  var month = date.getMonth()+1;
+  var week = date.getDay();
+  var day = date.getDate();
+  var yobi= new Array("日","月","火","水","木","金","土");
+  var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
+  var date3 = year+"/"+month+"/"+day;
+  var datelabel = document.createElement("p");
+  formday.value = date3;
+  datelabel.textContent = date2;
+  formday.after(datelabel);
+});
+
+
+
+
+
 //開始時刻
 const ft1s = document.querySelectorAll('.ft1');
 var times = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"]
