@@ -40,7 +40,8 @@ await console.log(qblock_object);
 
 }
 asyncfunc();
-console.log(qblock_object);
+var test = document.getElementById("シフト申請はこちら");
+console.log(test)
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
