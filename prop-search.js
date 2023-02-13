@@ -35,6 +35,10 @@ for (let i=0; i< qblock_wrap.length; i++){
     console.log(qblock_name); 
     console.log(qblock_value); 
     qblock_object[qblock_name] = qblock_value;
+
+
+    var test = document.getElementById(qblock_name);
+    console.log(test)
 }
 
 console.log(qblock_object);
