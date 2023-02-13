@@ -1,6 +1,3 @@
-
-setTimeout(shift_page, 3000);
-function shift_page(){
 if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
@@ -22,7 +19,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     // フォームを指定したテキストブロック要素の後に挿入
     var form_area = document.getElementById("form-area")
-    tblock_object["シフト提出フォーム欄"].after()
+    qblock_object["シフト申請はこちら"].after()
 
 
 
@@ -151,5 +148,4 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
 
-}
 }
