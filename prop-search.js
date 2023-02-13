@@ -13,7 +13,6 @@ for (let i=0; i< prop_wrap.length; i++){
 }
 console.log(prop_object);
 
-
 // prop_wrap.forEach(element => {
 //     const prop_name = element.getElementsByTagName("span")[0].innerHTML;
 //     const prop_value = element.getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
@@ -37,8 +36,9 @@ for (let i=0; i< qblock_wrap.length; i++){
 }
 await console.log(qblock_object);
 
-
 }
+
+asyncfunc();
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
