@@ -1,8 +1,30 @@
 if(prop_object["ページ表示名"]==="スケジュール提出"){
 
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // DB表示設定代項目
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+    // 教室or講師IDによるDBフィルタ
+    // 前提：データベースはグループ化しておく
+
+    const groups = document.querySelectorAll('.notion-collection-group__section');
+    groups.forEach(element =>{
+        var group_id = element.getElementsByTagName("span")[1].innerHTML;
+        element.setAttribute("id",group_id);
+    });
+    console.log(prop_object["講師ID"]);
+    var test = document.getElementById(prop_object["講師ID"]);
+    var prop_name = "講師ID";
+    console.log(prop_object[prop_name]);
+
+    test.style.display = "block" ;
+
+
+
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // 表示設定代項目
+    // フォーム表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
     // シフトフォームの表示
@@ -49,8 +71,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
 
-
-
     //フォームのプルダウン値設定
     //日付部分
     const formdays = document.querySelectorAll('.fd');
@@ -70,8 +90,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       datelabel.textContent = date2;
       formday.after(datelabel);
     });
-    
-    
     
     
     
@@ -95,24 +113,24 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       ft2.appendChild(option);
     });
     });
-    //開始調整時刻の設定
-    const adt1s = document.querySelectorAll('.adft1');
-    adt1s.forEach(function(ft1){
-    times.forEach(function(time){
-      var option = document.createElement('option');
-      option.textContent = time;
-      ft1.appendChild(option);
-    });
-    });
-    //終了調整時刻の設定
-    const adt2s = document.querySelectorAll('.adft2');
-    adt2s.forEach(function(ft2){
-    times2.forEach(function(time){
-      var option = document.createElement('option');
-      option.textContent = time;
-      ft2.appendChild(option);
-    });
-    });
+    // //開始調整時刻の設定
+    // const adt1s = document.querySelectorAll('.adft1');
+    // adt1s.forEach(function(ft1){
+    // times.forEach(function(time){
+    //   var option = document.createElement('option');
+    //   option.textContent = time;
+    //   ft1.appendChild(option);
+    // });
+    // });
+    // //終了調整時刻の設定
+    // const adt2s = document.querySelectorAll('.adft2');
+    // adt2s.forEach(function(ft2){
+    // times2.forEach(function(time){
+    //   var option = document.createElement('option');
+    //   option.textContent = time;
+    //   ft2.appendChild(option);
+    // });
+    // });
     //ステータス
     // const fss = document.querySelectorAll('.fs');
     // var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
