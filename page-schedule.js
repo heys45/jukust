@@ -99,22 +99,23 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
     });
     //ステータス
-    const fss = document.querySelectorAll('.fs');
-    var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
-    fss.forEach(function(fs){
-    sta.forEach(function(time){
-      var option = document.createElement('option');
-      option.textContent = time;
-      fs.appendChild(option);
-    });
-    });
-    //ステータス
+    // const fss = document.querySelectorAll('.fs');
+    // var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
+    // fss.forEach(function(fs){
+    // sta.forEach(function(time){
+    //   var option = document.createElement('option');
+    //   option.textContent = time;
+    //   fs.appendChild(option);
+    // });
+    // });
+    //スケジュール用ステータス
     const fs2s = document.querySelectorAll('.fs2');
-    var sta2 = ["","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
+    var sta2 = ["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
     fs2s.forEach(function(fs){
-    sta2.forEach(function(time){
+    sta2.forEach(function(sta2){
       var option = document.createElement('option');
-      option.textContent = time;
+      option.textContent = sta2;
+      option.value = sta2;
       fs.appendChild(option);
     });
     });
