@@ -1,7 +1,7 @@
 var prop_object = {};
 var qblock_object = {};
 
-async function asyncfunc(){
+
 //プロパティの連想配列を作成する。
 // var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
@@ -28,7 +28,6 @@ console.log(prop_object);
 // var qblock_object = {};
 const qblock_wrap = document.querySelectorAll('.notion-quote');
 
-function loop(){
 for (let i=0; i< qblock_wrap.length; i++){
     const qblock_name = qblock_wrap[i].getElementsByTagName("strong")[0].innerHTML;
     qblock_wrap[i].setAttribute("id",qblock_name);
@@ -39,12 +38,6 @@ for (let i=0; i< qblock_wrap.length; i++){
 }
 
 console.log(qblock_object);
-}
-
-await loop();
-
-}
-asyncfunc();
 var test = document.getElementById("シフト申請はこちら");
 console.log(test)
 
