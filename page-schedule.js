@@ -130,8 +130,8 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
         st2.onchange= function(){
             var st2v = st2.value;
             if(st2v == '一部勤務可能'){
-            sc_ft1s[index].style[background-color] ="red";
-            sc_ft2s[index].style[background-color] ="red";
+            sc_ft1s[index].style["background-color"] ="red";
+            sc_ft2s[index].style["background-color"] ="red";
             }
 
         }
