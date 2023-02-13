@@ -3,7 +3,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // 表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+    
     // シフトフォームの表示
     // const sh_form = document.getElementById("shift-form");
     // sh_form.style.display = 'block';
@@ -13,6 +13,13 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     // 提出期間変更ボタン表示
     const select_term = document.getElementsByClassName("select-term")[0];
     select_term.style.display = 'block';
+
+
+    // フォームを指定したテキストブロック要素の後に挿入
+    var form_area = document.getElementById("form-area")
+    tblock_object["シフト提出フォーム欄"].after()
+
+
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // 表示設定小項目
@@ -120,12 +127,12 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
     });
 
-
+    // スケジュールフォーム、時間入力時のみカラーの設定
+    // ターゲット取得
     sc_ft1s = sc_form.querySelectorAll('.ft1');
     sc_ft2s = sc_form.querySelectorAll('.ft2');
     st2s = document.querySelectorAll('.fs2');
-
-    console.log(st2s);
+    // ステータスが一部勤務可能の時のみ色変更
     st2s.forEach(function(st2,index){
         st2.onchange= function(){
             var st2v = st2.value;
@@ -133,10 +140,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
             sc_ft1s[index].style["background-color"] ="white";
             sc_ft2s[index].style["background-color"] ="white";
             }
-
         }
-
-
     });
     
 

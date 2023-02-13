@@ -20,7 +20,7 @@ tblock_wrap.forEach(element => {
     const tblock_value = element;
     console.log(tblock_name); 
     console.log(tblock_value); 
-    prop_object[tblock_name] = tblock_value;
+    tblock_object[tblock_name] = tblock_value;
 });
 console.log(tblock_object);
 

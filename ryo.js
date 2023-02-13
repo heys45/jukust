@@ -1,28 +1,8 @@
 
-// id属性で要素を取得
-function posichange(){
-var shiftrec = document.getElementsByClassName('notion-collection')[0];
-console.log(shiftrec);
-var form1 = document.getElementById("form11")
-console.log(form1);
-// 指定した要素の前に挿入
-shiftrec.after(form1);}
-window.addEventListener('load',posichange);
 
 
-// フォームプロパティ表示設定
-const adjs = document.querySelectorAll(".adj");
-adjs.forEach(function(adj){
-adj.style.display = 'none';
-});
-const status = document.querySelectorAll(".fs");
-status.forEach(function(state){
-state.style.display = 'none';
-});
-const formdays = document.querySelectorAll(".fd");
-formdays.forEach(function(formday){
-formday.style.display = 'none';
-});
+
+
 
 // フォーム初期値設定
 const pageproperty = document.getElementsByClassName('notion-page__properties')[0];
