@@ -121,20 +121,25 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
 
 
-    function st2_viewChange(){
-        st2s = document.querySelectorAll('.fs2');
-        console.log(st2s);
-        st2s.forEach(function(st2){
-            var st2v = st2.value
+    sc_ft1s = sc_form.querySelectorAll('.ft1');
+    sc_ft2s = sc_form.querySelectorAll('.ft2');
+    st2s = document.querySelectorAll('.fs2');
+
+    console.log(st2s);
+    st2s.forEach(function(st2,index){
+        st2.onchange= function(){
+            var st2v = st2.value;
             if(st2v == '一部勤務可能'){
-                document.getElementById('schedule-form1').style.color = "red";
+            sc_ft1s[index].style[backgroundc-olor] ="red";
+            sc_ft2s[index].style[background-color] ="red";
             }
 
-        });
-    }
+        }
+
+
+    });
     
-    var trigger_st2 = document.querySelectorAll('.fs2');
-    trigger_st2.onchange=st2_viewChange;
+
 
 
 
