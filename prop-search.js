@@ -44,11 +44,10 @@ for (let i=0; i< qblock_wrap.length; i++){
 
 console.log(qblock_object);
 
-function delay(){
-test = document.getElementById('select-term-button');
+var testw = "提出スケジュールの現状ステータス"; 
+test = document.getElementById(testw);
 console.log(test);
-}
-setTimeout(delay, 2000); 
+
 
 select_form = document.getElementById('select-term-button').value;
 
