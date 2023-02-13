@@ -121,36 +121,36 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
 
     //スケジュール用ステータス
-    function viewChange(){
-        id = document.getElementById('select-term-button').value;
-        console.log(id);
-        if(id == '１週間分'){
-            document.getElementById('Box1').style.display = "";
-            document.getElementById('Box2').style.display = "none";
-            document.getElementById('Box3').style.display = "none";
-        }else if(id == '2週間分'){
-            document.getElementById('Box1').style.display = "";
-            document.getElementById('Box2').style.display = "";
-            document.getElementById('Box3').style.display = "none";
-        }
-        else if(id == '1ヶ月分'){
-            document.getElementById('Box1').style.display = "";
-            document.getElementById('Box2').style.display = "";
-            document.getElementById('Box3').style.display = "";
-        }
-    }
+    // function viewChange(){
+    //     id = document.getElementById('select-term-button').value;
+    //     console.log(id);
+    //     if(id == '１週間分'){
+    //         document.getElementById('Box1').style.display = "";
+    //         document.getElementById('Box2').style.display = "none";
+    //         document.getElementById('Box3').style.display = "none";
+    //     }else if(id == '2週間分'){
+    //         document.getElementById('Box1').style.display = "";
+    //         document.getElementById('Box2').style.display = "";
+    //         document.getElementById('Box3').style.display = "none";
+    //     }
+    //     else if(id == '1ヶ月分'){
+    //         document.getElementById('Box1').style.display = "";
+    //         document.getElementById('Box2').style.display = "";
+    //         document.getElementById('Box3').style.display = "";
+    //     }
+    // }
     
-    var trigger_st2 = document.querySelectorAll('.fs2');
+    // var trigger_st2 = document.querySelectorAll('.fs2');
 
-    trigger_st2.array.forEach(element => {
-        element.addEventlistner("click",function(){
-            if(element.value == "一部勤務可能"){
-                element.style[color] = "red";
-            }
+    // trigger_st2.array.forEach(element => {
+    //     element.addEventlistner("click",function(){
+    //         if(element.value == "一部勤務可能"){
+    //             element.style[color] = "red";
+    //         }
 
-        });
-    });
-    trigger.onchange=viewChange;
+    //     });
+    // });
+    // trigger.onchange=viewChange;
 
 
 

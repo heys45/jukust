@@ -68,27 +68,27 @@ function viewChange(){
 var trigger = document.getElementById('sample');
 trigger.onchange=viewChange;
 
-function viewChange(){
-    id = document.getElementById('select-term-button').value;
-    console.log(id);
-    if(id == '１週間分'){
-        document.getElementById('Box1').style.color = "red";
-        document.getElementById('Box2').style.display = "none";
-        document.getElementById('Box3').style.display = "none";
-    }else if(id == '2週間分'){
-        document.getElementById('Box1').style.display = "";
-        document.getElementById('Box2').style.color = "red";
-        document.getElementById('Box3').style.display = "none";
-    }
-    else if(id == '1ヶ月分'){
-        document.getElementById('Box1').style.display = "";
-        document.getElementById('Box2').style.display = "";
-        document.getElementById('Box3').style.display = "";
-    }
-}
+// function viewChange(){
+//     id = document.getElementById('select-term-button').value;
+//     console.log(id);
+//     if(id == '１週間分'){
+//         document.getElementById('Box1').style.color = "red";
+//         document.getElementById('Box2').style.display = "none";
+//         document.getElementById('Box3').style.display = "none";
+//     }else if(id == '2週間分'){
+//         document.getElementById('Box1').style.display = "";
+//         document.getElementById('Box2').style.color = "red";
+//         document.getElementById('Box3').style.display = "none";
+//     }
+//     else if(id == '1ヶ月分'){
+//         document.getElementById('Box1').style.display = "";
+//         document.getElementById('Box2').style.display = "";
+//         document.getElementById('Box3').style.display = "";
+//     }
+// }
 
-var trigger = document.getElementById('sample');
-trigger.onchange=viewChange;
+// var trigger = document.getElementById('sample');
+// trigger.onchange=viewChange;
 
 
 
