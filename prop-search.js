@@ -42,7 +42,7 @@ for(let i=0; i< qblock_wrap.length; i++){
     console.log(qblock_value); 
     qblock_object[qblock_name] = qblock_value;
 }
-console.log(prop_object);
+console.log(qblock_object);
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
