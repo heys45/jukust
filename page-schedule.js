@@ -125,7 +125,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
         st2s = document.querySelectorAll('.fs2').value;
         console.log(st2s);
         st2s.forEach(function(st2){
-            if(st2s == '一部勤務可能'){
+            if(st2 == '一部勤務可能'){
                 document.getElementById('schedule-form1').style.color = "red";
             }
 
