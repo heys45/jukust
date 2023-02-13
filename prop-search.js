@@ -28,6 +28,7 @@ console.log(prop_object);
 // var qblock_object = {};
 const qblock_wrap = document.querySelectorAll('.notion-quote');
 
+function loop(){
 for (let i=0; i< qblock_wrap.length; i++){
     const qblock_name = qblock_wrap[i].getElementsByTagName("strong")[0].innerHTML;
     qblock_wrap[i].setAttribute("id",qblock_name);
@@ -36,7 +37,11 @@ for (let i=0; i< qblock_wrap.length; i++){
     console.log(qblock_value); 
     qblock_object[qblock_name] = qblock_value;
 }
-await console.log(qblock_object);
+
+console.log(qblock_object);
+}
+
+await loop();
 
 }
 asyncfunc();
