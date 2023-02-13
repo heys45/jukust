@@ -120,6 +120,23 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
     });
 
+
+    function st2_viewChange(){
+        st2s = document.querySelectorAll('.fs2').value;
+        console.log(st2s);
+        st2s.forEach(function(st2){
+            if(st2s == '１週間分'){
+                document.getElementById('schedule-form1').style.color = "red";
+            }
+
+        });
+    }
+    
+    var trigger_st2 = document.querySelectorAll('.fs2');
+    trigger_st2.onchange=st2_viewChange;
+
+
+
     //スケジュール用ステータス
     // function viewChange(){
     //     id = document.getElementById('select-term-button').value;
