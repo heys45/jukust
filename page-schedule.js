@@ -19,7 +19,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     // フォームを指定したテキストブロック要素の後に挿入
     var form_area = document.getElementById("form-area")
-    qblock_object["シフト申請はこちら"].after()
+    document.getElementById("シフト申請はこちら").after()
 
 
 
