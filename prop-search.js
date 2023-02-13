@@ -68,6 +68,29 @@ function viewChange(){
 var trigger = document.getElementById('select-term-button');
 trigger.onchange=viewChange;
 
+function viewChange(){
+    select_form = document.getElementById('select-term-button').value;
+    console.log(select_form);
+    if(select_form == '１週間分'){
+        document.getElementById('schedule-form1').style.color = "red";
+        document.getElementById('schedule-form2').style.display = "none";
+        document.getElementById('schedule-form3').style.display = "none";
+    }else if(select_form == '2週間分'){
+        document.getElementById('schedule-form1').style.display = "";
+        document.getElementById('schedule-form2').style.color = "red";
+        document.getElementById('schedule-form3').style.display = "none";
+    }
+    else if(select_form == '1ヶ月分'){
+        document.getElementById('schedule-form1').style.display = "";
+        document.getElementById('schedule-form2').style.display = "";
+        document.getElementById('schedule-form3').style.display = "";
+    }
+}
+
+var trigger = document.getElementById('select-term-button');
+trigger.onchange=viewChange;
+
+
 // function viewChange(){
 //     id = document.getElementById('select-term-button').value;
 //     console.log(id);
