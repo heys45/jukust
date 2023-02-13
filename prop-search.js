@@ -24,6 +24,8 @@ qblock_wrap.forEach(element => {
 });
 console.log(qblock_object);
 
+var test = document.getElementById("シフト申請はこちら");
+console.log(test);
 
 
 ///ページ名によって読み込むHTML要素とJSを切り替える
