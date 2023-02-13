@@ -21,7 +21,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     console.log(form_area);
     var quote_name = "シフト申請はこちらから";
     let div = document.createElement("div");
-    document.getElementById("quote_name").after(div,form_area);
+    document.getElementById("quote_name").after(div);
 
 
 
