@@ -1,10 +1,10 @@
-const promise = new Promise((resolve, reject) => {
 
+async function asyncfunc(){
 //プロパティの連想配列を作成する。
 var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
 
-for(let i=0; i< prop_wrap.length; i++){
+for await (let i=0; i< prop_wrap.length; i++){
     const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
     const prop_value = prop_wrap[i].getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
     console.log(prop_name); 
@@ -27,7 +27,7 @@ console.log(prop_object);
 var qblock_object = {};
 const qblock_wrap = document.querySelectorAll('.notion-quote');
 
-for(let i=0; i< qblock_wrap.length; i++){
+for await (let i=0; i< qblock_wrap.length; i++){
     const qblock_name = qblock_wrap[i].getElementsByTagName("strong")[0].innerHTML;
     qblock_wrap[i].setAttribute("id",qblock_name);
     const qblock_value = document.getElementById(qblock_name);
@@ -36,6 +36,9 @@ for(let i=0; i< qblock_wrap.length; i++){
     qblock_object[qblock_name] = qblock_value;
 }
 console.log(qblock_object);
+
+
+}
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
@@ -108,8 +111,3 @@ trigger.onchange=viewChange;
 
 // フォーム＝シフトの時
 
-
-});
-console.log('world!');
-
-promise.then(() => console.log('world!end'));
