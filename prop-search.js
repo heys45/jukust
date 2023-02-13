@@ -16,7 +16,8 @@ var qblock_object = {};
 const qblock_wrap = document.querySelectorAll('.notion-quote');
 qblock_wrap.forEach(element => {
     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
-    const qblock_value = element;
+    element.setAttribute("id",qblock_name);
+    const qblock_value = document.getElementById(qblock_name);
     console.log(qblock_name); 
     console.log(qblock_value); 
     qblock_object[qblock_name] = qblock_value;
