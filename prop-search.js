@@ -1,11 +1,4 @@
-// 2. for文で配列をループ処理する例
-let fruits = ["apple", "orange", "melon"];
-
-for(let i=0 ; i< fruits.length; i++){
-  console.log( fruits[i] );
-}
-
-
+const promise = new Promise((resolve, reject) => {
 
 //プロパティの連想配列を作成する。
 var prop_object = {};
@@ -116,3 +109,7 @@ trigger.onchange=viewChange;
 // フォーム＝シフトの時
 
 
+});
+console.log('world!');
+
+promise.then(() => console.log('world!end'));
