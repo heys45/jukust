@@ -150,8 +150,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
         });
     });
-
-
     trigger.onchange=viewChange;
 
 
