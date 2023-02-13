@@ -1,7 +1,9 @@
+var prop_object = {};
+var qblock_object = {};
 
 async function asyncfunc(){
 //プロパティの連想配列を作成する。
-var prop_object = {};
+// var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
 
 for (let i=0; i< prop_wrap.length; i++){
@@ -23,7 +25,7 @@ console.log(prop_object);
 // console.log(prop_object);
 
 // テキストブロックの連想配列を作成する。
-var qblock_object = {};
+// var qblock_object = {};
 const qblock_wrap = document.querySelectorAll('.notion-quote');
 
 for (let i=0; i< qblock_wrap.length; i++){
