@@ -47,8 +47,8 @@ console.log(prop_object);
 
 // フォーム共通の処理
 function viewChange(){
-    id = document.getElementById('select-term-button').value;
-    console.log(id);
+    form = document.getElementById('select-term-button').value;
+    console.log(rorm);
     if(id == '１週間分'){
         document.getElementById('Box1').style.display = "";
         document.getElementById('Box2').style.display = "none";
@@ -65,7 +65,7 @@ function viewChange(){
     }
 }
 
-var trigger = document.getElementById('sample');
+var trigger = document.getElementById('select-term-button');
 trigger.onchange=viewChange;
 
 // function viewChange(){
