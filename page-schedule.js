@@ -18,7 +18,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     // フォームを指定したテキストブロック要素の後に挿入
     var form_area = document.getElementById("form-area");
-    var quote_name = "シフト申請はこちら";
+    var quote_name = "シフト申請はこちらから";
     document.getElementById("quote_name").after();
 
 
