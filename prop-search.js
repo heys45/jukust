@@ -37,8 +37,8 @@ for (let i=0; i< qblock_wrap.length; i++){
 await console.log(qblock_object);
 
 }
-
 asyncfunc();
+console.log(qblock_object);
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
