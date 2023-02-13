@@ -37,7 +37,7 @@ for (let i=0; i< qblock_wrap.length; i++){
     qblock_object[qblock_name] = qblock_value;
 
 
-    var test = document.getElementById('シフト申請はこちら');
+    test = document.getElementById('シフト申請はこちら');
     console.log(test)
 }
 
