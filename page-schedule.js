@@ -1,16 +1,8 @@
 
-function sayHi() {
-    console.log('Hello!');
-  }
-  
-  setTimeout(sayHi, 3000);
-  // "Hello!"
-
-
-
+setTimeout(shift_page, 3000);
+function shift_page(){
 if(prop_object["ページ表示名"]==="スケジュール提出"){
-    setTimeout(shift_page, 3000);
-    function shift_page(){
+
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
