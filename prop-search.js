@@ -37,7 +37,7 @@ for (let i=0; i< qblock_wrap.length; i++){
     qblock_object[qblock_name] = qblock_value;
 
 
-    var test = document.getElementById("シフト申請はこちら");
+    var test = document.getElementById('シフト申請はこちら');
     console.log(test)
 }
 
@@ -45,12 +45,12 @@ for (let i=0; i< qblock_wrap.length; i++){
 console.log(qblock_object);
 
 function delay(){
-var test = document.getElementById("シフト申請はこちら");
+test = document.getElementById('select-term-button');
 console.log(test);
 }
 setTimeout(delay, 2000); 
 
-
+select_form = document.getElementById('select-term-button').value;
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
