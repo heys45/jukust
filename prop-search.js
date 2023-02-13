@@ -41,9 +41,15 @@ for (let i=0; i< qblock_wrap.length; i++){
     console.log(test)
 }
 
+
 console.log(qblock_object);
 var test = document.getElementById("シフト申請はこちら");
+function delay(){
 console.log(test)
+}
+setTimeout(delay, 2000); 
+
+
 
 // qblock_wrap.forEach(element => {
 //     const qblock_name = element.getElementsByTagName("strong")[0].innerHTML;
