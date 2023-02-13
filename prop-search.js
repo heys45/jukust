@@ -165,7 +165,7 @@ sta.forEach(function(time){
 });
 //ステータス
 const fs2s = document.querySelectorAll('.fs2');
-var sta2 = ["終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
+var sta2 = ["","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
 fs2s.forEach(function(fs){
 sta2.forEach(function(time){
   var option = document.createElement('option');
