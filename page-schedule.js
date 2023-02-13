@@ -1,9 +1,22 @@
+
+function sayHi() {
+    console.log('Hello!');
+  }
+  
+  setTimeout(sayHi, 3000);
+  // "Hello!"
+
+
+
 if(prop_object["ページ表示名"]==="スケジュール提出"){
+    setTimeout(shift_page, 3000);
+    function shift_page(){
+
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // 表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    
+
     // シフトフォームの表示
     // const sh_form = document.getElementById("shift-form");
     // sh_form.style.display = 'block';
@@ -146,40 +159,5 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
 
-
-    //スケジュール用ステータス
-    // function viewChange(){
-    //     id = document.getElementById('select-term-button').value;
-    //     console.log(id);
-    //     if(id == '１週間分'){
-    //         document.getElementById('Box1').style.display = "";
-    //         document.getElementById('Box2').style.display = "none";
-    //         document.getElementById('Box3').style.display = "none";
-    //     }else if(id == '2週間分'){
-    //         document.getElementById('Box1').style.display = "";
-    //         document.getElementById('Box2').style.display = "";
-    //         document.getElementById('Box3').style.display = "none";
-    //     }
-    //     else if(id == '1ヶ月分'){
-    //         document.getElementById('Box1').style.display = "";
-    //         document.getElementById('Box2').style.display = "";
-    //         document.getElementById('Box3').style.display = "";
-    //     }
-    // }
-    
-    // var trigger_st2 = document.querySelectorAll('.fs2');
-
-    // trigger_st2.array.forEach(element => {
-    //     element.addEventlistner("click",function(){
-    //         if(element.value == "一部勤務可能"){
-    //             element.style[color] = "red";
-    //         }
-
-    //     });
-    // });
-    // trigger.onchange=viewChange;
-
-
-
-
+}
 }
