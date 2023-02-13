@@ -122,10 +122,11 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
     function st2_viewChange(){
-        st2s = document.querySelectorAll('.fs2').value;
+        st2s = document.querySelectorAll('.fs2');
         console.log(st2s);
         st2s.forEach(function(st2){
-            if(st2 == '一部勤務可能'){
+            var st2v = st2.value
+            if(st2v == '一部勤務可能'){
                 document.getElementById('schedule-form1').style.color = "red";
             }
 
