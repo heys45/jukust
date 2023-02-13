@@ -4,7 +4,7 @@ async function asyncfunc(){
 var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
 
-for await (let i=0; i< prop_wrap.length; i++){
+for (let i=0; i< prop_wrap.length; i++){
     const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
     const prop_value = prop_wrap[i].getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
     console.log(prop_name); 
@@ -27,7 +27,7 @@ console.log(prop_object);
 var qblock_object = {};
 const qblock_wrap = document.querySelectorAll('.notion-quote');
 
-for await (let i=0; i< qblock_wrap.length; i++){
+for (let i=0; i< qblock_wrap.length; i++){
     const qblock_name = qblock_wrap[i].getElementsByTagName("strong")[0].innerHTML;
     qblock_wrap[i].setAttribute("id",qblock_name);
     const qblock_value = document.getElementById(qblock_name);
@@ -35,7 +35,7 @@ for await (let i=0; i< qblock_wrap.length; i++){
     console.log(qblock_value); 
     qblock_object[qblock_name] = qblock_value;
 }
-console.log(qblock_object);
+await console.log(qblock_object);
 
 
 }
