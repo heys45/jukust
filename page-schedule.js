@@ -59,7 +59,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       var date=new Date();
       date.setDate(date.getDate() + 1+index);
       var year = date.getFullYear();
-      var month = date.getMonth()+1;
+      var month = date.getMonth();
       var week = date.getDay();
       var day = date.getDate();
       var yobi= new Array("日","月","火","水","木","金","土");
