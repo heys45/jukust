@@ -11,16 +11,16 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const groups = document.querySelectorAll('.notion-collection-group__section');
     groups.forEach(element =>{
         var group_id = element.getElementsByTagName("span")[1].innerHTML;
-        element.setAttribute("class",group_id);
+        element.setAttribute("class","t"+ group_id);
     });
 
     var teacher_id = prop_object["講師ID"];
     console.log(teacher_id);
     var teacher_class ="."+teacher_id
     console.log(teacher_class);
-    var test = document.getElementsByClassName(prop_object["講師ID"]);
+    var test = document.getElementsByClassName(t+prop_object["講師ID"]);
     console.log(test);
-    var test2 = document.querySelectorAll('.00000');
+    var test2 = document.querySelectorAll('.t00000');
     console.log(test2);
 
     test.forEach(element =>{
