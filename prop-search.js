@@ -82,7 +82,6 @@ trigger.onchange=viewChange;
 
 // フォーム＝シフトの時
 
-console.log(prop_object["講師ID"]);
-var footer = document.getElementsByTagName("footer");
+var footer = document.getElementsByTagName("footer")[0];
 var main_content = document.getElementsByClassName("super-content")[0];
 main_content.after(footer) ;
