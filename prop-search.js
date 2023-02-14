@@ -85,3 +85,4 @@ trigger.onchange=viewChange;
 var footer = document.getElementsByTagName("footer")[0];
 var main_content = document.getElementsByClassName("super-content")[0];
 main_content.after(footer) ;
+footer.style.display = "block";

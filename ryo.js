@@ -4,12 +4,7 @@
 
 
 
-// フォーム初期値設定
-const pageproperty = document.getElementsByClassName('notion-page__properties')[0];
-var span2 = pageproperty.getElementsByTagName("span")[1];
-var span3 = span2.getElementsByTagName("span")[0].innerHTML;
-console.log(span3);
-document.getElementById("schid").value =span3;
+
 
 
 

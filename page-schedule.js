@@ -11,12 +11,13 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const groups = document.querySelectorAll('.notion-collection-group__section');
     groups.forEach(element =>{
         var group_id = element.getElementsByTagName("span")[1].innerHTML;
-        element.setAttribute("id",group_id);
+        element.setAttribute("class",group_id);
     });
 
-    console.log(prop_object["講師ID"]);
-    var test = document.getElementById(prop_object["講師ID"]);
-    test.style.display = "block" ;
+    var test = document.querySelectorAll("."+prop_object["講師ID"]);
+    test.forEach(element =>{
+    element.style.display = "block" ;
+    });
 
 
 
@@ -167,7 +168,38 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
         }
     });
     
+    
+
+
+    // フォーム初期値設定
+    document.getElementById("teaid").value = prop_object["講師ID"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
