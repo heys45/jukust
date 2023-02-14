@@ -13,11 +13,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
         var group_id = element.getElementsByTagName("span")[1].innerHTML;
         element.setAttribute("id",group_id);
     });
+
     console.log(prop_object["講師ID"]);
     var test = document.getElementById(prop_object["講師ID"]);
-    var prop_name = "講師ID";
-    console.log(prop_object[prop_name]);
-
     test.style.display = "block" ;
 
 
