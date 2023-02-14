@@ -11,7 +11,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const groups = document.querySelectorAll('.notion-collection-group__section');
     groups.forEach(element =>{
         var group_id = element.getElementsByTagName("span")[1].innerHTML;
-        dlement.classList.add("t"+ group_id);
+        element.classList.add("t"+ group_id);
     });
 
 
