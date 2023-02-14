@@ -14,8 +14,8 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
         element.setAttribute("class",group_id);
     });
 
-    var prop_class ="."+prop_object["講師ID"]
-
+    var prop_class ="." + prop_object["講師ID"];
+    console.log(prop_class);
     var test = document.querySelectorAll(prop_class);
     test.forEach(element =>{
     element.style.display = "block" ;
