@@ -18,7 +18,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     console.log(teacher_id);
     var teacher_class ="."+teacher_id
     console.log(teacher_class);
-    var test = document.querySelectorAll(teacher_class);
+    var test = document.getElementsByClassName(prop_object["講師ID"]);
     test.forEach(element =>{
     element.style.display = "block" ;
     });
