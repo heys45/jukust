@@ -1,6 +1,4 @@
 
-function prop_search() {
-
 //プロパティの連想配列を作成する。
 var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
@@ -84,8 +82,3 @@ main_content.after(footer) ;
 footer.style.display = "block";
 
 
-}
-
-
-window.addEventListener('load', prop_search);
-window.addEventListener('pageshow', prop_search);
