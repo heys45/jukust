@@ -199,23 +199,7 @@ if(prop_object["ページ表示名"]==="シフト確定"){
 
     // フォーム初期値設定
     document.getElementById("teaid").value = prop_object["講師ID"];
-  
 
-    function addAnswer(){
-
-      var newElement = document.createElement("p"); // p要素作成
-      var newContent = document.createTextNode("子要素２"); // テキストノードを作成
-      newElement.appendChild(newContent); // p要素にテキストノードを追加
-       
-       
-      // 子要素１への参照を取得
-      var childP1 = document.getElementById("form-area");
-       
-      // 追加
-      parentDiv.insertBefore(newElement, childP1.nextSibling);
-
-
-    }
 
 
 
