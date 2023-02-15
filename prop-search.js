@@ -1,5 +1,3 @@
-window.addEventListener('load', prop_search);
-window.addEventListener('pageshow', prop_search);
 
 function prop_search() {
 
@@ -87,3 +85,7 @@ footer.style.display = "block";
 
 
 }
+
+
+window.addEventListener('load', prop_search);
+window.addEventListener('pageshow', prop_search);
