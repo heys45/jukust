@@ -97,9 +97,8 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     const hosokus = document.querySelectorAll('.hosoku');
     hosokus.forEach(element =>{
       element.style.width = '300px';
-      var datelabel = document.createElement("br");
       var datelabel = document.createElement("span");
-      datelabel.textContent = "　備考・補足：";
+      datelabel.textContent = "<br>　備考・補足：";
       element.before(datelabel);
     });
 
