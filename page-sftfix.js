@@ -27,9 +27,6 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     element.style.display = "block" ;
     });
 
-
-
-
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // フォーム表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -54,7 +51,7 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     const select_term = document.getElementsByClassName("select-term")[0];
     select_term.style.display = 'block';
     function viewChange(){
-      select_form = document.getElementById('select-term-button').value;
+      var select_form = document.getElementById('select-term-button').value;
       console.log(select_form);
       if(select_form == '１週間分'){
           document.getElementById('schedule-form1').style.display = "";
@@ -77,22 +74,58 @@ if(prop_object["ページ表示名"]==="シフト確定"){
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // 表示設定小項目
+    // フォーム解答欄の設定
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-    // フォームプロパティ表示設定
+    // ステータス欄の設定
+    const timeafss = document.querySelectorAll('.fs');
+    timeafss.forEach(function(timeaf,index){
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "勤務希望時間：";
+      timeaf.before(datelabel);
+    });
+
+    // 調整希望時間の設定
+    const adft1s = document.querySelectorAll('.adft1');
+    adft1s.forEach(element =>{
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "　調整希望時間：";
+      element.before(datelabel);
+    });
+
+    // 補足欄の設定
+    const hosokus = document.querySelectorAll('.hosoku');
+    hosokus.forEach(element =>{
+      element.style.width = '300px';
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "　備考・補足：";
+      element.before(datelabel);
+    });
+
+    // フォーム解答欄非表示設定
     const adjs = document.querySelectorAll(".adj");
-    adjs.forEach(function(adj){
-    adj.style.display = 'none';
+    adjs.forEach(element =>{
+    element.style.display = 'none';
     });
     const status = document.querySelectorAll(".fs");
-    status.forEach(function(state){
-    state.style.display = 'none';
+    status.forEach(element =>{
+    element.style.display = 'none';
     });
     const fds = document.querySelectorAll(".fd");
-    fds.forEach(function(fd){
-    fd.style.display = 'none';
+    fds.forEach(element =>{
+    element.style.display = 'none';
     });
+
+
+
+    
+
+    
+
+
+
+
+
 
 
 
