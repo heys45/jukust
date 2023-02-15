@@ -1,12 +1,7 @@
-window.onpageshow = function(event) {
-	if (event.persisted) {
-		 console.log("submit");
-	}
-};
+window.addEventListener('load', prop_search);
+window.addEventListener('pageshow', prop_search);
 
-
-
-window.addEventListener('pageshow', function() {
+function prop_search() {
 
 //プロパティの連想配列を作成する。
 var prop_object = {};
@@ -91,4 +86,4 @@ main_content.after(footer) ;
 footer.style.display = "block";
 
 
-});
+}
