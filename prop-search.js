@@ -1,4 +1,15 @@
 
+var old_url = window.location.href;
+var url_interval = setInterval(()=>{
+
+    var new_url = window.location.href;
+    if (old_url !=new_url){
+
+        console.log("change!!!");
+
+        old_url = new_url;
+    }},1000)
+
 //プロパティの連想配列を作成する。
 var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
