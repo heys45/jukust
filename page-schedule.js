@@ -1,3 +1,4 @@
+window.addEventListener('pageshow', function() {
 setTimeout(timefunc,100);
 function timefunc(){
 if(prop_object["ページ表示名"]==="スケジュール提出"){
@@ -210,7 +211,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
 
-}}
+}}});
 
 
 

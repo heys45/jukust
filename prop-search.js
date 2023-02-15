@@ -1,8 +1,4 @@
-window.onpageshow = function(event) {
-	if (event.persisted) {
-		 window.location.reload();
-	}
-};
+window.addEventListener('pageshow', function() {
 
 //プロパティの連想配列を作成する。
 var prop_object = {};
@@ -85,3 +81,6 @@ var footer = document.getElementsByTagName("footer")[0];
 var main_content = document.getElementsByClassName("super-content")[0];
 main_content.after(footer) ;
 footer.style.display = "block";
+
+
+});
