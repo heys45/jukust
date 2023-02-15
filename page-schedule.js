@@ -184,8 +184,8 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     sc_ft2s = sc_form.querySelectorAll('.ft2');
     st2s = document.querySelectorAll('.fs2');
 
-    sc_ft1s[index].style["background-color"] ="#222222";
-    sc_ft2s[index].style["background-color"] ="#222222";
+    sc_ft1s[index].style["background-color"] ="glay";
+    sc_ft2s[index].style["background-color"] ="glay";
 
     // ステータスが一部勤務可能の時のみ色変更
     st2s.forEach(function(st2,index){
