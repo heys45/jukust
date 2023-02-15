@@ -97,6 +97,7 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     const hosokus = document.querySelectorAll('.hosoku');
     hosokus.forEach(element =>{
       element.style.width = '300px';
+      var datelabel = document.createElement("br");
       var datelabel = document.createElement("span");
       datelabel.textContent = "　備考・補足：";
       element.before(datelabel);
@@ -107,7 +108,7 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     ft1ss.forEach(element =>{
     element.style.display = 'none';
     });
-    const ft2ss = document.querySelectorAll("ft2");
+    const ft2ss = document.querySelectorAll(".ft2");
     ft2ss.forEach(element =>{
     element.style.display = 'none';
     });
