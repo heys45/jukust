@@ -78,11 +78,11 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
     // ステータス欄の設定
-    const timeafss = document.querySelectorAll('.fs');
-    timeafss.forEach(function(timeaf,index){
+    const fssa = document.querySelectorAll('.fs');
+    fssa.forEach(element =>{
       var datelabel = document.createElement("span");
-      datelabel.textContent = "勤務希望時間：";
-      timeaf.before(datelabel);
+      datelabel.textContent = "";
+      element.before(datelabel);
     });
 
     // 調整希望時間の設定
@@ -103,12 +103,12 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     });
 
     // フォーム解答欄非表示設定
-    const adjs = document.querySelectorAll(".adj");
-    adjs.forEach(element =>{
+    const ft1ss = document.querySelectorAll(".ft1");
+    ft1ss.forEach(element =>{
     element.style.display = 'none';
     });
-    const status = document.querySelectorAll(".fs");
-    status.forEach(element =>{
+    const ft2ss = document.querySelectorAll("ft2");
+    ft2ss.forEach(element =>{
     element.style.display = 'none';
     });
     const fds = document.querySelectorAll(".fd");
