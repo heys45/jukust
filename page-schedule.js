@@ -1,4 +1,4 @@
-setTimeout(timefunc,500);
+setTimeout(timefunc,100);
 function timefunc(){
 if(prop_object["ページ表示名"]==="スケジュール提出"){
 
