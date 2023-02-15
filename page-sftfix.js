@@ -41,7 +41,7 @@ if(prop_object["ページ表示名"]==="シフト確定"){
 
     // 表示するフォームと、その場所をここで設定する！！！！！！！！！！！！！！！！！！
     const view_form = sh_form;
-    var quote_name = "シフト申請はこちらから";
+    var quote_name = "シフト申請への回答はこちらから";
 
     // フォームを指定したテキストブロック要素の後に挿入
     var form_area = document.getElementById("form-area");
