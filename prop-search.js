@@ -1,3 +1,11 @@
+window.onpageshow = function(event) {
+	if (event.persisted) {
+		 console.log("submit");
+	}
+};
+
+
+
 window.addEventListener('pageshow', function() {
 
 //プロパティの連想配列を作成する。
