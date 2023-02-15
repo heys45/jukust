@@ -2,7 +2,7 @@
 setTimeout(timefunc,300);
 
 function timefunc(){
-if(prop_object["ページ表示名"]==="スケジュール提出"){
+if(prop_object["ページ表示名"]==="シフト確定"){
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // DB表示設定代項目
@@ -40,7 +40,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const sc_form = document.getElementById("schedule-form");
 
     // 表示するフォームと、その場所をここで設定する！！！！！！！！！！！！！！！！！！
-    const view_form = sc_form;
+    const view_form = sh_form;
     var quote_name = "シフト申請はこちらから";
 
     // フォームを指定したテキストブロック要素の後に挿入
@@ -139,60 +139,60 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
     });
     // //開始調整時刻の設定
-    // const adt1s = document.querySelectorAll('.adft1');
-    // adt1s.forEach(function(ft1){
-    // times.forEach(function(time){
-    //   var option = document.createElement('option');
-    //   option.textContent = time;
-    //   ft1.appendChild(option);
-    // });
-    // });
-    // //終了調整時刻の設定
-    // const adt2s = document.querySelectorAll('.adft2');
-    // adt2s.forEach(function(ft2){
-    // times2.forEach(function(time){
-    //   var option = document.createElement('option');
-    //   option.textContent = time;
-    //   ft2.appendChild(option);
-    // });
-    // });
-    //ステータス
-    // const fss = document.querySelectorAll('.fs');
-    // var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
-    // fss.forEach(function(fs){
-    // sta.forEach(function(time){
-    //   var option = document.createElement('option');
-    //   option.textContent = time;
-    //   fs.appendChild(option);
-    // });
-    // });
-    //スケジュール用ステータス
-    const fs2s = document.querySelectorAll('.fs2');
-    var sta2 = ["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
-    fs2s.forEach(function(fs){
-    sta2.forEach(function(sta2){
+    const adt1s = document.querySelectorAll('.adft1');
+    adt1s.forEach(function(ft1){
+    times.forEach(function(time){
       var option = document.createElement('option');
-      option.textContent = sta2;
-      option.value = sta2;
+      option.textContent = time;
+      ft1.appendChild(option);
+    });
+    });
+    // //終了調整時刻の設定
+    const adt2s = document.querySelectorAll('.adft2');
+    adt2s.forEach(function(ft2){
+    times2.forEach(function(time){
+      var option = document.createElement('option');
+      option.textContent = time;
+      ft2.appendChild(option);
+    });
+    });
+    //ステータス
+    const fss = document.querySelectorAll('.fs');
+    var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
+    fss.forEach(function(fs){
+    sta.forEach(function(time){
+      var option = document.createElement('option');
+      option.textContent = time;
       fs.appendChild(option);
     });
     });
+    //スケジュール用ステータス
+    // const fs2s = document.querySelectorAll('.fs2');
+    // var sta2 = ["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
+    // fs2s.forEach(function(fs){
+    // sta2.forEach(function(sta2){
+    //   var option = document.createElement('option');
+    //   option.textContent = sta2;
+    //   option.value = sta2;
+    //   fs.appendChild(option);
+    // });
+    // });
 
     // スケジュールフォーム、時間入力時のみカラーの設定
     // ターゲット取得
-    sc_ft1s = sc_form.querySelectorAll('.ft1');
-    sc_ft2s = sc_form.querySelectorAll('.ft2');
-    st2s = document.querySelectorAll('.fs2');
-    // ステータスが一部勤務可能の時のみ色変更
-    st2s.forEach(function(st2,index){
-        st2.onchange= function(){
-            var st2v = st2.value;
-            if(st2v == '一部勤務可能'){
-            sc_ft1s[index].style["background-color"] ="white";
-            sc_ft2s[index].style["background-color"] ="white";
-            }
-        }
-    });
+    // sc_ft1s = sc_form.querySelectorAll('.ft1');
+    // sc_ft2s = sc_form.querySelectorAll('.ft2');
+    // st2s = document.querySelectorAll('.fs2');
+    // // ステータスが一部勤務可能の時のみ色変更
+    // st2s.forEach(function(st2,index){
+    //     st2.onchange= function(){
+    //         var st2v = st2.value;
+    //         if(st2v == '一部勤務可能'){
+    //         sc_ft1s[index].style["background-color"] ="white";
+    //         sc_ft2s[index].style["background-color"] ="white";
+    //         }
+    //     }
+    // });
     
     
 
