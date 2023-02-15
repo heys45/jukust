@@ -1,3 +1,9 @@
+window.onpageshow = function(event) {
+	if (event.persisted) {
+		 window.location.reload();
+	}
+};
+
 //プロパティの連想配列を作成する。
 var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
@@ -22,14 +28,6 @@ for (let i=0; i< qblock_wrap.length; i++){
     qblock_object[qblock_name] = qblock_value;
 }
 console.log(qblock_object);
-
-
-
-
-
-
-
-
 
 
 
