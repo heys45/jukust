@@ -237,13 +237,11 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       span.innerHTML = "<span>サンプルタイトル</span>";
 
 
-
-
-
-
-
-
-
+      var schedule_form_btn = document.getElementById("schedule-form-btn");
+      schedule_form_btn.addEventListener('click', schedule_form);
+      function schedule_form() {
+        document.getElementById('schedule-form-comp').style.display = 'block';
+        }
 
 
 }}

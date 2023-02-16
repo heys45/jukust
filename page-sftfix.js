@@ -236,6 +236,17 @@ if(prop_object["ページ表示名"]==="シフト確定"){
 
 
 
+
+    var shift_form_btn = document.getElementById("shift-form-btn");
+    shift_form_btn.addEventListener('click', shift_form);
+    function shift_form() {
+      document.getElementById('shift-form-comp').style.display = 'block';
+      }
+
+
+
+
+
 }}
 
 
