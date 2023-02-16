@@ -8,6 +8,14 @@ if (old_url !=new_url){
     old_url = new_url;
 }},1000)
 
+var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
+reload_btn.addEventListener('click', reload2);
+function reload2() {
+  window.location.reload();
+  }
+
+
+
 //プロパティの連想配列を作成する。
 var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
