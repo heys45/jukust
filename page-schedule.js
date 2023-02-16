@@ -278,7 +278,7 @@ for( var i=0; i<dbs.length; i++) {
   }
   for( var k=0; k<columnhs.length; k++) {
   console.log(columnhs[k]);
-  var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
   console.log(name);
   columnhs[k].setAttribute("id",name);
 
