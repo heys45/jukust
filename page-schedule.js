@@ -27,7 +27,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     element.style.display = "block" ;
     });
     test2.forEach(element =>{
-      element.style.display = "block" ;
+      element.remove();
       });
 
 
