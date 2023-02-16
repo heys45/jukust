@@ -220,7 +220,7 @@ for( var i=0; i<tables.length; i++) {
   tables[i].setAttribute("id",name);
   
   //行をまとめて取得
-  const rows = tables[i].getElementsByTagName("tr")
+  const rows = tables[i].getElementsByTagName("tr");
   //行にIDを付与する 
   for( var j=0; j<rows.length; j++) {
   console.log(rows[j]);
@@ -229,8 +229,8 @@ for( var i=0; i<tables.length; i++) {
   rows[j].setAttribute("id",name);
   
   //列をまとめて取得
-  const columns =rows[j].getElementsByTagName("td")
-  const columnhs =rows[j].getElementsByTagName("th")
+  const columns =rows[j].getElementsByTagName("td");
+  const columnhs =rows[j].getElementsByTagName("th");
   //列にIDを付与する 
   for( var k=0; k<columns.length; k++) {
   console.log(columns[k]);
