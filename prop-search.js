@@ -3,9 +3,7 @@ var old_url = window.location.href;
 var url_interval = setInterval(()=>{
 var new_url = window.location.href;
 if (old_url !=new_url){
-
     window.location.reload();
-
     old_url = new_url;
 }},1000)
 
@@ -33,22 +31,3 @@ for (let i=0; i< qblock_wrap.length; i++){
     qblock_object[qblock_name] = qblock_value;
 }
 console.log(qblock_object);
-
-
-
-
-// ヘッダーの設定
-
-  var logo = document.getElementById("header-logo");
-  document.getElementsByClassName("notion-header__title")[0].before(logo);
-
-
-
-// フッターの設定
-
-var footer = document.getElementsByTagName("footer")[0];
-var main_content = document.getElementsByClassName("super-content")[0];
-main_content.after(footer) ;
-footer.style.display = "block";
-
-
