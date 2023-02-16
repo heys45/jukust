@@ -35,6 +35,15 @@ for (let i=0; i< qblock_wrap.length; i++){
 console.log(qblock_object);
 
 
+
+
+// ヘッダーの設定
+
+  var logo = document.getElementById("header-logo");
+  document.getElementsByClassName("notion-header__title")[0].before(logo);
+
+
+
 // フッターの設定
 
 var footer = document.getElementsByTagName("footer")[0];
