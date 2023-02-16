@@ -206,32 +206,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
 
-
-
-      // //テーブルをまとめて取得
-      // const tables = document.querySelectorAll('.notion-table');
-      // for( var i=0; i<tables.length; i++) {
-      //     var name = "table-"+(i+1);
-      //     tables[i].setAttribute("id",name);
-      //     //行をまとめて取得
-      //     const rows = tables[i].getElementsByTagName("tr")
-      //     //行にIDを付与する 
-      //     for( var j=0; j<rows.length; j++) {
-      //         var name = "table-"+(i+1)+"-"+(j+1);
-      //         rows[j].setAttribute("id",name);
-      //         //列をまとめて取得
-      //         const columns =rows[j].getElementsByTagName("td")
-      //         //列にIDを付与する 
-      //         for( var k=0; k<columns.length; k++) {
-      //             var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-      //             columns[k].setAttribute("id",name);
-      //         }
-      //     }
-      // }
-
-
-
-
 //テーブルをまとめて取得
 const tables = document.querySelectorAll('.notion-table');
 //テーブルにIDを付与する 
@@ -262,6 +236,39 @@ for( var i=0; i<tables.length; i++) {
   }
   }
 }
+
+//テーブルをまとめて取得
+const dbs = document.querySelectorAll('.notion-collection-table');
+//テーブルにIDを付与する 
+for( var i=0; i<dbs.length; i++) {
+  console.log(dbs[i]);
+  var name = "db-"+(i+1);
+  console.log(name);
+  dbs[i].setAttribute("id",name);
+  
+  //行をまとめて取得
+  const rows = dbs[i].getElementsByTagName("tr")
+  //行にIDを付与する 
+  for( var j=0; j<rows.length; j++) {
+  console.log(rows[j]);
+  var name = "db-"+(i+1)+"-"+(j+1);
+  console.log(name);
+  rows[j].setAttribute("id",name);
+  
+  //列をまとめて取得
+  const columns =rows[j].getElementsByTagName("td")
+  //列にIDを付与する 
+  for( var k=0; k<columns.length; k++) {
+  console.log(columns[k]);
+  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  console.log(name);
+  columns[k].setAttribute("id",name);
+
+  }
+  }
+}
+
+
 
 
 //書き換え処理
