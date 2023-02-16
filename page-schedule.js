@@ -268,12 +268,19 @@ for( var i=0; i<dbs.length; i++) {
   
   //列をまとめて取得
   const columns =rows[j].getElementsByTagName("td")
+  const columnhs =rows[j].getElementsByTagName("th");
   //列にIDを付与する 
   for( var k=0; k<columns.length; k++) {
   console.log(columns[k]);
   var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
   console.log(name);
   columns[k].setAttribute("id",name);
+  }
+  for( var k=0; k<columnhs.length; k++) {
+  console.log(columnhs[k]);
+  var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  console.log(name);
+  columnhs[k].setAttribute("id",name);
 
   }
   }
