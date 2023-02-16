@@ -21,7 +21,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     var teacher_id = prop_object["講師ID"];
     var teacher_class =".t"+teacher_id
     var test = groups.querySelectorAll(teacher_class);
-    var test2 = groups.querySelectorAll(":not"+teacher_class);
+    var test2 = groups.querySelectorAll(":not("+teacher_class+")");
 
     test.forEach(element =>{
     element.style.display = "block" ;
