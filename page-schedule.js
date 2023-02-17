@@ -104,7 +104,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       datelabel.style.width ="100%";
       element.before(datelabel);
       var datelabel = document.createElement("span");
-      datelabel.textContent = "　ステータス";
+      datelabel.textContent = "ステータス";
       element.before(datelabel);
     });
 
