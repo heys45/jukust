@@ -100,6 +100,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     // ステータス欄の設定
     const fssa = document.querySelectorAll('.fs2');
     fssa.forEach(element =>{
+      var datelabel = document.createElement("div");
+      datelabel.style.width ="100%";
+      element.before(datelabel);
       var datelabel = document.createElement("span");
       datelabel.textContent = "　ステータス";
       element.before(datelabel);
