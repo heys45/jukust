@@ -64,8 +64,7 @@ tbc_btn.addEventListener('click', tbc_view);
 function tbc_view() {
     copy_tbc.classList.toggle('active');
     tbc_btn.classList.toggle('active');
-
-  }
+}
 
 
 var header_title = document.getElementsByClassName("notion-collection")[0];
@@ -75,12 +74,12 @@ copy_tbc.setAttribute("id","tbc-list");
 copy_tbc.style["z-index"] = "999";
 copy_tbc.style["position"] = "fixed";
 copy_tbc.style["top"] = "51px";
-
 header.after(copy_tbc);
 
-
-
-
+let sp_header = document.createElement("div");
+sp_header.innerHTML = "SP用さぶヘッダー欄";
+sp_header.setAttribute("id","sp-header");
+header.after(copy_tbc);
 
 
 
