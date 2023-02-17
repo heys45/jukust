@@ -288,31 +288,22 @@ for( var i=0; i<dbs.length; i++) {
   }
 }
 
-//書き換え処理
-var div = document.getElementById('db-2-1-3');
-div.innerHTML = "勤務可能<br>開始時間";
 
 
-//書き換え処理
-var div = document.getElementById('table-1-1-3');
-var span =div.getElementsByTagName("span")[0];
-span.innerHTML = "<span>サンプルタイトル</span>";
+//DB書き換え処理
+document.getElementById('db-2-1-3').innerHTML = "勤務可能<br>開始時間";
+document.getElementById('db-2-1-4').innerHTML = "勤務可能<br>終了時間";
 
+//プログレスバー書き換え処理
+document.getElementById('li-schedule').setAttribute("class",active);
+// document.getElementById('db-2-1-4').setAttribute("class",complete);
 
-
-
-      
-      //書き換え処理
-      var div = document.getElementById('table-1-1-3');
-      var span =div.getElementsByTagName("span")[0];
-      span.innerHTML = "<span>サンプルタイトル</span>";
-
-
-      var schedule_form_btn = document.getElementById("schedule-form-btn");
-      schedule_form_btn.addEventListener('click', schedule_form);
-      function schedule_form() {
-        document.getElementById('schedule-form-comp').style.display = 'block';
-        }
+//フォーム送信後の処理
+var schedule_form_btn = document.getElementById("schedule-form-btn");
+schedule_form_btn.addEventListener('click', schedule_form);
+function schedule_form() {
+  document.getElementById('schedule-form-comp').style.display = 'block';
+  }
 
 
 }}
