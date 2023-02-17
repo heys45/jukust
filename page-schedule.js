@@ -228,14 +228,19 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     var sc_ft2s = document.querySelectorAll('.ft2');
     var st2s = document.querySelectorAll('.fs2');
 
+    const = document.querySelectorAll(".adj,.fs,.fd");
+    death_prop.forEach(element=>{
+    element.style.display = 'none';
+    });
+
     sc_ft1s.forEach(element=>{
       console.log(element);
-      element.style.display ="none";
-      element.style.backgroundColor = "#999999";
+      element.style.color = "red";
+      element.style[background-color] = "#999999";
     });
     sc_ft2s .forEach(element=>{
       console.log(element);
-      element.style.backgroundColor ="glay";
+      element.style["background-color"] ="red";
     });
     
     // ステータスが一部勤務可能の時のみ色変更
