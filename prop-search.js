@@ -52,11 +52,18 @@ console.log(qblock_object);
 var header_title = document.getElementsByClassName("notion-header__title")[0];
 document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
 
+var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
+
+
+let tbc_btn = document.createElement("button");
+tbc_btn.innerHTML = "ページ一覧";
+header_reload.after(tbc_btn);
+
 
 var header_title = document.getElementsByClassName("notion-collection")[0];
 var header = document.getElementsByClassName("super-navbar")[0];
 var copy_tbc = header_title.cloneNode(true);
-header.after(copy_tbc);
+header.appendChild(copy_tbc);
 
 
 
