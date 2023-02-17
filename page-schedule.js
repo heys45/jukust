@@ -152,8 +152,8 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       var day = date.getDate();
       var yobi= new Array("日","月","火","水","木","金","土");
       var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
-      var date3 = year+"/"+month+"/"+day;
-      var datelabel = document.createElement("span");
+      var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
+      var datelabel = document.createElement("p");
       formday.value = date3;
       datelabel.textContent = date2;
       formday.after(datelabel);
