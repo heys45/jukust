@@ -237,7 +237,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     
     // ステータスが一部勤務可能の時のみ色変更
     st2s.forEach(function(st2,index){
-        st2.onchange= function(){
+        st2.addEventListener("change", function() {
             console.log(st2);
             var st2v = st2.value;
             console.log(st2v);
@@ -245,7 +245,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
             sc_ft1s[index].style["background-color"] ="white";
             sc_ft2s[index].style["background-color"] ="white";
             }
-        }
+        });
     });
     
     // フォーム初期値設定
