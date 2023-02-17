@@ -104,8 +104,11 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       datelabel.style.width ="100%";
       element.before(datelabel);
       var datelabel = document.createElement("span");
-      datelabel.textContent = "ステータス";
+      datelabel.textContent = "ステータス：";
       element.before(datelabel);
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "　";
+      element.after(datelabel);
     });
 
     // 調整希望時間の設定
@@ -114,11 +117,17 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       var datelabel = document.createElement("span");
       datelabel.textContent = "希望時間：";
       element.before(datelabel);
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "〜";
+      element.after(datelabel);
     });
 
     // 補足欄の設定
     const hosokus = document.querySelectorAll('.hosoku');
     hosokus.forEach(element =>{
+      var datelabel = document.createElement("div");
+      datelabel.style.width ="100%";
+      element.before(datelabel);
       var datelabel = document.createElement("span");
       datelabel.textContent = "備考・補足：";
       element.before(datelabel);
