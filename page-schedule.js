@@ -230,7 +230,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     sc_ft1s.forEach(element=>{
       console.log(element);
-      element.style.backgroundColor ="glay";
+      element.style.backgroundColor = "#999999";
     });
     sc_ft2s .forEach(element=>{
       console.log(element);
