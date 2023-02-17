@@ -86,7 +86,8 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     // 表示位置の設定
     var quote_name = "スケジュール提出はこちらから";
     var form_area = document.getElementById("form-area");
-    document.getElementById(quote_name).after(form_area);
+    var position = document.getElementById(quote_name).nextElementSibling;
+    position.after(form_area);
     view_form.style.display = 'block';
     death_form.remove();
 
