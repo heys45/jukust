@@ -72,7 +72,6 @@ var header_title = document.getElementsByClassName("notion-collection")[0];
 var header = document.getElementsByClassName("super-navbar")[0];
 var copy_tbc = header_title.cloneNode(true);
 copy_tbc.setAttribute("id","tbc-list");
-copy_tbc.style.display = "none";
 copy_tbc.style["z-index"] = "999";
 copy_tbc.style["position"] = "fixed";
 copy_tbc.style["top"] = "51px";
