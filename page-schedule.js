@@ -230,11 +230,11 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     sc_ft1s.forEach(element=>{
       element.style["background-color"] ="gray";
-      element.style["border"] ="gray";
+      element.style["border"] ="solid 3px gray";
     });
     sc_ft2s .forEach(element=>{
       element.style.backgroundColor ="gray";
-      element.style["border"] ="gray";
+      element.style["border"] ="solid 3px gray";
     });
     
     // ステータスが一部勤務可能の時のみ色変更
@@ -246,23 +246,23 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
             if(elementv == '一部勤務可能'){
             element.style["background-color"] ="#17837c";
             element.style["color"] ="white";
-            element.style["border"] ="#17837c";
+            element.style["border"] ="solid 3px #17837c";
             element.style["font-weight"] ="normal";
             sc_ft1s[index].style["background-color"] ="white";
-            element.style["border"] ="#777777";
+            element.style["border"] ="solid 3px #777777";
             sc_ft2s[index].style["background-color"] ="white";
-            element.style["border"] ="#777777";
+            element.style["border"] ="solid 3px #777777";
             }
             if(elementv == '勤務不可'){
               element.style["background-color"] ="gray";
               element.style["color"] ="white";
-              element.style["border"] ="gray";
+              element.style["border"] ="solid 3px gray";
               element.style["font-weight"] ="normal";
             }
             if(elementv == '終日勤務可能'){
               element.style["background-color"] ="#17837c";
               element.style["color"] ="white";
-              element.style["border"] ="#17837c";
+              element.style["border"] ="solid 3px #17837c";
               element.style["font-weight"] ="normal";
             }
             
