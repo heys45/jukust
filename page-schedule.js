@@ -101,12 +101,12 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const fssa = document.querySelectorAll('.fs2');
     fssa.forEach(element =>{
       var datelabel = document.createElement("span");
-      datelabel.textContent = "ステータス";
+      datelabel.textContent = "　ステータス";
       element.before(datelabel);
     });
 
     // 調整希望時間の設定
-    const adft1s = document.querySelectorAll('.adft1');
+    const adft1s = document.querySelectorAll('.ft1');
     adft1s.forEach(element =>{
       var datelabel = document.createElement("span");
       datelabel.textContent = "希望時間：";
@@ -120,9 +120,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       datelabel.textContent = "備考・補足：";
       element.before(datelabel);
     });
-
-
-
 
 
 
