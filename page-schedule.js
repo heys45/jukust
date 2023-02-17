@@ -230,9 +230,11 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     sc_ft1s.forEach(element=>{
       element.style["background-color"] ="gray";
+      element.style["border"] ="gray";
     });
     sc_ft2s .forEach(element=>{
       element.style.backgroundColor ="gray";
+      element.style["border"] ="gray";
     });
     
     // ステータスが一部勤務可能の時のみ色変更
@@ -247,7 +249,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
             element.style["border"] ="#17837c";
             element.style["font-weight"] ="normal";
             sc_ft1s[index].style["background-color"] ="white";
+            element.style["border"] ="#777777";
             sc_ft2s[index].style["background-color"] ="white";
+            element.style["border"] ="#777777";
             }
             if(elementv == '勤務不可'){
               element.style["background-color"] ="gray";
