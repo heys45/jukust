@@ -71,6 +71,7 @@ var header = document.getElementsByClassName("super-navbar")[0];
 var copy_tbc = header_title.cloneNode(true);
 copy_tbc.style.display = "none";
 copy_tbc.style["padding-top"] = "50px";
+copy_tbc.style["z-index"] = "999";
 header.appendChild(copy_tbc);
 
 
