@@ -254,7 +254,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
   // ターゲット取得
-  const st_btns = document.querySelectorAll(".fs1,.fs2");
+  const st_btns = document.querySelectorAll(".fs2");
   // ステータスが一部勤務可能の時のみ色変更
   st_btns.forEach(function(st_btn,index){
       st_btn.onchange= function(){
