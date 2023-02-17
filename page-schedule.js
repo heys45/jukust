@@ -243,14 +243,20 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
             console.log(elementv);
             if(elementv == '一部勤務可能'){
             element.style["background-color"] ="#17837c";
+            element.style["color"] ="white";
+            element.style["border"] ="";
             sc_ft1s[index].style["background-color"] ="white";
             sc_ft2s[index].style["background-color"] ="white";
             }
             if(elementv == '勤務不可'){
               element.style["background-color"] ="gray";
+              element.style["color"] ="white";
+              element.style["border"] ="";
             }
-            if(elementv == '終日勤務可'){
+            if(elementv == '終日勤務可能'){
               element.style["background-color"] ="#17837c";
+              element.style["color"] ="white";
+              element.style["border"] ="";
             }
             
         });
