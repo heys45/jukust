@@ -72,7 +72,7 @@ var copy_tbc = header_title.cloneNode(true);
 copy_tbc.style.display = "none";
 copy_tbc.style["padding-top"] = "50px";
 copy_tbc.style["z-index"] = "999";
-header.befor(copy_tbc);
+header.before(copy_tbc);
 
 
 
