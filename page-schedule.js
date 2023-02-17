@@ -24,7 +24,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     // DB表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-
     // 教室or講師IDによるDBフィルタ
     // 前提：データベースはグループ化しておく
 
@@ -47,30 +46,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       });
 
 
-
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム表示設定代項目
+    // フォーム提出期間変更ボタンの設定
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-
-    // 表示するフォームの選択
-    const sh_form = document.getElementById("shift-form");
-    const sc_form = document.getElementById("schedule-form");
-
-    // 表示するフォームと、その場所をここで設定する！！！！！！！！！！！！！！！！！！
-    const view_form = sc_form;
-    const death_form = sh_form;
-
-    var quote_name = "スケジュール提出はこちらから";
-    // フォームを指定したテキストブロック要素の後に挿入
-    var form_area = document.getElementById("form-area");
-    var test = document.getElementById(quote_name);
-    test.after(form_area);
-    view_form.style.display = 'block';
-    death_form.remove();
-
-    // フォーム共通処理｜提出期間の切り替え
-    // 提出期間変更ボタン表示
     const select_term = document.getElementsByClassName("select-term")[0];
     select_term.style.display = 'block';
     function viewChange(){
@@ -95,25 +73,28 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     trigger.onchange=viewChange;
 
 
-
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // 表示設定小項目
+    // フォーム表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // 使用するフォームの選択
+    const sh_form = document.getElementById("shift-form");
+    const sc_form = document.getElementById("schedule-form");
 
-    // フォームプロパティ表示設定
-    const adjs = document.querySelectorAll(".adj");
-    adjs.forEach(function(adj){
-    adj.style.display = 'none';
-    });
-    const status = document.querySelectorAll(".fs");
-    status.forEach(function(state){
-    state.style.display = 'none';
-    });
-    const fds = document.querySelectorAll(".fd");
-    fds.forEach(function(fd){
-    fd.style.display = 'none';
-    });
+    const view_form = sc_form;          //ページによって変更する
+    const death_form = sh_form;         //ページによって変更する
 
+    // 表示位置の設定
+    var quote_name = "スケジュール提出はこちらから";
+    var form_area = document.getElementById("form-area");
+    document.getElementById(quote_name).after(form_area);
+    view_form.style.display = 'block';
+    death_form.remove();
+
+    // フォームプロパティ非表示設定
+    const death_prop = document.querySelectorAll(".adj .fs .fd");
+    death_prop.forEach(element=>{
+    element.style.display = 'none';
+    });
 
 
     //フォームのプルダウン値設定
