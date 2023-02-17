@@ -226,12 +226,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     // ターゲット取得
     var sc_ft1s = document.querySelectorAll('.ft1');
     var sc_ft2s = document.querySelectorAll('.ft2');
-    var st2s = document.querySelectorAll('.fs2');
-
-    const = document.querySelectorAll(".adj,.fs,.fd");
-    death_prop.forEach(element=>{
-    element.style.display = 'none';
-    });
+    var st2s = document.querySelectorAll('.fs2');   
 
     sc_ft1s.forEach(element=>{
       console.log(element);
