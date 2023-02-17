@@ -224,27 +224,35 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     // スケジュールフォーム、時間入力時のみカラーの設定
     // ターゲット取得
-    var sc_ft1s = document.querySelectorAll('.ft1,.ft2');
+    var sc_ft1s = document.querySelectorAll('.ft1');
     var sc_ft2s = document.querySelectorAll('.ft2');
     var st2s = document.querySelectorAll('.fs2');   
 
     sc_ft1s.forEach(element=>{
-      element.style["background-color"] ="red";
+      element.style["background-color"] ="gray";
     });
     sc_ft2s .forEach(element=>{
-      element.style.backgroundColor ="blue";
+      element.style.backgroundColor ="gray";
     });
     
     // ステータスが一部勤務可能の時のみ色変更
-    st2s.forEach(function(st2,index){
-        st2.addEventListener("change", function() {
-            console.log(st2);
-            var st2v = st2.value;
-            console.log(st2v);
-            if(st2v == '一部勤務可能'){
+    st2s.forEach(function(element,index){
+        element.addEventListener("change", function() {
+            console.log(element);
+            var elementv = element.value;
+            console.log(elementv);
+            if(elementv == '一部勤務可能'){
+            element.style["background-color"] ="#17837c";
             sc_ft1s[index].style["background-color"] ="white";
             sc_ft2s[index].style["background-color"] ="white";
             }
+            if(elementv == '勤務不可'){
+              element.style["background-color"] ="gray";
+            }
+            if(elementv == '終日勤務可'){
+              element.style["background-color"] ="#17837c";
+            }
+            
         });
     });
     
