@@ -229,9 +229,11 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     var st2s = document.querySelectorAll('.fs2');
 
     sc_ft1s.forEach(element=>{
+      console.log(element);
       element.style["background-color"] ="glay";
     });
     sc_ft2s .forEach(element=>{
+      console.log(element);
       element.style["background-color"] ="glay";
     });
     
