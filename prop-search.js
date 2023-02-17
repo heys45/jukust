@@ -77,7 +77,6 @@ copy_tbc.style["top"] = "51px";
 header.after(copy_tbc);
 
 let sp_header = document.createElement("div");
-sp_header.innerHTML = "SP用さぶヘッダー欄";
 sp_header.setAttribute("id","sp-header");
 sp_header.style["z-index"] = "999";
 sp_header.style["position"] = "fixed";
