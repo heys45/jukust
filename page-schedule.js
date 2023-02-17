@@ -43,13 +43,15 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     // 表示するフォームと、その場所をここで設定する！！！！！！！！！！！！！！！！！！
     const view_form = sc_form;
-    var quote_name = "シフト申請はこちらから";
+    const death_form = sh_form;
 
+    var quote_name = "シフト申請はこちらから";
     // フォームを指定したテキストブロック要素の後に挿入
     var form_area = document.getElementById("form-area");
     var test = document.getElementById(quote_name);
     test.after(form_area);
     view_form.style.display = 'block';
+    death_form.remove();
 
     // フォーム共通処理｜提出期間の切り替え
     // 提出期間変更ボタン表示
@@ -286,7 +288,10 @@ for( var i=0; i<dbs.length; i++) {
   }
 }
 
-
+//書き換え処理
+var div = document.getElementById('db-2-1-3');
+var span =div.getElementsByTagName("span")[0];
+span.innerHTML = "<span>サンプルタイトル</span>";
 
 
 //書き換え処理
