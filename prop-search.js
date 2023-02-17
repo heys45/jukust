@@ -53,6 +53,19 @@ var header_title = document.getElementsByClassName("notion-header__title")[0];
 document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
 
 
+var header_title = document.getElementsByClassName("notion-collection")[0];
+var header = document.getElementsByClassName("super-navbar")[0];
+var copy_tbc = header_title.cloneNode(true);
+header.after(copy_tbc);
+
+
+
+
+
+
+
+
+
 
 // // フッターの設定
 
