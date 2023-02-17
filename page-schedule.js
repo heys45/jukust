@@ -234,7 +234,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
     sc_ft2s .forEach(element=>{
       console.log(element);
-      element.style.backgroundColor ="red";
+      element.style.backgroundColor ="blue";
     });
     
     // ステータスが一部勤務可能の時のみ色変更
