@@ -229,18 +229,18 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     var st2s = document.querySelectorAll('.fs2');   
 
     sc_ft1s.forEach(element=>{
-      console.log(element);
       element.style["background-color"] ="red";
     });
     sc_ft2s .forEach(element=>{
-      console.log(element);
       element.style.backgroundColor ="blue";
     });
     
     // ステータスが一部勤務可能の時のみ色変更
     st2s.forEach(function(st2,index){
         st2.onchange= function(){
+            console.log(st2);
             var st2v = st2.value;
+            console.log(st2v);
             if(st2v == '一部勤務可能'){
             sc_ft1s[index].style["background-color"] ="white";
             sc_ft2s[index].style["background-color"] ="white";
