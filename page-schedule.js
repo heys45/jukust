@@ -15,7 +15,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     progressbar.style.display = 'flex';
 
     //プログレスバー書き換え処理
-    document.getElementById('li-schedule').setAttribute("class",active);
+    document.getElementById('li-schedule').setAttribute("class","active");
     // document.getElementById('db-2-1-4').setAttribute("class",complete);
 
 
