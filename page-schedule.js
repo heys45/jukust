@@ -4,6 +4,17 @@ setTimeout(timefunc,300);
 function timefunc(){
 if(prop_object["ページ表示名"]==="スケジュール提出"){
 
+
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // 表示位置の変更
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    var quote_name = "スポットバイトの流れ";
+    // フォームを指定したテキストブロック要素の後に挿入
+    var progressbar = document.getElementsByClassName("progressbar")[0];
+    document.getElementById(quote_name).after(progressbar);
+    progressbar.style.display = 'block';
+
+
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // DB表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
