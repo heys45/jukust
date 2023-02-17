@@ -245,6 +245,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
             element.style["background-color"] ="#17837c";
             element.style["color"] ="white";
             element.style["border"] ="#17837c";
+            element.style["font-weight"] ="normal";
             sc_ft1s[index].style["background-color"] ="white";
             sc_ft2s[index].style["background-color"] ="white";
             }
@@ -252,11 +253,13 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
               element.style["background-color"] ="gray";
               element.style["color"] ="white";
               element.style["border"] ="gray";
+              element.style["font-weight"] ="normal";
             }
             if(elementv == '終日勤務可能'){
               element.style["background-color"] ="#17837c";
               element.style["color"] ="white";
               element.style["border"] ="#17837c";
+              element.style["font-weight"] ="normal";
             }
             
         });
