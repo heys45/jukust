@@ -96,6 +96,38 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     element.style.display = 'none';
     });
 
+    // フォーム見出し設定
+    // ステータス欄の設定
+    const fssa = document.querySelectorAll('.fs2');
+    fssa.forEach(element =>{
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "ステータス";
+      element.before(datelabel);
+    });
+
+    // 調整希望時間の設定
+    const adft1s = document.querySelectorAll('.adft1');
+    adft1s.forEach(element =>{
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "希望時間：";
+      element.before(datelabel);
+    });
+
+    // 補足欄の設定
+    const hosokus = document.querySelectorAll('.hosoku');
+    hosokus.forEach(element =>{
+      var datelabel = document.createElement("span");
+      datelabel.textContent = "備考・補足：";
+      element.before(datelabel);
+    });
+
+
+
+
+
+
+
+
 
     //フォームのプルダウン値設定
     //日付部分
@@ -139,6 +171,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       ft2.appendChild(option);
     });
     });
+
     // //開始調整時刻の設定
     // const adt1s = document.querySelectorAll('.adft1');
     // adt1s.forEach(function(ft1){
@@ -290,8 +323,6 @@ for( var i=0; i<dbs.length; i++) {
 //DB書き換え処理
 document.getElementById('db-2-1-3').innerHTML = "勤務可能<br>開始時間";
 document.getElementById('db-2-1-4').innerHTML = "勤務可能<br>終了時間";
-
-
 
 //フォーム送信後の処理
 var schedule_form_btn = document.getElementById("schedule-form-btn");
