@@ -67,9 +67,9 @@ function tbc_view() {
 }
 
 
-var header_title = document.getElementsByClassName("notion-collection")[0];
+var page_list = document.getElementsByClassName("notion-collection")[0];
 var header = document.getElementsByClassName("super-navbar")[0];
-var copy_tbc = header_title.cloneNode(true);
+var copy_tbc = page_list.cloneNode(true);
 copy_tbc.setAttribute("id","tbc-list");
 copy_tbc.style["z-index"] = "999";
 copy_tbc.style["position"] = "fixed";
@@ -79,8 +79,15 @@ header.after(copy_tbc);
 let sp_header = document.createElement("div");
 sp_header.innerHTML = "SP用さぶヘッダー欄";
 sp_header.setAttribute("id","sp-header");
+sp_header.style["z-index"] = "999";
+sp_header.style["position"] = "fixed";
+sp_header.style["top"] = "51px";
 header.after(sp_header);
 
+var copy_title = header_title.cloneNode(true);
+sp_header.appendChild(copy_title);
+var copy_btn = reload_btn.cloneNode(true);
+sp_header.appendChild(copy_btn);
 
 
 
