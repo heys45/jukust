@@ -85,8 +85,10 @@ sp_header.style["top"] = "51px";
 header.after(sp_header);
 
 var copy_title = header_title.cloneNode(true);
+copy_title.setAttribute("id","copy-title");
 sp_header.appendChild(copy_title);
 var copy_btn = reload_btn.cloneNode(true);
+copy_btn.setAttribute("id","copy-btn");
 sp_header.appendChild(copy_btn);
 
 
