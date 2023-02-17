@@ -126,8 +126,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const hosokus = document.querySelectorAll('.hosoku');
     hosokus.forEach(element =>{
       var datelabel = document.createElement("div");
-      datelabel.style.width ="100%";
+      datelabel.style.width = "100%";
       element.before(datelabel);
+      element.style.width = "100%";
       var datelabel = document.createElement("span");
       datelabel.textContent = "備考・補足：";
       element.before(datelabel);
