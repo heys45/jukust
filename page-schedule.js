@@ -290,8 +290,7 @@ for( var i=0; i<dbs.length; i++) {
 
 //書き換え処理
 var div = document.getElementById('db-2-1-3');
-var span =div.getElementsByTagName("span")[0];
-span.innerHTML = "<span>サンプルタイトル</span>";
+div.innerHTML = "勤務可能<br>開始時間";
 
 
 //書き換え処理
