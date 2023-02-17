@@ -52,7 +52,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const select_term = document.getElementsByClassName("select-term")[0];
     select_term.style.display = 'block';
     function viewChange(){
-      select_form = document.getElementById('select-term-button').value;
+      var select_form = document.getElementById('select-term-button').value;
       console.log(select_form);
       if(select_form == '１週間分'){
           document.getElementById('schedule-form1').style.display = "";
@@ -248,6 +248,37 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     
     // フォーム初期値設定
     document.getElementById("teaids").value = prop_object["講師ID"];
+
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ステータスボタンの色設定
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  // ターゲット取得
+  const st_btns = document.querySelectorAll(".fs1,.fs2");
+  // ステータスが一部勤務可能の時のみ色変更
+  st_btns.forEach(function(st_btn,index){
+      st_btn.onchange= function(){
+          var stv = st_btn.value;
+          if(stv == '一部勤務可能'){
+          st_btn[index].style["background-color"] ="red";
+          }
+      }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
