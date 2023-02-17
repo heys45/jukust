@@ -70,6 +70,7 @@ var header_title = document.getElementsByClassName("notion-collection")[0];
 var header = document.getElementsByClassName("super-navbar")[0];
 var copy_tbc = header_title.cloneNode(true);
 copy_tbc.style.display = "none";
+copy_tbc.style["padding-top"] = "50px";
 header.appendChild(copy_tbc);
 
 
