@@ -247,7 +247,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     });
     
     // フォーム初期値設定
-    document.getElementById("teaids").value = prop_object["講師ID"];
+    document.getElementById("teaid").value = prop_object["講師ID"];
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // ステータスボタンの色設定
