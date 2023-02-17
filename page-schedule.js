@@ -91,7 +91,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     death_form.remove();
 
     // フォームプロパティ非表示設定
-    const death_prop = document.querySelectorAll(".fd");
+    const death_prop = document.querySelectorAll(".adj,.fs,.fd");
     death_prop.forEach(element=>{
     element.style.display = 'none';
     });
