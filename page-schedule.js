@@ -14,6 +14,10 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     document.getElementById(quote_name).after(progressbar);
     progressbar.style.display = 'flex';
 
+    //プログレスバー書き換え処理
+    document.getElementById('li-schedule').setAttribute("class",active);
+    // document.getElementById('db-2-1-4').setAttribute("class",complete);
+
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // DB表示設定代項目
@@ -305,9 +309,7 @@ for( var i=0; i<dbs.length; i++) {
 document.getElementById('db-2-1-3').innerHTML = "勤務可能<br>開始時間";
 document.getElementById('db-2-1-4').innerHTML = "勤務可能<br>終了時間";
 
-//プログレスバー書き換え処理
-document.getElementById('li-schedule').setAttribute("class",active);
-// document.getElementById('db-2-1-4').setAttribute("class",complete);
+
 
 //フォーム送信後の処理
 var schedule_form_btn = document.getElementById("schedule-form-btn");
