@@ -224,9 +224,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
     // スケジュールフォーム、時間入力時のみカラーの設定
     // ターゲット取得
-    sc_ft1s = document.querySelectorAll('.ft1');
-    sc_ft2s = document.querySelectorAll('.ft2');
-    st2s = document.querySelectorAll('.fs2');
+    var sc_ft1s = document.querySelectorAll('.ft1');
+    var sc_ft2s = document.querySelectorAll('.ft2');
+    var st2s = document.querySelectorAll('.fs2');
 
     sc_ft1s.forEach(element=>{
       element.style["background-color"] ="glay";
