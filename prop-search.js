@@ -56,7 +56,7 @@ document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
 
 let tbc_btn = document.createElement("button");
 tbc_btn.innerHTML = "ページ一覧";
-tbc_btn.setAttribute("id","tbc-btn")
+tbc_btn.setAttribute("id","tbc-btn");
 var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
 header_reload.after(tbc_btn);
 
@@ -71,7 +71,7 @@ function tbc_view() {
 var header_title = document.getElementsByClassName("notion-collection")[0];
 var header = document.getElementsByClassName("super-navbar")[0];
 var copy_tbc = header_title.cloneNode(true);
-copy_tbc.setAttribute("id","tbc-list")
+copy_tbc.setAttribute("id","tbc-list");
 copy_tbc.style.display = "none";
 copy_tbc.style["z-index"] = "999";
 copy_tbc.style["position"] = "fixed";
