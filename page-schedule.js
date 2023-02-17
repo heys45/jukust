@@ -128,7 +128,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       var datelabel = document.createElement("div");
       datelabel.style.width = "100%";
       element.before(datelabel);
-      element.style.width = "100%";
+      element.style.width = "calc(100% - 100px)";
       var datelabel = document.createElement("span");
       datelabel.textContent = "備考・補足：";
       element.before(datelabel);
