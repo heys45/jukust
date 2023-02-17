@@ -277,17 +277,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
   // ステータスボタンの色設定
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-  // ターゲット取得
-  const st_btns = document.querySelectorAll(".fs2");
-  // ステータスが一部勤務可能の時のみ色変更
-  st_btns.forEach(function(st_btn,index){
-      st_btn.onchange= function(){
-          var stv = st_btn.value;
-          if(stv == '一部勤務可能'){
-          st_btn[index].style["background-color"] ="red";
-          }
-      }
-  });
 
 
 
