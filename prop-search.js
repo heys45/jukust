@@ -79,7 +79,7 @@ header.after(copy_tbc);
 let sp_header = document.createElement("div");
 sp_header.innerHTML = "SP用さぶヘッダー欄";
 sp_header.setAttribute("id","sp-header");
-header.after(copy_tbc);
+header.after(sp_header);
 
 
 
