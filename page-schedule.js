@@ -361,7 +361,7 @@ var schedule_form_btn = document.getElementById("schedule-form-btn");
 schedule_form_btn.addEventListener('click', schedule_form);
 function schedule_form() {
   document.getElementById('schedule-form-comp').style.display = 'block';
-  schedule_form_btn.style.backgroundColor = "gray";
+  schedule_form_btn.style["background-color"] ="gray";
   }
 
 }}
