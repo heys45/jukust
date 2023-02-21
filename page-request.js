@@ -16,7 +16,8 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     progressbar.style.display = 'flex';
 
     //プログレスバー書き換え処理
-    document.getElementById('li-schedule').setAttribute("class","active");
+    document.getElementById('li-schedule').setAttribute("class","complete");
+    document.getElementById('li-request').setAttribute("class","active");
     // document.getElementById('db-2-1-4').setAttribute("class",complete);
 
 
@@ -197,84 +198,35 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     //   ft2.appendChild(option);
     // });
     // });
-    //ステータス
-    // const fss = document.querySelectorAll('.fs');
-    // var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
-    // fss.forEach(function(fs){
-    // sta.forEach(function(time){
-    //   var option = document.createElement('option');
-    //   option.textContent = time;
-    //   fs.appendChild(option);
-    // });
-    // });
-    //スケジュール用ステータス
-    const fs2s = document.querySelectorAll('.fs2');
-    var sta2 = ["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
-    fs2s.forEach(function(fs){
-    sta2.forEach(function(sta2){
+    // ステータス
+    const fss = document.querySelectorAll('.fs');
+    var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
+    fss.forEach(function(fs){
+    sta.forEach(function(time){
       var option = document.createElement('option');
-      option.textContent = sta2;
-      option.value = sta2;
+      option.textContent = time;
       fs.appendChild(option);
     });
     });
-
-    // スケジュールフォーム、時間入力時のみカラーの設定
-    // ターゲット取得
-    var sc_ft1s = document.querySelectorAll('.ft1');
-    var sc_ft2s = document.querySelectorAll('.ft2');
-    var st2s = document.querySelectorAll('.fs2');   
-
-    sc_ft1s.forEach(element=>{
-      element.style["background-color"] ="gray";
-      element.style["border"] ="solid 3px gray";
-    });
-    sc_ft2s .forEach(element=>{
-      element.style.backgroundColor ="gray";
-      element.style["border"] ="solid 3px gray";
-    });
-    
-    // ステータスが一部勤務可能の時のみ色変更
-    st2s.forEach(function(element,index){
-        element.addEventListener("change", function() {
-            console.log(element);
-            var elementv = element.value;
-            console.log(elementv);
-            if(elementv == '一部勤務可能'){
-            element.style["background-color"] ="#17837c";
-            element.style["color"] ="white";
-            element.style["border"] ="solid 3px #17837c";
-            element.style["font-weight"] ="normal";
-            sc_ft1s[index].style["background-color"] ="white";
-            sc_ft1s[index].style["border"] ="solid 3px #777777";
-            sc_ft2s[index].style["background-color"] ="white";
-            sc_ft1s[index].style["border"] ="solid 3px #777777";
-            }
-            if(elementv == '勤務不可'){
-              element.style["background-color"] ="gray";
-              element.style["color"] ="white";
-              element.style["border"] ="solid 3px gray";
-              element.style["font-weight"] ="normal";
-            }
-            if(elementv == '終日勤務可能'){
-              element.style["background-color"] ="#17837c";
-              element.style["color"] ="white";
-              element.style["border"] ="solid 3px #17837c";
-              element.style["font-weight"] ="normal";
-            }
-            
-        });
-    });
+    // //スケジュール用ステータス
+    // const fs2s = document.querySelectorAll('.fs2');
+    // var sta2 = ["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
+    // fs2s.forEach(function(fs){
+    // sta2.forEach(function(sta2){
+    //   var option = document.createElement('option');
+    //   option.textContent = sta2;
+    //   option.value = sta2;
+    //   fs.appendChild(option);
+    // });
+    // });
     
     // フォーム初期値設定
     document.getElementById("teaid").value = prop_object["講師ID"];
+    document.getElementById("schid").value = prop_object["教室ID"];
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // ステータスボタンの色設定
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-
-
 
 
 
