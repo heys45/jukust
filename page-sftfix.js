@@ -4,10 +4,24 @@ setTimeout(timefunc,300);
 function timefunc(){
 if(prop_object["ページ表示名"]==="シフト確定"){
 
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // プログレスバーの変更
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+    // 表示位置の設定
+    var quote_name = "スポットバイトの流れ";
+    var progressbar = document.getElementsByClassName("progressbar")[0];
+    document.getElementById(quote_name).after(progressbar);
+    progressbar.style.display = 'flex';
+
+    //プログレスバー書き換え処理
+    document.getElementById('li-schedule').setAttribute("class","active");
+    // document.getElementById('db-2-1-4').setAttribute("class",complete);
+
+
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // DB表示設定代項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
 
     // 教室or講師IDによるDBフィルタ
     // 前提：データベースはグループ化しておく
@@ -21,33 +35,19 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     var teacher_id = prop_object["講師ID"];
     var teacher_class =".t"+teacher_id
     var test = document.querySelectorAll(teacher_class);
-    console.log(test);
+    var test2 = document.querySelectorAll(".notion-collection-group__section:not("+teacher_class+")");
 
     test.forEach(element =>{
     element.style.display = "block" ;
     });
+    test2.forEach(element =>{
+      element.remove();
+      });
+
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム表示設定代項目
+    // フォーム提出期間変更ボタンの設定
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-
-    // 表示するフォームの選択
-    const sh_form = document.getElementById("shift-form");
-    const sc_form = document.getElementById("schedule-form");
-
-    // 表示するフォームと、その場所をここで設定する！！！！！！！！！！！！！！！！！！
-    const view_form = sh_form;
-    var quote_name = "シフト申請への回答はこちらから";
-
-    // フォームを指定したテキストブロック要素の後に挿入
-    var form_area = document.getElementById("form-area");
-    var test = document.getElementById(quote_name);
-    test.after(form_area);
-    view_form.style.display = 'block';
-
-    // フォーム共通処理｜提出期間の切り替え
-    // 提出期間変更ボタン表示
     const select_term = document.getElementsByClassName("select-term")[0];
     select_term.style.display = 'block';
     function viewChange(){
@@ -72,10 +72,29 @@ if(prop_object["ページ表示名"]==="シフト確定"){
     trigger.onchange=viewChange;
 
 
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // フォーム表示設定大項目
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    
+    const sh_form = document.getElementById("shift-form");
+    const sc_form = document.getElementById("schedule-form");
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム解答欄の設定
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    const view_form = sh_form;          //ページによって変更する
+    const death_form = sc_form;         //ページによって変更する
+
+    // 表示位置の設定
+    var quote_name = "シフト確定の回答はこちらから";
+    var form_area = document.getElementById("form-area");
+    var position = document.getElementById(quote_name).nextElementSibling;
+    position.after(form_area);
+    view_form.style.display = 'block';
+    death_form.remove();
+
+    // フォームプロパティ非表示設定
+    const death_prop = document.querySelectorAll(".adj,.fs,.fd");
+    death_prop.forEach(element=>{
+    element.style.display = 'none';
+    });
 
     // ステータス欄の設定
     const fssa = document.querySelectorAll('.fs');
@@ -102,30 +121,6 @@ if(prop_object["ページ表示名"]==="シフト確定"){
       element.before(datelabel);
     });
 
-    // フォーム解答欄非表示設定
-    const ft1ss = document.querySelectorAll(".ft1");
-    ft1ss.forEach(element =>{
-    element.style.display = 'none';
-    });
-    const ft2ss = document.querySelectorAll(".ft2");
-    ft2ss.forEach(element =>{
-    element.style.display = 'none';
-    });
-    const fds = document.querySelectorAll(".fd");
-    fds.forEach(element =>{
-    element.style.display = 'none';
-    });
-
-
-
-    
-
-    
-
-
-
-
-
 
 
 
@@ -137,12 +132,12 @@ if(prop_object["ページ表示名"]==="シフト確定"){
       var date=new Date();
       date.setDate(date.getDate() + 1+index);
       var year = date.getFullYear();
-      var month = date.getMonth();
+      var month = date.getMonth()+1;
       var week = date.getDay();
       var day = date.getDate();
       var yobi= new Array("日","月","火","水","木","金","土");
       var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
-      var date3 = year+"/"+month+"/"+day;
+      var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
       var datelabel = document.createElement("p");
       formday.value = date3;
       datelabel.textContent = date2;
@@ -171,6 +166,7 @@ if(prop_object["ページ表示名"]==="シフト確定"){
       ft2.appendChild(option);
     });
     });
+    
     // //開始調整時刻の設定
     const adt1s = document.querySelectorAll('.adft1');
     adt1s.forEach(function(ft1){
@@ -328,10 +324,6 @@ function schedule_form() {
   document.getElementById('schedule-form-comp').style.display = 'block';
   schedule_form_btn.style["background-color"] ="gray";
   }
-
-
-
-
 
 }}
 

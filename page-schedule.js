@@ -74,9 +74,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム表示設定代項目
+    // フォーム表示設定大項目
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // 使用するフォームの選択
+
     const sh_form = document.getElementById("shift-form");
     const sc_form = document.getElementById("schedule-form");
 
@@ -97,7 +97,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     element.style.display = 'none';
     });
 
-    // フォーム見出し設定
     // ステータス欄の設定
     const fssa = document.querySelectorAll('.fs2');
     fssa.forEach(element =>{
@@ -134,8 +133,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       datelabel.textContent = "備考・補足：";
       element.before(datelabel);
     });
-
-
 
 
 
@@ -182,7 +179,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       ft2.appendChild(option);
     });
     });
-
+    
     // //開始調整時刻の設定
     // const adt1s = document.querySelectorAll('.adft1');
     // adt1s.forEach(function(ft1){
