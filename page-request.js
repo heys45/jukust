@@ -153,7 +153,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
       var datelabel = document.createElement("p");
       formday.value = date3;
-      datelabel.textContent = date2+"[勤務可能or不可] 18:00~20:00";
+      datelabel.textContent = date2+"  [勤務可能or不可] 18:00~20:00";
       formday.after(datelabel);
     });
     
