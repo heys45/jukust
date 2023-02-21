@@ -157,6 +157,16 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       formday.after(datelabel);
     });
     
+
+
+
+
+
+
+
+
+
+
     
     
     //開始時刻
@@ -299,10 +309,41 @@ for( var i=0; i<dbs.length; i++) {
 }
 
 
-
 //DB書き換え処理
 document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
 document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
+
+
+
+
+// DBのデータを取得
+
+var request_db ={};
+
+  var db_data = document.getElementById("db-3-1").querySelectorAll("tr:not(#db-3-1)");
+  //1列目のデータ回収
+  var db_name1 = document.getElementById("db-3-1-1").innerHTML;
+  db_data.forEach(element => {
+    var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+    request_db[db_name1].push(a_db_data1);
+  });
+
+  //2列目以降のデータ回収
+  var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
+  db_data.forEach(element => {
+    // それぞれの行で、2列目以降のデータを準備
+    var a_db_data = element.querySelectorAll("th");
+    a_db_data.shift();
+    for (let index = 0; index < db_header; index++) {
+      var a_db_data_n = a_db_data[index];
+      request_db[db_header[index]].push(a_db_data_n);
+    }
+  });
+
+console.log(request_db);
+
+
+
 
 //フォーム送信後の処理
 var schedule_form_btn = document.getElementById("schedule-form-btn");
@@ -313,8 +354,5 @@ function schedule_form() {
   }
 
 }}
-
-
-
 
 
