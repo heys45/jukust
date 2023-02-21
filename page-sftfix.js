@@ -244,6 +244,92 @@ if(prop_object["ページ表示名"]==="シフト確定"){
       }
 
 
+ //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // テーブル処理
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+//テーブルをまとめて取得
+const tables = document.querySelectorAll('.notion-table');
+//テーブルにIDを付与する 
+for( var i=0; i<tables.length; i++) {
+  console.log(tables[i]);
+  var name = "table-"+(i+1);
+  console.log(name);
+  tables[i].setAttribute("id",name);
+  
+  //行をまとめて取得
+  const rows = tables[i].getElementsByTagName("tr");
+  //行にIDを付与する 
+  for( var j=0; j<rows.length; j++) {
+  console.log(rows[j]);
+  var name = "table-"+(i+1)+"-"+(j+1);
+  console.log(name);
+  rows[j].setAttribute("id",name);
+  
+  //列をまとめて取得
+  const columns =rows[j].getElementsByTagName("td");
+  const columnhs =rows[j].getElementsByTagName("th");
+  //列にIDを付与する 
+  for( var k=0; k<columns.length; k++) {
+  console.log(columns[k]);
+  var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  console.log(name);
+  columns[k].setAttribute("id",name);
+  }
+  for( var k=0; k<columnhs.length; k++) {
+    console.log(columnhs[k]);
+    var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+    console.log(name);
+    columnhs[k].setAttribute("id",name);
+  
+    }
+  }
+}
+
+//テーブルをまとめて取得
+const dbs = document.querySelectorAll('.notion-collection-table');
+//テーブルにIDを付与する 
+for( var i=0; i<dbs.length; i++) {
+  var name = "db-"+(i+1);
+  dbs[i].setAttribute("id",name);
+  
+  //行をまとめて取得
+  const rows = dbs[i].getElementsByTagName("tr")
+  //行にIDを付与する 
+  for( var j=0; j<rows.length; j++) {
+  var name = "db-"+(i+1)+"-"+(j+1);
+  rows[j].setAttribute("id",name);
+  
+  //列をまとめて取得
+  const columns =rows[j].getElementsByTagName("td")
+  const columnhs =rows[j].getElementsByTagName("th");
+  //列にIDを付与する 
+  for( var k=0; k<columns.length; k++) {
+  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  columns[k].setAttribute("id",name);
+  }
+  for( var k=0; k<columnhs.length; k++) {
+  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  columnhs[k].setAttribute("id",name);
+
+  }
+  }
+}
+
+//DB書き換え処理
+document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
+document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
+
+//フォーム送信後の処理
+var schedule_form_btn = document.getElementById("schedule-form-btn");
+schedule_form_btn.addEventListener('click', schedule_form);
+function schedule_form() {
+  document.getElementById('schedule-form-comp').style.display = 'block';
+  schedule_form_btn.style["background-color"] ="gray";
+  }
+
+
 
 
 

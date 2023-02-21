@@ -117,7 +117,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     const adft1s = document.querySelectorAll('.ft1');
     adft1s.forEach(element =>{
       var datelabel = document.createElement("span");
-      datelabel.textContent = "希望時間：";
+      datelabel.textContent = "勤務希望時間：";
       element.before(datelabel);
       var datelabel = document.createElement("span");
       datelabel.textContent = "〜";
