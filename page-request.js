@@ -331,7 +331,7 @@ var main_db ={};
     console.log(a_db_data2);
     var a_db_data3 = a_db_data2.innerHTML;
     console.log(a_db_data3);
-    main_db[db_name1].push(a_db_data3);
+    main_db[db_name1].push("test");
   });
 
   //2列目以降のデータ回収
