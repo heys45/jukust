@@ -335,9 +335,10 @@ var main_db ={};
   });
 
   //2列目以降のデータ回収
-  var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)").innerHTML;
+  var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
   db_header.forEach(element => {
-    main_db[element.innerHTML] =[];
+    element =  element.innerHTML
+    main_db[element] =[];
   });
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
