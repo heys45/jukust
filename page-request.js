@@ -339,7 +339,7 @@ var main_db ={};
     // それぞれの行で、2列目以降のデータを準備
     var a_db_data = element.querySelectorAll("td:nth-of-type(n+2)");
     console.log(a_db_data);
-    for (let index = 0; index < db_header.innerHTML; index++) {
+    for (let index = 0; index < db_header.innerHTML.length; index++) {
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0].innerHTML;
       console.log(a_db_data_n);
       console.log(db_header.innerHTML[index]);
