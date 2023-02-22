@@ -331,11 +331,11 @@ var main_db ={};
     console.log(a_db_data2);
     var a_db_data3 = a_db_data2.innerHTML;
     console.log(a_db_data3);
-    main_db[db_name1].push("test");
+    main_db[db_name1].push(a_db_data3);
   });
 
   //2列目以降のデータ回収
-  var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
+  var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)").innerHTML;
   db_header.forEach(element => {
     main_db[element.innerHTML] =[];
   });
