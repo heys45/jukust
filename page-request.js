@@ -341,7 +341,7 @@ var main_db ={};
     console.log(a_db_data);
     for (let index = 0; index < db_header.length; index++) {
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
-      if(!(a_db_data_n.getElementsByTagName('span')[0])){}else{
+      if(console.log(a_db_data_n.getElementsByTagName('span')[0] !=null)){
         var a_db_data_n = a_db_data_n.getElementsByTagName('span')[0];
       }
       var a_db_data_n = a_db_data_n.innerHTML;
