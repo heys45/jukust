@@ -322,7 +322,7 @@ var main_db ={};
   var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
   //1列目のデータ回収
   var db_name1 = document.getElementById("db-3-1-1").innerHTML;
-  main_db[db_name1] ={};
+  main_db[db_name1] =[];
   console.log(db_data);
   db_data.forEach(element => {
     var a_db_data1 = element.getElementsByTagName("span")[0];
@@ -337,7 +337,7 @@ var main_db ={};
   //2列目以降のデータ回収
   var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
   db_header.forEach(element => {
-    main_db[element.innerHTML] ={};
+    main_db[element.innerHTML] =[];
   });
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
