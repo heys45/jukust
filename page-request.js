@@ -324,9 +324,13 @@ var main_db ={};
   var db_name1 = document.getElementById("db-3-1-1").innerHTML;
   main_db[db_name1] ={};
   db_data.forEach(element => {
-    var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+    var a_db_data1 = element.getElementsByTagName("span")[0];
     console.log(a_db_data1);
-    main_db[db_name1].push(a_db_data1);
+    var a_db_data2 = a_db_data1.getElementsByTagName("span")[0];
+    console.log(a_db_data2);
+    var a_db_data3 = a_db_data2.innerHTML;
+    console.log(a_db_data3);
+    main_db[db_name1].push(a_db_data3);
   });
 
   //2列目以降のデータ回収
