@@ -336,18 +336,16 @@ var main_db ={};
 
   //2列目以降のデータ回収
   var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
-  console.log(db_header);
   db_header.forEach(element => {
     main_db[element.innerHTML] ={};
   });
-  console.log(main_db["ステータス"]);
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
     var a_db_data = element.querySelectorAll("th");
     a_db_data.shift();
-    for (let index = 0; index < db_header; index++) {
+    for (let index = 0; index < db_header.innerHTML; index++) {
       var a_db_data_n = a_db_data[index];
-      main_db[db_header[index]].push(a_db_data_n);
+      main_db[db_header.innerHTML[index]].push(a_db_data_n);
     }
   });
   console.log(main_db["ステータス"]);
