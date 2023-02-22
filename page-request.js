@@ -342,8 +342,8 @@ var main_db ={};
     for (let index = 0; index < db_header.length; index++) {
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0].innerHTML;
       console.log(a_db_data_n);
-      console.log(db_header.innerHTML[index]);
-      main_db[db_header.innerHTML[index]].push(a_db_data_n);
+      console.log(db_header[index].innerHTML);
+      main_db[db_header[index].innerHTML].push(a_db_data_n);
     }
   });
   console.log(main_db["ステータス"]);
