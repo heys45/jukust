@@ -321,35 +321,38 @@ document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
 var main_db ={};
   var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
   //1,2列目のデータ回収
-  var db_name1 = document.getElementById("db-3-1-1").innerHTML;
-  main_db[db_name1] =[];
-  console.log(db_data);
-  db_data.forEach(element => {
-    var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-    main_db[db_name1].push(a_db_data1);
-  });
-  var db_name2 = document.getElementById("db-3-1-2").innerHTML;
-  main_db[db_name2] =[];
-  console.log(db_data);
-  db_data.forEach(element => {
-    var a_db_data2 = element.getElementsByTagName("span")[0].innerHTML;
-    main_db[db_name2].push(a_db_data2);
-  });
+  // var db_name1 = document.getElementById("db-3-1-1").innerHTML;
+  // main_db[db_name1] =[];
+  // console.log(db_data);
+  // db_data.forEach(element => {
+  //   var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+  //   main_db[db_name1].push(a_db_data1);
+  // });
+  // var db_name2 = document.getElementById("db-3-1-2").innerHTML;
+  // main_db[db_name2] =[];
+  // console.log(db_data);
+  // db_data.forEach(element => {
+  //   var a_db_data2 = element.getElementsByTagName("span")[0].innerHTML;
+  //   main_db[db_name2].push(a_db_data2);
+  // });
 
   //3列目以降のデータ回収
 
-  var db_header = document.getElementById("db-3-1").querySelectorAll("th:nth-child(n + 3)");
+  var db_header = document.getElementById("db-3-1").querySelectorAll("th");
   console.log(db_header);
   db_header.forEach(element => {
     main_db[element.innerHTML] =[];
   });
   var nullspan = document.createElement("span");
   db_data.forEach(element => {
-    var a_db_data = element.querySelectorAll("td:nth-child(n + 3)");
+    var a_db_data = element.querySelectorAll("td");
     console.log(a_db_data);
     for (let index = 0; index < db_header.length; index++) {
       a_db_data[index].appendChild(nullspan);
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
+      if (console.log(a_db_data_n.getElementsByTagName("span")[0])) {
+        a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
+      }
       var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0].innerHTML;
       main_db[db_header[index].innerHTML].push(a_db_data_n);
     }
