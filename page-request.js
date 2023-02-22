@@ -333,17 +333,15 @@ var main_db ={};
   var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
   console.log(db_header);
   db_header.forEach(element => {
-    element =  element.innerHTML
-    main_db[element] =[];
+    main_db[element.innerHTML] =[];
   });
-  console.log(db_header);
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
-    var a_db_data = element.querySelectorAll("th");
+    var a_db_data = element.querySelectorAll("td");
     console.log(a_db_data)
     a_db_data.shift();
     for (let index = 0; index < db_header.innerHTML; index++) {
-      var a_db_data_n = a_db_data[index];
+      var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0].innerHTML;
       main_db[db_header.innerHTML[index]].push(a_db_data_n);
     }
   });
