@@ -333,7 +333,7 @@ var main_db ={};
   var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
   console.log(db_header);
   db_header.forEach(element => {
-    main_db[element] ={};
+    main_db[element.innerHTML] ={};
   });
   console.log(main_db["ステータス"]);
   db_data.forEach(element => {
