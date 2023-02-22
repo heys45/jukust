@@ -352,7 +352,7 @@ var main_db ={};
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
       var checker =console.log(a_db_data_n.getElementsByTagName("span")[0]);
       if (checker) {
-        a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
+        var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
       }
       var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0].innerHTML;
       main_db[db_header[index].innerHTML].push(a_db_data_n);
