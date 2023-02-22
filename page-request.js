@@ -323,6 +323,7 @@ var main_db ={};
   //1列目のデータ回収
   var db_name1 = document.getElementById("db-3-1-1").innerHTML;
   main_db[db_name1] ={};
+  console.log(db_data);
   db_data.forEach(element => {
     var a_db_data1 = element.getElementsByTagName("span")[0];
     console.log(a_db_data1);
