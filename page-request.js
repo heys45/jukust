@@ -331,9 +331,11 @@ var main_db ={};
 
   //2列目以降のデータ回収
   var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
+  console.log(db_header);
   db_header.forEach(element => {
     main_db[element] ={};
   });
+  console.log(main_db["ステータス"]);
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
     var a_db_data = element.querySelectorAll("th");
@@ -343,7 +345,7 @@ var main_db ={};
       main_db[db_header[index]].push(a_db_data_n);
     }
   });
-
+  console.log(main_db["ステータス"]);
 console.log(main_db);
 
 
