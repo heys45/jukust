@@ -354,7 +354,7 @@ var main_db ={};
       if (checker) {
         var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
       }
-      var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0].innerHTML;
+      var a_db_data_n =  a_db_data_n.innerHTML;
       main_db[db_header[index].innerHTML].push(a_db_data_n);
     }
   });
