@@ -326,16 +326,12 @@ var main_db ={};
   console.log(db_data);
   db_data.forEach(element => {
     var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-    console.log(a_db_data1);
-    var a_db_data2 = a_db_data1
-    console.log(a_db_data2);
-    var a_db_data3 = a_db_data2
-    console.log(a_db_data3);
-    main_db[db_name1].push(a_db_data3);
+    main_db[db_name1].push(a_db_data1);
   });
 
   //2列目以降のデータ回収
   var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
+  console.log(db_header);
   db_header.forEach(element => {
     element =  element.innerHTML
     main_db[element] =[];
