@@ -50,28 +50,28 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // フォーム提出期間変更ボタンの設定
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    const select_term = document.getElementsByClassName("select-term")[0];
-    select_term.style.display = 'block';
-    function viewChange(){
-      var select_form = document.getElementById('select-term-button').value;
-      console.log(select_form);
-      if(select_form == '１週間分'){
-          document.getElementById('shift-form1').style.display = "";
-          document.getElementById('shift-form2').style.display = "none";
-          document.getElementById('shift-form3').style.display = "none";
-      }else if(select_form == '2週間分'){
-          document.getElementById('shift-form1').style.display = "";
-          document.getElementById('shift-form2').style.display = "";
-          document.getElementById('shift-form3').style.display = "none";
-      }
-      else if(select_form == '1ヶ月分'){
-          document.getElementById('shift-form1').style.display = "";
-          document.getElementById('shift-form2').style.display = "";
-          document.getElementById('shift-form3').style.display = "";
-      }
-    }
-    var trigger = document.getElementById('select-term-button');
-    trigger.onchange=viewChange;
+    // const select_term = document.getElementsByClassName("select-term")[0];
+    // select_term.style.display = 'block';
+    // function viewChange(){
+    //   var select_form = document.getElementById('select-term-button').value;
+    //   console.log(select_form);
+    //   if(select_form == '１週間分'){
+    //       document.getElementById('shift-form1').style.display = "";
+    //       document.getElementById('shift-form2').style.display = "none";
+    //       document.getElementById('shift-form3').style.display = "none";
+    //   }else if(select_form == '2週間分'){
+    //       document.getElementById('shift-form1').style.display = "";
+    //       document.getElementById('shift-form2').style.display = "";
+    //       document.getElementById('shift-form3').style.display = "none";
+    //   }
+    //   else if(select_form == '1ヶ月分'){
+    //       document.getElementById('shift-form1').style.display = "";
+    //       document.getElementById('shift-form2').style.display = "";
+    //       document.getElementById('shift-form3').style.display = "";
+    //   }
+    // }
+    // var trigger = document.getElementById('select-term-button');
+    // trigger.onchange=viewChange;
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -156,17 +156,6 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     //   datelabel.textContent = date2+"  [勤務可能or不可] 18:00~20:00";
     //   formday.after(datelabel);
     // });
-    
-
-
-
-
-
-
-
-
-
-
     
     
     //開始時刻
@@ -396,6 +385,7 @@ death_fd.remove();
 //   document.getElementById('shift-form-comp').style.display = 'block';
 //   shift_form_btn.style["background-color"] ="gray";
 //   }
+
 }}
 
 
