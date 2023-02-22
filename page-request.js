@@ -357,12 +357,11 @@ console.log(main_db);
 // 日付部分
 main_db["日付"].forEach((element,index)=>{
   var datelabel = document.createElement("p");
-  datelabel.textContent = element+"　｜"+main_db["ステータス"]+"｜"+main_db["勤務可能<br>開始時間"]+"〜"+main_db["勤務可能<br>終了時間"];
+  datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
   var target = document.getElementsByClassName("fd")[index];
   target.classList.add("view-fd");
   target.before(datelabel);
   target.value = element;
-
 })
 
 
