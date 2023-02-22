@@ -341,6 +341,8 @@ var main_db ={};
     console.log(a_db_data);
     for (let index = 0; index < db_header.innerHTML; index++) {
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0].innerHTML;
+      console.log(a_db_data_n);
+      console.log(db_header.innerHTML[index]);
       main_db[db_header.innerHTML[index]].push(a_db_data_n);
     }
   });
