@@ -337,15 +337,18 @@ var main_db ={};
   });
 
   //3列目以降のデータ回収
+
   var db_header = document.getElementById("db-3-1").querySelectorAll("th:nth-child(n + 3)");
   console.log(db_header);
   db_header.forEach(element => {
     main_db[element.innerHTML] =[];
   });
+  var nullspan = document.createElement("span");
   db_data.forEach(element => {
     var a_db_data = element.querySelectorAll("td:nth-child(n + 3)");
     console.log(a_db_data);
     for (let index = 0; index < db_header.length; index++) {
+      a_db_data[index].appendChild(nullspan);
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
       var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0].innerHTML;
       main_db[db_header[index].innerHTML].push(a_db_data_n);
