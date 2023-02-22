@@ -336,7 +336,6 @@ var main_db ={};
   //   main_db[db_name2].push(a_db_data2);
   // });
 
-  //3列目以降のデータ回収
 
   var db_header = document.getElementById("db-3-1").querySelectorAll("th");
   console.log(db_header);
@@ -350,19 +349,21 @@ var main_db ={};
     for (let index = 0; index < db_header.length; index++) {
       a_db_data[index].appendChild(nullspan);
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
-      var checker =console.log(a_db_data_n.getElementsByTagName("span")[0]);
-      if (checker) {
+      var checker =console.log(a_db_data_n.getElementsByTagName("span")[0] !=null);
+      if (checker) {// spanが二段階の時
         var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
         var a_db_data_n =  a_db_data_n.innerHTML;
         main_db[db_header[index].innerHTML].push(a_db_data_n);
-      }else{
-      var a_db_data_n =  a_db_data_n.innerHTML;
-      main_db[db_header[index].innerHTML].push(a_db_data_n);
+      }else{// spanが一段階の時
+        var a_db_data_n =  a_db_data_n.innerHTML;
+        main_db[db_header[index].innerHTML].push(a_db_data_n);
       }
     }
   });
   console.log(main_db["ステータス"]);
 console.log(main_db);
+
+
 
 
 //フォーム送信後の処理
