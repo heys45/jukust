@@ -353,9 +353,12 @@ var main_db ={};
       var checker =console.log(a_db_data_n.getElementsByTagName("span")[0]);
       if (checker) {
         var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
-      }
+        var a_db_data_n =  a_db_data_n.innerHTML;
+        main_db[db_header[index].innerHTML].push(a_db_data_n);
+      }else{
       var a_db_data_n =  a_db_data_n.innerHTML;
       main_db[db_header[index].innerHTML].push(a_db_data_n);
+      }
     }
   });
   console.log(main_db["ステータス"]);
