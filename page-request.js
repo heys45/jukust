@@ -319,7 +319,7 @@ document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
 // DBのデータを取得
 
 var main_db ={};
-  var db_data = document.getElementById("db-3").querySelectorAll("tr");
+  var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
   // //1列目のデータ回収
   // var db_name1 = document.getElementById("db-3-1-1").innerHTML;
   // main_db[db_name1] =[];
