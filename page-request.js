@@ -352,7 +352,7 @@ main_db["日付"].forEach((element,index)=>{
   target.before(datelabel);
   target.value = element;
 })
-var death_fd = document.querySelectorAll(".dg:not(.viex-dg)")
+var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
 death_fd.remove();
 
 
