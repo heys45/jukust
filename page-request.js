@@ -350,7 +350,7 @@ var main_db ={};
       a_db_data[index].appendChild(nullspan);
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
       var checker =console.log(a_db_data_n.getElementsByTagName("span")[0] !=null);
-      if (checker) {// spanが二段階の時
+      if (true) {// spanが二段階の時
         console.log(a_db_data_n);
       //   var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
       //   var a_db_data_n =  a_db_data_n.innerHTML;
