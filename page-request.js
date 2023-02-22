@@ -359,10 +359,13 @@ main_db["日付"].forEach((element,index)=>{
   var datelabel = document.createElement("p");
   datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
   var target = document.getElementsByClassName("fd")[index];
-  target.classList.add("view-fd");
+  target.parentNode.classList.add("view-dg");
   target.before(datelabel);
   target.value = element;
 })
+var death_fd = document.querySelectorAll(".dg:not(.viex-dg)")
+death_fd.remove();
+
 
 
 // const formdays = document.querySelectorAll('.fd');
