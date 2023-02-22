@@ -337,10 +337,8 @@ var main_db ={};
   });
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
-    var a_db_data = element.querySelectorAll("td");
-    console.log(a_db_data)
-    var a_db_data = a_db_data.shift();
-    console.log(a_db_data)
+    var a_db_data = element.querySelectorAll("td:nth-of-type(n+2)");
+    console.log(a_db_data);
     for (let index = 0; index < db_header.innerHTML; index++) {
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0].innerHTML;
       main_db[db_header.innerHTML[index]].push(a_db_data_n);
