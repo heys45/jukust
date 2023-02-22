@@ -350,14 +350,13 @@ var main_db ={};
       a_db_data[index].appendChild(nullspan);
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
       var checker =console.log(a_db_data_n.getElementsByTagName("span")[0] !=null);
-      if (true) {// spanが二段階の時
-        console.log(a_db_data_n);
-      //   var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
-      //   var a_db_data_n =  a_db_data_n.innerHTML;
-      //   main_db[db_header[index].innerHTML].push(a_db_data_n);
-      // }else{// spanが一段階の時
-      //   var a_db_data_n =  a_db_data_n.innerHTML;
-      //   main_db[db_header[index].innerHTML].push(a_db_data_n);
+      if (checker===true) {// spanが二段階の時
+        var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
+        var a_db_data_n =  a_db_data_n.innerHTML;
+        main_db[db_header[index].innerHTML].push(a_db_data_n);
+      }else{// spanが一段階の時
+        var a_db_data_n =  a_db_data_n.innerHTML;
+        main_db[db_header[index].innerHTML].push(a_db_data_n);
       }
     }
   });
