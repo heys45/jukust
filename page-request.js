@@ -320,27 +320,31 @@ document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
 
 var main_db ={};
   var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
-  //1列目のデータ回収
-  var db_name1 = document.getElementById("db-3-1-1").innerHTML;
-  main_db[db_name1] =[];
-  console.log(db_data);
-  db_data.forEach(element => {
-    var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-    main_db[db_name1].push(a_db_data1);
-  });
+  // //1列目のデータ回収
+  // var db_name1 = document.getElementById("db-3-1-1").innerHTML;
+  // main_db[db_name1] =[];
+  // console.log(db_data);
+  // db_data.forEach(element => {
+  //   var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+  //   main_db[db_name1].push(a_db_data1);
+  // });
 
   //2列目以降のデータ回収
-  var db_header = document.getElementById("db-3-1").querySelectorAll("th:not(#db-3-1-1)");
+  var db_header = document.getElementById("db-3-1").querySelectorAll("th");
   console.log(db_header);
   db_header.forEach(element => {
     main_db[element.innerHTML] =[];
   });
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
-    var a_db_data = element.querySelectorAll("td:nth-of-type(n+2)");
+    var a_db_data = element.querySelectorAll("td");
     console.log(a_db_data);
     for (let index = 0; index < db_header.length; index++) {
-      var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0].innerHTML;
+      var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0]
+      if(a_db_data_n.getElementsByTagName('span')[0]){
+        var a_db_data_n = a_db_data_n.getElementsByTagName('span')[0];
+        } 
+      var a_db_data_n = a_db_data_n.innerHTML;
       console.log(a_db_data_n);
       console.log(db_header[index].innerHTML);
       main_db[db_header[index].innerHTML].push(a_db_data_n);
@@ -348,8 +352,6 @@ var main_db ={};
   });
   console.log(main_db["ステータス"]);
 console.log(main_db);
-
-
 
 
 //フォーム送信後の処理
