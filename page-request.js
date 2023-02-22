@@ -138,24 +138,24 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
 
     //フォームのプルダウン値設定
-    //日付部分
-    const formdays = document.querySelectorAll('.fd');
-    //グループごとにidにプロパティ名を設定
-    formdays.forEach(function(formday,index){
-      var date=new Date();
-      date.setDate(date.getDate() + 1+index);
-      var year = date.getFullYear();
-      var month = date.getMonth()+1;
-      var week = date.getDay();
-      var day = date.getDate();
-      var yobi= new Array("日","月","火","水","木","金","土");
-      var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
-      var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
-      var datelabel = document.createElement("p");
-      formday.value = date3;
-      datelabel.textContent = date2+"  [勤務可能or不可] 18:00~20:00";
-      formday.after(datelabel);
-    });
+    // //日付部分
+    // const formdays = document.querySelectorAll('.fd');
+    // //グループごとにidにプロパティ名を設定
+    // formdays.forEach(function(formday,index){
+    //   var date=new Date();
+    //   date.setDate(date.getDate() + 1+index);
+    //   var year = date.getFullYear();
+    //   var month = date.getMonth()+1;
+    //   var week = date.getDay();
+    //   var day = date.getDate();
+    //   var yobi= new Array("日","月","火","水","木","金","土");
+    //   var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
+    //   var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
+    //   var datelabel = document.createElement("p");
+    //   formday.value = date3;
+    //   datelabel.textContent = date2+"  [勤務可能or不可] 18:00~20:00";
+    //   formday.after(datelabel);
+    // });
     
 
 
@@ -239,44 +239,51 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// テーブルの番号づけ
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-//テーブルをまとめて取得
-const tables = document.querySelectorAll('.notion-table');
-//テーブルにIDを付与する 
-for( var i=0; i<tables.length; i++) {
-  console.log(tables[i]);
-  var name = "table-"+(i+1);
-  console.log(name);
-  tables[i].setAttribute("id",name);
+// //テーブルをまとめて取得
+// const tables = document.querySelectorAll('.notion-table');
+// //テーブルにIDを付与する 
+// for( var i=0; i<tables.length; i++) {
+//   console.log(tables[i]);
+//   var name = "table-"+(i+1);
+//   console.log(name);
+//   tables[i].setAttribute("id",name);
   
-  //行をまとめて取得
-  const rows = tables[i].getElementsByTagName("tr");
-  //行にIDを付与する 
-  for( var j=0; j<rows.length; j++) {
-  console.log(rows[j]);
-  var name = "table-"+(i+1)+"-"+(j+1);
-  console.log(name);
-  rows[j].setAttribute("id",name);
+//   //行をまとめて取得
+//   const rows = tables[i].getElementsByTagName("tr");
+//   //行にIDを付与する 
+//   for( var j=0; j<rows.length; j++) {
+//   console.log(rows[j]);
+//   var name = "table-"+(i+1)+"-"+(j+1);
+//   console.log(name);
+//   rows[j].setAttribute("id",name);
   
-  //列をまとめて取得
-  const columns =rows[j].getElementsByTagName("td");
-  const columnhs =rows[j].getElementsByTagName("th");
-  //列にIDを付与する 
-  for( var k=0; k<columns.length; k++) {
-  console.log(columns[k]);
-  var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-  console.log(name);
-  columns[k].setAttribute("id",name);
-  }
-  for( var k=0; k<columnhs.length; k++) {
-    console.log(columnhs[k]);
-    var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    console.log(name);
-    columnhs[k].setAttribute("id",name);
-  
-    }
-  }
-}
+//   //列をまとめて取得
+//   const columns =rows[j].getElementsByTagName("td");
+//   const columnhs =rows[j].getElementsByTagName("th");
+//   //列にIDを付与する 
+//   for( var k=0; k<columns.length; k++) {
+//   console.log(columns[k]);
+//   var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+//   console.log(name);
+//   columns[k].setAttribute("id",name);
+//   }
+//   for( var k=0; k<columnhs.length; k++) {
+//     console.log(columnhs[k]);
+//     var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+//     console.log(name);
+//     columnhs[k].setAttribute("id",name);
+
+//     }
+//   }
+// }
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベースの番号づけ
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 //テーブルをまとめて取得
 const dbs = document.querySelectorAll('.notion-collection-table');
@@ -308,61 +315,57 @@ for( var i=0; i<dbs.length; i++) {
   }
 }
 
-
 //DB書き換え処理
 document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
 document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
 
-
-
-
-// DBのデータを取得
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベースの値取得
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 var main_db ={};
-  var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
-  //1,2列目のデータ回収
-  // var db_name1 = document.getElementById("db-3-1-1").innerHTML;
-  // main_db[db_name1] =[];
-  // console.log(db_data);
-  // db_data.forEach(element => {
-  //   var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-  //   main_db[db_name1].push(a_db_data1);
-  // });
-  // var db_name2 = document.getElementById("db-3-1-2").innerHTML;
-  // main_db[db_name2] =[];
-  // console.log(db_data);
-  // db_data.forEach(element => {
-  //   var a_db_data2 = element.getElementsByTagName("span")[0].innerHTML;
-  //   main_db[db_name2].push(a_db_data2);
-  // });
-
-
-  var db_header = document.getElementById("db-3-1").querySelectorAll("th");
-  console.log(db_header);
-  db_header.forEach(element => {
-    main_db[element.innerHTML] =[];
-  });
-  var nullspan = document.createElement("span");
-  db_data.forEach(element => {
-    var a_db_data = element.querySelectorAll("td");
-    console.log(a_db_data);
-    for (let index = 0; index < db_header.length; index++) {
-      a_db_data[index].appendChild(nullspan);
-      var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
-      if (a_db_data_n.getElementsByTagName("span")[0] !=null) {// spanが二段階の時
-        var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
-        var a_db_data_n =  a_db_data_n.innerHTML;
-        main_db[db_header[index].innerHTML].push(a_db_data_n);
-      }else{// spanが一段階の時
-        var a_db_data_n =  a_db_data_n.innerHTML;
-        main_db[db_header[index].innerHTML].push(a_db_data_n);
-      }
+var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
+var db_header = document.getElementById("db-3-1").querySelectorAll("th");
+console.log(db_header);
+db_header.forEach(element => {
+  main_db[element.innerHTML] =[];
+});
+var nullspan = document.createElement("span");
+db_data.forEach(element => {
+  var a_db_data = element.querySelectorAll("td");
+  console.log(a_db_data);
+  for (let index = 0; index < db_header.length; index++) {
+    a_db_data[index].appendChild(nullspan);
+    var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
+    if (a_db_data_n.getElementsByTagName("span")[0] !=null) {// spanが二段階の時
+      var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
+      var a_db_data_n =  a_db_data_n.innerHTML;
+      main_db[db_header[index].innerHTML].push(a_db_data_n);
+    }else{// spanが一段階の時
+      var a_db_data_n =  a_db_data_n.innerHTML;
+      main_db[db_header[index].innerHTML].push(a_db_data_n);
     }
-  });
-  console.log(main_db["ステータス"]);
+  }
+});
 console.log(main_db);
 
-// //日付部分
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベース由来のフォーム作成
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// 日付部分
+main_db["日付"].forEach((element,index)=>{
+  var datelabel = document.createElement("p");
+  datelabel.textContent = element+"　｜"+main_db["ステータス"]+"｜"+main_db["勤務可能<br>開始時間"]+"〜"+main_db["勤務可能<br>終了時間"];
+  var target = document.getElementsByClassName("fd")[index];
+  target.classList.add("view-fd");
+  target.before(datelabel);
+  target.value = element;
+
+})
+
+
 // const formdays = document.querySelectorAll('.fd');
 // //グループごとにidにプロパティ名を設定
 // formdays.forEach(function(formday,index){
