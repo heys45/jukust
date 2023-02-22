@@ -325,9 +325,9 @@ var main_db ={};
   main_db[db_name1] =[];
   console.log(db_data);
   db_data.forEach(element => {
-    var a_db_data1 = element.getElementsByTagName("span")[0];
+    var a_db_data1 = element.getElementsByTagName("span")[0].getElementsByTagName("span")[0];
     console.log(a_db_data1);
-    var a_db_data2 = a_db_data1.getElementsByTagName("span")[0];
+    var a_db_data2 = a_db_data1
     console.log(a_db_data2);
     var a_db_data3 = a_db_data2.innerHTML;
     console.log(a_db_data3);
