@@ -351,17 +351,37 @@ var main_db ={};
       var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
       var checker =console.log(a_db_data_n.getElementsByTagName("span")[0] !=null);
       if (checker) {// spanが二段階の時
-        var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
-        var a_db_data_n =  a_db_data_n.innerHTML;
-        main_db[db_header[index].innerHTML].push(a_db_data_n);
-      }else{// spanが一段階の時
-        var a_db_data_n =  a_db_data_n.innerHTML;
-        main_db[db_header[index].innerHTML].push(a_db_data_n);
+        console.log(a_db_data_n);
+      //   var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
+      //   var a_db_data_n =  a_db_data_n.innerHTML;
+      //   main_db[db_header[index].innerHTML].push(a_db_data_n);
+      // }else{// spanが一段階の時
+      //   var a_db_data_n =  a_db_data_n.innerHTML;
+      //   main_db[db_header[index].innerHTML].push(a_db_data_n);
       }
     }
   });
   console.log(main_db["ステータス"]);
 console.log(main_db);
+
+// //日付部分
+// const formdays = document.querySelectorAll('.fd');
+// //グループごとにidにプロパティ名を設定
+// formdays.forEach(function(formday,index){
+//   // var date=new Date();
+//   // date.setDate(date.getDate() + 1+index);
+//   // var year = date.getFullYear();
+//   // var month = date.getMonth()+1;
+//   // var week = date.getDay();
+//   // var day = date.getDate();
+//   // var yobi= new Array("日","月","火","水","木","金","土");
+//   // var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
+//   // var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
+//   var datelabel = document.createElement("p");
+//   formday.value = date3;
+//   datelabel.textContent = ;
+//   formday.after(datelabel);
+// });
 
 
 
