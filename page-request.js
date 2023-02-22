@@ -336,6 +336,7 @@ var main_db ={};
     element =  element.innerHTML
     main_db[element] =[];
   });
+  console.log(db_header);
   db_data.forEach(element => {
     // それぞれの行で、2列目以降のデータを準備
     var a_db_data = element.querySelectorAll("th");
