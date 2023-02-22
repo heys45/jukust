@@ -357,27 +357,6 @@ death_fd.remove();
 
 
 
-// const formdays = document.querySelectorAll('.fd');
-// //グループごとにidにプロパティ名を設定
-// formdays.forEach(function(formday,index){
-//   // var date=new Date();
-//   // date.setDate(date.getDate() + 1+index);
-//   // var year = date.getFullYear();
-//   // var month = date.getMonth()+1;
-//   // var week = date.getDay();
-//   // var day = date.getDate();
-//   // var yobi= new Array("日","月","火","水","木","金","土");
-//   // var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
-//   // var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
-//   var datelabel = document.createElement("p");
-//   formday.value = date3;
-//   datelabel.textContent = ;
-//   formday.after(datelabel);
-// });
-
-
-
-
 //フォーム送信後の処理
 // var shift_form_btn = document.getElementById("schedule-form-btn");
 // shift_form_btn.addEventListener('click', shift_form);
