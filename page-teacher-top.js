@@ -18,15 +18,33 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
   top_span1.classList.add();
   top_span1.style["font-size"] = "32px";
   top_div.appendChild(top_span1);
+  var top_span1_1 = document.createElement("span");
+  top_span1_1.textContent = "先生";
+  top_span1_1.style["padding-right"] = "16px";
+  top_div.appendChild(top_span1_1);
 
   var top_span2 = document.createElement("span");
   top_span2.textContent = prop_object["ステータス！"];
   top_span2.classList.add();
-  top_span2.style["font-size"] = "16px";
   top_span2.style["background-color"] = "gray";
+  top_span2.style["color"] = "white";
   top_span2.style["border-radius"] = "20px";
   top_span2.style["padding"] = "3px 10px";
   top_div.appendChild(top_span2);
+
+// 勤務情報集約
+  var top_p3 = document.createElement("p");
+  top_p3.textContent = "過去1ヶ月の勤務回数｜X　回";
+  top_p3.classList.add();
+  top_p3.style["padding-top"] = "30px";
+  top_div.appendChild(top_p3);
+  var top_p4 = document.createElement("p");
+  top_p4.textContent = "これから1ヶ月の勤務予定回数｜X　回";
+  top_p4.classList.add();
+  top_div.appendChild(top_p4);
+
+
+
 
 
 
