@@ -34,32 +34,14 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
 
 // 勤務情報集約
   var top_p3 = document.createElement("p");
-  top_p3.textContent = "過去1ヶ月の勤務回数｜X　回";
+  top_p3.textContent = "過去1ヶ月の勤務回数｜　X回";
   top_p3.classList.add();
   top_p3.style["padding-top"] = "30px";
   top_div.appendChild(top_p3);
   var top_p4 = document.createElement("p");
-  top_p4.textContent = "これから1ヶ月の勤務予定回数｜X　回";
+  top_p4.textContent = "これから1ヶ月の勤務予定回数｜　X回";
   top_p4.classList.add();
   top_div.appendChild(top_p4);
-
-
-
-
-
-
-  // // 表示位置の設定
-  // var quote_name = "スポットバイトの流れ";
-  // var progressbar = document.getElementsByClassName("progressbar")[0];
-  // document.getElementById(quote_name).after(progressbar);
-  // progressbar.style.display = 'flex';
-
-  // //プログレスバー書き換え処理
-  // document.getElementById('li-schedule').setAttribute("class","complete");
-  // document.getElementById('li-request').setAttribute("class","complete");
-  // document.getElementById('li-confirm').setAttribute("class","active");
-  // // document.getElementById('db-2-1-4').setAttribute("class",complete);
-
 
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -108,28 +90,28 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // フォーム提出期間変更ボタンの設定
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    const select_term = document.getElementsByClassName("select-term")[0];
-    select_term.style.display = 'block';
-    function viewChange(){
-      var select_form = document.getElementById('select-term-button').value;
-      console.log(select_form);
-      if(select_form == '１週間分'){
-          document.getElementById('schedule-form1').style.display = "";
-          document.getElementById('schedule-form2').style.display = "none";
-          document.getElementById('schedule-form3').style.display = "none";
-      }else if(select_form == '2週間分'){
-          document.getElementById('schedule-form1').style.display = "";
-          document.getElementById('schedule-form2').style.display = "";
-          document.getElementById('schedule-form3').style.display = "none";
-      }
-      else if(select_form == '1ヶ月分'){
-          document.getElementById('schedule-form1').style.display = "";
-          document.getElementById('schedule-form2').style.display = "";
-          document.getElementById('schedule-form3').style.display = "";
-      }
-    }
-    var trigger = document.getElementById('select-term-button');
-    trigger.onchange=viewChange;
+    // const select_term = document.getElementsByClassName("select-term")[0];
+    // select_term.style.display = 'block';
+    // function viewChange(){
+    //   var select_form = document.getElementById('select-term-button').value;
+    //   console.log(select_form);
+    //   if(select_form == '１週間分'){
+    //       document.getElementById('schedule-form1').style.display = "";
+    //       document.getElementById('schedule-form2').style.display = "none";
+    //       document.getElementById('schedule-form3').style.display = "none";
+    //   }else if(select_form == '2週間分'){
+    //       document.getElementById('schedule-form1').style.display = "";
+    //       document.getElementById('schedule-form2').style.display = "";
+    //       document.getElementById('schedule-form3').style.display = "none";
+    //   }
+    //   else if(select_form == '1ヶ月分'){
+    //       document.getElementById('schedule-form1').style.display = "";
+    //       document.getElementById('schedule-form2').style.display = "";
+    //       document.getElementById('schedule-form3').style.display = "";
+    //   }
+    // }
+    // var trigger = document.getElementById('select-term-button');
+    // trigger.onchange=viewChange;
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -138,17 +120,23 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
     
     const sh_form = document.getElementById("shift-form");
     const sc_form = document.getElementById("schedule-form");
+    const wr_form = document.getElementById("wr-form");
 
-    const view_form = sh_form;          //ページによって変更する
-    const death_form = sc_form;         //ページによって変更する
 
+    var death_form = sc_form;         //ページによって変更する
+    death_form.remove();
+    var death_form = sh_form;         //ページによって変更する
+    death_form.remove();
+
+    
+    const view_form = wr_form;          //ページによって変更する
     // 表示位置の設定
-    var quote_name = "シフト確定の回答はこちらから";
+    var quote_name = "勤怠報告はこちらから";
     var form_area = document.getElementById("form-area");
     var position = document.getElementById(quote_name).nextElementSibling;
     position.after(form_area);
     view_form.style.display = 'block';
-    death_form.remove();
+
 
     // フォームプロパティ非表示設定
     const death_prop = document.querySelectorAll(".ft1,.ft2,.fd");
@@ -413,6 +401,16 @@ console.log(main_db);
 
 // 日付部分
 main_db["日付"].forEach((element,index)=>{
+  if(main_db["報告フラグ"][index] !=null){
+    span
+
+
+
+
+  }
+
+
+
   var datelabel = document.createElement("p");
   datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
   var target = document.getElementsByClassName("fd")[index];

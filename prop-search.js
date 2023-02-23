@@ -22,7 +22,7 @@ const prop_wrap = document.querySelectorAll('.notion-page__property');
 for (let i=0; i< prop_wrap.length; i++){
     const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
     var prop_value = null;
-    var check = prop_wrap[i].getElementsByTagName("span")[1]
+    var check = prop_wrap[i].getElementsByTagName("span")[1];
     if(check !=null){
     var prop_value = prop_wrap[i].getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
     }
