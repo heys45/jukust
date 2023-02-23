@@ -14,7 +14,7 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
   top_position.after(top_div);
 
   var top_span1 = document.createElement("span");
-  top_span1.textContent = prop_object["講師名！"]
+  top_span1.textContent = prop_object["講師名！"];
   top_span1.classList.add();
   top_span1.style["font-size"] = "32px";
   top_position.appendChild(top_span1);
