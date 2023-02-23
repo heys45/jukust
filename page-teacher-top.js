@@ -8,7 +8,7 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
   // トップ情報の書き出し
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-  var top_position = document.getElementById("マイページへようこそ")
+  var top_position = document.getElementById("マイページへようこそ");
   var top_div =document.createElement("div");
   top_div.classList.add("top-content-wrapper");
   top_position.after(top_div);
