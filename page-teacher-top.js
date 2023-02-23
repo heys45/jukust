@@ -10,7 +10,7 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
 
   var top_position = document.getElementById("マイページへようこそ")
   var top_div =document.createElement("div");
-  top_span1.classList.add("top-content-wrapper");
+  top_div.classList.add("top-content-wrapper");
   top_position.after(top_div);
 
   var top_span1 = document.createElement("span");
