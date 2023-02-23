@@ -23,11 +23,7 @@ for (let i=0; i< prop_wrap.length; i++){
     const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
     var prop_value = null;
     var check = prop_wrap[i].getElementsByTagName("span")[1]
-    console.log(check !=null);
-    console.log(check.getElementsByTagName("span")[0] !=null);
-    if(check.getElementsByTagName("span")[0] !=null){
     var prop_value = prop_wrap[i].getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
-    }
     console.log(prop_name); 
     console.log(prop_value); 
     prop_object[prop_name] = prop_value;
