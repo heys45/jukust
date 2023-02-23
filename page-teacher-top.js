@@ -17,7 +17,7 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
   top_span1.textContent = prop_object["講師名！"];
   top_span1.classList.add();
   top_span1.style["font-size"] = "32px";
-  top_position.appendChild(top_span1);
+  top_div.appendChild(top_span1);
 
   var top_span2 = document.createElement("span");
   top_span2.textContent = prop_object["ステータス！"];
@@ -26,7 +26,7 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
   top_span2.style["background-color"] = "gray";
   top_span2.style["border-radius"] = "20px";
   top_span2.style["padding"] = "3px 10px";
-  top_position.appendChild(top_span2);
+  top_div.appendChild(top_span2);
 
 
 
