@@ -411,12 +411,12 @@ main_db["日付"].forEach((element,index)=>{
     target.after(clone);
 
     // 出勤フォーマットにフォーム挿入
-    var element = document.getElementsByClassName("in-dg")[counter];
-    target.getElementsByClassName("in-content")[0].appendChild(element);
+    var formset = document.getElementsByClassName("in-dg")[counter];
+    target.getElementsByClassName("in-content")[0].appendChild(formset);
 
     // 退勤フォーマットにフォーム挿入
-    var element = document.getElementsByClassName("out-dg")[counter];
-    target.getElementsByClassName("out-content")[0].appendChild(element);
+    var formset = document.getElementsByClassName("out-dg")[counter];
+    target.getElementsByClassName("out-content")[0].appendChild(formset);
 
     // カウントアップ
     var counter = counter+1;
