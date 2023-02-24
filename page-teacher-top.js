@@ -414,10 +414,10 @@ main_db["日付"].forEach((element,index)=>{
     var formset = document.getElementsByClassName("in-dg")[counter];
     target.getElementsByClassName("in-content")[0].appendChild(formset);
     // 出勤フォーマットにデータセット
-    target.getElementsByClassName("in-day-label")[0].textContent(element);
+    target.getElementsByClassName("in-day-label")[0].textContent = element;
 
     var target_class="in-fd" ; var textcontent = "実際の出勤時間";
-    spancontent.textContent(textcontent);
+    spancontent.textContent = textcontent;
     var spancontent =document.create("span");
     target.getElementsByClassName(target_class)[0].before(spancontent);
 
@@ -427,7 +427,7 @@ main_db["日付"].forEach((element,index)=>{
     var formset = document.getElementsByClassName("out-dg")[counter];
     target.getElementsByClassName("out-content")[0].appendChild(formset);
     // 退勤フォーマットにデータセット
-    target.getElementsByClassName("out-day-label")[0].textContent(element);
+    target.getElementsByClassName("out-day-label")[0].textConten= element;
 
     // カウントアップ
     var counter = counter+1;
