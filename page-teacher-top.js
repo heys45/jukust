@@ -416,6 +416,13 @@ main_db["日付"].forEach((element,index)=>{
     // 出勤フォーマットにデータセット
     target.getElementsByClassName("in-day-label")[0].textContent(element);
 
+    var target_class="in-fd" ; var textcontent = "実際の出勤時間";
+    spancontent.textContent(textcontent);
+    var spancontent =document.create("span");
+    target.getElementsByClassName(target_class)[0].before(spancontent);
+
+
+
     // 退勤フォーマットにフォーム挿入
     var formset = document.getElementsByClassName("out-dg")[counter];
     target.getElementsByClassName("out-content")[0].appendChild(formset);
