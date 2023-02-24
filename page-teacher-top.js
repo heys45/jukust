@@ -413,12 +413,14 @@ main_db["日付"].forEach((element,index)=>{
     // 出勤フォーマットにフォーム挿入
     var formset = document.getElementsByClassName("in-dg")[counter];
     target.getElementsByClassName("in-content")[0].appendChild(formset);
-    // 出勤フォーマットにデータ挿入
-    target.getElementsByClassName("in-day-label").textContent(element);
+    // 出勤フォーマットにデータセット
+    target.getElementsByClassName("in-day-label")[0].textContent(element);
 
     // 退勤フォーマットにフォーム挿入
     var formset = document.getElementsByClassName("out-dg")[counter];
     target.getElementsByClassName("out-content")[0].appendChild(formset);
+    // 退勤フォーマットにデータセット
+    target.getElementsByClassName("out-day-label")[0].textContent(element);
 
     // カウントアップ
     var counter = counter+1;
