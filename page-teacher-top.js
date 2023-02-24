@@ -401,22 +401,32 @@ console.log(main_db);
 
 // 日付部分
 main_db["日付"].forEach((element,index)=>{
-  if(main_db["報告フラグ"][index] !=null){
-    span
+  var counter = 0;
+  if(main_db["報告フラグ"][index]=1){
+    // フォーマットの複製
+    var target =document.getElementsByClassName("wr-form")[counter];
+    var clone  = target.cloneNode();
+    target.after(clone);
 
+    // 出勤フォーマットにフォーム挿入
+    var element = document.getElementsByClassName("in-dg")[counter];
+    target.getElementsByClassName("in-content")[0].appendChild(element);
 
+    // 退勤フォーマットにフォーム挿入
+    var element = document.getElementsByClassName("out-dg")[counter];
+    target.getElementsByClassName("out-content")[0].appendChild(element);
 
+    // カウントアップ
+    var counter = counter+1;
 
   }
 
-
-
-  var datelabel = document.createElement("p");
-  datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
-  var target = document.getElementsByClassName("fd")[index];
-  target.parentNode.classList.add("view-dg");
-  target.before(datelabel);
-  target.value = element;
+  // var datelabel = document.createElement("p");
+  // datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
+  // var target = document.getElementsByClassName("fd")[index];
+  // target.parentNode.classList.add("view-dg");
+  // target.before(datelabel);
+  // target.value = element;
 })
 var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
 death_fd.remove();
