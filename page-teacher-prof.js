@@ -49,7 +49,7 @@ for( var i=0; i<tables.length; i++) {
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
   // 2行テーブルのデータ挿入
-  var row2_table = document.querySelectorAll(".table-1,.table-2");
+  var row2_table = document.querySelectorAll("#table-1,#table-2");
 
   row2_table.forEach(element=>{
     var header = element.querySelectorAll("tr")[0].querySelectorAll("td");
