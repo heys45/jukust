@@ -406,7 +406,7 @@ main_db["日付"].forEach((element,index)=>{
   console.log(main_db["報告フラグ"]);
   if(main_db["報告フラグ"][index]=1){
     // フォーマットの複製
-    var target =document.getElementsByClassName("wr-form")[counter];
+    var target =document.getElementsByClassName("wr-formbox")[counter];
     var clone  = target.cloneNode();
     target.after(clone);
 
