@@ -277,11 +277,11 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
     // フォーム初期値設定
     document.getElementById("teaid").value = prop_object["講師ID"];
 
-    var shift_form_btn = document.getElementById("shift-form-btn");
-    shift_form_btn.addEventListener('click', shift_form);
-    function shift_form() {
-      document.getElementById('shift-form-comp').style.display = 'block';
-      }
+    // var shift_form_btn = document.getElementById("shift-form-btn");
+    // shift_form_btn.addEventListener('click', shift_form);
+    // function shift_form() {
+    //   document.getElementById('shift-form-comp').style.display = 'block';
+    //   }
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
