@@ -400,8 +400,10 @@ console.log(main_db);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 // 日付部分
+console.log(main_db["日付"]);
 main_db["日付"].forEach((element,index)=>{
   var counter = 0;
+  console.log(main_db["報告フラグ"]);
   if(main_db["報告フラグ"][index]=1){
     // フォーマットの複製
     var target =document.getElementsByClassName("wr-form")[counter];
