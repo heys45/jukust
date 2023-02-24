@@ -407,7 +407,7 @@ main_db["日付"].forEach((element,index)=>{
   if(main_db["報告フラグ"][index]=1){
     // フォーマットの複製
     var target =document.getElementsByClassName("wr-formbox")[counter];
-    var clone  = target.cloneNode();
+    var clone  = target.cloneNode(true);
     target.after(clone);
 
     // 出勤フォーマットにフォーム挿入
