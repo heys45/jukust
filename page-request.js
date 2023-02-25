@@ -396,10 +396,10 @@ var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
       var sch_id =document.getElementsByName(key)[0].getAttribute('id')+"-2";
       var sch_info = document.getElementById(sch_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sch-info")[0].innerHTML = sch_info;
-    }
+    }else{target.getElementsByClassName("sch-info")[0].remove;}
 
     // フォームを入れる
-    target.getElementsByClassName("day-box-form").appendChild(element);
+    target.getElementsByClassName("day-box-form")[0].appendChild(element);
   
   })
 
