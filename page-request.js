@@ -348,33 +348,69 @@ console.log(main_db);
     });
   
   })
+  
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // フォーム提出期間変更ボタンの設定
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+  var form_term_box = document.createElement("div");
+  form_term_box.id("form_term_swich_wrapper");
+  form_term_box.style.display="flex";
+  area_target.after(form_term_box);
+
+  var form_term_swich = document.createElement("div");
+  form_term_swich.innerHTML="1週間分を<br>提出する";
+  form_term_swich.id("week1");
+  form_term_swich.style["background-color"]="red";
+  form_term_box.appendChild(form_term_swich);
+
+  var form_term_swich = document.createElement("div");
+  form_term_swich.innerHTML="1週間分を<br>提出する";
+  form_term_swich.id("week2");
+  form_term_box.appendChild(form_term_swich);
+
+  var form_term_swich = document.createElement("div");
+  form_term_swich.innerHTML="1ヶ月分を<br>提出する";
+  form_term_swich.id("week4");
+  form_term_box.appendChild(form_term_swich);
+
+
 
   
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム提出期間変更ボタンの設定
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // const select_term = document.getElementsByClassName("select-term")[0];
-    // select_term.style.display = 'block';
-    // function viewChange(){
-    //   var select_form = document.getElementById('select-term-button').value;
-    //   console.log(select_form);
-    //   if(select_form == '１週間分'){
-    //       document.getElementById('shift-form1').style.display = "";
-    //       document.getElementById('shift-form2').style.display = "none";
-    //       document.getElementById('shift-form3').style.display = "none";
-    //   }else if(select_form == '2週間分'){
-    //       document.getElementById('shift-form1').style.display = "";
-    //       document.getElementById('shift-form2').style.display = "";
-    //       document.getElementById('shift-form3').style.display = "none";
-    //   }
-    //   else if(select_form == '1ヶ月分'){
-    //       document.getElementById('shift-form1').style.display = "";
-    //       document.getElementById('shift-form2').style.display = "";
-    //       document.getElementById('shift-form3').style.display = "";
-    //   }
-    // }
-    // var trigger = document.getElementById('select-term-button');
-    // trigger.onchange=viewChange;
+
+
+
+
+  
+
+  <div class="form-term-swich">
+    <div id="1week">１週間分</div>
+    <div id="2week">2週間分</div>
+    <div id="4week">1ヶ月分</div>
+  </div>
+
+  // const select_term = document.getElementsByClassName("select-term")[0];
+  // select_term.style.display = 'block';
+  // function viewChange(){
+  //   var select_form = document.getElementById('select-term-button').value;
+  //   console.log(select_form);
+  //   if(select_form == '１週間分'){
+  //       document.getElementById('shift-form1').style.display = "";
+  //       document.getElementById('shift-form2').style.display = "none";
+  //       document.getElementById('shift-form3').style.display = "none";
+  //   }else if(select_form == '2週間分'){
+  //       document.getElementById('shift-form1').style.display = "";
+  //       document.getElementById('shift-form2').style.display = "";
+  //       document.getElementById('shift-form3').style.display = "none";
+  //   }
+  //   else if(select_form == '1ヶ月分'){
+  //       document.getElementById('shift-form1').style.display = "";
+  //       document.getElementById('shift-form2').style.display = "";
+  //       document.getElementById('shift-form3').style.display = "";
+  //   }
+  // }
+  // var trigger = document.getElementById('select-term-button');
+  // trigger.onchange=viewChange;
 
 
 
