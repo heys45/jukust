@@ -376,6 +376,7 @@ console.log(main_db);
 
   var triggers = document.querySelectorAll("form_term_swich_wrapper div");
   triggers.forEach(element =>{
+    console.log(element);
     element.addEventListener("click",function(){
       for (let i = 0; i < triggers.length; i++) {
         triggers[index].style["background-color"]="red";
