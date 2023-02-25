@@ -282,7 +282,7 @@ console.log(main_db);
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sch-info")[0].after(target.getElementsByClassName("sh-info")[0]);
-      target.getElementsByClassName("sh-info")[0].innerHTML = "希望時間を設定してシフトを依頼してください";
+      target.getElementsByClassName("sh-info")[0].innerHTML = "⬇︎希望時間を設定してシフトを依頼してください";
       target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
     }
 
