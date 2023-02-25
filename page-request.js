@@ -355,6 +355,7 @@ console.log(main_db);
   var form_term_box = document.createElement("div");
   form_term_box.id="form_term_swich_wrapper";
   form_term_box.style.display="flex";
+  form_term_box.style.padding="5px";
   area_target.after(form_term_box);
 
   var form_term_swich = document.createElement("div");
