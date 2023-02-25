@@ -413,11 +413,10 @@ console.log(main_db);
       var db_info = document.getElementByIdd(db_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
     }else{
-      target.getElementsByClassName("sh-info")[0].innerHTML = "スケジュール未提出";
+      target.getElementsByClassName("sh-info")[0].remove();
     }
 
     // 参考ボックスの非表示
-    target.getElementsByClassName("sch-info")[1].remove();
     target.getElementsByClassName("ajs-info")[0].remove();
 
 
