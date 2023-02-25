@@ -186,7 +186,8 @@ console.log(main_db);
   const sc_form = document.getElementById("schedule-form");
 
   const view_form = sh_form;          //ページによって変更する
-  const death_form = sc_form;         //ページによって変更する
+
+  sc_form.remove();
 
   const forms = document.querySelectorAll('.dg');
 
@@ -344,11 +345,7 @@ console.log(main_db);
   
   })
 
-    
-
-
-
-
+  
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // フォーム提出期間変更ボタンの設定
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
