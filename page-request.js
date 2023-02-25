@@ -414,7 +414,7 @@ console.log(main_db);
         var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
       else{var time2="" }
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-      var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+      var hosoku = "<br>備考・補足｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
       else{var hosoku="" }
       var db_info ="ｽｹｼﾞｭｰﾙ "+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
@@ -436,9 +436,9 @@ console.log(main_db);
         var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
       else{var time2="" }
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-      var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+      var hosoku = "<br>備考・補足｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
       else{var hosoku="" }
-      var db_info ="依頼状況"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+      var db_info ="依頼済み"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
 
       // 依頼フォームのボックスを初期で非表示にする
