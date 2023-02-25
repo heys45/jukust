@@ -308,10 +308,12 @@ console.log(main_db);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "勤務希望時間：";
+    time_guide.style["font-weight"]="bold";
     target.getElementsByClassName("ft1")[0].before(time_guide);
 
     var hosoku_guide = document.createElement("span");
     hosoku_guide.innerHTML = "備考・補足　：";
+    hosoku_guide.style["font-weight"]="bold";
     target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
     target.getElementsByClassName("hosoku").style.width = "calc(100% - 100px)";
 
