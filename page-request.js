@@ -314,7 +314,7 @@ console.log(main_db);
     var hosoku_guide = document.createElement("span");
     hosoku_guide.innerHTML = "備考・補足　：";
     hosoku_guide.style["font-weight"]="bold";
-    time_guide.style["font-size"]="14px";
+    hosoku_guide.style["font-size"]="14px";
     target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
     target.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 105px)";
 
