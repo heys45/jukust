@@ -393,13 +393,8 @@ var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
 
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementsByName(key) !=null){
-      var sch_id =document.getElementsByName(key).id;
-      console.log(sch_id);
-      var sch_id =document.getElementsByName(key).id+"2";
-      console.log(sch_id);
-      var sch_id =document.getElementsByName(key).id+"-2";
-      console.log(sch_id);
-      var sch_info = document.getElementById(sch_id+"-2").getElementsByTagName("span")[0].innerHTML;
+      var sch_id =document.getElementsByName(key).getAttribute('id')+"-2";
+      var sch_info = document.getElementById(sch_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sch-info")[0].innerHTML = sch_info;
     }
 
