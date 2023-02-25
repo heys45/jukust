@@ -378,6 +378,7 @@ console.log(main_db);
   triggers.forEach(element =>{
     console.log(element);
     element.addEventListener("click",function(){
+      console.log(element);
       for (let i = 0; i < triggers.length; i++) {
         triggers[index].style["background-color"]="red";
       }
