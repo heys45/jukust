@@ -402,8 +402,8 @@ console.log(main_db);
 
   
     // スケジュール提出があればスケジュール情報を入れる
-    if(document.querySelectorAll("#db-3[name='"+key+"']")[0] !=null){
-      var db_id =document.querySelectorAll("#db-3[name='"+key+"']")[0].getAttribute('id');
+    if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
+      var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
       else{var status}
