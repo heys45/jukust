@@ -401,6 +401,7 @@ console.log(main_db);
 
     // スケジュール提出があればスケジュール情報を入れる
     console.log(document.getElementById("db-3")!=null);
+    console.log(document.getElementById("db-3"));
     var lemon =document.getElementById("db-3");
     console.log(key);
     console.log(lemon.getElementsByName(key));
