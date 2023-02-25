@@ -444,7 +444,7 @@ console.log(main_db);
       // 依頼フォームのボックスを初期で非表示にする
       target.getElementsByClassName("day-box-form")[0].style.display="none";
       // 依頼フォーム再表示用のボタンを用意する
-      const swich= '<div class="btn">依頼時間を<br>変更する</div><div class="btn">シフトの依頼を<br>取り消す</div>';
+      const swich= '<div class="btn">依頼時間を<br>変更する</div><div class="btn">依頼内容を<br>取り消す</div>';
       target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
     }else{
