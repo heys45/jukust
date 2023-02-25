@@ -416,14 +416,14 @@ console.log(main_db);
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
       var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
       else{var hosoku="" }
-      var db_info ="ｽｹｼﾞｭｰﾙ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+      var db_info ="ｽｹｼﾞｭｰﾙ "+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
       target.getElementsByClassName("sch-info")[0].style.color = "red";
     }
 
-    // シフト申請or確定シフトがあればシフト情報を入れる
+    // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
     if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
       var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
@@ -438,9 +438,17 @@ console.log(main_db);
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
       var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
       else{var hosoku="" }
-      var db_info ="ｼﾌﾄｽﾃｰﾀｽ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+      var db_info ="依頼状況"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+
+      // 依頼フォームのボックスを初期で非表示にする
+      target.getElementsByClassName("day-box-form")[0].style.display="none";
+      // 依頼フォーム再表示用のボタンを用意する
+      const swich= '<div class="btn">"依頼時間を<br>変更する"</div><div class="btn">"シフトの依頼を<br>取り消す"</div>';
+      target.getElementsByClassName("day-box-swich")[0].innerHTML.swich;
+
     }else{
+      target.getElementsByClassName("day-box-swich")[0].remove()
       target.getElementsByClassName("sh-info")[0].remove()
     }
 
