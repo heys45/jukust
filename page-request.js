@@ -384,7 +384,9 @@ console.log(main_db);
   // フォームを作成していく〜！！
   forms.forEach((element,index) =>{
     // 挿入する日付を用意（明日以降）
+    console.log(index);
     formdate.setDate(today.getDate() + 1+index);
+    console.log(formdate);
     var year = formdate.getFullYear();
     var month = formdate.getMonth()+1;
     var week = formdate.getDay();
