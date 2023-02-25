@@ -98,8 +98,15 @@ for( var i=0; i<tables.length; i++) {
   document.getElementById("table-9").classList.add("col-header,row-header");
   document.getElementById("table-10").style.width="100%";
   document.getElementById("table-11").style.width="100%";
+  
+  var slide_guide = document.create("p");
+  slide_guide.textContent = "表を左にスライドしてください";
+  slide_guide.style.color("red");
+  
+  document.getElementById("ユーザープロフィール").after(slide-guide);
+  document.getElementById("指導可能科目").after(slide-guide);
 
-  //var slide_guide =document.
+
 
 
 
