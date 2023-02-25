@@ -369,6 +369,59 @@ death_fd.remove();
 //   shift_form_btn.style["background-color"] ="gray";
 //   }
 
+
+  // 挿入するグーグルフォームのセットを選択
+  const forms = document.querySelectorAll('.dg');
+  const formdate =new Date();
+  forms.forEach((element,index) =>{
+    // 作成する日付を用意（明日以降）
+    formdate.setDate(formdate.getDate() + 1+index);
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;
+    var week = date.getDay();
+    var day = date.getDate();
+    var yobi= new Array("日","月","火","水","木","金","土");
+    var key = year+"/"+month+"/"+day+"("+yobi[week]+")";
+    // フォームデザインのフォーマットを用意
+    var area = document.getElementById("シフト依頼はこちらから");
+    area.after(document.getElementsByClassName("day-box")[0].cloneNode(true));
+    var target = document.getElementsByClassName("day-box")[index+1];
+
+    // 日付を入れる
+    var day_label = month+"/"+day+"<br>("+yobi[week]+")"
+    target.getElementsByClassName("day-label")[0].textContent = day_label;
+
+    // スケジュール提出があればスケジュール情報を入れる
+    if(document.getElementsByName(key) !=null){
+      var sch_id =document.getElementsByName(key).id;
+      var sch_info = document.getElementById(sch_id+"-2").getElementsByTagName("span")[0].innerHTML;
+      target.getElementsByClassName("sch-info")[0].textContent = sch_info;
+    }
+
+    // フォームを入れる
+    target.getElementsByClassName("day-box-form").appendChild(element);
+  
+  })
+
+  // 日付作成
+
+  formdays.forEach(function(formday,index){
+    var date=new Date();
+    date.setDate(date.getDate() + 1+index);
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;
+    var week = date.getDay();
+    var day = date.getDate();
+    var yobi= new Array("日","月","火","水","木","金","土");
+    var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
+    var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
+    var datelabel = document.createElement("p");
+    formday.value = date3;
+    datelabel.textContent = date2+"  [勤務可能or不可] 18:00~20:00";
+    formday.after(datelabel);
+  });
+
+
 // 日付部分
 console.log(main_db["日付"]);
 main_db["日付"].forEach((element,index)=>{
