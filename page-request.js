@@ -400,22 +400,20 @@ console.log(main_db);
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
 
     // スケジュール提出があればスケジュール情報を入れる
-    if(document.getElementsByName(key)[0] !=null){
+    if(document.getElementById("d-3").getElementsByName(key)[0] !=null){
       var db_id =document.getElementsByName(key)[0].getAttribute('id');
-
-
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
-      else{var status =null}
+      else{var status}
       if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
       var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-      else{var time1 =null}
+      else{var time1 }
       if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
         var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-      else{var time2 =null}
+      else{var time2 }
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
       var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-      else{var hosoku =null}
+      else{var hosoku }
       var db_info ="ｽｹｼﾞｭｰﾙ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
