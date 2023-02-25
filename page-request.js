@@ -400,8 +400,11 @@ console.log(main_db);
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
 
     // スケジュール提出があればスケジュール情報を入れる
+    console.log(document.getElementsByName(key));
+    console.log(document.getElementsByName(key) !=null);
     if(document.getElementsByName(key) !=null){
       var sch_id =document.getElementsByName(key)[0].getAttribute('id')+"-2";
+
       var sch_info = document.getElementById(sch_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sch-info")[0].innerHTML = sch_info;
     }else{target.getElementsByClassName("sch-info")[0].remove;}
