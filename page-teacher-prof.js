@@ -50,7 +50,6 @@ for( var i=0; i<tables.length; i++) {
 
   // 2行テーブルのデータ挿入
   var row2_table = document.querySelectorAll(".notion-table");
-
   row2_table.forEach(element=>{
     var header = element.querySelectorAll("tr")[0].querySelectorAll("td");
     var target = element.querySelectorAll("tr")[1].querySelectorAll("td");
@@ -63,12 +62,20 @@ for( var i=0; i<tables.length; i++) {
         var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
         a_target.textContent = value;
         var key = key.replace(/（.*?）/,"X"); 
-
         console.log(key);
         header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].textContent = key;
       } //空ヘッダーエラー処理
     }
   });
+
+  // テーブルサイズなど個別調整
+  document.getElementById("table-10").style.width="100%";
+  document.getElementById("table-11").style.width="100%";
+
+  //var slide_guide =document.
+
+
+
 
 
 
