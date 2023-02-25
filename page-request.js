@@ -399,8 +399,8 @@ console.log(main_db);
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
 
     // スケジュール提出があればスケジュール情報を入れる
-    if(document.getElementsByName(key).length !== 0){
-      var sch_id =document.getElementsByName(key)[0].getAttribute('id')+"-2";
+    if(document.getElementbyID("db-3").getElementsByName(key).length !== 0){
+      var sch_id =document.getElementbyID("db-3").getElementsByName(key)[0].getAttribute('id')+"-2";
       var sch_info = document.getElementById(sch_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sch-info")[0].innerHTML = sch_info;
     }else{
