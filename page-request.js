@@ -445,7 +445,7 @@ console.log(main_db);
       target.getElementsByClassName("day-box-form")[0].style.display="none";
       // 依頼フォーム再表示用のボタンを用意する
       const swich= '<div class="btn">"依頼時間を<br>変更する"</div><div class="btn">"シフトの依頼を<br>取り消す"</div>';
-      target.getElementsByClassName("day-box-swich")[0].innerHTML.swich;
+      target.getElementsByClassName("day-box-swich")[0].innerHTML(swich);
 
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove()
