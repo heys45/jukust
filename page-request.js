@@ -315,7 +315,7 @@ console.log(main_db);
     hosoku_guide.innerHTML = "備考・補足　：";
     hosoku_guide.style["font-weight"]="bold";
     target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
-    target.getElementsByClassName("hosoku").style.width = "calc(100% - 100px)";
+    target.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 100px)";
 
 
     // フォームの回答と選択肢を設定する
