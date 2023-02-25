@@ -402,9 +402,10 @@ console.log(main_db);
     // スケジュール提出があればスケジュール情報を入れる
     console.log(document.getElementById("db-3")!=null);
     var lemon =document.getElementById("db-3");
+    console.log(key);
     console.log(lemon.getElementsByName(key));
     console.log(lemon.getElementsByName(key)[0]);
-    console.log(lemon.getElementsByName(key)[0] !=null);
+    console.log(lemon.getElementsByName(key)[0] !=null);getElementsByName
     console.log(document.getElementById("db-3").getElementsByName(key)[0] !=null);
     if(document.getElementById("db-3").getElementsByName(key)[0] !=null){
       var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id');
