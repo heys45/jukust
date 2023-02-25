@@ -357,7 +357,7 @@ main_db["日付"].forEach((element,index)=>{
   target.value = element;
 })
 var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
-death_fd.remove();
+// death_fd.remove();
 
 
 
