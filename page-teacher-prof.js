@@ -52,18 +52,18 @@ for( var i=0; i<tables.length; i++) {
   var row2_table = document.querySelectorAll(".notion-table");
 
   row2_table.forEach(element=>{
-    if(element.querySelectorAll("tr")[0] !=null){//空ヘッダーエラー処理
     var header = element.querySelectorAll("tr")[0].querySelectorAll("td");
     var target = element.querySelectorAll("tr")[1].querySelectorAll("td");
     for (let index = 0; index < header.length; index++) {
-      var key = header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].innerHTML;
-      var value =prop_object[key];
-      var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
-      a_target.textContent = value;
-      var key = key.replace(/\(.*?\)/,"X");
-      console.log(key);
-      header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].textContent = key;
-    } //空ヘッダーエラー処理
+      if(header[index].querySelectorAll("span")[0] !=null){ //空ヘッダーエラー処理
+        var key = header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].innerHTML;
+        var value =prop_object[key];
+        var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
+        a_target.textContent = value;
+        var key = key.replace(/\(.*?\)/,"X");
+        console.log(key);
+        header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].textContent = key;
+      } //空ヘッダーエラー処理
     }
   });
 
