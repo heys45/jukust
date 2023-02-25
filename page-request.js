@@ -230,7 +230,6 @@ console.log(main_db);
     // 日付を入れる
     var day_label = month+"/"+day+"<br>("+yobi[week]+")"
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
-    console.log(document.getElementById("db-3").getElementsByTagName("span")[1]);
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // 一つ目のデータベースから情報を取得
@@ -362,14 +361,16 @@ console.log(main_db);
   form_term_swich.innerHTML="1週間分を<br>提出する";
   form_term_swich.id="week1";
   form_term_swich.style["background-color"]="red";
+  form_term_swich.style["width"]="33.3%";
+  form_term_swich.style["margin"]="5px";
+  form_term_swich.style["borer-radius"]="5px";
+  form_term_swich.style["text-align"]="center";
   form_term_box.appendChild(form_term_swich);
 
-  var form_term_swich = document.createElement("div");
-  form_term_swich.innerHTML="1週間分を<br>提出する";
+  form_term_swich.innerHTML="2週間分を<br>提出する";
   form_term_swich.id="week2";
   form_term_box.appendChild(form_term_swich);
 
-  var form_term_swich = document.createElement("div");
   form_term_swich.innerHTML="1ヶ月分を<br>提出する";
   form_term_swich.id="week4";
   form_term_box.appendChild(form_term_swich);
