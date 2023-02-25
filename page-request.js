@@ -418,6 +418,7 @@ console.log(main_db);
       else{var hosoku="" }
       var db_info ="ｽｹｼﾞｭｰﾙ "+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
+      target.getElementsByClassName("sch-info")[0].style["font-weight"] = "bold";
     }else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
       target.getElementsByClassName("sch-info")[0].style.color = "red";
@@ -440,6 +441,9 @@ console.log(main_db);
       else{var hosoku="" }
       var db_info ="依頼済み"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+
+      target.getElementsByClassName("sch-info")[0].style["font-weight"] = "";
+      target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
 
       // 依頼フォームのボックスを初期で非表示にする
       target.getElementsByClassName("day-box-form")[0].style.display="none";
