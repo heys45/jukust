@@ -373,8 +373,16 @@ var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
   // 挿入するグーグルフォームのセットを選択
   const forms = document.querySelectorAll('.dg');
   const formdate =new Date();
+  // 出力する場所を用意
+  var area_target = document.getElementById("シフト依頼はこちらから");
+  var form_area = document.createElement("div");
+  form_area.setAttribute("id","form-area");
+  area_target.after(form_area);
+
+
+  // フォームを作成していく〜！！
   forms.forEach((element,index) =>{
-    // 作成する日付を用意（明日以降）
+    // 挿入する日付を用意（明日以降）
     formdate.setDate(formdate.getDate() + 1+index);
     var year = formdate.getFullYear();
     var month = formdate.getMonth()+1;
@@ -383,8 +391,7 @@ var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
     var yobi= new Array("日","月","火","水","木","金","土");
     var key = year+"/"+month+"/"+day+"("+yobi[week]+")";
     // フォームデザインのフォーマットを用意
-    var area = document.getElementById("シフト依頼はこちらから");
-    area.after(document.getElementsByClassName("day-box")[0].cloneNode(true));
+    form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
     var target = document.getElementsByClassName("day-box")[index+1];
 
     // 日付を入れる
