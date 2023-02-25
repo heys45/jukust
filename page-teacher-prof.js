@@ -61,6 +61,7 @@ for( var i=0; i<tables.length; i++) {
       var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
       a_target.textContent = value;
       var key = key.replace(/\(.*?\)/,"X");
+      console.log(key);
       header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].textContent = key;
     } //空ヘッダーエラー処理
     }
