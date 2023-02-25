@@ -285,6 +285,8 @@ for( var i=0; i<dbs.length; i++) {
   const rows = dbs[i].getElementsByTagName("tr")
   //行にIDを付与する 
   for( var j=0; j<rows.length; j++) {
+  var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+  rows[j].setAttribute("name",name);
   var name = "db-"+(i+1)+"-"+(j+1);
   rows[j].setAttribute("id",name);
   
