@@ -376,10 +376,10 @@ var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
   forms.forEach((element,index) =>{
     // 作成する日付を用意（明日以降）
     formdate.setDate(formdate.getDate() + 1+index);
-    var year = date.getFullYear();
-    var month = date.getMonth()+1;
-    var week = date.getDay();
-    var day = date.getDate();
+    var year = formdate.getFullYear();
+    var month = formdate.getMonth()+1;
+    var week = formdate.getDay();
+    var day = formdate.getDate();
     var yobi= new Array("日","月","火","水","木","金","土");
     var key = year+"/"+month+"/"+day+"("+yobi[week]+")";
     // フォームデザインのフォーマットを用意
