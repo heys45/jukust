@@ -59,14 +59,15 @@ for( var i=0; i<tables.length; i++) {
           if(prop_object[key] !=null){ //空バリュー（notion_prop）エラー処理
             var value =prop_object[key];
             console.log(value);
-            var value = value.replace(/1/,"指導可能"); 
+            var value = value.replace(/1/,"✅指導可能"); 
             var value = value.replace(/0/,"-"); 
             var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
             a_target.textContent = value;
-            var key = key.replace(/（.*?）/,"X"); 
-            console.log(key);
-            header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].textContent = key;
+
           }//空バリュー（notion_prop）エラー処理
+        var key = key.replace(/（.*?）/,"X"); 
+        console.log(key);
+        header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].textContent = key;
       } //空ヘッダーエラー処理
     }
   });
