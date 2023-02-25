@@ -400,11 +400,20 @@ console.log(main_db);
 
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementbyID("db-3").getElementsByName(key).length !== 0){
-      var sch_id =document.getElementbyID("db-3").getElementsByName(key)[0].getAttribute('id')+"-2";
-      var sch_info = document.getElementById(sch_id).getElementsByTagName("span")[0].innerHTML;
-      target.getElementsByClassName("sch-info")[0].innerHTML = sch_info;
+      var db_id =document.getElementbyID("db-3").getElementsByName(key)[0].getAttribute('id')+"-2";
+      var db_info = document.getElementByIdd(db_id).getElementsByTagName("span")[0].innerHTML;
+      target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
+    }
+
+    // シフト申請or確定シフトがあればシフト情報を入れる
+    if(document.getElementbyID("db-4").getElementsByName(key).length !== 0){
+      var db_id =document.getElementbyID("db-4").getElementsByName(key)[0].getAttribute('id')+"-2";
+      var db_info = document.getElementByIdd(db_id).getElementsByTagName("span")[0].innerHTML;
+      target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+    }else{
+      target.getElementsByClassName("sh-info")[0].innerHTML = "スケジュール未提出";
     }
 
     // 参考ボックスの非表示
