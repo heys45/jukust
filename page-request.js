@@ -381,14 +381,14 @@ console.log(main_db);
   var triggers = document.querySelectorAll("form_term_swich_wrapper div");
   triggers.forEach(element =>{
     console.log(element);
-    element.addEventListener("click",function(){
+    element.addEventListener('click',function(){
       console.log(element);
       for (let i = 0; i < triggers.length; i++) {
         triggers[index].style["background-color"]="red";
       }
     element.style["background-color"]="blue";
-    },false);
-  })
+    });
+  });
 
 
   // const select_term = document.getElementsByClassName("select-term")[0];
