@@ -354,30 +354,35 @@ console.log(main_db);
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
   var form_term_box = document.createElement("div");
-  form_term_box.id("form_term_swich_wrapper");
+  form_term_box.id="form_term_swich_wrapper";
   form_term_box.style.display="flex";
   area_target.after(form_term_box);
 
   var form_term_swich = document.createElement("div");
   form_term_swich.innerHTML="1週間分を<br>提出する";
-  form_term_swich.id("week1");
+  form_term_swich.id="week1";
   form_term_swich.style["background-color"]="red";
   form_term_box.appendChild(form_term_swich);
 
   var form_term_swich = document.createElement("div");
   form_term_swich.innerHTML="1週間分を<br>提出する";
-  form_term_swich.id("week2");
+  form_term_swich.id="week2";
   form_term_box.appendChild(form_term_swich);
 
   var form_term_swich = document.createElement("div");
   form_term_swich.innerHTML="1ヶ月分を<br>提出する";
-  form_term_swich.id("week4");
+  form_term_swich.id="week4";
   form_term_box.appendChild(form_term_swich);
 
-
-
-  
-
+  var triggers = document.querySelectorAll("form_term_swich_wrapper div");
+  triggers.forEach(element =>{
+    element.addEventListener("click",function(){
+      for (let i = 0; i < triggers.length; i++) {
+        triggers[index].style["background-color"]="red";
+      }
+    element.style["background-color"]="blue";
+    },false);
+  })
 
 
   // const select_term = document.getElementsByClassName("select-term")[0];
