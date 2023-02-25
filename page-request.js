@@ -383,7 +383,7 @@ console.log(main_db);
   // フォームを作成していく〜！！
   forms.forEach((element,index) =>{
     // 挿入する日付を用意（明日以降）
-    formdate.setDate(formdate() + 1);
+    formdate.setDate(formdate.getDate() + 1);
     console.log(formdate);
     var year = formdate.getFullYear();
     var month = formdate.getMonth()+1;
