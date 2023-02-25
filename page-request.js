@@ -397,8 +397,7 @@ console.log(main_db);
     // 日付を入れる
     var day_label = month+"/"+day+"<br>("+yobi[week]+")"
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
-getElementByID
-get
+
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementById("db-3").getElementsByName(key).length !== 0){
       var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id')+"-2";
