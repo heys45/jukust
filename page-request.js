@@ -388,7 +388,7 @@ console.log(main_db);
       // 共通処理
       console.log(element);
       for (let i = 0; i < triggers.length; i++) {
-        triggers[index].style["background-color"]="red";
+        triggers[i].style["background-color"]="red";
       }
       element.style["background-color"]="blue";
       for (let j = 0; j < 30; j++) {
