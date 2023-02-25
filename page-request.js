@@ -439,10 +439,9 @@ console.log(main_db);
       var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
       else{var hosoku="" }
       var db_info ="ｼﾌﾄｽﾃｰﾀｽ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
-      target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
+      target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
     }else{
-      target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
-      target.getElementsByClassName("sch-info")[0].style.color = "red";
+      target.getElementsByClassName("sh-info")[0].remove()
     }
 
     // 参考ボックスの非表示
