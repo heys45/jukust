@@ -405,6 +405,8 @@ console.log(main_db);
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
+      target.getElementsByClassName("sch-info")[0].style.color("red");
+
     }
 
     // シフト申請or確定シフトがあればシフト情報を入れる
