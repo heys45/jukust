@@ -401,8 +401,14 @@ console.log(main_db);
 
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementById("db-3").getElementsByName(key)[0].length !=null){
-      var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id')+"-2";
-      var db_info = document.getElementById(db_id).getElementsByTagName("span")[0].innerHTML;
+      var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id');
+
+      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
+      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;
+      var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;
+      var hosoku = document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;
+        if(hosoku !=null){hosoku = "<br>"+hosoku;} 
+      var db_info = "<span>"+status+"</span>"+"｜"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
