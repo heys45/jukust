@@ -384,7 +384,6 @@ console.log(main_db);
   forms.forEach((element,index) =>{
     // 挿入する日付を用意（明日以降）
     formdate.setDate(formdate.getDate() + 1);
-    console.log(formdate);
     var year = formdate.getFullYear();
     var month = formdate.getMonth()+1;
     var week = formdate.getDay();
@@ -402,10 +401,11 @@ console.log(main_db);
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementsByName(key).length !== 0){
       var sch_id =document.getElementsByName(key)[0].getAttribute('id')+"-2";
-
       var sch_info = document.getElementById(sch_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sch-info")[0].innerHTML = sch_info;
-    }else{target.getElementsByClassName("sch-info")[0].remove();}
+    }else{
+      target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
+    }
 
     // フォームを入れる
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
