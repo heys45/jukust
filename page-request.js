@@ -190,6 +190,15 @@ console.log(main_db);
 
   const forms = document.querySelectorAll('.dg');
 
+  // フォーム初期値の設定
+  document.getElementById("teaid").value = prop_object["講師ID"];
+  document.getElementById("schid").value = prop_object["教室ID"];
+
+  // フォーム不要項目の非表示
+  const death_prop = document.querySelectorAll(".adj,.fs,.fd");
+  death_prop.forEach(element=>{  element.style.display = 'none';  });
+
+
   // 出力する場所を用意
   var area_target = document.getElementById("シフト依頼はこちらから").nextElementSibling;
   var form_area = document.createElement("div");
@@ -294,150 +303,46 @@ console.log(main_db);
     // フォームの中身を調整する
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 
-
-
-    // フォームを入れる
+    // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "勤務希望時間：";
+    target.getElementsByClassName("ft1")[0].before(time_guide);
+
+    var hosoku_guide = document.createElement("span");
+    hosoku_guide.innerHTML = "備考・補足　：";
+    target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
+    target.getElementsByClassName("hosoku").style.width = "calc(100% - 100px)";
+
+
+    // フォームの回答と選択肢を設定する
+    target.getElementsByClassName("fd")[0].value =key;
+
+    var values =["講師回答前", "勤務確定", "勤務不可", "調整中"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.textContent = element;
+      target.getElementsByClassName("fs")[0].appendChild(option);
+    });
+
+    var values = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"]
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.textContent = element;
+      target.getElementsByClassName("ft1")[0].appendChild(option);
+    });
+
+    var values = ["","10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"]
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.textContent = element;
+      target.getElementsByClassName("ft2")[0].appendChild(option);
+    });
   
   })
 
-
-
-
-    // フォームプロパティ非表示設定
-    const death_prop = document.querySelectorAll(".adj,.fs,.fd");
-    death_prop.forEach(element=>{
-    element.style.display = 'none';
-    });
-
-    // フォーム見出し設定
-    // ステータス欄の設定
-    const fssa = document.querySelectorAll('.fs2');
-    fssa.forEach(element =>{
-      var datelabel = document.createElement("div");
-      datelabel.style.width ="100%";
-      element.before(datelabel);
-      var datelabel = document.createElement("span");
-      datelabel.textContent = "ステータス：";
-      element.before(datelabel);
-      var datelabel = document.createElement("span");
-      datelabel.textContent = "　";
-      element.after(datelabel);
-    });
-
-    // 調整希望時間の設定
-    const adft1s = document.querySelectorAll('.ft1');
-    adft1s.forEach(element =>{
-      var datelabel = document.createElement("span");
-      datelabel.textContent = "勤務希望時間：";
-      element.before(datelabel);
-      var datelabel = document.createElement("span");
-      datelabel.textContent = "〜";
-      element.after(datelabel);
-    });
-
-    // 補足欄の設定
-    const hosokus = document.querySelectorAll('.hosoku');
-    hosokus.forEach(element =>{
-      var datelabel = document.createElement("div");
-      datelabel.style.width = "100%";
-      element.before(datelabel);
-      element.style.width = "calc(100% - 100px)";
-      var datelabel = document.createElement("span");
-      datelabel.textContent = "備考・補足：";
-      element.before(datelabel);
-    });
-
-
-    //フォームのプルダウン値設定
-    // //日付部分
-    // const formdays = document.querySelectorAll('.fd');
-    // //グループごとにidにプロパティ名を設定
-    // formdays.forEach(function(formday,index){
-    //   var date=new Date();
-    //   date.setDate(date.getDate() + 1+index);
-    //   var year = date.getFullYear();
-    //   var month = date.getMonth()+1;
-    //   var week = date.getDay();
-    //   var day = date.getDate();
-    //   var yobi= new Array("日","月","火","水","木","金","土");
-    //   var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
-    //   var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
-    //   var datelabel = document.createElement("p");
-    //   formday.value = date3;
-    //   datelabel.textContent = date2+"  [勤務可能or不可] 18:00~20:00";
-    //   formday.after(datelabel);
-    // });
     
-    
-    //開始時刻
-    const ft1s = document.querySelectorAll('.ft1');
-    var times = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"]
-    ft1s.forEach(function(ft1){
-    times.forEach(function(time){
-      var option = document.createElement('option');
-      option.textContent = time;
-      ft1.appendChild(option);
-    });
-    });
-    //終了時刻
-    const ft2s = document.querySelectorAll('.ft2');
-    var times2 = ["","10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"]
-    ft2s.forEach(function(ft2){
-    times2.forEach(function(time){
-      var option = document.createElement('option');
-      option.textContent = time;
-      ft2.appendChild(option);
-    });
-    });
-
-    // //開始調整時刻の設定
-    // const adt1s = document.querySelectorAll('.adft1');
-    // adt1s.forEach(function(ft1){
-    // times.forEach(function(time){
-    //   var option = document.createElement('option');
-    //   option.textContent = time;
-    //   ft1.appendChild(option);
-    // });
-    // });
-    // //終了調整時刻の設定
-    // const adt2s = document.querySelectorAll('.adft2');
-    // adt2s.forEach(function(ft2){
-    // times2.forEach(function(time){
-    //   var option = document.createElement('option');
-    //   option.textContent = time;
-    //   ft2.appendChild(option);
-    // });
-    // });
-    // ステータス
-    const fss = document.querySelectorAll('.fs');
-    var sta = ["講師回答前", "勤務確定", "勤務不可", "調整中"]
-    fss.forEach(function(fs){
-    sta.forEach(function(time){
-      var option = document.createElement('option');
-      option.textContent = time;
-      fs.appendChild(option);
-    });
-    });
-    // //スケジュール用ステータス
-    // const fs2s = document.querySelectorAll('.fs2');
-    // var sta2 = ["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"]
-    // fs2s.forEach(function(fs){
-    // sta2.forEach(function(sta2){
-    //   var option = document.createElement('option');
-    //   option.textContent = sta2;
-    //   option.value = sta2;
-    //   fs.appendChild(option);
-    // });
-    // });
-    
-    // フォーム初期値設定
-    document.getElementById("teaid").value = prop_object["講師ID"];
-    document.getElementById("schid").value = prop_object["教室ID"];
-
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // ステータスボタンの色設定
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
 
