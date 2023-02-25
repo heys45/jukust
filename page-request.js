@@ -368,10 +368,12 @@ console.log(main_db);
   form_term_swich.style["text-align"]="center";
   form_term_box.appendChild(form_term_swich);
 
+  var form_term_swich = form_term_swich.cloneNode(true);
   form_term_swich.innerHTML="2週間分を<br>提出する";
   form_term_swich.id="week2";
   form_term_box.appendChild(form_term_swich);
 
+  var form_term_swich = form_term_swich.cloneNode(true);
   form_term_swich.innerHTML="1ヶ月分を<br>提出する";
   form_term_swich.id="week4";
   form_term_box.appendChild(form_term_swich);
