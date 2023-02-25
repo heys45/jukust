@@ -408,7 +408,7 @@ console.log(main_db);
     console.log(lemon.getElementsByName(key)[0]);
     console.log(lemon.getElementsByName(key)[0] !=null);
     console.log(document.getElementById("db-3").getElementsByName(key)[0] !=null);
-    if(document.getElementById("db-3").getElementsByName(key)[0] !=null){
+    if(document.querySelectorAll("db-3").getElementsByName(key)[0] !=null){
       var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id');
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
       var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;
