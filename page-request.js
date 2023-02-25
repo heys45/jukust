@@ -405,7 +405,7 @@ console.log(main_db);
     console.log(key);
     console.log(lemon.getElementsByName(key));
     console.log(lemon.getElementsByName(key)[0]);
-    console.log(lemon.getElementsByName(key)[0] !=null);getElementsByName
+    console.log(lemon.getElementsByName(key)[0] !=null);
     console.log(document.getElementById("db-3").getElementsByName(key)[0] !=null);
     if(document.getElementById("db-3").getElementsByName(key)[0] !=null){
       var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id');
