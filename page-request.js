@@ -399,7 +399,7 @@ console.log(main_db);
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
 
     // スケジュール提出があればスケジュール情報を入れる
-    if(document.getElementById("db-3").getElementsByName(key).length !== 0){
+    if(document.getElementById("db-3").getElementsByName(key)[0].length !== 0){
       var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id')+"-2";
       var db_info = document.getElementById(db_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
@@ -410,7 +410,7 @@ console.log(main_db);
     }
 
     // シフト申請or確定シフトがあればシフト情報を入れる
-    if(document.getElementById("db-4").getElementsByName(key).length !== 0){
+    if(document.getElementById("db-4").getElementsByName(key)[0].length !== 0){
       var db_id =document.getElementById("db-4").getElementsByName(key)[0].getAttribute('id')+"-2";
       var db_info = document.getElementById(db_id).getElementsByTagName("span")[0].innerHTML;
       target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
