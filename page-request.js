@@ -207,7 +207,6 @@ console.log(main_db);
   area_target.after(form_area);
 
   view_form.style.display = 'block';
-  death_form.remove();
 
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
