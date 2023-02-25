@@ -395,7 +395,7 @@ var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
     if(document.getElementsByName(key) !=null){
       var sch_id =document.getElementsByName(key).id;
       var sch_info = document.getElementById(sch_id+"-2").getElementsByTagName("span")[0].innerHTML;
-      target.getElementsByClassName("sch-info")[0].textContent = sch_info;
+      target.getElementsByClassName("sch-info")[0].innerHTML = sch_info;
     }
 
     // フォームを入れる
