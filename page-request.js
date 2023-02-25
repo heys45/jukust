@@ -196,7 +196,7 @@ console.log(main_db);
   document.getElementById("schid").value = prop_object["教室ID"];
 
   // フォーム不要項目の非表示
-  const death_prop = document.querySelectorAll(".adj,.fs");
+  const death_prop = document.querySelectorAll(".fd,.adj,.fs");
   death_prop.forEach(element=>{  element.style.display = 'none';  });
 
 
@@ -314,8 +314,9 @@ console.log(main_db);
     var hosoku_guide = document.createElement("span");
     hosoku_guide.innerHTML = "備考・補足　：";
     hosoku_guide.style["font-weight"]="bold";
+    time_guide.style["font-size"]="14px";
     target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
-    target.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 100px)";
+    target.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 105px)";
 
 
     // フォームの回答と選択肢を設定する
