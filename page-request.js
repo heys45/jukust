@@ -400,7 +400,7 @@ console.log(main_db);
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
 
     // スケジュール提出があればスケジュール情報を入れる
-    if(document.getElementById("d-3").getElementsByName(key)[0] !=null){
+    if(document.getElementById("db-3").getElementsByName(key)[0] !=null){
       var db_id =document.getElementsByName(key)[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
