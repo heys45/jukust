@@ -406,16 +406,16 @@ console.log(main_db);
       var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
-      else{var status}
+      else{var status=""}
       if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
       var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-      else{var time1 }
+      else{var time1="" }
       if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
         var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-      else{var time2 }
+      else{var time2="" }
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
       var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-      else{var hosoku }
+      else{var hosoku="" }
       var db_info ="ｽｹｼﾞｭｰﾙ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
@@ -428,16 +428,16 @@ console.log(main_db);
       var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
-      else{var status}
+      else{var status=""}
       if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
       var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-      else{var time1 }
+      else{var time1="" }
       if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
         var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-      else{var time2 }
+      else{var time2="" }
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
       var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-      else{var hosoku }
+      else{var hosoku="" }
       var db_info ="ｼﾌﾄｽﾃｰﾀｽ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
