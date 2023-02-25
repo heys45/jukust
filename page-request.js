@@ -47,50 +47,259 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       });
 
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム提出期間変更ボタンの設定
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // const select_term = document.getElementsByClassName("select-term")[0];
-    // select_term.style.display = 'block';
-    // function viewChange(){
-    //   var select_form = document.getElementById('select-term-button').value;
-    //   console.log(select_form);
-    //   if(select_form == '１週間分'){
-    //       document.getElementById('shift-form1').style.display = "";
-    //       document.getElementById('shift-form2').style.display = "none";
-    //       document.getElementById('shift-form3').style.display = "none";
-    //   }else if(select_form == '2週間分'){
-    //       document.getElementById('shift-form1').style.display = "";
-    //       document.getElementById('shift-form2').style.display = "";
-    //       document.getElementById('shift-form3').style.display = "none";
-    //   }
-    //   else if(select_form == '1ヶ月分'){
-    //       document.getElementById('shift-form1').style.display = "";
-    //       document.getElementById('shift-form2').style.display = "";
-    //       document.getElementById('shift-form3').style.display = "";
-    //   }
-    // }
-    // var trigger = document.getElementById('select-term-button');
-    // trigger.onchange=viewChange;
 
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム表示設定代項目
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // 使用するフォームの選択
-    const sh_form = document.getElementById("shift-form");
-    const sc_form = document.getElementById("schedule-form");
 
-    const view_form = sh_form;          //ページによって変更する
-    const death_form = sc_form;         //ページによって変更する
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// テーブルの番号づけ
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-    // 表示位置の設定
-    var quote_name = "シフト依頼はこちらから";
-    var form_area = document.getElementById("form-area");
-    var position = document.getElementById(quote_name).nextElementSibling;
-    position.after(form_area);
-    view_form.style.display = 'block';
-    death_form.remove();
+// //テーブルをまとめて取得
+// const tables = document.querySelectorAll('.notion-table');
+// //テーブルにIDを付与する 
+// for( var i=0; i<tables.length; i++) {
+//   console.log(tables[i]);
+//   var name = "table-"+(i+1);
+//   console.log(name);
+//   tables[i].setAttribute("id",name);
+  
+//   //行をまとめて取得
+//   const rows = tables[i].getElementsByTagName("tr");
+//   //行にIDを付与する 
+//   for( var j=0; j<rows.length; j++) {
+//   console.log(rows[j]);
+//   var name = "table-"+(i+1)+"-"+(j+1);
+//   console.log(name);
+//   rows[j].setAttribute("id",name);
+  
+//   //列をまとめて取得
+//   const columns =rows[j].getElementsByTagName("td");
+//   const columnhs =rows[j].getElementsByTagName("th");
+//   //列にIDを付与する 
+//   for( var k=0; k<columns.length; k++) {
+//   console.log(columns[k]);
+//   var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+//   console.log(name);
+//   columns[k].setAttribute("id",name);
+//   }
+//   for( var k=0; k<columnhs.length; k++) {
+//     console.log(columnhs[k]);
+//     var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+//     console.log(name);
+//     columnhs[k].setAttribute("id",name);
+
+//     }
+//   }
+// }
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベースの番号づけ
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+//テーブルをまとめて取得
+const dbs = document.querySelectorAll('.notion-collection-table');
+//テーブルにIDを付与する 
+for( var i=0; i<dbs.length; i++) {
+  var name = "db-"+(i+1);
+  dbs[i].setAttribute("id",name);
+  
+  //行をまとめて取得
+  const rows = dbs[i].getElementsByTagName("tr")
+  //行にIDを付与する 
+  for( var j=0; j<rows.length; j++) {
+  if(j != 0){
+  var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+  rows[j].setAttribute("name",name);
+  }
+  var name = "db-"+(i+1)+"-"+(j+1);
+  rows[j].setAttribute("id",name);
+  
+  //列をまとめて取得
+  const columns =rows[j].getElementsByTagName("td")
+  const columnhs =rows[j].getElementsByTagName("th");
+  //列にIDを付与する 
+  for( var k=0; k<columns.length; k++) {
+  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  columns[k].setAttribute("id",name);
+  }
+  for( var k=0; k<columnhs.length; k++) {
+  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  columnhs[k].setAttribute("id",name);
+
+  }
+  }
+}
+
+//DB書き換え処理
+document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
+document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベースの値取得
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+var main_db ={};
+var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
+var db_header = document.getElementById("db-3-1").querySelectorAll("th");
+console.log(db_header);
+db_header.forEach(element => {
+  main_db[element.innerHTML] =[];
+});
+var nullspan = document.createElement("span");
+db_data.forEach(element => {
+  var a_db_data = element.querySelectorAll("td");
+  console.log(a_db_data);
+  for (let index = 0; index < db_header.length; index++) {
+    a_db_data[index].appendChild(nullspan);
+    var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
+    if (a_db_data_n.getElementsByTagName("span")[0] !=null) {// spanが二段階の時
+      var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
+      var a_db_data_n =  a_db_data_n.innerHTML;
+      main_db[db_header[index].innerHTML].push(a_db_data_n);
+    }else{// spanが一段階の時
+      var a_db_data_n =  a_db_data_n.innerHTML;
+      main_db[db_header[index].innerHTML].push(a_db_data_n);
+    }
+  }
+});
+console.log(main_db);
+
+
+
+//フォーム送信後の処理
+// var shift_form_btn = document.getElementById("schedule-form-btn");
+// shift_form_btn.addEventListener('click', shift_form);
+// function shift_form() {
+//   document.getElementById('shift-form-comp').style.display = 'block';
+//   shift_form_btn.style["background-color"] ="gray";
+//   }
+
+
+
+
+
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // フォーム表示設定代項目
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // 使用するフォームの選択
+  const sh_form = document.getElementById("shift-form");
+  const sc_form = document.getElementById("schedule-form");
+
+  const view_form = sh_form;          //ページによって変更する
+  const death_form = sc_form;         //ページによって変更する
+
+  const forms = document.querySelectorAll('.dg');
+
+  // 出力する場所を用意
+  var area_target = document.getElementById("シフト依頼はこちらから").nextElementSibling;
+  var form_area = document.createElement("div");
+  form_area.setAttribute("id","form-area");
+  area_target.after(form_area);
+
+  view_form.style.display = 'block';
+  death_form.remove();
+
+
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // フォームボックスの作成
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  const formdate =new Date();
+  forms.forEach((element,index) =>{
+    // 挿入する日付を用意（明日以降）
+    formdate.setDate(formdate.getDate() + 1);
+    var year = formdate.getFullYear();
+    var month = formdate.getMonth()+1;
+    var week = formdate.getDay();
+    var day = formdate.getDate();
+    var yobi= new Array("日","月","火","水","木","金","土");
+    var key = year+"/"+month+"/"+day+"("+yobi[week]+")";
+    // フォームデザインのフォーマットを用意
+    form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
+    var target = document.getElementsByClassName("day-box")[index+1];
+    target.style.display = "flex";
+
+    // 日付を入れる
+    var day_label = month+"/"+day+"<br>("+yobi[week]+")"
+    target.getElementsByClassName("day-label")[0].innerHTML = day_label;
+    console.log(document.getElementById("db-3").getElementsByTagName("span")[1]);
+
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // 一つ目のデータベースから情報を取得
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+    // スケジュール提出があればスケジュール情報を入れる
+    if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
+      var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
+      if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
+      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
+      else{var status=""}
+      if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
+      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
+      else{var time1="" }
+      if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
+        var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
+      else{var time2="" }
+      if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
+      var hosoku = "<br>備考・補足｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+      else{var hosoku="" }
+      var db_info ="ｽｹｼﾞｭｰﾙ "+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+      target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
+      target.getElementsByClassName("sch-info")[0].style["font-weight"] = "bold";
+    }else{
+      target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
+      target.getElementsByClassName("sch-info")[0].style.color = "red";
+    }
+
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // 二つ目のデータベースから情報を取得
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+    // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
+    if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
+      var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
+      if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
+      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
+      else{var status=""}
+      if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
+      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
+      else{var time1="" }
+      if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
+        var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
+      else{var time2="" }
+      if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
+      var hosoku = "<br>備考・補足｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+      else{var hosoku="" }
+      var db_info ="依頼済み"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+      target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+
+      target.getElementsByClassName("sch-info")[0].style["font-weight"] = "";
+      target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
+
+      // 依頼フォームのボックスを初期で非表示にする
+      target.getElementsByClassName("day-box-form")[0].style.display="none";
+      // 依頼フォーム再表示用のボタンを用意する
+      const swich= '<div class="btn">依頼時間を<br>変更する</div><div class="btn">依頼内容を<br>取り消す</div>';
+      target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+
+    }else{
+      target.getElementsByClassName("day-box-swich")[0].remove()
+      target.getElementsByClassName("sh-info")[0].remove()
+    }
+
+    // 参考ボックスの非表示
+    target.getElementsByClassName("ajs-info")[0].remove();
+
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // フォームの中身を調整する
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+
+
+
+    // フォームを入れる
+    target.getElementsByClassName("day-box-form")[0].appendChild(element);
+  
+  })
+
+
+
 
     // フォームプロパティ非表示設定
     const death_prop = document.querySelectorAll(".adj,.fs,.fd");
@@ -228,281 +437,36 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// テーブルの番号づけ
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-// //テーブルをまとめて取得
-// const tables = document.querySelectorAll('.notion-table');
-// //テーブルにIDを付与する 
-// for( var i=0; i<tables.length; i++) {
-//   console.log(tables[i]);
-//   var name = "table-"+(i+1);
-//   console.log(name);
-//   tables[i].setAttribute("id",name);
-  
-//   //行をまとめて取得
-//   const rows = tables[i].getElementsByTagName("tr");
-//   //行にIDを付与する 
-//   for( var j=0; j<rows.length; j++) {
-//   console.log(rows[j]);
-//   var name = "table-"+(i+1)+"-"+(j+1);
-//   console.log(name);
-//   rows[j].setAttribute("id",name);
-  
-//   //列をまとめて取得
-//   const columns =rows[j].getElementsByTagName("td");
-//   const columnhs =rows[j].getElementsByTagName("th");
-//   //列にIDを付与する 
-//   for( var k=0; k<columns.length; k++) {
-//   console.log(columns[k]);
-//   var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-//   console.log(name);
-//   columns[k].setAttribute("id",name);
-//   }
-//   for( var k=0; k<columnhs.length; k++) {
-//     console.log(columnhs[k]);
-//     var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-//     console.log(name);
-//     columnhs[k].setAttribute("id",name);
-
-//     }
-//   }
-// }
-
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベースの番号づけ
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-//テーブルをまとめて取得
-const dbs = document.querySelectorAll('.notion-collection-table');
-//テーブルにIDを付与する 
-for( var i=0; i<dbs.length; i++) {
-  var name = "db-"+(i+1);
-  dbs[i].setAttribute("id",name);
-  
-  //行をまとめて取得
-  const rows = dbs[i].getElementsByTagName("tr")
-  //行にIDを付与する 
-  for( var j=0; j<rows.length; j++) {
-  if(j != 0){
-  var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-  rows[j].setAttribute("name",name);
-  }
-  var name = "db-"+(i+1)+"-"+(j+1);
-  rows[j].setAttribute("id",name);
-  
-  //列をまとめて取得
-  const columns =rows[j].getElementsByTagName("td")
-  const columnhs =rows[j].getElementsByTagName("th");
-  //列にIDを付与する 
-  for( var k=0; k<columns.length; k++) {
-  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-  columns[k].setAttribute("id",name);
-  }
-  for( var k=0; k<columnhs.length; k++) {
-  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-  columnhs[k].setAttribute("id",name);
-
-  }
-  }
-}
-
-//DB書き換え処理
-document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
-document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
-
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベースの値取得
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-var main_db ={};
-var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
-var db_header = document.getElementById("db-3-1").querySelectorAll("th");
-console.log(db_header);
-db_header.forEach(element => {
-  main_db[element.innerHTML] =[];
-});
-var nullspan = document.createElement("span");
-db_data.forEach(element => {
-  var a_db_data = element.querySelectorAll("td");
-  console.log(a_db_data);
-  for (let index = 0; index < db_header.length; index++) {
-    a_db_data[index].appendChild(nullspan);
-    var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
-    if (a_db_data_n.getElementsByTagName("span")[0] !=null) {// spanが二段階の時
-      var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
-      var a_db_data_n =  a_db_data_n.innerHTML;
-      main_db[db_header[index].innerHTML].push(a_db_data_n);
-    }else{// spanが一段階の時
-      var a_db_data_n =  a_db_data_n.innerHTML;
-      main_db[db_header[index].innerHTML].push(a_db_data_n);
-    }
-  }
-});
-console.log(main_db);
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベース由来のフォーム作成
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-// // 日付部分
-// main_db["日付"].forEach((element,index)=>{
-//   var datelabel = document.createElement("p");
-//   datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
-//   var target = document.getElementsByClassName("fd")[index];
-//   target.parentNode.classList.add("view-dg");
-//   target.before(datelabel);
-//   target.value = element;
-// })
-// var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
-// // death_fd.remove();
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // フォーム提出期間変更ボタンの設定
+    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    // const select_term = document.getElementsByClassName("select-term")[0];
+    // select_term.style.display = 'block';
+    // function viewChange(){
+    //   var select_form = document.getElementById('select-term-button').value;
+    //   console.log(select_form);
+    //   if(select_form == '１週間分'){
+    //       document.getElementById('shift-form1').style.display = "";
+    //       document.getElementById('shift-form2').style.display = "none";
+    //       document.getElementById('shift-form3').style.display = "none";
+    //   }else if(select_form == '2週間分'){
+    //       document.getElementById('shift-form1').style.display = "";
+    //       document.getElementById('shift-form2').style.display = "";
+    //       document.getElementById('shift-form3').style.display = "none";
+    //   }
+    //   else if(select_form == '1ヶ月分'){
+    //       document.getElementById('shift-form1').style.display = "";
+    //       document.getElementById('shift-form2').style.display = "";
+    //       document.getElementById('shift-form3').style.display = "";
+    //   }
+    // }
+    // var trigger = document.getElementById('select-term-button');
+    // trigger.onchange=viewChange;
 
 
 
-//フォーム送信後の処理
-// var shift_form_btn = document.getElementById("schedule-form-btn");
-// shift_form_btn.addEventListener('click', shift_form);
-// function shift_form() {
-//   document.getElementById('shift-form-comp').style.display = 'block';
-//   shift_form_btn.style["background-color"] ="gray";
-//   }
-
-
-  // 挿入するグーグルフォームのセットを選択
-  const forms = document.querySelectorAll('.dg');
-  const formdate =new Date();
-  // 出力する場所を用意
-  var area_target = document.getElementById("シフト依頼はこちらから");
-  var form_area = document.createElement("div");
-  form_area.setAttribute("id","form-area");
-  area_target.after(form_area);
-
-
-  // フォームを作成していく〜！！
-  forms.forEach((element,index) =>{
-    // 挿入する日付を用意（明日以降）
-    formdate.setDate(formdate.getDate() + 1);
-    var year = formdate.getFullYear();
-    var month = formdate.getMonth()+1;
-    var week = formdate.getDay();
-    var day = formdate.getDate();
-    var yobi= new Array("日","月","火","水","木","金","土");
-    var key = year+"/"+month+"/"+day+"("+yobi[week]+")";
-    // フォームデザインのフォーマットを用意
-    form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
-    var target = document.getElementsByClassName("day-box")[index+1];
-    target.style.display = "flex";
-
-    // 日付を入れる
-    var day_label = month+"/"+day+"<br>("+yobi[week]+")"
-    target.getElementsByClassName("day-label")[0].innerHTML = day_label;
-    console.log(document.getElementById("db-3").getElementsByTagName("span")[1]);
-
-  
-    // スケジュール提出があればスケジュール情報を入れる
-    if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
-      var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
-      if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
-      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
-      else{var status=""}
-      if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
-      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-      else{var time1="" }
-      if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
-        var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-      else{var time2="" }
-      if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-      var hosoku = "<br>備考・補足｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-      else{var hosoku="" }
-      var db_info ="ｽｹｼﾞｭｰﾙ "+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
-      target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
-      target.getElementsByClassName("sch-info")[0].style["font-weight"] = "bold";
-    }else{
-      target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
-      target.getElementsByClassName("sch-info")[0].style.color = "red";
-    }
-
-    // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
-    if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
-      var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
-      if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
-      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
-      else{var status=""}
-      if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
-      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-      else{var time1="" }
-      if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
-        var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-      else{var time2="" }
-      if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-      var hosoku = "<br>備考・補足｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-      else{var hosoku="" }
-      var db_info ="依頼済み"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
-      target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
-
-      target.getElementsByClassName("sch-info")[0].style["font-weight"] = "";
-      target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
-
-      // 依頼フォームのボックスを初期で非表示にする
-      target.getElementsByClassName("day-box-form")[0].style.display="none";
-      // 依頼フォーム再表示用のボタンを用意する
-      const swich= '<div class="btn">依頼時間を<br>変更する</div><div class="btn">依頼内容を<br>取り消す</div>';
-      target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
-
-    }else{
-      target.getElementsByClassName("day-box-swich")[0].remove()
-      target.getElementsByClassName("sh-info")[0].remove()
-    }
-
-    // 参考ボックスの非表示
-    target.getElementsByClassName("ajs-info")[0].remove();
-
-
-
-    // フォームを入れる
-    target.getElementsByClassName("day-box-form")[0].appendChild(element);
-  
-  })
-
-
-
-// // 日付部分
-// console.log(main_db["日付"]);
-// main_db["日付"].forEach((element,index)=>{
-//   var counter = 0;
-//   console.log(main_db["報告フラグ"]);
-//   if(main_db["報告フラグ"][index]=1){
-//     // フォーマットの複製
-//     var target =document.getElementsByClassName("wr-formbox")[counter];
-//     var clone  = target.cloneNode(true);
-//     target.after(clone);
-
-//     // 出勤フォーマットにフォーム挿入
-//     var formset = document.getElementsByClassName("in-dg")[counter];
-//     target.getElementsByClassName("in-content")[0].appendChild(formset);
-//     // 出勤フォーマットにデータセット
-//     target.getElementsByClassName("in-day-label")[0].textContent = element;
-
-//     var target_class="in-fd" ; var textcontent = "実際の出勤時間";
-//     spancontent.textContent = textcontent;
-//     var spancontent =document.create("span");
-//     target.getElementsByClassName(target_class)[0].before(spancontent);
-
-
-
-//     // 退勤フォーマットにフォーム挿入
-//     var formset = document.getElementsByClassName("out-dg")[counter];
-//     target.getElementsByClassName("out-content")[0].appendChild(formset);
-//     // 退勤フォーマットにデータセット
-//     target.getElementsByClassName("out-day-label")[0].textConten= element;
-
-//     // カウントアップ
-//     var counter = counter+1;
-
-// //   }
-// })
 
 
 
