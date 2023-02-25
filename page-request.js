@@ -293,7 +293,7 @@ console.log(main_db);
       target.getElementsByClassName("sch-info")[0].after(target.getElementsByClassName("sh-info")[0]);
       target.getElementsByClassName("sh-info")[0].innerHTML = "勤務希望時間を設定してください。依頼の完了にはフォーム送信が必要です。";
       target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
-      target.getElementsByClassName("sh-info")[0].style["color"] = "red";
+      target.getElementsByClassName("sh-info")[0].style["color"] = "#34675c";
       target.getElementsByClassName("sh-info")[0].style["font-size"] = "14px";
     }
 
