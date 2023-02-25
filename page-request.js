@@ -424,17 +424,25 @@ console.log(main_db);
     }
 
     // シフト申請or確定シフトがあればシフト情報を入れる
-    if(document.getElementById("db-4").getElementsByName(key)[0] !=null){
-      var db_id =document.getElementById("db-3").getElementsByName(key)[0].getAttribute('id');
-      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
-      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;
-      var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;
-      var hosoku = document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;
-        if(hosoku !=null){hosoku = "<br>"+hosoku;} 
-      var db_info ="ｽｹｼﾞｭｰﾙ"+"<span>｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
-      target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+    if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
+      var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
+      if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
+      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
+      else{var status}
+      if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
+      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
+      else{var time1 }
+      if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
+        var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
+      else{var time2 }
+      if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
+      var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+      else{var hosoku }
+      var db_info ="ｼﾌﾄｽﾃｰﾀｽ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+      target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
-      target.getElementsByClassName("sh-info")[0].remove();
+      target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
+      target.getElementsByClassName("sch-info")[0].style.color = "red";
     }
 
     // 参考ボックスの非表示
