@@ -372,7 +372,6 @@ console.log(main_db);
 
   // 挿入するグーグルフォームのセットを選択
   const forms = document.querySelectorAll('.dg');
-  const today =new Date();
   const formdate =new Date();
   // 出力する場所を用意
   var area_target = document.getElementById("シフト依頼はこちらから");
@@ -384,9 +383,7 @@ console.log(main_db);
   // フォームを作成していく〜！！
   forms.forEach((element,index) =>{
     // 挿入する日付を用意（明日以降）
-    console.log(index);
-    console.log(today.getDate());
-    formdate.setDate(today.getDate() + 1+index);
+    formdate.setDate(formDate() + 1);
     console.log(formdate);
     var year = formdate.getFullYear();
     var month = formdate.getMonth()+1;
