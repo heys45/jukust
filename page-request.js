@@ -281,7 +281,8 @@ console.log(main_db);
 
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove()
-      target.getElementsByClassName("sh-info")[0].remove()
+      target.getElementsByClassName("sh-info")[0].innerHTML = "シフトを依頼する場合は〜〜ください";
+      target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
     }
 
     // 参考ボックスの非表示
