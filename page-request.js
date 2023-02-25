@@ -393,8 +393,7 @@ console.log(main_db);
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
     var target = document.getElementsByClassName("day-box")[index+1];
-    target.style.color("red");
-    target.style.display("flex");
+    target.style.display = "flex";
 
     // 日付を入れる
     var day_label = month+"/"+day+"<br>("+yobi[week]+")"
@@ -407,7 +406,7 @@ console.log(main_db);
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
-      target.getElementsByClassName("sch-info")[0].style.color("red");
+      target.getElementsByClassName("sch-info")[0].style.color = "red";
 
     }
 
