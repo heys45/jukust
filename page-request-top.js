@@ -2,7 +2,7 @@
 setTimeout(timefunc,300);
 
 function timefunc(){
-if(prop_object["ページ表示名"]==="シフト依頼ページ"){
+if(prop_object["ページ表示名"]==="シフト管理"){
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
