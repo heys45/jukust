@@ -364,7 +364,7 @@ console.log(main_db);
   form_term_swich.style["background-color"]="red";
   form_term_swich.style["width"]="33.3%";
   form_term_swich.style["margin"]="5px";
-  form_term_swich.style["borer-radius"]="5px";
+  form_term_swich.style["border-radius"]="5px";
   form_term_swich.style["text-align"]="center";
   form_term_box.appendChild(form_term_swich);
 
