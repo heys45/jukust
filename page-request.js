@@ -382,11 +382,27 @@ console.log(main_db);
   triggers.forEach(element =>{
     console.log(element);
     element.addEventListener('click',function(){
+      // 共通処理
       console.log(element);
       for (let i = 0; i < triggers.length; i++) {
         triggers[index].style["background-color"]="red";
       }
-    element.style["background-color"]="blue";
+      element.style["background-color"]="blue";
+      for (let j = 0; j < 30; j++) {
+        document.getElementsByClassName("day-box")[j].style.display="flex";
+      }
+      // 個別処理
+      if(element.id == "week1"){
+        for (let j = 7; j < 30; j++) {
+          document.getElementsByClassName("day-box")[j].style.display="none";
+        }
+      }
+      if(element.id == "week2"){
+        for (let j = 14; j < 30; j++) {
+          document.getElementsByClassName("day-box")[j].style.display="none";
+        }
+      }
+
     });
   });
 
