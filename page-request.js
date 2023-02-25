@@ -385,6 +385,7 @@ console.log(main_db);
   forms.forEach((element,index) =>{
     // 挿入する日付を用意（明日以降）
     console.log(index);
+    console.log(today.getDate());
     formdate.setDate(today.getDate() + 1+index);
     console.log(formdate);
     var year = formdate.getFullYear();
