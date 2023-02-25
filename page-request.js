@@ -402,11 +402,20 @@ console.log(main_db);
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementsByName(key)[0] !=null){
       var db_id =document.getElementsByName(key)[0].getAttribute('id');
-      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
-      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;
-      var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;
-      var hosoku = document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;
-        if(hosoku !=null){hosoku = "<br>"+hosoku;} 
+
+
+      if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
+      var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
+      else{var status =null}
+      if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
+      var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
+      else{var time1 =null}
+      if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
+        var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
+      else{var time2 =null}
+      if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
+      var hosoku = "<br>"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+      else{var hosoku =null}
       var db_info ="ｽｹｼﾞｭｰﾙ"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
     }else{
