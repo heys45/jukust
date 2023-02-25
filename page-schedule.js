@@ -80,8 +80,9 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     const sh_form = document.getElementById("shift-form");
     const sc_form = document.getElementById("schedule-form");
 
-    const view_form = sc_form;          //ページによって変更する
-    const death_form = sh_form;         //ページによって変更する
+    sc_form.remove();
+    sh_form.style.display="block";
+
 
     // 表示位置の設定
     var quote_name = "スケジュール提出はこちらから";
@@ -179,7 +180,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       ft2.appendChild(option);
     });
     });
-    
+
     // //開始調整時刻の設定
     // const adt1s = document.querySelectorAll('.adft1');
     // adt1s.forEach(function(ft1){
