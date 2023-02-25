@@ -400,7 +400,6 @@ console.log(main_db);
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
 
 
-    console.log(document.getElementById("db-3").getElementById("db-3-1"));
     console.log(document.getElementById("db-3").getElementsByTagName("span")[1]);
 
     // スケジュール提出があればスケジュール情報を入れる
