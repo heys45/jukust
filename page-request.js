@@ -380,15 +380,6 @@ console.log(main_db);
 
 
 
-
-  
-
-  <div class="form-term-swich">
-    <div id="1week">１週間分</div>
-    <div id="2week">2週間分</div>
-    <div id="4week">1ヶ月分</div>
-  </div>
-
   // const select_term = document.getElementsByClassName("select-term")[0];
   // select_term.style.display = 'block';
   // function viewChange(){
