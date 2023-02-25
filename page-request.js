@@ -407,6 +407,12 @@ console.log(main_db);
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
     }
 
+    // 参考ボックスの非表示
+    target.getElementsByClassName("sch-info")[1].remove();
+    target.getElementsByClassName("ajs-info")[0].remove();
+
+
+
     // フォームを入れる
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
   
