@@ -290,11 +290,12 @@ const dbs = document.querySelectorAll('.notion-collection-table');
 for( var i=0; i<dbs.length; i++) {
   var name = "db-"+(i+1);
   dbs[i].setAttribute("id",name);
-  
   //行をまとめて取得
   const rows = dbs[i].getElementsByTagName("tr")
   //行にIDを付与する 
   for( var j=0; j<rows.length; j++) {
+  var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+  rows[j].setAttribute("name",name);
   var name = "db-"+(i+1)+"-"+(j+1);
   rows[j].setAttribute("id",name);
   
@@ -364,6 +365,12 @@ main_db["日付"].forEach((element,index)=>{
 })
 var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
 death_fd.remove();
+
+
+
+
+
+
 
 
 
