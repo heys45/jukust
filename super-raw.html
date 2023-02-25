@@ -1,32 +1,3 @@
-<!-- 勤怠報告フォームのデザインフォーマット -->
-<div class="day-box">
-  <div class="day-box-l">
-    <span class="day-label">
-      2月22日<br>（土）
-    </span>
-  </div>
-  <div class="day-box-r">
-    <div class="sh-info">
-      依頼状況｜勤務可｜18:00~22:00</div>
-    <div class="sch-info">
-      ｽｹｼﾞｭｰﾙ｜勤務可｜18:00~22:00
-    </div>
-    <div class="ajs-info">
-      調整希望｜18:00~22:00</div>
-    <div class="day-box-swich">
-      スイッチ出力欄
-    </div>
-    <div class="day-box-form">
-    
-    </div>
-  </div>
-</div>
-  
-
-  
-
-
-
 <script defer src="https://heys45.github.io/jukust/prop-search.js"></script>
 <script defer src="https://heys45.github.io/jukust/page-schedule.js"></script>
 <script defer src="https://heys45.github.io/jukust/page-sftfix.js"></script>
@@ -36,16 +7,36 @@
 <script defer src="https://heys45.github.io/jukust/page-teacher-prof.js"></script>
 
 
+<!-- 勤怠報告フォームのデザインフォーマット -->
+<div class="day-box">
+  <div class="day-box-l">
+    <span class="day-label">2月22日<br>（土）</span>
+  </div>
+  <div class="day-box-r">
+    <div class="sh-info">依頼状況｜勤務可｜18:00~22:00</div>
+    <div class="sch-info">ｽｹｼﾞｭｰﾙ｜勤務可｜18:00~22:00</div>
+    <div class="ajs-info">調整希望｜18:00~22:00</div>
+    <div class="day-box-swich">スイッチ出力欄</div>
+    <div class="day-box-form"></div>
+  </div>
+</div>
+  
+<!--プログレスバー-------------------------->
+<ul class="progressbar">
+  <li id="li-schedule" class="">ｽｹｼﾞｭｰﾙ<br>提出</li>
+  <li id="li-request" class="">シフト<br>ﾘｸｴｽﾄ</li>
+  <li id="li-confirm" class="">シフト<br>確定</li>
+  <li id="li-attendance" class="">勤務<br>報告</li>
+  <li id="li-payment" class="">給与<br>振込</li>
+</ul>
+
+
+
 <div id="form-area">
 
-<div class="select-term">
-    <span>回答期間：</span>
-    <select class="form-control" id="select-term-button">
-        <option value="select1">１週間分</option>
-        <option value="select2">2週間分</option>
-        <option value="select3">1ヶ月分</option>
-    </select>
-</div>
+
+
+
 
 <!--form開始-------------------------->
 <!--form開始-------------------------->
@@ -87,33 +78,6 @@
 
 
 <!--勤怠報告form開始-------------------------->
-
-<!-- 勤怠報告フォームのデザインフォーマット -->
-<div class="wr-formbox">
-  <div class="in-wr-formbox">
-    <span class="in-day-label"></span>
-    <div class="in-content">
-      <div class="in-buttons">
-        <span class="in-flag">出勤報告<br>する</span>
-        <span class="in-ajust">報告時間の<br>調整をする</span>
-        <span class="in-change">出勤時間の<br>変更を報告</span>
-      </div>
-    </div>
-  </div><!-- 出勤情報入力終わり -->
-  <div class="out-wr-formbox">
-    <span class="out-day-label"></span>
-    <div class="out-content">
-      <div class="out-buttons">
-        <span class="out-flag">退勤報告<br>する</span>
-        <span class="out-ajust">報告時間の<br>調整をする</span>
-        <span class="out-change">退勤時間の<br>変更を報告</span>
-      </div>
-    </div>
-  </div><!-- 退勤情報入力終わり -->
-</div>
-
-
-
 <form id="wr-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-A1F9-21GN26sz3k6pwyCL5F-W34yXHRjHI75EQGGtos6_g/formResponse" target="hidden_iframe3">
   <!--共通項目-------------------------->
   <input type="text" name="entry.1896935942" class="" id="schid"> <input type="text" name="entry.1911019539" class="" id="teaid"> <input type="text" name="entry.1494113897" class="" id="worid"><br>
@@ -130,24 +94,30 @@
 
 
 
+<!-- 
+勤怠報告フォームのデザインフォーマット
+<div class="wr-formbox">
+  <div class="in-wr-formbox">
+    <span class="in-day-label"></span>
+    <div class="in-content">
+      <div class="in-buttons">
+        <span class="in-flag">出勤報告<br>する</span>
+        <span class="in-ajust">報告時間の<br>調整をする</span>
+        <span class="in-change">出勤時間の<br>変更を報告</span>
+      </div>
+    </div>
+  </div>
+  <div class="out-wr-formbox">
+    <span class="out-day-label"></span>
+    <div class="out-content">
+      <div class="out-buttons">
+        <span class="out-flag">退勤報告<br>する</span>
+        <span class="out-ajust">報告時間の<br>調整をする</span>
+        <span class="out-change">退勤時間の<br>変更を報告</span>
+      </div>
+    </div>
+  </div> -->
 
 
-<!--プログレスバー-------------------------->
-<ul class="progressbar">
-  <li id="li-schedule" class="">ｽｹｼﾞｭｰﾙ<br>提出</li>
-  <li id="li-request" class="">シフト<br>ﾘｸｴｽﾄ</li>
-  <li id="li-confirm" class="">シフト<br>確定</li>
-  <li id="li-attendance" class="">勤務<br>報告</li>
-  <li id="li-payment" class="">給与<br>振込</li>
-</ul>
-
-
-
-<footer>
-  <p>フッターコンテンツ</p>
-  <p>フッターコンテンツ</p>
-  <p>フッターコンテンツ</p>
-  <p>フッターコンテンツ</p>
-</footer>
 
 
