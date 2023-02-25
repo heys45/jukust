@@ -347,17 +347,17 @@ console.log(main_db);
 // データベース由来のフォーム作成
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-// 日付部分
-main_db["日付"].forEach((element,index)=>{
-  var datelabel = document.createElement("p");
-  datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
-  var target = document.getElementsByClassName("fd")[index];
-  target.parentNode.classList.add("view-dg");
-  target.before(datelabel);
-  target.value = element;
-})
-var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
-// death_fd.remove();
+// // 日付部分
+// main_db["日付"].forEach((element,index)=>{
+//   var datelabel = document.createElement("p");
+//   datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
+//   var target = document.getElementsByClassName("fd")[index];
+//   target.parentNode.classList.add("view-dg");
+//   target.before(datelabel);
+//   target.value = element;
+// })
+// var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
+// // death_fd.remove();
 
 
 
@@ -410,60 +410,43 @@ var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
   
   })
 
-  // 日付作成
-
-  formdays.forEach(function(formday,index){
-    var date=new Date();
-    date.setDate(date.getDate() + 1+index);
-    var year = date.getFullYear();
-    var month = date.getMonth()+1;
-    var week = date.getDay();
-    var day = date.getDate();
-    var yobi= new Array("日","月","火","水","木","金","土");
-    var date2 = year+"年"+month+"月"+day+"日 ("+yobi[week]+")";
-    var date3 = year+"/"+month+"/"+day+"("+yobi[week]+")";
-    var datelabel = document.createElement("p");
-    formday.value = date3;
-    datelabel.textContent = date2+"  [勤務可能or不可] 18:00~20:00";
-    formday.after(datelabel);
-  });
 
 
-// 日付部分
-console.log(main_db["日付"]);
-main_db["日付"].forEach((element,index)=>{
-  var counter = 0;
-  console.log(main_db["報告フラグ"]);
-  if(main_db["報告フラグ"][index]=1){
-    // フォーマットの複製
-    var target =document.getElementsByClassName("wr-formbox")[counter];
-    var clone  = target.cloneNode(true);
-    target.after(clone);
+// // 日付部分
+// console.log(main_db["日付"]);
+// main_db["日付"].forEach((element,index)=>{
+//   var counter = 0;
+//   console.log(main_db["報告フラグ"]);
+//   if(main_db["報告フラグ"][index]=1){
+//     // フォーマットの複製
+//     var target =document.getElementsByClassName("wr-formbox")[counter];
+//     var clone  = target.cloneNode(true);
+//     target.after(clone);
 
-    // 出勤フォーマットにフォーム挿入
-    var formset = document.getElementsByClassName("in-dg")[counter];
-    target.getElementsByClassName("in-content")[0].appendChild(formset);
-    // 出勤フォーマットにデータセット
-    target.getElementsByClassName("in-day-label")[0].textContent = element;
+//     // 出勤フォーマットにフォーム挿入
+//     var formset = document.getElementsByClassName("in-dg")[counter];
+//     target.getElementsByClassName("in-content")[0].appendChild(formset);
+//     // 出勤フォーマットにデータセット
+//     target.getElementsByClassName("in-day-label")[0].textContent = element;
 
-    var target_class="in-fd" ; var textcontent = "実際の出勤時間";
-    spancontent.textContent = textcontent;
-    var spancontent =document.create("span");
-    target.getElementsByClassName(target_class)[0].before(spancontent);
+//     var target_class="in-fd" ; var textcontent = "実際の出勤時間";
+//     spancontent.textContent = textcontent;
+//     var spancontent =document.create("span");
+//     target.getElementsByClassName(target_class)[0].before(spancontent);
 
 
 
-    // 退勤フォーマットにフォーム挿入
-    var formset = document.getElementsByClassName("out-dg")[counter];
-    target.getElementsByClassName("out-content")[0].appendChild(formset);
-    // 退勤フォーマットにデータセット
-    target.getElementsByClassName("out-day-label")[0].textConten= element;
+//     // 退勤フォーマットにフォーム挿入
+//     var formset = document.getElementsByClassName("out-dg")[counter];
+//     target.getElementsByClassName("out-content")[0].appendChild(formset);
+//     // 退勤フォーマットにデータセット
+//     target.getElementsByClassName("out-day-label")[0].textConten= element;
 
-    // カウントアップ
-    var counter = counter+1;
+//     // カウントアップ
+//     var counter = counter+1;
 
-  }
-})
+// //   }
+// })
 
 
 
