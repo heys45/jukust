@@ -313,7 +313,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_button.setAttribute("id","form_button");
   form_button.setAttribute("type","submit");
   form_button.innerHTML="シフトの依頼を完了する";
-  form_button.style["background-color"] ="green";
+  form_button.style["background-color"] ="#34675c";
   form_button.style["border-radius"] = "5px";
   form_button.style.color="white";
   form_wrapper.appendChild(form_button);
@@ -370,11 +370,14 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   var form_term_swich = document.createElement("div");
   form_term_swich.innerHTML="1週間分を<br>提出する";
   form_term_swich.id="week1";
-  form_term_swich.style["background-color"]="red";  form_term_swich.style["width"]="33.3%";  form_term_swich.style["margin"]="5px";  form_term_swich.style["padding"]="5px";  form_term_swich.style["color"]="white";  form_term_swich.style["border-radius"]="5px";  form_term_swich.style["text-align"]="center";
+  form_term_swich.style["background-color"]="#34675c";  form_term_swich.style["width"]="33.3%";  form_term_swich.style["margin"]="5px";  form_term_swich.style["padding"]="5px";  form_term_swich.style["color"]="white";  form_term_swich.style["border-radius"]="5px";  form_term_swich.style["text-align"]="center";
   form_term_box.appendChild(form_term_swich);
 
   var form_term_swich = form_term_swich.cloneNode(true);
   form_term_swich.innerHTML="2週間分を<br>提出する";
+  form_term_swich.style["background-color"]="#white";
+  form_term_swich.style["color"]="#34675c";
+  form_term_swich.style["border"]="solid 1px #34675c";
   form_term_swich.id="week2";
   form_term_box.appendChild(form_term_swich);
 
@@ -383,6 +386,11 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_term_swich.id="week4";
   form_term_box.appendChild(form_term_swich);
 
+  for (let j = 7; j < 30; j++) {
+    document.getElementsByClassName("day-box")[j].style.display="none";
+  }
+
+
   var triggers = document.querySelectorAll("#form_term_swich_wrapper div");
   triggers.forEach(element =>{
     console.log(element);
@@ -390,9 +398,12 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       // 共通処理
       console.log(element);
       for (let i = 0; i < triggers.length; i++) {
-        triggers[i].style["background-color"]="red";
+        triggers[i].style["background-color"]="#white";
+        triggers[i].style["color"]="#34675c";
+        triggers[i].style["border"]="solid 1px #34675c";
       }
-      element.style["background-color"]="blue";
+      element.style["background-color"]="#34675c";
+      element.style["color"]="white";
       for (let j = 0; j < 30; j++) {
         document.getElementsByClassName("day-box")[j].style.display="flex";
       }
