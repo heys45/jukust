@@ -274,7 +274,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     target.getElementsByClassName("ft1")[0].after(time_guide);
 
     var hosoku_guide = document.createElement("span");
-    hosoku_guide.innerHTML = "備考・補足　：";
+    hosoku_guide.innerHTML = "備考・補足";
     target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
     target.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 115px)";
 
