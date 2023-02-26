@@ -316,8 +316,8 @@ for( var i=0; i<dbs.length; i++) {
 }
 
 //DB書き換え処理
-document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
-document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
+// document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
+// document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベースの値取得
