@@ -370,7 +370,7 @@ console.log(main_db);
   var form_comfirm= document.createElement("div");
   form_comfirm.innerHTML="シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。";
   form_comfirm.style.display="none";
-  document.appendChild(form_button);
+  document.appendChild(form_comfirm);
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
