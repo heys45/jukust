@@ -184,10 +184,18 @@ console.log(main_db);
   // 使用するフォームの選択
   const sh_form = document.getElementById("shift-form");
   const sc_form = document.getElementById("schedule-form");
+  const wr_form = document.getElementById("wr-form");
 
   const view_form = sh_form;          //ページによって変更する
-
   sc_form.remove();
+  wr_form.remove();
+
+  // 出力する場所を用意（quoteを指定）
+  var area_target = document.getElementById("シフト依頼はこちらから").nextElementSibling;
+  var form_area = document.getElementsByTagName("form")[0];
+  form_area.setAttribute("id","form");
+  area_target.after(form_area);  console.log(form_area.id);
+
 
   const forms = document.querySelectorAll('.dg');
 
@@ -200,17 +208,11 @@ console.log(main_db);
   death_prop.forEach(element=>{  element.style.display = 'none';  });
 
 
-  // 出力する場所を用意
-  var area_target = document.getElementById("シフト依頼はこちらから").nextElementSibling;
-  var form_area = document.createElement("div");
-  form_area.setAttribute("id","form-area");
-  area_target.after(form_area);
-
   view_form.style.display = 'block';
 
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // フォームボックスの作成
+  // フォームボックスの作成 （DBからの情報取得）
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   const formdate =new Date();
   forms.forEach((element,index) =>{
@@ -348,6 +350,45 @@ console.log(main_db);
     });
   
   })
+
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // フォーム提出期間変更ボタン　
+  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  var form_button_wrapper = document.createElement("div");
+  form_button_wrapper.style.display = "flex";form_button_wrapper.style["justify-content"] = "center";form_button_wrapper.style["align-item"] = "center";
+  form_area.appendChild(form_button_wrapper);
+
+  var form_button = document.createElement("div");
+  form_button.setAttribute("type","submit");
+  form_button.innerHTML="シフトの依頼を完了する";
+  form_button.style["background-color"] ="green";
+  form_button.style["border-radius"] = "5px";
+  form_button.style.color="white";
+  form_button_wrapper.appendChild(form_button);
+
+  var form_comfirm= document.createElement("div");
+  form_comfirm.innerHTML="シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。";
+  form_comfirm.style.display="none";
+  form_comfirm.appendChild(form_button);
+
+  var form_iframe = document.createElement("iframe");
+  form_iframe.setAttribute("name","hidden_iframe");
+  form_iframe.setAttribute("id","hidden_iframe");
+  form_iframe.style.display="none";
+  form_area.appendChild(form_iframe);
+  form_area.setAttribute("target","hidden_iframe")
+
+  //フォーム送信後の処理
+  form_button.addEventListener('click',function(){
+    form_comfirm.style.display="block";
+    form_button.style["background-color"]="gray";
+    form_button.innerHTML="送信完了";
+
+  });
+
+
+
+
   
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // フォーム提出期間変更ボタンの設定
