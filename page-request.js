@@ -360,12 +360,14 @@ console.log(main_db);
   form_area.appendChild(form_button_wrapper);
 
   var form_button = document.createElement("div");
+  form_button.setAttribute("id","form_button");
   form_button.setAttribute("type","submit");
   form_button.innerHTML="シフトの依頼を完了する";
   form_button.style["background-color"] ="green";
   form_button.style["border-radius"] = "5px";
   form_button.style.color="white";
   document.getElementById("form_button_wrapper").appendChild(form_button);
+  var form_button = document.getElementById("form_button")
 
   var form_comfirm= document.createElement("div");
   form_comfirm.innerHTML="シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。";
