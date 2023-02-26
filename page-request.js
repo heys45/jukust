@@ -331,7 +331,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
       var re_contentp = document.createElement("p");
       re_contentp.innerHTML= re_content;
-      document.getElementById("re_content").appendChild(re_contentp)；
+      document.getElementById("re_content").appendChild(re_contentp);
     }
   });
 
