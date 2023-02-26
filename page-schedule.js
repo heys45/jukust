@@ -309,7 +309,7 @@ forms.forEach((element,index) =>{
 
   var formss = document.querySelectorAll(".day-box");
   formss.forEach(element =>{
-    var restart = element.getElementsByClassName("ft1")[0].value;
+    // var restart = element.getElementsByClassName("ft1")[0].value;
     console.log(element.getElementsByClassName("ft1")[0].innerHTML);
     if(restart !=null){
       var reday = element.getElementsByClassName("fd")[0].value;
