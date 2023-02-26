@@ -375,7 +375,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
   var form_term_swich = form_term_swich.cloneNode(true);
   form_term_swich.innerHTML="2週間分を<br>提出する";
-  form_term_swich.style["background-color"]="#white";
+  form_term_swich.style["background-color"]="white";
   form_term_swich.style["color"]="#34675c";
   form_term_swich.style["border"]="solid 1px #34675c";
   form_term_swich.id="week2";
@@ -398,7 +398,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       // 共通処理
       console.log(element);
       for (let i = 0; i < triggers.length; i++) {
-        triggers[i].style["background-color"]="#white";
+        triggers[i].style["background-color"]="white";
         triggers[i].style["color"]="#34675c";
         triggers[i].style["border"]="solid 1px #34675c";
       }
