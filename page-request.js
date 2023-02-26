@@ -306,7 +306,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_area.appendChild(form_button_wrapper);
   var form_wrapper = document.getElementById("form_button_wrapper")
 
-  var form_button = document.createElement("div");
+  var form_button = document.createElement("button");
   form_button.setAttribute("id","form_button");
   form_button.setAttribute("type","submit");
   form_button.innerHTML="シフトの依頼を完了する";
@@ -364,7 +364,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_term_box.style.padding="5px";
   area_target.after(form_term_box);
 
-  var form_term_swich = document.createElement("button");
+  var form_term_swich = document.createElement("div");
   form_term_swich.innerHTML="1週間分を<br>提出する";
   form_term_swich.id="week1";
   form_term_swich.style["background-color"]="red";  form_term_swich.style["width"]="33.3%";  form_term_swich.style["margin"]="5px";  form_term_swich.style["padding"]="5px";  form_term_swich.style["color"]="white";  form_term_swich.style["border-radius"]="5px";  form_term_swich.style["text-align"]="center";
