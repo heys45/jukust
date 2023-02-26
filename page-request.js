@@ -157,9 +157,9 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   view_form.style.display = 'block';
 
 
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // フォームボックスの作成 （DBからの情報取得）
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの作成①　日付ラベル作成 　　何もしなくてOK
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   const formdate =new Date();
   forms.forEach((element,index) =>{
     // 挿入する日付を用意（明日以降）
@@ -179,9 +179,9 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     var day_label = month+"/"+day+"<br>("+yobi[week]+")"
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // 一つ目のデータベースから情報を取得
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの作成②　スケジュール情報挿入 　10min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
       var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
@@ -205,9 +205,9 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       target.getElementsByClassName("sch-info")[0].style.color = "red";
     }
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // 二つ目のデータベースから情報を取得
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの作成③　シフト情報挿入 　10min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
     if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
       var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
@@ -248,9 +248,9 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォームの中身を調整する
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの作成④　送信部分の作成 　10min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
@@ -297,9 +297,9 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   
   })
 
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // フォーム提出期間変更ボタン　
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの拡張①　送信機能＋送信後の設定　10min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
   var form_button_wrapper = document.createElement("div");
   form_button_wrapper.setAttribute("id","form_button_wrapper");
   form_button_wrapper.style.display = "flex";form_button_wrapper.style["justify-content"] = "center";form_button_wrapper.style["align-item"] = "center";
@@ -324,6 +324,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
   forms.forEach(element =>{
     var restart = element.getElementsByClassName("ft1")[0].value;
+    console.log(restart);
     if(restart !=null){
       var reday = element.getElementsByClassName("fd")[0].value;
       var reend = element.getElementsByClassName("ft2")[0].value;
@@ -336,9 +337,6 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       document.getElementById("re_content").appendChild(re_contentp);
     }
   });
-
-
-
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
@@ -354,14 +352,10 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     form_button.innerHTML="送信完了";
 
   });
-
-
-
-
   
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // フォーム提出期間変更ボタンの設定
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの拡張②　提出期間切り替えボタンの設定
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 
   var form_term_box = document.createElement("div");
   form_term_box.id="form_term_swich_wrapper";
@@ -384,11 +378,6 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_term_swich.innerHTML="1ヶ月分を<br>提出する";
   form_term_swich.id="week4";
   form_term_box.appendChild(form_term_swich);
-
-
-
-
-
 
   var triggers = document.querySelectorAll("#form_term_swich_wrapper div");
   triggers.forEach(element =>{
