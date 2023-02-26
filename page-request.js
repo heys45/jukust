@@ -1,9 +1,6 @@
-
 setTimeout(timefunc,300);
-
 function timefunc(){
 if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
-
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // プログレスバーの変更 2min
@@ -228,7 +225,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
         var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
       else{var time2="" }
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-      var hosoku = "<br>備考・補足｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+      var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
       else{var hosoku="" }
       var db_info ="依頼済み"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
