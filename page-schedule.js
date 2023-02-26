@@ -247,7 +247,7 @@ forms.forEach((element,index) =>{
     submit_guide.style["color"] = "#34675c";
     submit_guide.style["font-size"] = "14px";
     submit_guide.style["display"] = "inline-box";
-    target.getElementsByClassName("ft2")[0].after(submit_guide);
+    target.getElementsByClassName("fs2")[0].after(submit_guide);
 
     var hosoku_guide = document.createElement("span");
     hosoku_guide.innerHTML = "補足事項｜";
