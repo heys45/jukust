@@ -115,10 +115,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       }
     }
 
-    //DB書き換え処理
-    document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
-    document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
-
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォーム表示設定代項目　3分
@@ -204,7 +200,7 @@ forms.forEach((element,index) =>{
     // スケジュールがあれば提出フォームを初期で非表示にする
     target.getElementsByClassName("day-box-form")[0].style.display="none";
     // 依頼フォーム再表示用のボタンを用意する
-    const swich= '<div class="btn">スケジュール<br>を変更する</div>';
+    const swich= '<div class="btn">スケジュールを<br>変更する</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
 
@@ -227,13 +223,12 @@ forms.forEach((element,index) =>{
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
 
     var status_guide = document.createElement("span");
-    status_guide.innerHTML = "ｽｹｼﾞｭｰﾙ｜";
+    status_guide.innerHTML = "ｽｹｼﾞｭｰﾙ ｜";
     status_guide.style["font-weight"]="bold";
     target.getElementsByClassName("fs2")[0].before(status_guide);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "依頼時間｜";
-    time_guide.style["font-weight"]="bold";
     target.getElementsByClassName("ft1")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
