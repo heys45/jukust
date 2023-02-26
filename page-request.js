@@ -323,7 +323,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   var form_button = document.createElement("button");
   form_button.setAttribute("id","form_button");
   form_button.setAttribute("type","submit");
-  form_button.innerHTML="シフトの依頼を完了する";
+  form_button.innerHTML="▶︎ シフトの依頼を完了する";
   form_button.style["background-color"] ="#34675c";
   form_button.style["border-radius"] = "5px";
   form_button.style["padding"] = "8px";
