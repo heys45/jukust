@@ -264,7 +264,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "勤務希望時間：";
+    time_guide.innerHTML = "依頼時間｜";
     time_guide.style["font-weight"]="bold";
     target.getElementsByClassName("ft1")[0].before(time_guide);
 
