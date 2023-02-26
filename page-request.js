@@ -5,9 +5,9 @@ function timefunc(){
 if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // プログレスバーの変更
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// プログレスバーの変更 2min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
     // 表示位置の設定
     var quote_name = "スポットバイトの流れ";
@@ -22,7 +22,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// DB表示設定代項目
+// DB表示設定代項目 1min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
     // 教室or講師IDによるDBフィルタ
@@ -30,24 +30,19 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     const groups = document.querySelectorAll('.notion-collection-group__section');
     groups.forEach(element =>{
         var group_id = element.getElementsByTagName("span")[1].innerHTML;
-        element.classList.add("t"+ group_id);
+        element.classList.add("x"+ group_id);
     });
 
-    var teacher_id = prop_object["教室ID"];
-    var teacher_class =".t"+teacher_id
-    var test = document.querySelectorAll(teacher_class);
-    var test2 = document.querySelectorAll(".notion-collection-group__section:not("+teacher_class+")");
+    var research_id = prop_object["教室ID"];
+    var research_class =".x"+research_id
 
-
-    test.forEach(element =>{
-    element.style.display = "block" ;
-    });
-    test2.forEach(element =>{
-      element.remove();
-      });
+    document.querySelectorAll(research_class).forEach(element =>{
+      element.style.display = "block" ;  });
+    document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
+      element.remove();  });
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// テーブルの番号づけ
+// テーブルの番号づけ 何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     //テーブルをまとめて取得
     const tables = document.querySelectorAll('.notion-table');
@@ -88,7 +83,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     }
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベースの番号づけ
+// データベースの番号づけ 何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     //DBをまとめて取得
     const dbs = document.querySelectorAll('.notion-collection-table');
@@ -336,7 +331,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
       var re_contentp = document.createElement("p");
       re_contentp.innerHTML= re_content;
-      document.getElementById("re_content").appendChild.re_contentp
+      document.getElementById("re_content").appendChild(re_contentp)；
     }
   });
 
