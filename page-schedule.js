@@ -204,7 +204,7 @@ forms.forEach((element,index) =>{
     // スケジュールがあれば提出フォームを初期で非表示にする
     target.getElementsByClassName("day-box-form")[0].style.display="none";
     // 依頼フォーム再表示用のボタンを用意する
-    const swich= '<div class="btn">スケジュールを変更する</div>';
+    const swich= '<div class="btn">スケジュール<br>を変更する</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
 
@@ -227,7 +227,7 @@ forms.forEach((element,index) =>{
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
 
     var status_guide = document.createElement("span");
-    status_guide.innerHTML = "スケジュール｜";
+    status_guide.innerHTML = "ｽｹｼﾞｭｰﾙ｜";
     status_guide.style["font-weight"]="bold";
     target.getElementsByClassName("fs2")[0].before(status_guide);
 
@@ -307,13 +307,13 @@ forms.forEach((element,index) =>{
   
 
   var form_comfirm= document.createElement("div");
-  form_comfirm.innerHTML='<p>スケジュール提出が完了しました。データの反映には2分ほど時間がかかります。</p><p>依頼内容</p><div id="re_content"></div>';
+  form_comfirm.innerHTML='<p>スケジュール提出が完了しました。データの反映には2分ほど時間がかかります。</p><p>送信内容</p><div id="re_content"></div>';
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
   forms.forEach(element =>{
     var restart = element.getElementsByClassName("ft1")[0].value;
-    console.log(element.getElementsByClassName("ft1")[0]);
+    console.log(element.getElementsByClassName("ft1")[0].innerHTML);
     if(restart !=null){
       var reday = element.getElementsByClassName("fd")[0].value;
       var reend = element.getElementsByClassName("ft2")[0].value;
