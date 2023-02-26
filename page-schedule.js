@@ -224,7 +224,7 @@ forms.forEach((element,index) =>{
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
 
     var status_guide = document.createElement("span");
-    status_guide.innerHTML = "ｽｹｼﾞｭｰﾙ ｜";
+    status_guide.innerHTML = "ｽｹｼﾞｭｰﾙ  ｜";
     status_guide.style["font-weight"]="bold";
     target.getElementsByClassName("fs2")[0].before(status_guide);
 
