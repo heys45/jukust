@@ -187,6 +187,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 // フォームボックスの作成②　スケジュール情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // スケジュール提出があればスケジュール情報を入れる
+    if(document.getElementById("db-3") !=null){
     if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
       var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
@@ -207,12 +208,13 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     }else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
       target.getElementsByClassName("sch-info")[0].style.color = "red";
-    }
+    }}
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成③　シフト情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
+    if(document.getElementById("db-4") !=null){
     if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
       var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
@@ -243,7 +245,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sh-info")[0].remove();
       target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-    }
+    }}
 
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();
