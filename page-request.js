@@ -244,13 +244,8 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove();
-      var submit_guide = document.createElement("span");
-      submit_guide.innerHTML="※ 依頼完了には送信が必要です";
-      submit_guide.style["font-weight"] = "bold";
-      submit_guide.style["color"] = "#34675c";
-      submit_guide.style["font-size"] = "14px";
-      target.getElementsByClassName("ft2")[0].after(submit_guide);
-      
+
+
       // target.getElementsByClassName("sch-info")[0].after(target.getElementsByClassName("sh-info")[0]);
       // target.getElementsByClassName("sh-info")[0].innerHTML = "勤務希望時間を設定してください。依頼の完了にはフォーム送信が必要です。";
       // target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
@@ -279,6 +274,13 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     time_guide.innerHTML = "〜";
     time_guide.style["font-weight"]="bold";
     target.getElementsByClassName("ft1")[0].after(time_guide);
+
+    var submit_guide = document.createElement("span");
+    submit_guide.innerHTML="※ 依頼完了には送信が必要です";
+    submit_guide.style["font-weight"] = "bold";
+    submit_guide.style["color"] = "#34675c";
+    submit_guide.style["font-size"] = "14px";
+    target.getElementsByClassName("ft2")[0].after(submit_guide);
 
     var hosoku_guide = document.createElement("span");
     hosoku_guide.innerHTML = "備考・補足";
