@@ -243,6 +243,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       target.getElementsByClassName("sh-info")[0].style["color"] = "#34675c";
       target.getElementsByClassName("sh-info")[0].style["font-size"] = "14px";
       target.getElementsByClassName("sh-info")[0].style["padding-bottom"] = "3px";
+      target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
     }
 
     // 参考ボックスの非表示
