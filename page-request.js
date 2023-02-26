@@ -394,7 +394,7 @@ console.log(main_db);
   form_term_box.style.padding="5px";
   area_target.after(form_term_box);
 
-  var form_term_swich = document.createElement("div");
+  var form_term_swich = document.createElement("button");
   form_term_swich.innerHTML="1週間分を<br>提出する";
   form_term_swich.id="week1";
   form_term_swich.style["background-color"]="red";  form_term_swich.style["width"]="33.3%";  form_term_swich.style["margin"]="5px";  form_term_swich.style["padding"]="5px";  form_term_swich.style["color"]="white";  form_term_swich.style["border-radius"]="5px";  form_term_swich.style["text-align"]="center";
