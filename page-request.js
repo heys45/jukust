@@ -355,6 +355,7 @@ console.log(main_db);
   // フォーム提出期間変更ボタン　
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   var form_button_wrapper = document.createElement("div");
+  form_button.setAttribute("id","form_button_wrapper");
   form_button_wrapper.style.display = "flex";form_button_wrapper.style["justify-content"] = "center";form_button_wrapper.style["align-item"] = "center";
   form_area.appendChild(form_button_wrapper);
 
@@ -364,12 +365,12 @@ console.log(main_db);
   form_button.style["background-color"] ="green";
   form_button.style["border-radius"] = "5px";
   form_button.style.color="white";
-  form_button_wrapper.appendChild(form_button);
+  document.getElementById("form_button_wrapper").appendChild(form_button);
 
   var form_comfirm= document.createElement("div");
   form_comfirm.innerHTML="シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。";
   form_comfirm.style.display="none";
-  form_comfirm.appendChild(form_button);
+  dicynebt.appendChild(form_button);
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
