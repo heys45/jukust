@@ -361,7 +361,24 @@ console.log(main_db);
   var form_button = document.getElementById("form_button")
 
   var form_comfirm= document.createElement("div");
-  form_comfirm.innerHTML="シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。";
+  form_comfirm.innerHTML='<p>シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。</p><p>依頼内容</p><div id="re_content"></div>';
+
+  forms.forEach(element =>{
+    var restart = element.getElementsByClassName("ft1")[0].value;
+    if(value !=""){
+      var reday = element.getElementsByClassName("fd")[0].value;
+      var reend = element.getElementsByClassName("ft2")[0].value;
+      if(element.getElementsByClassName("hosoku")[0].value !=""){
+        var rehosoku = "<br>補足｜"+element.getElementsByClassName("hosoku")[0].value;
+      }else{var rehosoku =""}
+      var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
+      var re_contentp = document.createElement("p");
+      re_contentp.innerHTML= re_content;
+      document.getElementById("re_content").appendChild.re_contentp
+    }
+  });
+
+
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
@@ -409,6 +426,10 @@ console.log(main_db);
   form_term_swich.innerHTML="1ヶ月分を<br>提出する";
   form_term_swich.id="week4";
   form_term_box.appendChild(form_term_swich);
+
+
+
+
 
 
   var triggers = document.querySelectorAll("#form_term_swich_wrapper div");
