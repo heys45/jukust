@@ -343,7 +343,8 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_iframe.setAttribute("id","hidden_iframe");
   form_iframe.style.display="none";
   form_area.appendChild(form_iframe);
-  form_area.setAttribute("target","hidden_iframe")
+  form_area.setAttribute("method","post");
+  form_area.setAttribute("target","hidden_iframe");
 
   //フォーム送信後の処理
   form_button.addEventListener('click',function(){
