@@ -244,6 +244,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove();
+      target.getElementsByClassName("sh-info")[0].remove();
 
 
       // target.getElementsByClassName("sch-info")[0].after(target.getElementsByClassName("sh-info")[0]);
