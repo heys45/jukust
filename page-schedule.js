@@ -203,13 +203,20 @@ forms.forEach((element,index) =>{
       
     // スケジュールがあれば提出フォームを初期で非表示にする
     target.getElementsByClassName("day-box-form")[0].style.display="none";
+    // 依頼フォーム再表示用のボタンを用意する
+    const swich= '<div class="btn">スケジュールを変更する</div>';
+    target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+
+
+
     }else{
-      target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
-      target.getElementsByClassName("sch-info")[0].style.color = "red";
+      target.getElementsByClassName("day-box-swich")[0].remove();
+      target.getElementsByClassName("sch-info")[0].remove();
     }
 
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();
+    target.getElementsByClassName("sh-info")[0].remove();
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -218,6 +225,11 @@ forms.forEach((element,index) =>{
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
+
+    var status_guide = document.createElement("span");
+    status_guide.innerHTML = "スケジュール｜";
+    status_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("fs2")[0].before(status_guide);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "依頼時間｜";
