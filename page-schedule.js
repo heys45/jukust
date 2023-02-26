@@ -179,6 +179,7 @@ forms.forEach((element,index) =>{
 // フォームボックスの作成②　スケジュール情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // スケジュール提出があればスケジュール情報を入れる
+    if(document.getElementById("db-3") !=null){
     if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
       var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
@@ -208,7 +209,7 @@ forms.forEach((element,index) =>{
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sch-info")[0].remove();
-    }
+    }}
 
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();
