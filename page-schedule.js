@@ -206,10 +206,10 @@ forms.forEach((element,index) =>{
 
 
 
-    }else{
+    }}else{
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sch-info")[0].remove();
-    }}
+    }
 
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();

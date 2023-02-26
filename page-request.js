@@ -205,10 +205,10 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       var db_info ="ｽｹｼﾞｭｰﾙ "+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
       target.getElementsByClassName("sch-info")[0].style["font-weight"] = "bold";
-    }else{
+    }}else{
       target.getElementsByClassName("sch-info")[0].innerHTML = "スケジュール未提出";
       target.getElementsByClassName("sch-info")[0].style.color = "red";
-    }}
+    }
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成③　シフト情報挿入 　10min
@@ -241,11 +241,11 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       const swich= '<div class="btn">依頼時間を変更する</div><div class="btn">依頼内容を取り消す</div>';
       target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
-    }else{
+    }}else{
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sh-info")[0].remove();
       target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-    }}
+    }
 
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();
