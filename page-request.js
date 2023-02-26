@@ -337,7 +337,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
   forms.forEach(element =>{
     var restart = element.getElementsByClassName("ft1")[0].value;
-    console.log(element.getElementsByClassName("ft1")[0]);
+    console.log(element.getElementsByClassName("ft1")[0].value);
     if(restart !=null){
       var reday = element.getElementsByClassName("fd")[0].value;
       var reend = element.getElementsByClassName("ft2")[0].value;
