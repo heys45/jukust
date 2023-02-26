@@ -358,6 +358,7 @@ console.log(main_db);
   form_button_wrapper.setAttribute("id","form_button_wrapper");
   form_button_wrapper.style.display = "flex";form_button_wrapper.style["justify-content"] = "center";form_button_wrapper.style["align-item"] = "center";
   form_area.appendChild(form_button_wrapper);
+  var form_wrapper = document.getElementById("form_button_wrapper")
 
   var form_button = document.createElement("div");
   form_button.setAttribute("id","form_button");
@@ -366,13 +367,13 @@ console.log(main_db);
   form_button.style["background-color"] ="green";
   form_button.style["border-radius"] = "5px";
   form_button.style.color="white";
-  document.getElementById("form_button_wrapper").appendChild(form_button);
+  form_wrapper.appendChild(form_button);
   var form_button = document.getElementById("form_button")
 
   var form_comfirm= document.createElement("div");
   form_comfirm.innerHTML="シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。";
   form_comfirm.style.display="none";
-  document.appendChild(form_comfirm);
+  form_wrapper.appendChild(form_comfirm);
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
