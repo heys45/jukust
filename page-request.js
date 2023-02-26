@@ -183,9 +183,9 @@ console.log(main_db);
   // 出力する場所を用意（quoteを指定）
   var area_target = document.getElementById("シフト依頼はこちらから").nextElementSibling;
   var form_area = document.getElementsByTagName("form")[0];
+  console.log(form_area.id);
   form_area.setAttribute("id","form");
-  area_target.after(form_area);  console.log(form_area.id);
-
+  area_target.after(form_area);  
 
   const forms = document.querySelectorAll('.dg');
 
@@ -365,10 +365,10 @@ console.log(main_db);
 
   forms.forEach(element =>{
     var restart = element.getElementsByClassName("ft1")[0].value;
-    if(value !=""){
+    if(value !=null){
       var reday = element.getElementsByClassName("fd")[0].value;
       var reend = element.getElementsByClassName("ft2")[0].value;
-      if(element.getElementsByClassName("hosoku")[0].value !=""){
+      if(element.getElementsByClassName("hosoku")[0].value !=null){
         var rehosoku = "<br>補足｜"+element.getElementsByClassName("hosoku")[0].value;
       }else{var rehosoku =""}
       var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
