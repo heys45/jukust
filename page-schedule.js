@@ -307,7 +307,8 @@ forms.forEach((element,index) =>{
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
-  forms.forEach(element =>{
+  var formss = document.querySelectorAll(".day-box");
+  formss.forEach(element =>{
     var restart = element.getElementsByClassName("ft1")[0].value;
     console.log(element.getElementsByClassName("ft1")[0].innerHTML);
     if(restart !=null){
