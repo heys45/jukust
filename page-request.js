@@ -315,9 +315,12 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_button.style.color="white";
   form_wrapper.appendChild(form_button);
   var form_button = document.getElementById("form_button")
+  
 
   var form_comfirm= document.createElement("div");
   form_comfirm.innerHTML='<p>シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。</p><p>依頼内容</p><div id="re_content"></div>';
+  form_comfirm.style.display="none";
+  form_wrapper.appendChild(form_comfirm);
 
   forms.forEach(element =>{
     var restart = element.getElementsByClassName("ft1")[0].value;
@@ -335,8 +338,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   });
 
 
-  form_comfirm.style.display="none";
-  form_wrapper.appendChild(form_comfirm);
+
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
