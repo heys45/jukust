@@ -238,7 +238,7 @@ forms.forEach((element,index) =>{
     target.getElementsByClassName("ft1")[0].after(time_guide);
 
     var submit_guide = document.createElement("span");
-    submit_guide.innerHTML="　＊依頼完了には送信が必要です";
+    submit_guide.innerHTML="　＊提出完了には送信が必要です";
     submit_guide.style["font-weight"] = "bold";
     submit_guide.style["color"] = "#34675c";
     submit_guide.style["font-size"] = "14px";
@@ -252,7 +252,7 @@ forms.forEach((element,index) =>{
 
 
     // フォームの回答と選択肢を設定する
-    target.getElementsByClassName("fs2")[0].value =key;
+    target.getElementsByClassName("fd")[0].value =key;
 
     var values =["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"];
     values.forEach(element =>{
