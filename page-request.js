@@ -394,7 +394,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_term_swich.id="week4";
   form_term_box.appendChild(form_term_swich);
 
-  for (let j = 7; j < 30; j++) {
+  for (let j = 8; j <= 30; j++) {
     document.getElementsByClassName("day-box")[j].style.display="none";
   }
 
@@ -412,17 +412,17 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
       }
       element.style["background-color"]="#34675c";
       element.style["color"]="white";
-      for (let j = 0; j < 30; j++) {
+      for (let j = 0; j <= 30; j++) {
         document.getElementsByClassName("day-box")[j].style.display="flex";
       }
       // 個別処理
       if(element.id == "week1"){
-        for (let j = 7; j < 30; j++) {
+        for (let j = 8; j <= 30; j++) {
           document.getElementsByClassName("day-box")[j].style.display="none";
         }
       }
       if(element.id == "week2"){
-        for (let j = 14; j < 30; j++) {
+        for (let j = 15; j <= 30; j++) {
           document.getElementsByClassName("day-box")[j].style.display="none";
         }
       }
