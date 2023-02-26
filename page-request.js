@@ -178,6 +178,13 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
     // 日付を入れる
     var day_label = month+"/"+day+"<br>("+yobi[week]+")"
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
+    if (week = 0){
+      target.getElementsByClassName("day-label")[0].style["background-color"]="#6f1d1b"
+    } 
+    if (week = 6){
+      target.getElementsByClassName("day-label")[0].style["background-color"]="#284b63"
+    } 
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成②　スケジュール情報挿入 　10min
