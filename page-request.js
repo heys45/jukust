@@ -126,7 +126,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// フォーム表示設定代項目
+// フォーム表示設定代項目　3分
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // 使用するフォームの選択
   const sh_form = document.getElementById("shift-form");
@@ -146,14 +146,13 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
   const forms = document.querySelectorAll('.dg');
 
-  // フォーム初期値の設定
+  // フォーム初期値の設定 講師ID、教室ID、勤務IDの存在を確認。
   document.getElementById("teaid").value = prop_object["講師ID"];
   document.getElementById("schid").value = prop_object["教室ID"];
 
   // フォーム不要項目の非表示
   const death_prop = document.querySelectorAll(".fd,.adj,.fs");
-  death_prop.forEach(element=>{  element.style.display = 'none';  });
-
+  death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   view_form.style.display = 'block';
 
