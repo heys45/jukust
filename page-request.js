@@ -302,7 +302,10 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
   var form_button_wrapper = document.createElement("div");
   form_button_wrapper.setAttribute("id","form_button_wrapper");
-  form_button_wrapper.style.display = "flex";form_button_wrapper.style["justify-content"] = "center";form_button_wrapper.style["align-item"] = "center";
+  form_button_wrapper.style.display = "flex";
+  form_button_wrapper.style["flex-direction"]: "column";
+  form_button_wrapper.style["justify-content"] = "center";
+  form_button_wrapper.style["align-item"] = "center";
   form_area.appendChild(form_button_wrapper);
   var form_wrapper = document.getElementById("form_button_wrapper")
 
