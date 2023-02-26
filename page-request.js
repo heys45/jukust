@@ -355,7 +355,7 @@ console.log(main_db);
   // フォーム提出期間変更ボタン　
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   var form_button_wrapper = document.createElement("div");
-  form_button.setAttribute("id","form_button_wrapper");
+  form_button_wrapper.setAttribute("id","form_button_wrapper");
   form_button_wrapper.style.display = "flex";form_button_wrapper.style["justify-content"] = "center";form_button_wrapper.style["align-item"] = "center";
   form_area.appendChild(form_button_wrapper);
 
