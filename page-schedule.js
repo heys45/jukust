@@ -289,6 +289,7 @@ forms.forEach((element,index) =>{
 var selects =document.querySelectorAll("select");
 selects.forEach((element,index) =>{
   //select設定時に、selected
+  console.log(element.value);
   element.addEventListener('change', function(){
     console.log(element.selectedIndex);
     console.log(element.value);
