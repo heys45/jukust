@@ -186,8 +186,9 @@ forms.forEach((element,index) =>{
         var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
         else{var hosoku="" }
 
-        var db_info ="シフト依頼時間"+time1+"〜"+time2+hosoku;
+        var db_info ="シフト依頼時間｜"+time1+"〜"+time2+hosoku;
         target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+        target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
         target.getElementsByClassName("sch-info")[0].remove();
   
         // // 依頼フォームのボックスを初期で非表示にする
