@@ -378,6 +378,16 @@ forms.forEach((element,index) =>{
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
+  var selects =document.querySelectorAll("select");
+  selects.forEach((element) =>{
+    //select設定時に、selected
+    console.log(element.value);
+    element.addEventListener('change', function(){
+      console.log(element.selectedIndex);
+      console.log(element.value);
+    });
+  });
+
   var formss = document.querySelectorAll(".day-box");
   formss.forEach(element =>{
     if(element.querySelectorAll(".ft1")[0].value !=null){
@@ -393,6 +403,17 @@ forms.forEach((element,index) =>{
       document.getElementById("re_content").appendChild(re_contentp);
     }
   });
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
