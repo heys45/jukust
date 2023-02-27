@@ -285,19 +285,69 @@ forms.forEach((element,index) =>{
 // Select属性の処理
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 
+
 var selects =document.querySelectorAll("select");
 selects.forEach((element,index) =>{
-  var options =element.querySelectorAll("option");
-  if(index = 0){ //初期値をselected
-    options[0].selected = true;} 
   //select設定時に、selected
   element.addEventListener('change', function(){
-  for (let j = 0; j < options.length; j++) {
-    options[j].selected=false;};
-    options[i].selected=true;
+    console.log(element.selectedIndex);
   });
 });
 
+
+
+
+
+
+
+// var selects =document.querySelectorAll("select");
+// selects.forEach((element,index) =>{
+//   var options =element.querySelectorAll("option");
+//   if(index = 0){ //初期値をselected
+//     options[0].selected = true;} 
+//   //select設定時に、selected
+//   element.addEventListener('change', function(){
+//   for (let j = 0; j < options.length; j++) {
+//     options[j].selected=false;};
+//     options[i].selected=true;
+//   });
+// });
+
+
+
+
+
+
+// var selects =document.querySelectorAll("select");
+// selects.forEach((element,index) =>{
+//   var options =element.querySelectorAll("option");
+//   swich(element.selectedIndex){
+//       for (let i = 0; i < options.length; i++){
+//       case i:
+//         target.innerHTML = "〜〜〜〜〜〜〜";
+//         break;
+//       };
+//     };
+
+
+//   }
+
+
+//   var options =element.querySelectorAll("option");
+//   if(index = 0){ //初期値をselected
+//     options[0].selected = true;} 
+//   //select設定時に、selected
+
+//     selindex = element
+
+//   element.addEventListener('change', function(){
+//   for (let j = 0; j < options.length; j++) {
+//     selindex 
+
+//     options[j].selected=false;};
+//     options[i].selected=true;
+//   });
+// });
 
 
 
@@ -335,21 +385,21 @@ selects.forEach((element,index) =>{
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
-  var formss = document.querySelectorAll(".day-box");
-  formss.forEach(element =>{
-    if(element.getElementsByClassName("ft1")[0].value !=null){
-      var restart = element.getElementsByClassName("ft1")[0].value;
-      var reday = element.getElementsByClassName("fd")[0].value;
-      var reend = element.getElementsByClassName("ft2")[0].value;
-      if(element.getElementsByClassName("hosoku")[0].value !=null){
-        var rehosoku = "<br>補足｜"+element.getElementsByClassName("hosoku")[0].value;
-      }else{var rehosoku =""}
-      var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
-      var re_contentp = document.createElement("p");
-      re_contentp.innerHTML= re_content;
-      document.getElementById("re_content").appendChild(re_contentp);
-    }
-  });
+  // var formss = document.querySelectorAll(".day-box");
+  // formss.forEach(element =>{
+  //   if(element.getElementsByClassName("ft1")[0].value !=null){
+  //     var restart = element.getElementsByClassName("ft1")[0].value;
+  //     var reday = element.getElementsByClassName("fd")[0].value;
+  //     var reend = element.getElementsByClassName("ft2")[0].value;
+  //     if(element.getElementsByClassName("hosoku")[0].value !=null){
+  //       var rehosoku = "<br>補足｜"+element.getElementsByClassName("hosoku")[0].value;
+  //     }else{var rehosoku =""}
+  //     var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
+  //     var re_contentp = document.createElement("p");
+  //     re_contentp.innerHTML= re_content;
+  //     document.getElementById("re_content").appendChild(re_contentp);
+  //   }
+  // });
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
