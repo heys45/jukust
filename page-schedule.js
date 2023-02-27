@@ -397,13 +397,14 @@ forms.forEach((element,index) =>{
     form_button.innerHTML="送信完了";
 
     // 送信内容の作成
-    var restarts = document.querySelectorAll(".day-box .ft1");
+    var restarts = document.querySelectorAll(".day-box .fs2");
     console.log(restarts);
     restarts.forEach((element,index) =>{
       console.log(element);
-      if(element.value !=null){
-        var restart = document.querySelectorAll(".day-box .ft1")[index].value;
+      if(element.value !="選択してください"){
+        var reday = document.querySelectorAll(".day-box .fs2")[index].value;
         var reday = document.querySelectorAll(".day-box .fd")[index].value;
+        var restart = document.querySelectorAll(".day-box .ft1")[index].value;
         var reend = document.querySelectorAll(".day-box .ft2")[index].value;
         if(document.querySelectorAll(".day-box .hosoku")[index].value !=null){
           var rehosoku = "<br>補足｜"+document.querySelectorAll(".day-box .hosoku")[index].value;
