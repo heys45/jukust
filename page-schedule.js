@@ -5,7 +5,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // プログレスバーの変更
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+// #region プログレスバー設定　個別
     // 表示位置の設定
     var quote_name = "スポットバイトの流れ";
     var progressbar = document.getElementsByClassName("progressbar")[0];
@@ -15,12 +15,13 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     //プログレスバー書き換え処理
     document.getElementById('li-schedule').setAttribute("class","active");
     // document.getElementById('db-2-1-4').setAttribute("class",complete);
+// #endregion
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // DB表示設定代項目 1min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+// #region データベースフィルター設定　★まとめページは変更？
     // 教室or講師IDによるDBフィルタ
     // 前提：データベースはグループ化しておく
     const groups = document.querySelectorAll('.notion-collection-group__section');
@@ -36,6 +37,8 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
       element.style.display = "block" ;  });
     document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
       element.remove();  });
+// #endregion
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // テーブルの番号づけ 何もしなくてOK
