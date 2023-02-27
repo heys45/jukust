@@ -173,9 +173,8 @@ forms.forEach((element,index) =>{
     if(document.getElementById("db-3") !=null){
       if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
         var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
-        if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
-        var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
-        else{var status=""}
+        if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0] =="講師回答前"){
+        var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
         if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
         var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
         else{var time1="" }
@@ -192,13 +191,7 @@ forms.forEach((element,index) =>{
         target.getElementsByClassName("sh-info")[0].style["color"]="red";
         target.getElementsByClassName("sch-info")[0].remove();
         target.getElementsByClassName("day-box-swich")[0].remove();
-  
-        // // 依頼フォームのボックスを初期で非表示にする
-        // target.getElementsByClassName("day-box-form")[0].style.display="none";
-        // // 依頼フォーム再表示用のボタンを用意する
-        // const swich= '<div class="btn">依頼時間を変更する</div><div class="btn">依頼内容を取り消す</div>';
-        // target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
-  
+      }  
       }else{
         target.getElementsByClassName("day-box-swich")[0].remove();
         target.getElementsByClassName("sh-info")[0].remove();
