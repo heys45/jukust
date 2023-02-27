@@ -171,9 +171,9 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 // フォームボックスの作成②　スケジュール情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // スケジュール提出があればスケジュール情報を入れる
-    if(document.getElementById("db-3") !=null){
-    if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
-      var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
+    if(document.getElementById("db-4") !=null){
+    if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
+      var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
       else{var status=""}
@@ -198,9 +198,9 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 // フォームボックスの作成③　シフト情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
-    if(document.getElementById("db-4") !=null){
-    if(document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0] !=null){
-      var db_id =document.getElementById("db-4").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
+    if(document.getElementById("db-3") !=null){
+    if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
+      var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
       else{var status=""}
