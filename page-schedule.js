@@ -286,15 +286,6 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 
 
-var selects =document.querySelectorAll("select");
-selects.forEach((element,index) =>{
-  //select設定時に、selected
-  console.log(element.value);
-  element.addEventListener('change', function(){
-    console.log(element.selectedIndex);
-    console.log(element.value);
-  });
-});
 
 
 
@@ -387,21 +378,24 @@ selects.forEach((element,index) =>{
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
-  // var formss = document.querySelectorAll(".day-box");
-  // formss.forEach(element =>{
-  //   if(element.getElementsByClassName("ft1")[0].value !=null){
-  //     var restart = element.getElementsByClassName("ft1")[0].value;
-  //     var reday = element.getElementsByClassName("fd")[0].value;
-  //     var reend = element.getElementsByClassName("ft2")[0].value;
-  //     if(element.getElementsByClassName("hosoku")[0].value !=null){
-  //       var rehosoku = "<br>補足｜"+element.getElementsByClassName("hosoku")[0].value;
-  //     }else{var rehosoku =""}
-  //     var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
-  //     var re_contentp = document.createElement("p");
-  //     re_contentp.innerHTML= re_content;
-  //     document.getElementById("re_content").appendChild(re_contentp);
-  //   }
-  // });
+  var formss = document.querySelectorAll(".day-box");
+  formss.forEach(element =>{
+    if(element.querySelectorAll(".ft1")[0].value !=null){
+      var restart = element.querySelectorAll(".ft1")[0].value;
+      var reday = element.querySelectorAll(".fd")[0].value;
+      var reend = element.querySelectorAll(".ft2")[0].value;
+      if(element.querySelectorAll(".hosoku")[0].value !=null){
+        var rehosoku = "<br>補足｜"+element.gquerySelectorAll(".hosoku")[0].value;
+      }else{var rehosoku =""}
+      var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
+      var re_contentp = document.createElement("p");
+      re_contentp.innerHTML= re_content;
+      document.getElementById("re_content").appendChild(re_contentp);
+    }
+  });
+
+
+
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
