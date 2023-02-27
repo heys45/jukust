@@ -35,7 +35,6 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     document.querySelectorAll(research_class).forEach(element =>{
       element.style.display = "block" ;  });
     document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
-      console.log(element);
       element.remove();  });
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -183,7 +182,7 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementById("db-3") !=null){
-    if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
+    if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].length !=0){
       var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
       var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;}
@@ -206,8 +205,6 @@ forms.forEach((element,index) =>{
     // 依頼フォーム再表示用のボタンを用意する
     const swich= '<div class="btn">スケジュールを<br>変更する</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
-
-
 
     }}else{
       target.getElementsByClassName("day-box-swich")[0].remove();
