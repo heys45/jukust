@@ -312,7 +312,10 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの拡張①　送信機能＋送信後の設定　10min
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region フォーム関連の共通設定  ※送信ボタンのテキストのみ個別！！
+
+  // フォーム送信ボタンラッパーの作成
   var form_button_wrapper = document.createElement("div");
   form_button_wrapper.setAttribute("id","form_button_wrapper");
   form_button_wrapper.style.display = "flex";
@@ -322,6 +325,7 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_area.appendChild(form_button_wrapper);
   var form_wrapper = document.getElementById("form_button_wrapper")
 
+  // フォーム送信ボタンの作成
   var form_button = document.createElement("button");
   form_button.setAttribute("id","form_button");
   form_button.setAttribute("type","submit");
@@ -334,29 +338,12 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_wrapper.appendChild(form_button);
   var form_button = document.getElementById("form_button")
   
-
+  // フォーム送信ボタン送信後の表示設定
   var form_comfirm= document.createElement("div");
-  form_comfirm.innerHTML='<p>シフトの依頼が完了しました。データが反映されるまでは2分ほど時間がかかります。</p><p>依頼内容</p><div id="re_content"></div>';
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
-  var formss = document.querySelectorAll(".day-box");
-  formss.forEach(element =>{
-    var restart = element.getElementsByClassName("ft1")[0].value;
-    console.log(element.getElementsByClassName("ft1")[0].value);
-    if(restart !=null){
-      var reday = element.getElementsByClassName("fd")[0].value;
-      var reend = element.getElementsByClassName("ft2")[0].value;
-      if(element.getElementsByClassName("hosoku")[0].value !=null){
-        var rehosoku = "<br>補足｜"+element.getElementsByClassName("hosoku")[0].value;
-      }else{var rehosoku =""}
-      var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
-      var re_contentp = document.createElement("p");
-      re_contentp.innerHTML= re_content;
-      document.getElementById("re_content").appendChild(re_contentp);
-    }
-  });
-
+  // フォーム送信後の画面遷移の設定
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
   form_iframe.setAttribute("id","hidden_iframe");
@@ -365,13 +352,43 @@ if(prop_object["ページ表示名"]==="講師別シフト依頼ページ"){
   form_area.setAttribute("method","post");
   form_area.setAttribute("target","hidden_iframe");
 
-  //フォーム送信後の処理
+// #endregion 
+
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの拡張①　送信後のメッセージ作成　10min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+// #region 【個別】送信後のメッセージ作成
+  //フォーム送信後の処理　　メッセージの設定必要！
   form_button.addEventListener('click',function(){
     form_comfirm.style.display="block";
     form_button.style["background-color"]="gray";
     form_button.innerHTML="送信完了";
+    form_comfirm.innerHTML='<p>シフトの依頼が完了しました。データの反映には2分ほど時間がかかります。</p><p>送信内容</p><div id="re_content"></div>';
+
+    // 送信内容の作成
+    var restarts = document.querySelectorAll(".day-box .ft1");
+    console.log(restarts);
+    restarts.forEach((element,index) =>{
+      console.log(element);
+      if(element.value !="選択してください"){
+        var reday = document.querySelectorAll(".day-box .fd")[index].value;
+        var restart = document.querySelectorAll(".day-box .ft1")[index].value;
+        var reend = document.querySelectorAll(".day-box .ft2")[index].value;
+        if(document.querySelectorAll(".day-box .hosoku")[index].value !=null){
+          var rehosoku = "<br>補足｜"+document.querySelectorAll(".day-box .hosoku")[index].value;
+        }else{var rehosoku =""}
+        var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
+        var re_contentp = document.createElement("p");
+        re_contentp.innerHTML= re_content;
+        document.getElementById("re_content").appendChild(re_contentp);
+      }
+    });
 
   });
+  
+ //#endregion
+
   
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの拡張②　提出期間切り替えボタンの設定
