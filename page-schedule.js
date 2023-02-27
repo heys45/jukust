@@ -206,7 +206,7 @@ forms.forEach((element,index) =>{
     const swich= '<div class="btn">スケジュールを<br>変更する</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
-    var trigger = document.target.getElementsByClassName("btn")[0];
+    var trigger = target.getElementsByClassName("btn")[0];
     trigger.addEventListener('click',function(){
       target.getElementsByClassName("day-box-form")[0].style.display="block";
     });
@@ -459,7 +459,7 @@ forms.forEach((element,index) =>{
     // });
     // console.log(main_db);
 
-        // スケジュールフォーム、時間入力時のみカラーの設定
+    // スケジュールフォーム、時間入力時のみカラーの設定
     // ターゲット取得
     var sc_ft1s = document.querySelectorAll('.ft1');
     var sc_ft2s = document.querySelectorAll('.ft2');
@@ -473,6 +473,7 @@ forms.forEach((element,index) =>{
       element.style.backgroundColor ="gray";
       element.style["border"] ="solid 3px gray";
     });
+
     
     // ステータスが一部勤務可能の時のみ色変更
     st2s.forEach(function(element,index){
@@ -480,6 +481,18 @@ forms.forEach((element,index) =>{
             console.log(element);
             var elementv = element.value;
             console.log(elementv);
+
+            if(elementv == '選択してください'){
+              element.style["background-color"] ="white";
+              element.style["color"] ="#17837c";
+              element.style["border"] ="solid 3px #17837c";
+              element.style["font-weight"] ="normal";
+              sc_ft1s[index].style["background-color"] ="gray";
+              sc_ft1s[index].style["border"] ="gray";
+              sc_ft2s[index].style["background-color"] ="gray";
+              sc_ft2s[index].style["border"] ="gray";
+              }
+
             if(elementv == '一部勤務可能'){
             element.style["background-color"] ="#17837c";
             element.style["color"] ="white";
@@ -495,12 +508,20 @@ forms.forEach((element,index) =>{
               element.style["color"] ="white";
               element.style["border"] ="solid 3px gray";
               element.style["font-weight"] ="normal";
+              sc_ft1s[index].style["background-color"] ="gray";
+              sc_ft1s[index].style["border"] ="gray";
+              sc_ft2s[index].style["background-color"] ="gray";
+              sc_ft2s[index].style["border"] ="gray";
             }
             if(elementv == '終日勤務可能'){
               element.style["background-color"] ="#17837c";
               element.style["color"] ="white";
               element.style["border"] ="solid 3px #17837c";
               element.style["font-weight"] ="normal";
+              sc_ft1s[index].style["background-color"] ="gray";
+              sc_ft1s[index].style["border"] ="gray";
+              sc_ft2s[index].style["background-color"] ="gray";
+              sc_ft2s[index].style["border"] ="gray";
             }
             
         });
