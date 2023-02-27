@@ -257,6 +257,7 @@ forms.forEach((element,index) =>{
     var values =["選択してください","終日勤務可能", "一部勤務可能", "勤務不可", "調整中"];
     values.forEach(element =>{
       var option = document.createElement('option');
+      option.setAttribute("value",element);
       option.textContent = element;
       target.getElementsByClassName("fs2")[0].appendChild(option);
     });
@@ -264,6 +265,7 @@ forms.forEach((element,index) =>{
     var values = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"];
     values.forEach(element =>{
       var option = document.createElement('option');
+      option.setAttribute("value",element);
       option.textContent = element;
       target.getElementsByClassName("ft1")[0].appendChild(option);
     });
@@ -271,6 +273,7 @@ forms.forEach((element,index) =>{
     var values = ["","10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
     values.forEach(element =>{
       var option = document.createElement('option');
+      option.setAttribute("value",element);
       option.textContent = element;
       target.getElementsByClassName("ft2")[0].appendChild(option);
     });
