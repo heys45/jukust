@@ -385,11 +385,14 @@ forms.forEach((element,index) =>{
     element.addEventListener('change', function(){
       console.log(element.selectedIndex);
       console.log(element.value);
+      console.log(element)
     });
   });
 
   var formss = document.querySelectorAll(".day-box");
   formss.forEach(element =>{
+    console.log(element.querySelectorAll(".ft1")[0])
+
     if(element.querySelectorAll(".ft1")[0].value !=null){
       var restart = element.querySelectorAll(".ft1")[0].value;
       var reday = element.querySelectorAll(".fd")[0].value;
