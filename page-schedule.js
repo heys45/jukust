@@ -392,6 +392,7 @@ forms.forEach((element,index) =>{
   var formss = document.querySelectorAll(".day-box");
   formss.forEach(element =>{
     console.log(element.querySelectorAll(".ft1")[0])
+    console.log(element.querySelectorAll(".ft1")[0].value)
 
     if(element.querySelectorAll(".ft1")[0].value !=null){
       var restart = element.querySelectorAll(".ft1")[0].value;
