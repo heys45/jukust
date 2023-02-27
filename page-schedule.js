@@ -196,7 +196,7 @@ forms.forEach((element,index) =>{
       if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
       var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
       else{var hosoku="" }
-      var db_info ="ｽｹｼﾞｭｰﾙ "+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+      var db_info ="スケジュール提出済み"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
       target.getElementsByClassName("sch-info")[0].innerHTML = db_info;
       target.getElementsByClassName("sch-info")[0].style["font-weight"] = "bold";
       
@@ -206,6 +206,9 @@ forms.forEach((element,index) =>{
     const swich= '<div class="btn">スケジュールを<br>変更する</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
+    }else{
+      target.getElementsByClassName("day-box-swich")[0].remove();
+      target.getElementsByClassName("sch-info")[0].remove();
     }}else{
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sch-info")[0].remove();
