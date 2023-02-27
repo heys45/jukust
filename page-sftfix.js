@@ -190,6 +190,7 @@ forms.forEach((element,index) =>{
         target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
         target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
         target.getElementsByClassName("sch-info")[0].remove();
+        target.getElementsByClassName("day-box-swich")[0].remove();
   
         // // 依頼フォームのボックスを初期で非表示にする
         // target.getElementsByClassName("day-box-form")[0].style.display="none";
