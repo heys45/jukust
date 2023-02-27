@@ -43,6 +43,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     //テーブルをまとめて取得
     const tables = document.querySelectorAll('.notion-table');
+    console.log(tables);
     //テーブルにIDを付与する 
     for( var i=0; i<tables.length; i++) {
       console.log(tables[i]);
@@ -84,6 +85,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     //DBをまとめて取得
     const dbs = document.querySelectorAll('.notion-collection-table');
+    console.log(dbs);
     //DBにIDを付与する 
     for( var i=0; i<dbs.length; i++) {
       var name = "db-"+(i+1);
