@@ -285,9 +285,9 @@ forms.forEach((element,index) =>{
 // Select属性の処理
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 
-var selects =document.getElementsByTagName("select");
+var selects =document.querySelectorAll("select");
 selects.forEach((element,index) =>{
-  var options =element.getElementsByTagName("option");
+  var options =element.querySelectorAll("option");
   if(index = 0){
     options[0].selected = true;
   }
