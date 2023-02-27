@@ -291,13 +291,11 @@ selects.forEach((element,index) =>{
   if(index = 0){ //初期値をselected
     options[0].selected = true;} 
   //select設定時に、selected
-  for (let i = 0; i < options.length; i++) {
-    element.addEventListener('change', function(){
-      for (let j = 0; j < array.length; j++) {
-        options[j].selected=false;};
-      options[i].selected=true;
-    });
-  }
+  element.addEventListener('change', function(){
+  for (let j = 0; j < options.length; j++) {
+    options[j].selected=false;};
+    options[i].selected=true;
+  });
 });
 
 
