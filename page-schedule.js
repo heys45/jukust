@@ -35,6 +35,7 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
     document.querySelectorAll(research_class).forEach(element =>{
       element.style.display = "block" ;  });
     document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
+      console.log(element);
       element.remove();  });
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
