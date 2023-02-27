@@ -202,6 +202,7 @@ forms.forEach((element,index) =>{
       
     // スケジュールがあれば提出フォームを初期で非表示にする
     target.getElementsByClassName("day-box-form")[0].style.display="none";
+
     // 依頼フォーム再表示用のボタンを用意する
     const swich= '<div class="btn">スケジュールを<br>変更する</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
@@ -209,8 +210,12 @@ forms.forEach((element,index) =>{
     var trigger = target.getElementsByClassName("btn")[0];
     trigger.addEventListener('click',function(){
       target.getElementsByClassName("day-box-form")[0].style.display="block";
+      target.getElementsByClassName("day-box-swich")[0].style.display="none";
     });
 
+    //ーーーーーーーーーーーーーーーーーー
+    // スケジュール提出がなかった時の処理
+    //ーーーーーーーーーーーーーーーーーー
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sch-info")[0].remove();
