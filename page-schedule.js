@@ -398,7 +398,9 @@ forms.forEach((element,index) =>{
 
     // 送信内容の作成
     var restarts = document.querySelectorAll(".day_box .ft1");
+    console.log
     restarts.forEach(element =>{
+      console.log(element);
       if(element.value !=null){
         var restart = element.querySelectorAll(".day_box .ft1")[0].value;
         var reday = element.querySelectorAll(".day_box .fd")[0].value;
