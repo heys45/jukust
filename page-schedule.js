@@ -291,6 +291,7 @@ selects.forEach((element,index) =>{
   //select設定時に、selected
   element.addEventListener('change', function(){
     console.log(element.selectedIndex);
+    console.log(element.value);
   });
 });
 
