@@ -364,13 +364,60 @@ forms.forEach((element,index) =>{
 // スケジュールフォーム、時間入力時のみカラーの設定
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-var formss = document.querySelectorAll(".day-box");
+var formss = document.querySelectorAll(".day-box .fs");
 formss.forEach((element,index) =>{
   console.log(document.querySelectorAll(".day-box .fs")[index].value);
-  element.getElementsByClassName("adft1")[0].style["background-color"] ="gray";
-  element.getElementsByClassName("adft2")[0].style["background-color"] ="gray";
-  element.getElementsByClassName("adft1")[0].style["border"] ="solid 3px gray";
-  element.getElementsByClassName("adft2")[0].style["border"] ="solid 3px gray";
+  var adoff = function(){
+  document.getElementsByClassName("adft1")[index].style["background-color"] ="gray";
+  document.getElementsByClassName("adft2")[index].style["background-color"] ="gray";
+  document.getElementsByClassName("adft1")[index].style["border"] ="solid 3px gray";
+  document.getElementsByClassName("adft2")[index].style["border"] ="solid 3px gray";
+  document.getElementsByClassName("adft1")[index].style["color"] ="solid 3px white";
+  document.getElementsByClassName("adft2")[index].style["color"] ="solid 3px white";
+  }
+  adoff;
+
+  element.addEventListener("change", function(){
+    if(element.value == "講師回答前"){
+      element.style["border"] ="solid 3px #17837c";
+      element.style["background-color"] ="white";
+      element.style["color"] ="#17837c";
+      adoff;
+    }
+    if(element.value == "勤務確定"){
+      element.style["border"] ="solid 3px #17837c";
+      element.style["background-color"] ="#17837c";
+      element.style["color"] ="white";
+      adoff;
+    }
+    if(element.value == "勤務不可"){
+      element.style["border"] ="solid 3px gray";
+      element.style["background-color"] ="gray";
+      element.style["color"] ="white";
+      adoff;
+    }
+    if(element.value == "調整中"){
+      element.style["border"] ="solid 3px gray";
+      element.style["background-color"] ="gray";
+      element.style["color"] ="white";
+      document.getElementsByClassName("adft1")[index].style["background-color"] ="white";
+      document.getElementsByClassName("adft2")[index].style["background-color"] ="white";
+      document.getElementsByClassName("adft1")[index].style["border"] ="solid 3px #17837c";
+      document.getElementsByClassName("adft2")[index].style["border"] ="solid 3px #17837c";
+      document.getElementsByClassName("adft1")[index].style["color"] ="solid 3px #17837c";
+      document.getElementsByClassName("adft2")[index].style["color"] ="solid 3px #17837c";
+
+    }
+
+
+
+
+  })
+
+  
+
+
+
 });
 
   // element.addEventListener("change", function() {
