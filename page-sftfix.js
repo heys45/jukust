@@ -130,7 +130,7 @@ if(prop_object["ページ表示名"]==="シフト確定"){
   document.getElementById("schid").value = prop_object["教室ID"];
 
   // フォーム不要項目の非表示
-  const death_prop = document.querySelectorAll(".fd,.ft1,.ft2,.fs");
+  const death_prop = document.querySelectorAll(".fd,.ft1,.ft2");
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   view_form.style.display = 'block';
@@ -185,17 +185,16 @@ forms.forEach((element,index) =>{
         if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
         var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
         else{var hosoku="" }
-        var db_info ="依頼済み"+"<span class=\"pill\">｜"+status+"｜</span>"+time1+"〜"+time2+hosoku;
+
+        var db_info ="シフト依頼時間"+time1+"〜"+time2+hosoku;
         target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+        target.getElementsByClassName("sch-info")[0].remove();
   
-        target.getElementsByClassName("sch-info")[0].style["font-weight"] = "";
-        target.getElementsByClassName("sh-info")[0].style["font-weight"] = "bold";
-  
-        // 依頼フォームのボックスを初期で非表示にする
-        target.getElementsByClassName("day-box-form")[0].style.display="none";
-        // 依頼フォーム再表示用のボタンを用意する
-        const swich= '<div class="btn">依頼時間を変更する</div><div class="btn">依頼内容を取り消す</div>';
-        target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+        // // 依頼フォームのボックスを初期で非表示にする
+        // target.getElementsByClassName("day-box-form")[0].style.display="none";
+        // // 依頼フォーム再表示用のボタンを用意する
+        // const swich= '<div class="btn">依頼時間を変更する</div><div class="btn">依頼内容を取り消す</div>';
+        // target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
   
       }else{
         target.getElementsByClassName("day-box-swich")[0].remove();
@@ -210,7 +209,7 @@ forms.forEach((element,index) =>{
       // 参考ボックスの非表示
       target.getElementsByClassName("ajs-info")[0].remove();
 
-      //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成④　送信部分の作成 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 
