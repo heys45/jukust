@@ -280,6 +280,34 @@ forms.forEach((element,index) =>{
   
   })
 
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// Select属性の処理
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+
+var selects =document.getElementsByTagName("select");
+selects.forEach((element,index) =>{
+  var options =element.getElementsByTagName("option");
+  if(index = 0){
+    options[0].selected = true;
+  }
+  for (let i = 0; i < array.length; i++) {
+    element.addEventListener('change', function(){
+      for (let j = 0; j < array.length; j++) {
+        options[j].selected=false;
+      };
+      options[i].selected=true;
+    });
+  }
+});
+
+
+
+
+
+
+
+
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの拡張①　送信機能＋送信後の設定　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
@@ -406,6 +434,8 @@ forms.forEach((element,index) =>{
 
     });
   });
+
+  
 
 
 
