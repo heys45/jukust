@@ -399,14 +399,14 @@ forms.forEach((element,index) =>{
     // 送信内容の作成
     var restarts = document.querySelectorAll(".day-box .ft1");
     console.log(restarts);
-    restarts.forEach(element =>{
+    restarts.forEach((element,index) =>{
       console.log(element);
       if(element.value !=null){
-        var restart = element.querySelectorAll(".day-box .ft1")[0].value;
-        var reday = element.querySelectorAll(".day-box .fd")[0].value;
-        var reend = element.querySelectorAll(".day-box .ft2")[0].value;
-        if(element.querySelectorAll(".day-box .hosoku")[0].value !=null){
-          var rehosoku = "<br>補足｜"+element.gquerySelectorAll(".day-box .hosoku")[0].value;
+        var restart = document.querySelectorAll(".day-box .ft1")[index].value;
+        var reday = document.querySelectorAll(".day-box .fd")[index].value;
+        var reend = document.querySelectorAll(".day-box .ft2")[index].value;
+        if(document.querySelectorAll(".day-box .hosoku")[index].value !=null){
+          var rehosoku = "<br>補足｜"+document.gquerySelectorAll(".day-box .hosoku")[index].value;
         }else{var rehosoku =""}
         var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
         var re_contentp = document.createElement("p");
