@@ -378,65 +378,6 @@ forms.forEach((element,index) =>{
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
-  var selects =document.querySelectorAll("select");
-  selects.forEach((element) =>{
-    //select設定時に、selected
-    console.log(element.value);
-    element.addEventListener('change', function(){
-      console.log(element.selectedIndex);
-      console.log(element.value);
-      console.log(element)
-    });
-  });
-
-
-  var restarts = document.querySelectorAll(".day_box .ft1");
-  restarts.forEach(element =>{
-    if(element.value !=null){
-      var restart = element.querySelectorAll(".day_box .ft1")[0].value;
-      var reday = element.querySelectorAll(".day_box .fd")[0].value;
-      var reend = element.querySelectorAll(".day_box .ft2")[0].value;
-      if(element.querySelectorAll(".day_box .hosoku")[0].value !=null){
-        var rehosoku = "<br>補足｜"+element.gquerySelectorAll(".day_box .hosoku")[0].value;
-      }else{var rehosoku =""}
-      var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
-      var re_contentp = document.createElement("p");
-      re_contentp.innerHTML= re_content;
-      document.getElementById("re_content").appendChild(re_contentp);
-    }
-
-  })
-
-  // var formss = document.querySelectorAll(".day-box");
-  // formss.forEach(element =>{
-  //   if(element.querySelectorAll(".ft1")[0].value !=null){
-  //     var restart = element.querySelectorAll(".ft1")[0].value;
-  //     var reday = element.querySelectorAll(".fd")[0].value;
-  //     var reend = element.querySelectorAll(".ft2")[0].value;
-  //     if(element.querySelectorAll(".hosoku")[0].value !=null){
-  //       var rehosoku = "<br>補足｜"+element.gquerySelectorAll(".hosoku")[0].value;
-  //     }else{var rehosoku =""}
-  //     var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
-  //     var re_contentp = document.createElement("p");
-  //     re_contentp.innerHTML= re_content;
-  //     document.getElementById("re_content").appendChild(re_contentp);
-  //   }
-  // });
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
   form_iframe.setAttribute("id","hidden_iframe");
@@ -445,11 +386,32 @@ forms.forEach((element,index) =>{
   form_area.setAttribute("method","post");
   form_area.setAttribute("target","hidden_iframe");
 
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームボックスの拡張①　送信機能＋送信後の設定　10min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
+  
   //フォーム送信後の処理
   form_button.addEventListener('click',function(){
     form_comfirm.style.display="block";
     form_button.style["background-color"]="gray";
     form_button.innerHTML="送信完了";
+
+    // 送信内容の作成
+    var restarts = document.querySelectorAll(".day_box .ft1");
+    restarts.forEach(element =>{
+      if(element.value !=null){
+        var restart = element.querySelectorAll(".day_box .ft1")[0].value;
+        var reday = element.querySelectorAll(".day_box .fd")[0].value;
+        var reend = element.querySelectorAll(".day_box .ft2")[0].value;
+        if(element.querySelectorAll(".day_box .hosoku")[0].value !=null){
+          var rehosoku = "<br>補足｜"+element.gquerySelectorAll(".day_box .hosoku")[0].value;
+        }else{var rehosoku =""}
+        var re_content = reday+"｜"+restart+"〜"+reend+rehosoku;
+        var re_contentp = document.createElement("p");
+        re_contentp.innerHTML= re_content;
+        document.getElementById("re_content").appendChild(re_contentp);
+      }
+    })
 
   });
   
