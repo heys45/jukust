@@ -206,6 +206,11 @@ forms.forEach((element,index) =>{
     const swich= '<div class="btn">スケジュールを<br>変更する</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
+    var trigger = document.target.getElementsByClassName("btn")[0];
+    trigger.addEventListener('click',function(){
+      target.getElementsByClassName("day-box-form")[0].style.display="block";
+    });
+
     }else{
       target.getElementsByClassName("day-box-swich")[0].remove();
       target.getElementsByClassName("sch-info")[0].remove();
@@ -420,6 +425,7 @@ forms.forEach((element,index) =>{
 
     });
   });
+
 
   
 
