@@ -363,7 +363,7 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // スケジュールフォーム、時間入力時のみカラーの設定
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+// region スケジュール、勤務確定など、ステータスによるカラー変更
 var formss = document.querySelectorAll(".day-box .fs");
 formss.forEach((element,index) =>{
   console.log(document.querySelectorAll(".day-box .fs")[index].value);
@@ -397,8 +397,8 @@ formss.forEach((element,index) =>{
       adoff();
     }
     if(element.value == "調整中"){
-      element.style["border"] ="solid 3px gray";
-      element.style["background-color"] ="gray";
+      element.style["border"] ="solid 3px #17837c";
+      element.style["background-color"] ="#17837c";
       element.style["color"] ="white";
       document.getElementsByClassName("adft1")[index].style["background-color"] ="white";
       document.getElementsByClassName("adft2")[index].style["background-color"] ="white";
@@ -409,69 +409,7 @@ formss.forEach((element,index) =>{
 
     }
   })
-
-  
-
-
-
 });
-
-  // element.addEventListener("change", function() {
-    
-
-    
-  //   // ステータスが一部勤務可能の時のみ色変更
-  //   st2s.forEach(function(element,index){
-  //       element.addEventListener("change", function() {
-  //           console.log(element);
-  //           var elementv = element.value;
-  //           console.log(elementv);
-
-  //           if(elementv == '選択してください'){
-  //             element.style["background-color"] ="white";
-  //             element.style["color"] ="#17837c";
-  //             element.style["border"] ="solid 3px #17837c";
-  //             element.style["font-weight"] ="normal";
-  //             sc_ft1s[index].style["background-color"] ="gray";
-  //             sc_ft1s[index].style["border"] ="gray";
-  //             sc_ft2s[index].style["background-color"] ="gray";
-  //             sc_ft2s[index].style["border"] ="gray";
-  //             }
-
-  //           if(elementv == '一部勤務可能'){
-  //           element.style["background-color"] ="#17837c";
-  //           element.style["color"] ="white";
-  //           element.style["border"] ="solid 3px #17837c";
-  //           element.style["font-weight"] ="normal";
-  //           sc_ft1s[index].style["background-color"] ="white";
-  //           sc_ft1s[index].style["border"] ="solid 3px #777777";
-  //           sc_ft2s[index].style["background-color"] ="white";
-  //           sc_ft1s[index].style["border"] ="solid 3px #777777";
-  //           }
-  //           if(elementv == '勤務不可'){
-  //             element.style["background-color"] ="gray";
-  //             element.style["color"] ="white";
-  //             element.style["border"] ="solid 3px gray";
-  //             element.style["font-weight"] ="normal";
-  //             sc_ft1s[index].style["background-color"] ="gray";
-  //             sc_ft1s[index].style["border"] ="gray";
-  //             sc_ft2s[index].style["background-color"] ="gray";
-  //             sc_ft2s[index].style["border"] ="gray";
-  //           }
-  //           if(elementv == '終日勤務可能'){
-  //             element.style["background-color"] ="#17837c";
-  //             element.style["color"] ="white";
-  //             element.style["border"] ="solid 3px #17837c";
-  //             element.style["font-weight"] ="normal";
-  //             sc_ft1s[index].style["background-color"] ="gray";
-  //             sc_ft1s[index].style["border"] ="gray";
-  //             sc_ft2s[index].style["background-color"] ="gray";
-  //             sc_ft2s[index].style["border"] ="gray";
-  //           }
-            
-  //       });
-  //   });
-
 
 
 }}
