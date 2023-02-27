@@ -224,12 +224,12 @@ forms.forEach((element,index) =>{
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
 
     var status_guide = document.createElement("span");
-    status_guide.innerHTML = "ｽｹｼﾞｭｰﾙ  ｜";
+    status_guide.innerHTML = "スケジュール｜";
     status_guide.style["font-weight"]="bold";
     target.getElementsByClassName("fs2")[0].before(status_guide);
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "依頼時間｜";
+    time_guide.innerHTML = "勤務可能時間｜";
     target.getElementsByClassName("ft1")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
@@ -246,7 +246,7 @@ forms.forEach((element,index) =>{
     target.getElementsByClassName("fs2")[0].after(submit_guide);
 
     var hosoku_guide = document.createElement("span");
-    hosoku_guide.innerHTML = "補足事項｜";
+    hosoku_guide.innerHTML = "備考・補足　｜";
     target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
     target.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 115px)";
 
