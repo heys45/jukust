@@ -202,12 +202,13 @@ forms.forEach((element,index) =>{
         target.getElementsByClassName("day-box-swich")[0].remove();
         target.getElementsByClassName("sh-info")[0].remove();
         target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-        target.remove();
+        target.style.display="none";
       }}else{
         target.getElementsByClassName("day-box-swich")[0].remove();
         target.getElementsByClassName("sh-info")[0].remove();
         target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
         target.remove();
+        target.style.display="none";
       }
   
       // 参考ボックスの非表示
