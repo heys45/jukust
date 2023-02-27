@@ -40,82 +40,60 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // テーブルの番号づけ 何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    //テーブルをまとめて取得
+// #region テーブル共通処理
+  //テーブルを取得しIDを付与する
     const tables = document.querySelectorAll('.notion-table');
-    console.log(tables);
-    //テーブルにIDを付与する 
     for( var i=0; i<tables.length; i++) {
-      console.log(tables[i]);
-      var name = "table-"+(i+1);
-      console.log(name);
-      tables[i].setAttribute("id",name);
-      
-      //行をまとめて取得
+    var name = "table-"+(i+1);
+    tables[i].setAttribute("id",name);
+      //行をまとめて取得しIDを付与する
       const rows = tables[i].getElementsByTagName("tr");
-      //行にIDを付与する 
       for( var j=0; j<rows.length; j++) {
-      console.log(rows[j]);
       var name = "table-"+(i+1)+"-"+(j+1);
-      console.log(name);
       rows[j].setAttribute("id",name);
-      
-      //列をまとめて取得
+      //列をまとめて取得しIDを付与する
       const columns =rows[j].getElementsByTagName("td");
       const columnhs =rows[j].getElementsByTagName("th");
-      //列にIDを付与する 
       for( var k=0; k<columns.length; k++) {
-      console.log(columns[k]);
       var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-      console.log(name);
-      columns[k].setAttribute("id",name);
-      }
+      columns[k].setAttribute("id",name);}//列の設定１
       for( var k=0; k<columnhs.length; k++) {
-        console.log(columnhs[k]);
         var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-        console.log(name);
-        columnhs[k].setAttribute("id",name);
-
-        }
-      }
+        columnhs[k].setAttribute("id",name);}//列の設定２
+      }//行の設定完了
     }
+// #endregion
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベースの番号づけ 何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    //DBをまとめて取得
+// #region データベース共通処理
+    //DBをまとめて取得しIDを付与する 
     const dbs = document.querySelectorAll('.notion-collection-table');
-    console.log(dbs);
-    //DBにIDを付与する 
     for( var i=0; i<dbs.length; i++) {
-      var name = "db-"+(i+1);
-      dbs[i].setAttribute("id",name);
-      
-      //行をまとめて取得
+    var name = "db-"+(i+1);
+    dbs[i].setAttribute("id",name); 
+      //行をまとめて取得しIDを付与する 
       const rows = dbs[i].getElementsByTagName("tr")
-      //行にIDを付与する 
       for( var j=0; j<rows.length; j++) {
       if(j != 0){
       var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-      rows[j].setAttribute("name",name);
-      }
+      rows[j].setAttribute("name",name);}
       var name = "db-"+(i+1)+"-"+(j+1);
       rows[j].setAttribute("id",name);
-      
-      //列をまとめて取得
+      //列をまとめて取得しIDを付与する 
       const columns =rows[j].getElementsByTagName("td")
       const columnhs =rows[j].getElementsByTagName("th");
-      //列にIDを付与する 
       for( var k=0; k<columns.length; k++) {
       var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-      columns[k].setAttribute("id",name);
-      }
+      columns[k].setAttribute("id",name);}//列の設定１
       for( var k=0; k<columnhs.length; k++) {
       var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-      columnhs[k].setAttribute("id",name);
-
-      }
-      }
+      columnhs[k].setAttribute("id",name);}//列の設定2
+      }//行の設定完了
     }
+// #endregion
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -149,9 +127,11 @@ if(prop_object["ページ表示名"]==="スケジュール提出"){
 
   view_form.style.display = 'block';
 
+
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成①　日付ラベル作成 　　何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region 【共通】スケ提出とシフト管理は同じ　直近30日のフォーム用意
 const formdate =new Date();
 forms.forEach((element,index) =>{
   // 挿入する日付を用意（明日以降）
@@ -176,6 +156,8 @@ forms.forEach((element,index) =>{
   if (week == 6){
     target.getElementsByClassName("day-box-l")[0].style["background-color"]="#284b63"
   } 
+// #endregion
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成②　スケジュール情報挿入 　10min
@@ -381,7 +363,7 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの拡張②　提出期間切り替えボタンの設定
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
-
+// #region 【共通】スケ提出とシフト管理は同じ
   var form_term_box = document.createElement("div");
   form_term_box.id="form_term_swich_wrapper";
   form_term_box.style.display="flex";
@@ -443,13 +425,13 @@ forms.forEach((element,index) =>{
     });
   });
 
+// #endregion
 
-  
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベースの値取得
+// データベースの値取得改善案
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+// #region 【改善案】データベースの情報取得
     // var main_db ={};
     // var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
     // var db_header = document.getElementById("db-3-1").querySelectorAll("th");
@@ -475,6 +457,12 @@ forms.forEach((element,index) =>{
     //   }
     // });
     // console.log(main_db);
+// #endregion
+
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// スケジュールフォーム、時間入力時のみカラーの設定
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
     // スケジュールフォーム、時間入力時のみカラーの設定
     // ターゲット取得
