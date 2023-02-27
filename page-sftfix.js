@@ -365,8 +365,8 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 var formss = document.querySelectorAll(".day-box");
-formss.forEach(element =>{
-  console.log(element.querySelectorAll("st")[0].value);
+formss.forEach((element,index) =>{
+  console.log(element.querySelectorAll(".day-box .st")[index].value);
   element.getElementsByClassName("adft1")[0].style["background-color"] ="gray";
   element.getElementsByClassName("adft2")[0].style["background-color"] ="gray";
   element.getElementsByClassName("adft1")[0].style["border"] ="solid 3px gray";
