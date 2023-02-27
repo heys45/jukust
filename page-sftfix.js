@@ -217,15 +217,21 @@ forms.forEach((element,index) =>{
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
 
+
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "教室からの依頼時間｜";
+    time_guide.innerHTML = "依頼への回答｜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("ft1")[0].before(time_guide);
+    target.getElementsByClassName("fs")[0].before(time_guide);
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "調整希望時間｜";
+    time_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("adft1")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "〜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("ft1")[0].after(time_guide);
+    target.getElementsByClassName("adft1")[0].after(time_guide);
 
     var submit_guide = document.createElement("span");
     submit_guide.innerHTML="　＊依頼完了には送信が必要です";
@@ -233,10 +239,10 @@ forms.forEach((element,index) =>{
     submit_guide.style["color"] = "#34675c";
     submit_guide.style["font-size"] = "14px";
     submit_guide.style["display"] = "inline-box";
-    target.getElementsByClassName("ft2")[0].after(submit_guide);
+    target.getElementsByClassName("fs")[0].after(submit_guide);
 
     var hosoku_guide = document.createElement("span");
-    hosoku_guide.innerHTML = "補足事項｜";
+    hosoku_guide.innerHTML = "備考・補足｜";
     target.getElementsByClassName("hosoku")[0].before(hosoku_guide);
     target.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 115px)";
 
@@ -257,7 +263,7 @@ forms.forEach((element,index) =>{
       var option = document.createElement('option');
       option.setAttribute("value",element);
       option.textContent = element;
-      target.getElementsByClassName("ft1")[0].appendChild(option);
+      target.getElementsByClassName("adft1")[0].appendChild(option);
     });
 
     var values = ["","10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
@@ -265,7 +271,7 @@ forms.forEach((element,index) =>{
       var option = document.createElement('option');
       option.setAttribute("value",element);
       option.textContent = element;
-      target.getElementsByClassName("ft2")[0].appendChild(option);
+      target.getElementsByClassName("adft2")[0].appendChild(option);
     });
   
   })
