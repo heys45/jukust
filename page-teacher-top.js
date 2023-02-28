@@ -274,15 +274,12 @@ main_db["日付"].forEach((element,index)=>{
     time_guide.style["font-weight"]="bold";
     target.getElementsByClassName("in-hosoku")[0].before(time_guide);
     
-
-
-    // 依頼フォームのボックスを初期で非表示にする
-    // target.getElementsByClassName("day-box-form")[0].style.display="none";
+    //依頼フォームのボックスを初期で非表示にする
+    target.getElementsByClassName("day-box-form")[0].style.display="none";
     // 依頼フォーム再表示用のボタンを用意する
     const swich= '<div class="btn">出勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
-    
-
+  
 
   }
 
@@ -371,9 +368,6 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("out-time")[0].appendChild(option);
     target.getElementsByClassName("out-change")[0].appendChild(option);
   });
-
-
-
 
 });
 
