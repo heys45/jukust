@@ -303,6 +303,10 @@ main_db["日付"].forEach((element,index)=>{
 
     //依頼フォームのボックスを初期で非表示にする
     target1.getElementsByClassName("day-box-form")[0].style.display="none";
+    target1.getElementsByClassName("in-time")[0].style.display="none";
+    target1.getElementsByClassName("in-time")[0].previousElementSibling.style.display="none";
+    target1.getElementsByClassName("in-change")[0].style.display="none";
+    target1.getElementsByClassName("in-change")[0].previousElementSibling.style.display="none";
 
 
     // 依頼フォーム再表示用のボタンを用意する
@@ -320,12 +324,16 @@ main_db["日付"].forEach((element,index)=>{
     trigger2.addEventListener('click',function(){
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
       trigger2.style["color"]="white";
+      target1.getElementsByClassName("in-time")[0].style.display="inline-block";
+      target1.getElementsByClassName("in-time")[0].previousElementSibling.style.display="inline-block";
     });
 
     var trigger3 = target1.getElementsByClassName("btn")[2];
     trigger3.addEventListener('click',function(){
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
       trigger3.style["color"]="white";
+      target1.getElementsByClassName("in-change")[0].style.display="inline-block";
+      target1.getElementsByClassName("in-change")[0].previousElementSibling.style.display="inline-block";
     });
 
   }
