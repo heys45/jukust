@@ -273,12 +273,61 @@ main_db["日付"].forEach((element,index)=>{
     time_guide.innerHTML = "補足・備考｜";
     time_guide.style["font-weight"]="bold";
     target.getElementsByClassName("in-hosoku")[0].before(time_guide);
+
+    // フォームの回答と選択肢を設定する
+    var values =["", "出勤"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.setAttribute("value",element);
+      option.textContent = element;
+      target.getElementsByClassName("in-flag")[0].appendChild(option);
+    });
+
+    var values = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.setAttribute("value",element);
+      option.textContent = element;
+      target.getElementsByClassName("in-time")[0].appendChild(option);
+      target.getElementsByClassName("in-change")[0].appendChild(option);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     //依頼フォームのボックスを初期で非表示にする
     target.getElementsByClassName("day-box-form")[0].style.display="none";
+
+
     // 依頼フォーム再表示用のボタンを用意する
     const swich= '<div class="btn">出勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
     target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+
+    var trigger = target.getElementsByClassName("btn")[0];
+    trigger.addEventListener('click',function(){
+      target.getElementsByClassName("day-box-form")[0].style.display="block";
+      target.getElementsByClassName("day-box-swich")[0].style.display="none";
+    });
+
+    var trigger = target.getElementsByClassName("btn")[0];
+    trigger.addEventListener('click',function(){
+      target.getElementsByClassName("day-box-form")[0].style.display="block";
+      target.getElementsByClassName("day-box-swich")[0].style.display="none";
+    });
+
+
+
+
   
 
   }
@@ -324,6 +373,31 @@ main_db["日付"].forEach((element,index)=>{
     time_guide.innerHTML = "補足・備考｜";
     time_guide.style["font-weight"]="bold";
     target.getElementsByClassName("out-hosoku")[0].before(time_guide);
+
+
+  // フォームの回答と選択肢を設定する
+  var values =["", "退勤"];
+  values.forEach(element =>{
+    var option = document.createElement('option');
+    option.setAttribute("value",element);
+    option.textContent = element;
+    target.getElementsByClassName("out-flag")[0].appendChild(option);
+  });
+
+  var values = ["","10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
+  values.forEach(element =>{
+    var option = document.createElement('option');
+    option.setAttribute("value",element);
+    target.getElementsByClassName("out-time")[0].appendChild(option);
+    target.getElementsByClassName("out-change")[0].appendChild(option);
+  });
+
+
+
+
+
+
+
 
 
     // 依頼フォームのボックスを初期で非表示にする
