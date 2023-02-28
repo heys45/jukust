@@ -184,8 +184,8 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 var main_db ={};
-var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
-var db_header = document.getElementById("db-3-1").querySelectorAll("th");
+var db_data = document.getElementById("db-4").querySelectorAll("tr:not(#db-4-1)");
+var db_header = document.getElementById("db-4-1").querySelectorAll("th");
 console.log(db_header);
 db_header.forEach(element => {
   main_db[element.innerHTML] =[];
@@ -229,6 +229,46 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
   };
 });
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベースの値取得準備
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+var senkou_db ={};
+var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
+var db_header = document.getElementById("db-3-1").querySelectorAll("th");
+console.log(db_header);
+db_header.forEach(element => {
+  senkou_db[element.innerHTML] =[];
+});
+var nullspan = document.createElement("span");
+db_data.forEach(element => {
+  var a_db_data = element.querySelectorAll("td");
+  console.log(a_db_data);
+  for (let index = 0; index < db_header.length; index++) {
+    a_db_data[index].appendChild(nullspan);
+    var a_db_data_n = a_db_data[index].getElementsByTagName("span")[0];
+    if (a_db_data_n.getElementsByTagName("span")[0] !=null) {// spanが二段階の時
+      var a_db_data_n = a_db_data_n.getElementsByTagName("span")[0];
+      var a_db_data_n =  a_db_data_n.innerHTML;
+      senkou_db[db_header[index].innerHTML].push(a_db_data_n);
+    }else{// spanが一段階の時
+      var a_db_data_n =  a_db_data_n.innerHTML;
+      senkou_db[db_header[index].innerHTML].push(a_db_data_n);
+    }
+  }
+});
+console.log(senkou_db);
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベース由来のフォーム作成
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
+
+
+
 
     // // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
     // if(document.getElementById("db-3") !=null){
