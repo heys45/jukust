@@ -1,7 +1,7 @@
 setTimeout(timefunc,300);
 
 function timefunc(){
-if(prop_object["ページ表示名"]==="シフト確定"){
+if(prop_object["ページ表示名"]==="教室別シフト確定ページ"){
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // プログレスバーの変更 2min
