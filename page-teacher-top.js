@@ -273,23 +273,6 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("sch-info")[0].remove();
     target.getElementsByClassName("day-box-swich")[0].remove();
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  };
 });
 
 
