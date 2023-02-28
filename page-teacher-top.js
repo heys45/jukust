@@ -403,7 +403,7 @@ senkou_db["TimeRex入力済"].forEach((element,index)=>{
     TimeRex.innerHTML="TimerexCalendar();"
     area_target.appendChild(TimeRex);
 
-    var TimeRexdata = document.getElementById("timerex_calendar");
+    var TimeRexdata = document.querySelectorAll("#timerex_calendar")[0];
     area_target.appendChild(TimeRexdata);
 
 
