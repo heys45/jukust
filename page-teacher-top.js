@@ -311,15 +311,21 @@ main_db["日付"].forEach((element,index)=>{
 
     var trigger = target1.getElementsByClassName("btn")[0];
     trigger.addEventListener('click',function(){
-      target1.getElementsByClassName("day-box-form")[0].style.display="block";
-      target1.getElementsByClassName("day-box-swich")[0].style.display="none";
       target1.getElementsByClassName("in-flag")[0].firstElementChild.remove();
+      trigger.style["backgound-color"]="#34675c";
+      trigger.style["color"]="white";
     });
 
-    var trigger = target1.getElementsByClassName("btn")[0];
+    var trigger = target1.getElementsByClassName("btn")[1];
     trigger.addEventListener('click',function(){
-      targe1t.getElementsByClassName("day-box-form")[0].style.display="block";
-      targe1t.getElementsByClassName("day-box-swich")[0].style.display="none";
+      target1.getElementsByClassName("day-box-form")[0].style.display="block";
+      trigger.style["color"]="white";
+    });
+
+    var trigger = target1.getElementsByClassName("btn")[2];
+    trigger.addEventListener('click',function(){
+      target1.getElementsByClassName("day-box-form")[0].style.display="block";
+      trigger.style["color"]="white";
     });
 
   }
