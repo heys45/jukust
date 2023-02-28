@@ -242,7 +242,7 @@ main_db["日付"].forEach((element,index)=>{
     console.log(target);
     target.style.display = "flex";
     // 日付を入れる
-    var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>"+element.replace(/.*\(/,"");
+    var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>（"+element.replace(/.*\(/,"");
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
     var start = main_db["開始時刻"][index];
     var end = main_db["終了時刻"][index];
@@ -261,7 +261,7 @@ main_db["日付"].forEach((element,index)=>{
     console.log(target);
     target.style.display = "flex";
     // 日付を入れる
-    var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>"+element.replace(/.*\(\[/,"");
+    var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>（"+element.replace(/.*\(/,"");
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
     var start = main_db["開始時刻"][index];
     var end = main_db["終了時刻"][index];
@@ -270,8 +270,10 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
     target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
     target.getElementsByClassName("sh-info")[0].style["color"]="red";
-    target.getElementsByClassName("sch-info")[0].remove();
     target.getElementsByClassName("day-box-swich")[0].remove();
+    target.getElementsByClassName("ajs-info")[0].remove();
+
+
   }
 });
 
