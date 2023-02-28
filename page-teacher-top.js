@@ -213,54 +213,56 @@ console.log(main_db);
 // データベース由来のフォーム作成
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-// // 過去の日付で勤怠報告未完了のものを取得
-// console.log(main_db["日付"]);
-// main_db["日付"].forEach((element,index)=>{
-//   var counter = 0;
-//   console.log(main_db["開始報告フラグ"]);
-//   if(main_db["開始報告フラグ"][index]=1){
-//     // フォームデザインのフォーマットを用意
-//     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
-//     var target = document.getElementsByClassName("day-box").lastElementChild;
-//     target.style.display = "flex";
-//     // 日付を入れる
-//     target.getElementsByClassName("day-label")[0].innerHTML = element;
+// 過去の日付で勤怠報告未完了のものを取得
+console.log(main_db["日付"]);
+main_db["日付"].forEach((element,index)=>{
+  var counter = 0;
+  console.log(main_db["開始報告フラグ"]);
+  if(main_db["開始報告フラグ"][index]=1){
+    // フォームデザインのフォーマットを用意
+    form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
+    var target = document.getElementsByClassName("day-box").lastElementChild;
+    target.style.display = "flex";
+    // 日付を入れる
+    target.getElementsByClassName("day-label")[0].innerHTML = element;
+  };
+}
 
-//     // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
-//     if(document.getElementById("db-3") !=null){
-//       if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
-//         var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
-//         if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0] =="講師回答前"){
-//         var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
-//         if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
-//         var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-//         else{var time1="" }
-//         if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
-//           var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-//         else{var time2="" }
-//         if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-//         var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-//         else{var hosoku="" }
+    // // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
+    // if(document.getElementById("db-3") !=null){
+    //   if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
+    //     var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
+    //     if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0] =="講師回答前"){
+    //     var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
+    //     if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
+    //     var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
+    //     else{var time1="" }
+    //     if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
+    //       var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
+    //     else{var time2="" }
+    //     if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
+    //     var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
+    //     else{var hosoku="" }
 
-//         var db_info ="シフト時間　｜"+time1+"〜"+time2+hosoku;
-//         target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
-//         target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
-//         target.getElementsByClassName("sh-info")[0].style["color"]="red";
-//         target.getElementsByClassName("sch-info")[0].remove();
-//         target.getElementsByClassName("day-box-swich")[0].remove();
-//       }  
-//       }else{
-//         target.getElementsByClassName("day-box-swich")[0].remove();
-//         target.getElementsByClassName("sh-info")[0].remove();
-//         target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-//         target.style.display="none";
-//       }}else{
-//         target.getElementsByClassName("day-box-swich")[0].remove();
-//         target.getElementsByClassName("sh-info")[0].remove();
-//         target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-//         target.remove();
-//         target.style.display="none";
-//       }
+    //     var db_info ="シフト時間　｜"+time1+"〜"+time2+hosoku;
+    //     target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+    //     target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
+    //     target.getElementsByClassName("sh-info")[0].style["color"]="red";
+    //     target.getElementsByClassName("sch-info")[0].remove();
+    //     target.getElementsByClassName("day-box-swich")[0].remove();
+    //   }  
+    //   }else{
+    //     target.getElementsByClassName("day-box-swich")[0].remove();
+    //     target.getElementsByClassName("sh-info")[0].remove();
+    //     target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+    //     target.style.display="none";
+    //   }}else{
+    //     target.getElementsByClassName("day-box-swich")[0].remove();
+    //     target.getElementsByClassName("sh-info")[0].remove();
+    //     target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+    //     target.remove();
+    //     target.style.display="none";
+    //   }
 
 
 
