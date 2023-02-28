@@ -324,12 +324,7 @@ main_db["日付"].forEach((element,index)=>{
       target.getElementsByClassName("day-box-form")[0].style.display="block";
       target.getElementsByClassName("day-box-swich")[0].style.display="none";
     });
-
-
-
-
-  
-
+    
   }
 
 
