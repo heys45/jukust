@@ -82,7 +82,7 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
     document.querySelectorAll(research_class).forEach(element =>{
       element.style.display = "block" ;  });
     document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
-      // element.remove(); 
+      element.remove(); 
      });
 // #endregion
 
