@@ -235,44 +235,45 @@ console.log(main_db["日付"]);
 main_db["日付"].forEach((element,index)=>{
   var counter = 0;
   console.log(main_db["開始報告フラグ"]);
+
   if(main_db["開始報告フラグ"][index]==1){
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
-    var target = form_area.lastChild;
+    var target1 = form_area.lastChild;
     console.log(target);
-    target.style.display = "flex";
+    target1.style.display = "flex";
     // 日付を入れ
     var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>（"+element.replace(/.*\(/,"");
-    target.getElementsByClassName("day-label")[0].innerHTML = day_label;
+    target1.getElementsByClassName("day-label")[0].innerHTML = day_label;
     var start = main_db["開始時刻"][index];
     var end = main_db["終了時刻"][index];
 
     db_info = "勤務時間｜" + start +"〜"+end;
-    target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
-    target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
-    target.getElementsByClassName("sh-info")[0].style["color"]="red";
-    target.getElementsByClassName("sch-info")[0].remove();
+    target1.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+    target1.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
+    target1.getElementsByClassName("sh-info")[0].style["color"]="red";
+    target1.getElementsByClassName("sch-info")[0].remove();
 
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     var shift_form = document.getElementsByClassName("in-dg")[0];
-    target.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
-    target.getElementsByClassName("in-fd")[0].innerHTML=element;
+    target1.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
+    target1.getElementsByClassName("in-fd")[0].innerHTML=element;
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "実際の出勤時間　｜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("in-time")[0].before(time_guide);
+    target1.getElementsByClassName("in-time")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "変更後の出勤時間｜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("in-change")[0].before(time_guide);
+    target1.getElementsByClassName("in-change")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "補足・備考｜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("in-hosoku")[0].before(time_guide);
+    target1.getElementsByClassName("in-hosoku")[0].before(time_guide);
 
     // フォームの回答と選択肢を設定する
     var values =["", "出勤"];
@@ -280,7 +281,7 @@ main_db["日付"].forEach((element,index)=>{
       var option = document.createElement('option');
       option.setAttribute("value",element);
       option.textContent = element;
-      target.getElementsByClassName("in-flag")[0].appendChild(option);
+      target1.getElementsByClassName("in-flag")[0].appendChild(option);
     });
 
     var values = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"];
@@ -288,41 +289,29 @@ main_db["日付"].forEach((element,index)=>{
       var option = document.createElement('option');
       option.setAttribute("value",element);
       option.textContent = element;
-      target.getElementsByClassName("in-time")[0].appendChild(option);
-      target.getElementsByClassName("in-change")[0].appendChild(option);
+      target1.getElementsByClassName("in-time")[0].appendChild(option);
+      target1.getElementsByClassName("in-change")[0].appendChild(option);
     });
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
     //依頼フォームのボックスを初期で非表示にする
-    target.getElementsByClassName("day-box-form")[0].style.display="none";
+    target1.getElementsByClassName("day-box-form")[0].style.display="none";
 
 
     // 依頼フォーム再表示用のボタンを用意する
     const swich= '<div class="btn">出勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
-    target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+    target1.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
-    var trigger = target.getElementsByClassName("btn")[0];
+    var trigger = target1.getElementsByClassName("btn")[0];
     trigger.addEventListener('click',function(){
-      target.getElementsByClassName("day-box-form")[0].style.display="block";
-      target.getElementsByClassName("day-box-swich")[0].style.display="none";
+      target1.getElementsByClassName("day-box-form")[0].style.display="block";
+      target1.getElementsByClassName("day-box-swich")[0].style.display="none";
     });
 
-    var trigger = target.getElementsByClassName("btn")[0];
+    var trigger = target1.getElementsByClassName("btn")[0];
     trigger.addEventListener('click',function(){
-      target.getElementsByClassName("day-box-form")[0].style.display="block";
-      target.getElementsByClassName("day-box-swich")[0].style.display="none";
+      targe1t.getElementsByClassName("day-box-form")[0].style.display="block";
+      targe1t.getElementsByClassName("day-box-swich")[0].style.display="none";
     });
 
   }
@@ -333,41 +322,41 @@ main_db["日付"].forEach((element,index)=>{
   if(main_db["終了報告フラグ"][index]==1){
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
-    var target = form_area.lastChild;
-    console.log(target);
-    target.style.display = "flex";
+    var target2 = form_area.lastChild;
+    console.log(target2);
+    target2.style.display = "flex";
     // 日付を入れる
     var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>（"+element.replace(/.*\(/,"");
-    target.getElementsByClassName("day-label")[0].innerHTML = day_label;
+    target2.getElementsByClassName("day-label")[0].innerHTML = day_label;
     var start = main_db["開始時刻"][index];
     var end = main_db["終了時刻"][index];
 
     db_info = "勤務時間｜" + start +"〜"+end;
-    target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
-    target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
-    target.getElementsByClassName("sh-info")[0].style["color"]="red";
-    target.getElementsByClassName("ajs-info")[0].remove();
+    target2.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+    target2.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
+    target2.getElementsByClassName("sh-info")[0].style["color"]="red";
+    target2.getElementsByClassName("ajs-info")[0].remove();
 
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     var shift_form = document.getElementsByClassName("out-dg")[0];
-    target.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
-    target.getElementsByClassName("out-fd")[0].innerHTML=element;
+    target2.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
+    target2.getElementsByClassName("out-fd")[0].innerHTML=element;
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "実際の退勤時間　｜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("out-time")[0].before(time_guide);
+    target2.getElementsByClassName("out-time")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "変更後の退勤時間｜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("out-change")[0].before(time_guide);
+    target2.getElementsByClassName("out-change")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "補足・備考｜";
     time_guide.style["font-weight"]="bold";
-    target.getElementsByClassName("out-hosoku")[0].before(time_guide);
+    target2.getElementsByClassName("out-hosoku")[0].before(time_guide);
 
 
   // フォームの回答と選択肢を設定する
@@ -376,30 +365,17 @@ main_db["日付"].forEach((element,index)=>{
     var option = document.createElement('option');
     option.setAttribute("value",element);
     option.textContent = element;
-    target.getElementsByClassName("out-flag")[0].appendChild(option);
+    target2.getElementsByClassName("out-flag")[0].appendChild(option);
   });
 
   var values = ["","10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
   values.forEach(element =>{
     var option = document.createElement('option');
     option.setAttribute("value",element);
-    target.getElementsByClassName("out-time")[0].appendChild(option);
-    target.getElementsByClassName("out-change")[0].appendChild(option);
+    target2.getElementsByClassName("out-time")[0].appendChild(option);
+    target2.getElementsByClassName("out-change")[0].appendChild(option);
   });
 
-
-
-
-
-
-
-
-
-    // 依頼フォームのボックスを初期で非表示にする
-    // target.getElementsByClassName("day-box-form")[0].style.display="none";
-    // 依頼フォーム再表示用のボタンを用意する
-    const swich= '<div class="btn">退勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
-    target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
 
   }
