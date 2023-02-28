@@ -306,6 +306,7 @@ main_db["日付"].forEach((element,index)=>{
     trigger.addEventListener('click',function(){
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
       target1.getElementsByClassName("day-box-swich")[0].style.display="none";
+      target1.getElementsByClassName("in-flag")[0].firstElementChild.remove();
     });
 
     var trigger = target1.getElementsByClassName("btn")[0];
