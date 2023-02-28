@@ -190,13 +190,13 @@ var checks = document.querySelectorAll(".notion-checkbox.checked");
 checks.forEach(element =>{
   var check = document.createElement("span");
   check.innerHTML="1";
-  element.appendChild.check
+  element.appendChild(check);
 })
 var checks = document.querySelectorAll(".notion-checkbox:not(.checked)");
 checks.forEach(element =>{
   var check = document.createElement("span");
   check.innerHTML="0";
-  element.appendChild.check
+  element.appendChild(check);
 })
 
 
