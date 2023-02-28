@@ -221,7 +221,7 @@ main_db["日付"].forEach((element,index)=>{
   if(main_db["開始報告フラグ"][index]==1){
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
-    var target = document.querySelectorAll(".day-box").lastChild;
+    var target = form_area.lastChild;
     console.log(target);
     target.style.display = "flex";
     // 日付を入れる
