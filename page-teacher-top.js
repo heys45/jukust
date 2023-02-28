@@ -252,8 +252,27 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
     target.getElementsByClassName("sh-info")[0].style["color"]="red";
     target.getElementsByClassName("sch-info")[0].remove();
-    target.getElementsByClassName("day-box-swich")[0].remove();
+
+
+    //フォーム挿入
+    var shift_form = document.getElementsByClassName("in-dg")[0];
+    target.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
+    
+
+
+    // 依頼フォームのボックスを初期で非表示にする
+    // target.getElementsByClassName("day-box-form")[0].style.display="none";
+    // 依頼フォーム再表示用のボタンを用意する
+    const swich= '<div class="btn">出勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
+    target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+    
+
+
   }
+
+
+
+
   if(main_db["終了報告フラグ"][index]==1){
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
