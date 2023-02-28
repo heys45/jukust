@@ -253,6 +253,7 @@ main_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
     target1.getElementsByClassName("sh-info")[0].style["color"]="red";
     target1.getElementsByClassName("sch-info")[0].remove();
+    target2.getElementsByClassName("ajs-info")[0].remove();
 
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
