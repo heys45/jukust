@@ -274,6 +274,7 @@ main_db["日付"].forEach((element,index)=>{
     time_guide.innerHTML = "補足・備考｜";
     time_guide.style["font-weight"]="bold";
     target1.getElementsByClassName("in-hosoku")[0].before(time_guide);
+    target1.getElementsByClassName("in-hosoku")[0].style.width = "calc(100% - 115px)";
 
     // フォームの回答と選択肢を設定する
     var values =["", "出勤"];
