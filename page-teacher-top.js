@@ -76,10 +76,14 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
     var research_id = prop_object["講師ID"];
     var research_class =".x"+research_id
 
+    var research_id = prop_object["講師ID"];
+    var research_class =".x"+research_id
+    
     document.querySelectorAll(research_class).forEach(element =>{
       element.style.display = "block" ;  });
     document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
-      element.remove();  });
+      // element.remove(); 
+     });
 // #endregion
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
