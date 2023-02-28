@@ -279,7 +279,9 @@ console.log(senkou_db);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // 選考状況による表示編集
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
 senkou_db["TimeRex入力済"].forEach((element,index)=>{
+  console.log(main_db["開始報告フラグ"][index]);
   if(main_db["開始報告フラグ"][index]==1){
     var area_target = document.getElementById("やることリスト").nextElementSibling;
     var TimeRexbox = document.getElementById("timerex_calendar");
