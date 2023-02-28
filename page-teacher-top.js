@@ -329,7 +329,7 @@ main_db["日付"].forEach((element,index)=>{
       trigger2.style["color"]="white";
       target1.getElementsByClassName("in-time")[0].style.display="inline-block";
       target1.getElementsByClassName("in-time")[0].previousElementSibling.style.display="inline-block";
-      target1.getElementsByClassName("in-time")[0].nextElementSibling.style.display="inline-block";
+      target1.getElementsByClassName("in-time")[0].nextElementSibling.style.display="inline";
     });
 
     var trigger3 = target1.getElementsByClassName("btn")[2];
@@ -339,7 +339,7 @@ main_db["日付"].forEach((element,index)=>{
       trigger3.style["color"]="white";
       target1.getElementsByClassName("in-change")[0].style.display="inline-block";
       target1.getElementsByClassName("in-change")[0].previousElementSibling.style.display="inline-block";
-      target1.getElementsByClassName("in-change")[0].nextElementSibling.style.display="inline-block";
+      target1.getElementsByClassName("in-change")[0].nextElementSibling.style.display="inline";
     });
 
   }
