@@ -242,10 +242,29 @@ main_db["日付"].forEach((element,index)=>{
     console.log(target);
     target.style.display = "flex";
     // 日付を入れる
-    // var day_label = element.replace(/.*\/|\(.*/,"");
+    var day_label = element.replace(/（.*/,"");
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   };
 });
+
+
+
+
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベースの値取得準備
