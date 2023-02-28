@@ -172,8 +172,8 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
   document.getElementById("schid").value = prop_object["教室ID"];
 
   // フォーム不要項目の非表示
-  const death_prop = document.querySelectorAll("");
-  death_prop.forEach(element=>{  element.style.display = 'none'; });
+  // const death_prop = document.querySelectorAll("");
+  // death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   view_form.style.display = 'block';
 
