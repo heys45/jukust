@@ -316,9 +316,10 @@ console.log(senkou_db);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 senkou_db["TimeRex入力済"].forEach((element,index)=>{
-  if(senkkou_db["TimeRex入力済"][index]==1){
+  if(senkou_db["TimeRex入力済"][index]==1){
     var area_target = document.getElementById("やることリスト").nextElementSibling;
-    var TimeRexbox = document.getElementById("timerex_calendar");
+    var TimeRexbox = document.createElement("div")
+    TimeRexbox.innerHTML='<div id="timerex_calendar" data-url="https://timerex.net/s/kaitoyoshitomi_4a1b/7ba6055f"></div><script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script><script type="text/javascript">TimerexCalendar();</script>';
     area_target.after(TimeRexbox);
     TimeRexbox.style.display="block";
   };
