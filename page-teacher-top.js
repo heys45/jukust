@@ -279,20 +279,27 @@ console.log(senkou_db);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // 選考状況による表示編集
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-senkou_db["TimeRex入力済"].forEach((element,index)=>{
-  var counter = 0;
-  console.log(main_db["開始報告フラグ"]);
-  if(main_db["開始報告フラグ"][index]==1){
-    // フォームデザインのフォーマットを用意
-    form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
-    var target = form_area.lastChild;
-    console.log(target);
-    target.style.display = "flex";
-    // 日付を入れる
-    var day_label = element.replace(/.*\/|\(.*/,"");
-    target.getElementsByClassName("day-label")[0].innerHTML = day_label;
-  };
-});
+// senkou_db["TimeRex入力済"].forEach((element,index)=>{
+//   var counter = 0;
+//   console.log(main_db["開始報告フラグ"]);
+//   if(main_db["開始報告フラグ"][index]==1){
+//     // フォームデザインのフォーマットを用意
+//     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
+//     var target = form_area.lastChild;
+//     console.log(target);
+//     target.style.display = "flex";
+//     // 日付を入れる
+//     var day_label = element.replace(/.*\/|\(.*/,"");
+//     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
+//   };
+// });
+
+
+var area_target = document.getElementById("やることリスト").nextElementSibling;
+var TimeRexbox = document.createElement("div");
+TimeRexbox.innerHTML='<div id="timerex_calendar" data-url="https://timerex.net/s/kaitoyoshitomi_4a1b/7ba6055f"></div><script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script><script type="text/javascript">TimerexCalendar();</script>';
+area_target.after(TimeRexbox);
+
 
 
 
