@@ -309,23 +309,23 @@ main_db["日付"].forEach((element,index)=>{
     const swich= '<div class="btn">出勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
     target1.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
-    var trigger = target1.getElementsByClassName("btn")[0];
-    trigger.addEventListener('click',function(){
+    var trigger1 = target1.getElementsByClassName("btn")[0];
+    trigger1.addEventListener('click',function(){
       target1.getElementsByClassName("in-flag")[0].firstElementChild.remove();
-      trigger.style["backgound-color"]="#34675c";
-      trigger.style["color"]="white";
+      trigger1.style["backgound-color"]="#34675c";
+      trigger1.style["color"]="white";
     });
 
-    var trigger = target1.getElementsByClassName("btn")[1];
-    trigger.addEventListener('click',function(){
+    var trigger2 = target1.getElementsByClassName("btn")[1];
+    trigger2.addEventListener('click',function(){
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
-      trigger.style["color"]="white";
+      trigger2.style["color"]="white";
     });
 
-    var trigger = target1.getElementsByClassName("btn")[2];
-    trigger.addEventListener('click',function(){
+    var trigger3 = target1.getElementsByClassName("btn")[2];
+    trigger3.addEventListener('click',function(){
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
-      trigger.style["color"]="white";
+      trigger3.style["color"]="white";
     });
 
   }
