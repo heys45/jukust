@@ -253,7 +253,7 @@ main_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
     target1.getElementsByClassName("sh-info")[0].style["color"]="red";
     target1.getElementsByClassName("sch-info")[0].remove();
-    target2.getElementsByClassName("ajs-info")[0].remove();
+    target1.getElementsByClassName("ajs-info")[0].remove();
 
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
@@ -318,7 +318,7 @@ main_db["日付"].forEach((element,index)=>{
 
     var trigger1 = target1.getElementsByClassName("btn")[0];
     trigger1.addEventListener('click',function(){
-      target1.getElementsByClassName("in-flag")[0].firstElementChild.remove();
+      target1.getElementsByClassName("in-flag")[0].prepend.
       trigger1.style["background-color"]="#34675c";
       trigger1.style["color"]="white";
     });
@@ -354,7 +354,7 @@ main_db["日付"].forEach((element,index)=>{
     var target2 = form_area.lastChild;
     console.log(target2);
     target2.style.display = "flex";
-    // 日付を入れる
+    // 日付を入れ
     var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>（"+element.replace(/.*\(/,"");
     target2.getElementsByClassName("day-label")[0].innerHTML = day_label;
     var start = main_db["開始時刻"][index];
@@ -364,6 +364,7 @@ main_db["日付"].forEach((element,index)=>{
     target2.getElementsByClassName("sh-info")[0].innerHTML = db_info;
     target2.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
     target2.getElementsByClassName("sh-info")[0].style["color"]="red";
+    target2.getElementsByClassName("sch-info")[0].remove();
     target2.getElementsByClassName("ajs-info")[0].remove();
 
 
@@ -378,7 +379,7 @@ main_db["日付"].forEach((element,index)=>{
     target2.getElementsByClassName("out-time")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "変更後の退勤時間｜";
+    time_guide.innerHTML = "変更後の出勤時間｜";
     time_guide.style["font-weight"]="bold";
     target2.getElementsByClassName("out-change")[0].before(time_guide);
 
@@ -386,26 +387,73 @@ main_db["日付"].forEach((element,index)=>{
     time_guide.innerHTML = "補足・備考｜";
     time_guide.style["font-weight"]="bold";
     target2.getElementsByClassName("out-hosoku")[0].before(time_guide);
+    target2.getElementsByClassName("out-hosoku")[0].style.width = "calc(100% - 115px)";
+
+    // フォームの回答と選択肢を設定する
+    var values =["", "出勤"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.setAttribute("value",element);
+      option.textContent = element;
+      target2.getElementsByClassName("out-flag")[0].appendChild(option);
+    });
+
+    var values = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.setAttribute("value",element);
+      option.textContent = element;
+      target2.getElementsByClassName("out-time")[0].appendChild(option);
+    });
+    var values = ["","8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.setAttribute("value",element);
+      option.textContent = element;
+      target2.getElementsByClassName("out-change")[0].appendChild(option);
+    });
 
 
-  // フォームの回答と選択肢を設定する
-  var values =["", "退勤"];
-  values.forEach(element =>{
-    var option = document.createElement('option');
-    option.setAttribute("value",element);
-    option.textContent = element;
-    target2.getElementsByClassName("out-flag")[0].appendChild(option);
-  });
-
-  var values = ["","10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
-  values.forEach(element =>{
-    var option = document.createElement('option');
-    option.setAttribute("value",element);
-    target2.getElementsByClassName("out-time")[0].appendChild(option);
-    target2.getElementsByClassName("out-change")[0].appendChild(option);
-  });
+    //依頼フォームのボックスを初期で非表示にする
+    target2.getElementsByClassName("day-box-form")[0].style.display="none";
+    target2.getElementsByClassName("out-time")[0].style.display="none";
+    target2.getElementsByClassName("out-time")[0].previousElementSibling.style.display="none";
+    target2.getElementsByClassName("out-time")[0].nextElementSibling.style.display="none";
+    target2.getElementsByClassName("out-change")[0].style.display="none";
+    target2.getElementsByClassName("out-change")[0].previousElementSibling.style.display="none";
+    target2.getElementsByClassName("out-change")[0].nextElementSibling.style.display="none";
 
 
+    // 依頼フォーム再表示用のボタンを用意する
+    const swich= '<div class="btn">出勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
+    target2.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+
+    var trigger1 = target2.getElementsByClassName("btn")[0];
+    trigger1.addEventListener('click',function(){
+      target2.getElementsByClassName("out-flag")[0].prepend.
+      trigger1.style["background-color"]="#34675c";
+      trigger1.style["color"]="white";
+    });
+
+    var trigger2 = target2.getElementsByClassName("btn")[1];
+    trigger2.addEventListener('click',function(){
+      target2.getElementsByClassName("day-box-form")[0].style.display="block";
+      trigger2.style["background-color"]="#34675c";
+      trigger2.style["color"]="white";
+      target2.getElementsByClassName("out-time")[0].style.display="inline-block";
+      target2.getElementsByClassName("out-time")[0].previousElementSibling.style.display="inline-block";
+      target2.getElementsByClassName("out-time")[0].nextElementSibling.style.display="inline";
+    });
+
+    var trigger3 = target2.getElementsByClassName("btn")[2];
+    trigger3.addEventListener('click',function(){
+      target2.getElementsByClassName("day-box-form")[0].style.display="block";
+      trigger3.style["background-color"]="#34675c";
+      trigger3.style["color"]="white";
+      target2.getElementsByClassName("out-change")[0].style.display="inline-block";
+      target2.getElementsByClassName("out-change")[0].previousElementSibling.style.display="inline-block";
+      target2.getElementsByClassName("out-change")[0].nextElementSibling.style.display="inline";
+    });
 
   }
 
