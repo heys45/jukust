@@ -314,7 +314,7 @@ console.log(senkou_db);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 senkou_db["TimeRex入力済"].forEach((element,index)=>{
-  if(main_db["TimeRex入力済"][index]==1){
+  if(senkkou_db["TimeRex入力済"][index]==1){
     var area_target = document.getElementById("やることリスト").nextElementSibling;
     var TimeRexbox = document.getElementById("timerex_calendar");
     area_target.after(TimeRexbox);
