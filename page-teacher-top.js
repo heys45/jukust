@@ -222,6 +222,7 @@ main_db["日付"].forEach((element,index)=>{
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
     var target = document.getElementsByClassName("day-box").lastElementChild;
+    console.log(target);
     target.style.display = "flex";
     // 日付を入れる
     target.getElementsByClassName("day-label")[0].innerHTML = element;
