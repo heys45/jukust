@@ -225,7 +225,7 @@ main_db["日付"].forEach((element,index)=>{
     console.log(target);
     target.style.display = "flex";
     // 日付を入れる
-    var day_label = element.exec(/\/.*?\(/,"")
+    var day_label = element.exec(/\/.*?\(/)
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
   };
 });
