@@ -241,7 +241,7 @@ main_db["日付"].forEach((element,index)=>{
     var target = form_area.lastChild;
     console.log(target);
     target.style.display = "flex";
-    // 日付を入れる
+    // 日付を入れ
     var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>（"+element.replace(/.*\(/,"");
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
     var start = main_db["開始時刻"][index];
@@ -254,9 +254,25 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("sch-info")[0].remove();
 
 
-    //フォーム挿入
+    // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     var shift_form = document.getElementsByClassName("in-dg")[0];
     target.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
+    target.getElementsByClassName("in-fd")[0].innerHTML=element;
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "実際の出勤時間　｜";
+    time_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("in-time")[0].before(time_guide);
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "変更後の出勤時間｜";
+    time_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("in-change")[0].before(time_guide);
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "補足・備考｜";
+    time_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("in-hosoku")[0].before(time_guide);
     
 
 
@@ -291,6 +307,36 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("sh-info")[0].style["color"]="red";
     target.getElementsByClassName("day-box-swich")[0].remove();
     target.getElementsByClassName("ajs-info")[0].remove();
+
+
+
+
+    // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
+    var shift_form = document.getElementsByClassName("out-dg")[0];
+    target.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
+    target.getElementsByClassName("out-fd")[0].innerHTML=element;
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "実際の退勤時間　｜";
+    time_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("out-time")[0].before(time_guide);
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "変更後の退勤時間｜";
+    time_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("out-change")[0].before(time_guide);
+
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "補足・備考｜";
+    time_guide.style["font-weight"]="bold";
+    target.getElementsByClassName("out-hosoku")[0].before(time_guide);
+
+
+    // 依頼フォームのボックスを初期で非表示にする
+    // target.getElementsByClassName("day-box-form")[0].style.display="none";
+    // 依頼フォーム再表示用のボタンを用意する
+    const swich= '<div class="btn">退勤報告する</div><div class="btn">報告時間の<br>調整をする</div><div class="btn">勤務時間の<br>変更を報告</div>';
+    target.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
 
 
   }
