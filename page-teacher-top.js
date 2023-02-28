@@ -186,6 +186,19 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベースの値取得準備
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var checks = document.querySelectorAll(".notion-checkbox.checked");
+checks.forEach(element =>{
+  var check = document.createElement("span");
+  check.innerHTML="1";
+  element.appendChild.check
+})
+var checks = document.querySelectorAll(".notion-checkbox:not(.checked)");
+checks.forEach(element =>{
+  var check = document.createElement("span");
+  check.innerHTML="0";
+  element.appendChild.check
+})
+
 
 var main_db ={};
 var db_data = document.getElementById("db-4").querySelectorAll("tr:not(#db-4-1)");
@@ -237,7 +250,6 @@ main_db["日付"].forEach((element,index)=>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベースの値取得準備
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
 var senkou_db ={};
 var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
 var db_header = document.getElementById("db-3-1").querySelectorAll("th");
@@ -265,9 +277,22 @@ db_data.forEach(element => {
 console.log(senkou_db);
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベース由来のフォーム作成
+// 選考状況による表示編集
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+senkou_db["TimeRex入力済"].forEach((element,index)=>{
+  var counter = 0;
+  console.log(main_db["開始報告フラグ"]);
+  if(main_db["開始報告フラグ"][index]==1){
+    // フォームデザインのフォーマットを用意
+    form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
+    var target = form_area.lastChild;
+    console.log(target);
+    target.style.display = "flex";
+    // 日付を入れる
+    var day_label = element.replace(/.*\/|\(.*/,"");
+    target.getElementsByClassName("day-label")[0].innerHTML = day_label;
+  };
+});
 
 
 
