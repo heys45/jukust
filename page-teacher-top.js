@@ -305,8 +305,10 @@ main_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("day-box-form")[0].style.display="none";
     target1.getElementsByClassName("in-time")[0].style.display="none";
     target1.getElementsByClassName("in-time")[0].previousElementSibling.style.display="none";
+    target1.getElementsByClassName("in-time")[0].nextElementSibling.style.display="none";
     target1.getElementsByClassName("in-change")[0].style.display="none";
     target1.getElementsByClassName("in-change")[0].previousElementSibling.style.display="none";
+    target1.getElementsByClassName("in-change")[0].nextElementSibling.style.display="none";
 
 
     // 依頼フォーム再表示用のボタンを用意する
@@ -316,24 +318,28 @@ main_db["日付"].forEach((element,index)=>{
     var trigger1 = target1.getElementsByClassName("btn")[0];
     trigger1.addEventListener('click',function(){
       target1.getElementsByClassName("in-flag")[0].firstElementChild.remove();
-      trigger1.style["backgound-color"]="#34675c";
+      trigger1.style["background-color"]="#34675c";
       trigger1.style["color"]="white";
     });
 
     var trigger2 = target1.getElementsByClassName("btn")[1];
     trigger2.addEventListener('click',function(){
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
+      trigger2.style["background-color"]="#34675c";
       trigger2.style["color"]="white";
       target1.getElementsByClassName("in-time")[0].style.display="inline-block";
       target1.getElementsByClassName("in-time")[0].previousElementSibling.style.display="inline-block";
+      target1.getElementsByClassName("in-time")[0].nextElementSibling.style.display="inline-block";
     });
 
     var trigger3 = target1.getElementsByClassName("btn")[2];
     trigger3.addEventListener('click',function(){
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
+      trigger3.style["background-color"]="#34675c";
       trigger3.style["color"]="white";
       target1.getElementsByClassName("in-change")[0].style.display="inline-block";
       target1.getElementsByClassName("in-change")[0].previousElementSibling.style.display="inline-block";
+      target1.getElementsByClassName("in-change")[0].nextElementSibling.style.display="inline-block";
     });
 
   }
