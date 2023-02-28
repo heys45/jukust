@@ -305,7 +305,6 @@ main_db["日付"].forEach((element,index)=>{
     target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
     target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
     target.getElementsByClassName("sh-info")[0].style["color"]="red";
-    target.getElementsByClassName("day-box-swich")[0].remove();
     target.getElementsByClassName("ajs-info")[0].remove();
 
 
