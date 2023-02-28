@@ -240,7 +240,7 @@ main_db["日付"].forEach((element,index)=>{
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
     var target1 = form_area.lastChild;
-    console.log(target);
+    console.log(target1);
     target1.style.display = "flex";
     // 日付を入れ
     var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>（"+element.replace(/.*\(/,"");
