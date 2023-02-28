@@ -261,7 +261,7 @@ main_db["日付"].forEach((element,index)=>{
     console.log(target);
     target.style.display = "flex";
     // 日付を入れる
-    var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>"+element.replace(/.*\(/,"");
+    var day_label =element.replace(/.*\//,"").replace(/\(.*/,"")+"<br>"+element.replace(/.*\(\[/,"");
     target.getElementsByClassName("day-label")[0].innerHTML = day_label;
     var start = main_db["開始時刻"][index];
     var end = main_db["終了時刻"][index];
