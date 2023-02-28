@@ -117,7 +117,7 @@ if(prop_object["ページ表示名"]==="教室別シフト確定ページ"){
   wr_form.remove();
 
   // 出力する場所を用意（quoteを指定）
-  var area_target = document.getElementById("シフト確定の回答はこちらから").nextElementSibling;
+  var area_target = document.getElementById("シフト確定の回答はこちらから");
   var form_area = document.getElementsByTagName("form")[0];
   console.log(form_area.id);
   form_area.setAttribute("id","form");
