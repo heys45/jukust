@@ -226,7 +226,7 @@ main_db["日付"].forEach((element,index)=>{
     // 日付を入れる
     target.getElementsByClassName("day-label")[0].innerHTML = element;
   };
-}
+});
 
     // // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
     // if(document.getElementById("db-3") !=null){
