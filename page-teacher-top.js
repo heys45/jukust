@@ -225,8 +225,7 @@ db_data.forEach(element => {
     }
   }
 });
-}
-console.log(main_db);
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベース由来のフォーム作成
@@ -461,6 +460,7 @@ main_db["日付"].forEach((element,index)=>{
 
 });
 
+}
 document.querySelectorAll("#form>.in-dg").forEach(element => {
   element.remove();
 });
