@@ -568,6 +568,7 @@ document.querySelectorAll("#form>.out-dg").forEach(element => {
 // データベースの値取得準備
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 var senkou_db ={};
+if(document.getElementById("db-3") !=null){
 var db_data = document.getElementById("db-3").querySelectorAll("tr:not(#db-3-1)");
 var db_header = document.getElementById("db-3-1").querySelectorAll("th");
 console.log(db_header);
@@ -630,6 +631,7 @@ senkou_db["TimeRex入力済"].forEach((element,index)=>{
   };
 });
 
+}
 
 
 
