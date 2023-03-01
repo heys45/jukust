@@ -459,6 +459,9 @@ main_db["日付"].forEach((element,index)=>{
 
 });
 
+document.querySelectorAll("#form>.in-dg").remove();
+document.querySelectorAll("#form>.out-dg").remove();
+
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
