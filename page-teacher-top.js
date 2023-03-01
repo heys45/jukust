@@ -461,8 +461,13 @@ main_db["日付"].forEach((element,index)=>{
 
 });
 
-document.querySelectorAll("#form>.in-dg").remove();
-document.querySelectorAll("#form>.out-dg").remove();
+document.querySelectorAll("#form>.in-dg").forEach(element => {
+  element.remove();
+});
+document.querySelectorAll("#form>.out-dg").forEach(element => {
+  element.remove();
+});
+
 
 
 
