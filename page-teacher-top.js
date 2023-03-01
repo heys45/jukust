@@ -201,6 +201,7 @@ checks.forEach(element =>{
 
 
 var main_db ={};
+if(document.getElementById("db-4") !=null){
 var db_data = document.getElementById("db-4").querySelectorAll("tr:not(#db-4-1)");
 var db_header = document.getElementById("db-4-1").querySelectorAll("th");
 console.log(db_header);
@@ -224,6 +225,7 @@ db_data.forEach(element => {
     }
   }
 });
+}
 console.log(main_db);
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
