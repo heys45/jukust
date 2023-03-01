@@ -590,7 +590,7 @@ console.log(senkou_db);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 senkou_db["TimeRex入力済"].forEach((element,index)=>{
-  if(senkou_db["TimeRex入力済"][index]==1){
+  if(senkou_db["TimeRex入力済"][index]==0){
     var area_target = document.getElementById("やることリスト").nextElementSibling;
 
     var TimeRexbox = document.createElement("div");
@@ -598,27 +598,25 @@ senkou_db["TimeRex入力済"].forEach((element,index)=>{
     area_target.after(TimeRexbox);
     area_target = document.getElementById("TRB");
 
+    setTimeout(timefunc2,5000);
+    function timefunc2(){
+    var TimeRex = document.createElement("div");
+    TimeRex.setAttribute("id","timerex_calender");
+    TimeRex.setAttribute("data-url","https://timerex.net/s/kaitoyoshitomi_4a1b/7ba6055f");
+    area_target.appendChild(TimeRex);
 
+    var TimeRex = document.createElement("script");
+    TimeRex.setAttribute("id","timerex_embed");
+    TimeRex.setAttribute("src","https://asset.timerex.net/js/embed.js");
+    area_target.appendChild(TimeRex);
 
-    // setTimeout(timefunc2,5000);
-    // function timefunc2(){
-    // var TimeRex = document.createElement("div");
-    // TimeRex.setAttribute("id","timerex_calender");
-    // TimeRex.setAttribute("data-url","https://timerex.net/s/kaitoyoshitomi_4a1b/7ba6055f");
-    // area_target.appendChild(TimeRex);
-
-    // var TimeRex = document.createElement("script");
-    // TimeRex.setAttribute("id","timerex_embed");
-    // TimeRex.setAttribute("src","https://asset.timerex.net/js/embed.js");
-    // area_target.appendChild(TimeRex);
-
-    // var TimeRex = document.createElement("script");
-    // TimeRex.setAttribute("type","text/javascript");
-    // TimeRex.innerHTML="TimerexCalendar();"
-    // area_target.appendChild(TimeRex);
-    // var TimeRexdata = document.getElementById("timerex_calendar")[0];
-    // area_target.appendChild(TimeRexdata);
-    // }
+    var TimeRex = document.createElement("script");
+    TimeRex.setAttribute("type","text/javascript");
+    TimeRex.innerHTML="TimerexCalendar();"
+    area_target.appendChild(TimeRex);
+    var TimeRexdata = document.getElementById("timerex_calendar")[0];
+    area_target.appendChild(TimeRexdata);
+    }
 
 
   };
