@@ -460,16 +460,6 @@ main_db["日付"].forEach((element,index)=>{
 
 });
 
-}
-document.querySelectorAll("#form>.in-dg").forEach(element => {
-  element.remove();
-});
-document.querySelectorAll("#form>.out-dg").forEach(element => {
-  element.remove();
-});
-
-
-
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの拡張①　送信機能＋送信後の設定　10min
@@ -551,6 +541,24 @@ document.querySelectorAll("#form>.out-dg").forEach(element => {
   });
   
  //#endregion
+
+
+
+
+
+}//maindbがあればの処理完了
+
+
+document.querySelectorAll("#form>.in-dg").forEach(element => {
+  element.remove();
+});
+document.querySelectorAll("#form>.out-dg").forEach(element => {
+  element.remove();
+});
+
+
+
+
 
 
 
