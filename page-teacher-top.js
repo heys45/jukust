@@ -610,11 +610,11 @@ senkou_db["TimeRex入力済"].forEach((element,index)=>{
     setTimeout(timefunc2,5000);
     function timefunc2(){
     var testrex =document.createElement("div");
-    testrex.innerHTML="タイムレックスが入力済みでないのでここにタイムレックスを表示"
+    testrex.innerHTML="タイムレックスが入力済みでないのでここにタイムレックスを表示<br><br>タイムレックス入力後は、面談の案内<br><br>面談後、合格ならシフト入力の案内<br><br>不合格の場合は何を表示しましょう？？"
     testrex.style.height="500px"
     testrex.style["background-color"]="#eeeeee";
     area_target.appendChild(testrex);
-    
+
     // var TimeRex = document.createElement("div");
     // TimeRex.setAttribute("id","timerex_calender");
     // TimeRex.setAttribute("data-url","https://timerex.net/s/kaitoyoshitomi_4a1b/7ba6055f");
