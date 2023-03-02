@@ -169,6 +169,18 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成③　シフト情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+  // // データベースの存在を確認する
+  // var area_target = document.getElementById("シフト確定の回答はこちらから");
+  // var form_area = document.getElementsByTagName("form")[0];
+  // console.log(form_area.id);
+  // form_area.setAttribute("id","form");
+  // area_target.after(form_area);  
+
+
+
+
     // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
     if(document.getElementById("db-3") !=null){
       if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){

@@ -43,9 +43,9 @@ if(prop_object["ページ表示名"]==="シフト確定まとめ"){
     test.forEach(element =>{
     element.style.display = "block" ;
     });
-    test2.forEach(element =>{
-      element.remove();
-      });
+    // test2.forEach(element =>{
+    //   element.remove();
+    //   });
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
