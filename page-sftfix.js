@@ -207,7 +207,7 @@ forms.forEach((element,index) =>{
     target.getElementsByClassName("day-box-swich")[0].remove();
     target.getElementsByClassName("sh-info")[0].remove();
     target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-    target.style.display="none";null){
+    target.style.display="none";
     
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();
