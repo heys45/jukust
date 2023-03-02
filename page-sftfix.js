@@ -92,6 +92,8 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
             var data =element.querySelectorAll("span")[i].innerHTML;}}
         else{
           var data=null;}
+        console.log(data);
+        console.log(header[i]);
         make_db[headers[i].innerHTML].push(data);}
     });
     console.log(make_db);}
