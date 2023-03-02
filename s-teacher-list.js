@@ -76,7 +76,7 @@ for( var i=0; i<tables.length; i++) {
       element.classList.add("t"+ group_id);
   });
 
-  var teacher_id = prop_object["会員ID"];
+  var teacher_id = prop_object["教室ID"];
   var teacher_class =".t"+teacher_id
   var test = document.querySelectorAll(teacher_class);
   var test2 = document.querySelectorAll(".notion-collection-group__section:not("+teacher_class+")");
