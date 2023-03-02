@@ -167,6 +167,7 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // スケジュール提出があればスケジュール情報を入れる
     if(document.getElementById("db-3") !=null){
+      
     if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
       var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
       if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0]!=null){
