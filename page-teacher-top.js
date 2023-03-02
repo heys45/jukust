@@ -241,7 +241,7 @@ console.log(kintai_db);
 // 過去の日付で勤怠報告未完了のものを取得
 console.log(kintai_db["日付"]);
 kintai_db["日付"].forEach((element,index)=>{
-
+  console.log(kintai_db["開始報告フラグ"][index])
   if(kintai_db["開始報告フラグ"][index]==1){
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
@@ -282,8 +282,10 @@ kintai_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("hosoku")[0].before(time_guide);
     target1.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 115px)";
 
-    // フォームの回答と選択肢を設定する
 
+    // --------------------------------
+    // フォームの回答と選択肢を設定する
+    // --------------------------------
     var values = ["","8", "9","10","11", "12", "13", "14", "15","16", "17", "18", "19", "20", "21", "22"];
     values.forEach(element =>{
       var option = document.createElement('option');
@@ -310,6 +312,7 @@ kintai_db["日付"].forEach((element,index)=>{
     var trigger1 = target1.getElementsByClassName("btn")[0];
     trigger1.addEventListener('click',function(){
       target1.getElementsByClassName("flag")[0].innerHTML="出勤報告あり"
+      target1.getElementsByClassName("day-box-form")[0].style.display="block";
       trigger1.style["background-color"]="#34675c";
       trigger1.style["color"]="white";
     });
