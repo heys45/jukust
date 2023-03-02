@@ -102,7 +102,9 @@ for( var i=0; i<tables.length; i++) {
   var slide_guide = document.createElement("p");
   slide_guide.textContent = "表を左にスライドしてください";
   slide_guide.style.color="red";
-  document.getElementById("ユーザープロフィール").after(slide_guide);
+  var user =document.getElementById("ユーザープロフィール");
+  console.log(user);
+  user.after(slide_guide);
   var slide_guide = document.createElement("p");
   slide_guide.textContent = "表を左にスライドしてください";
   slide_guide.style.color="red";
