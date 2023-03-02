@@ -225,7 +225,7 @@ var check_area = document.getElementById("これからの勤務予定").nextElem
 // #endregion
 if(make_db !=null){
 var kintai_db = make_db;}
-console.log(shift_db);
+console.log(kintai_db);
 
 
 //     //DB書き換え処理
@@ -493,95 +493,9 @@ senkou_db["TimeRex入力済"].forEach((element,index)=>{
 
 
   };
-});
+ });//選考状況終わり
 
 }
-
-
-
-
-
-
-
-
-
-    // // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
-    // if(document.getElementById("db-3") !=null){
-    //   if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
-    //     var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
-    //     if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0] =="講師回答前"){
-    //     var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
-    //     if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
-    //     var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-    //     else{var time1="" }
-    //     if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
-    //       var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-    //     else{var time2="" }
-    //     if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-    //     var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-    //     else{var hosoku="" }
-
-    //     var db_info ="シフト時間　｜"+time1+"〜"+time2+hosoku;
-    //     target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
-    //     target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
-    //     target.getElementsByClassName("sh-info")[0].style["color"]="red";
-    //     target.getElementsByClassName("sch-info")[0].remove();
-    //     target.getElementsByClassName("day-box-swich")[0].remove();
-    //   }  
-    //   }else{
-    //     target.getElementsByClassName("day-box-swich")[0].remove();
-    //     target.getElementsByClassName("sh-info")[0].remove();
-    //     target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-    //     target.style.display="none";
-    //   }}else{
-    //     target.getElementsByClassName("day-box-swich")[0].remove();
-    //     target.getElementsByClassName("sh-info")[0].remove();
-    //     target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-    //     target.remove();
-    //     target.style.display="none";
-    //   }
-
-
-
-
-
-
-//     // 出勤フォーマットにフォーム挿入
-//     var formset = document.getElementsByClassName("in-dg")[counter];
-//     target.getElementsByClassName("in-content")[0].appendChild(formset);
-//     // 出勤フォーマットにデータセット
-//     target.getElementsByClassName("in-day-label")[0].textContent = element;
-
-//     var target_class="in-fd" ; var textcontent = "実際の出勤時間";
-//     spancontent.textContent = textcontent;
-//     var spancontent =document.create("span");
-//     target.getElementsByClassName(target_class)[0].before(spancontent);
-
-
-
-//     // 退勤フォーマットにフォーム挿入
-//     var formset = document.getElementsByClassName("out-dg")[counter];
-//     target.getElementsByClassName("out-content")[0].appendChild(formset);
-//     // 退勤フォーマットにデータセット
-//     target.getElementsByClassName("out-day-label")[0].textConten= element;
-
-//     // カウントアップ
-//     var counter = counter+1;
-
-//   }
-
-//   // var datelabel = document.createElement("p");
-//   // datelabel.textContent = element+"　｜"+main_db["ステータス"][index]+"｜"+main_db["勤務可能<br>開始時間"][index]+"〜"+main_db["勤務可能<br>終了時間"][index];
-//   // var target = document.getElementsByClassName("fd")[index];
-//   // target.parentNode.classList.add("view-dg");
-//   // target.before(datelabel);
-//   // target.value = element;
-// })
-// var death_fd = document.querySelectorAll(".dg:not(.view-dg)")
-// death_fd.remove();
-
-
-
 
 
 }}
