@@ -56,6 +56,7 @@ console.log(qblock_object);
 var header_title = document.getElementsByClassName("notion-header__title")[0];
 document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
 
+header_title.after(prop_object["会員ID"]);
 
 
 let tbc_btn = document.createElement("button");
