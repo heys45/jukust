@@ -28,6 +28,7 @@ for (let i=0; i< prop_wrap.length; i++){
     }
     prop_object[prop_name] = prop_value;
 }
+console.log("プロパティリスト");
 console.log(prop_object);
 
 // テキストブロックの連想配列を作成する。
@@ -40,6 +41,7 @@ for (let i=0; i< qblock_wrap.length; i++){
 
     qblock_object[qblock_name] = qblock_value;
 }
+console.log("quoteリスト");
 console.log(qblock_object);
 
 
