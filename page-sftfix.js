@@ -82,14 +82,14 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
     headers.forEach(element =>{
       make_db[element.innerHTML]=[];
     });
-    var datas = check_db.querySelectorAll("tr:nth-child(n + 2) ");
+    var datas = check_db.querySelectorAll("tbody tr ");
     datas.forEach(element =>{
       for (let i = 0; i < headers.length; i++) {
-        if(element.querySelectorAll("td span")[i] !=null){
-          if(element.querySelectorAll("td span span")[i] !=null){
-            var data =element.querySelectorAll("td span span")[i].innerHTML;}
+        if(element.querySelectorAll("span")[i] !=null){
+          if(element.querySelectorAll("span span")[i] !=null){
+            var data =element.querySelectorAll("span span")[i].innerHTML;}
           else{
-            var data =element.querySelectorAll("td span")[i].innerHTML;}}
+            var data =element.querySelectorAll("span")[i].innerHTML;}}
         else{
           var data=null;}
         make_db[headers[i].innerHTML].push(data);}
