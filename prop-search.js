@@ -24,13 +24,13 @@ for (let i=0; i< prop_wrap.length; i++){
     const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
     var prop_value = null;
         if(prop_wrap[i].querySelectorAll("checked")[0] !=null){
-            var prop_value = 1;
+            prop_value = 1;
         }
         else if(prop_wrap[i].getElementsByTagName("span")[1] !=null){
         if(prop_wrap[i].querySelectorAll("span span")[0]){
-            var prop_value = prop_wrap[i].querySelectorAll("span span")[0].innerHTML;
+            prop_value = prop_wrap[i].querySelectorAll("span span")[0].innerHTML;
         }else{
-            var prop_value = prop_wrap[i].getElementsByTagName("span")[1].innerHTML;
+            prop_value = prop_wrap[i].getElementsByTagName("span")[1].innerHTML;
         }
     }
     prop_object[prop_name] = prop_value;
