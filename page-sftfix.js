@@ -98,7 +98,7 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
 // #endregion
 var shift_db = make_db;
 // これで、shift_db[カラム名]で回答の配列を取得可能。
-console.log(shift_db["ステータス"])；
+console.log(shift_db["ステータス"][0])；
 
 
 //     //DB書き換え処理
