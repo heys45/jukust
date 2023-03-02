@@ -85,11 +85,11 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
     var datas = check_db.querySelectorAll("tr:nth-child(n + 2) ");
     datas.forEach(element =>{
       for (let i = 0; i < headers.length; i++) {
-        if(element.querySelectorAll("td span")[0] !=null){
-          if(element.querySelectorAll("td span span")[0] !=null){
-            var data =element.querySelectorAll("td span span")[0].innerHTML;}
+        if(element.querySelectorAll("td span")[i] !=null){
+          if(element.querySelectorAll("td span span")[i] !=null){
+            var data =element.querySelectorAll("td span span")[i].innerHTML;}
           else{
-            var data =element.getElementsByTagName("td span").innerHTML;}}
+            var data =element.querySelectorAll("td span")[i].innerHTML;}}
         else{
           var data=null;}
         make_db[headers[i].innerHTML].push(data);}
