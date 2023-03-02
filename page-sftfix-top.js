@@ -38,6 +38,7 @@ if(prop_object["ページ表示名"]==="シフト確定まとめ"){
     var teacher_class =".t"+teacher_id
     console.log(teacher_class);
     var test = document.querySelectorAll(teacher_class);
+    console.log(test);
     var test2 = document.querySelectorAll(".notion-collection-group__section:not("+teacher_class+")");
 
 
