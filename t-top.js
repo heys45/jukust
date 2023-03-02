@@ -269,17 +269,23 @@ kintai_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("fd")[0].innerHTML=element;
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "実際の出勤時間　｜";
-    time_guide.style["font-weight"]="bold";
+    time_guide.innerHTML = "実際の出勤時間｜";
     target1.getElementsByClassName("wh")[0].before(time_guide);
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "<br>↑勤務開始時間が早まった or 遅刻した場合に記入など";
+    target1.getElementsByClassName("wm")[0].after(time_guide);
+
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "実際の休憩時間｜";
     time_guide.style["font-weight"]="bold";
     target1.getElementsByClassName("bh")[0].before(time_guide);
+    var time_guide = document.createElement("span");
+    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合に記入";
+    target1.getElementsByClassName("bm")[0].after(time_guide);
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "補足・備考｜";
+    time_guide.innerHTML = "補足・備考｜<br>";
     time_guide.style["font-weight"]="bold";
     target1.getElementsByClassName("hosoku")[0].before(time_guide);
     target1.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 115px)";
@@ -301,6 +307,20 @@ kintai_db["日付"].forEach((element,index)=>{
       option.setAttribute("value",element);
       option.textContent = element;
       target1.getElementsByClassName("wm")[0].appendChild(option);
+    });
+    var values = ["","8", "9","10","11", "12", "13", "14", "15","16", "17", "18", "19", "20", "21", "22"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.setAttribute("value",element);
+      option.textContent = element;
+      target1.getElementsByClassName("bh")[0].appendChild(option);
+    });
+    var values = ["","00", "10", "20", "30", "40", "50"];
+    values.forEach(element =>{
+      var option = document.createElement('option');
+      option.setAttribute("value",element);
+      option.textContent = element;
+      target1.getElementsByClassName("bm")[0].appendChild(option);
     });
 
 
