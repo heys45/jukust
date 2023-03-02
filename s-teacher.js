@@ -2,7 +2,7 @@
 setTimeout(timefunc,300);
 
 function timefunc(){
-if(prop_object["ページ表示名"]==="講師プロフィール"){
+if(prop_object["ページ表示名"]==="教室講師確認"){
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // テーブルの番号づけ
@@ -112,45 +112,6 @@ for( var i=0; i<tables.length; i++) {
 
 
 
-
-
-
-  var top_position = document.getElementById("マイページへようこそ");
-  var top_div =document.createElement("div");
-  top_div.classList.add("top-content-wrapper");
-  top_position.after(top_div);
-
-  var top_span1 = document.createElement("span");
-  top_span1.textContent = prop_object["講師名！"];
-  top_span1.classList.add();
-  top_span1.style["font-size"] = "32px";
-  top_div.appendChild(top_span1);
-  var top_span1_1 = document.createElement("span");
-  top_span1_1.textContent = "先生";
-  top_span1_1.style["padding-right"] = "16px";
-  top_div.appendChild(top_span1_1);
-
-  var top_span2 = document.createElement("span");
-  top_span2.textContent = prop_object["ステータス！"];
-  top_span2.classList.add();
-  top_span2.style["background-color"] = "gray";
-  top_span2.style["color"] = "white";
-  top_span2.style["border-radius"] = "20px";
-  top_span2.style["padding"] = "3px 10px";
-  top_div.appendChild(top_span2);
-
-// 勤務情報集約
-  var top_p3 = document.createElement("p");
-  top_p3.textContent = "過去1ヶ月の勤務回数｜　X回";
-  top_p3.classList.add();
-  top_p3.style["padding-top"] = "30px";
-  top_div.appendChild(top_p3);
-  var top_p4 = document.createElement("p");
-  top_p4.textContent = "これから1ヶ月の勤務予定回数｜　X回";
-  top_p4.classList.add();
-  top_div.appendChild(top_p4);
-
-
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // プログレスバーの変更
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -181,7 +142,7 @@ for( var i=0; i<tables.length; i++) {
       element.classList.add("t"+ group_id);
   });
 
-  var teacher_id = prop_object["講師ID"];
+  var teacher_id = prop_object["教室ID"];
   var teacher_class =".t"+teacher_id
   var test = document.querySelectorAll(teacher_class);
   var test2 = document.querySelectorAll(".notion-collection-group__section:not("+teacher_class+")");
