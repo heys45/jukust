@@ -173,8 +173,9 @@ forms.forEach((element,index) =>{
 
     // シフト情報で、キー（日付）のデータが存在するかを確認する。
     if(shift_db !=null){
-      var db_key = null
+      var db_key = null;
       shift_db["日付"].forEach((element,index) =>{
+        var db_key =null;
         console.log(element);
         if(element ==key){ var db_key = index;}
         console.log(db_key);
