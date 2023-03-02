@@ -175,39 +175,42 @@ forms.forEach((element,index) =>{
     if(shift_db !=null){
       var db_key = null;
       shift_db["日付"].forEach((element,index) =>{
-        if(element ==key){db_key = index;}
-      });
-      // キー（日付）かつ講師回答前のデータが存在すれば情報を取得。
-      console.log(shift_db["ステータス"][7]);
-      if(shift_db["ステータス"][db_key]=="講師回答前"){
-      var time1 = shift_db["開始時刻"][db_key];
-      console.log(time1);
-      var time2 = shift_db["終了時刻"][db_key];
-      if(shift_db["備考・補足"][db_key] !=null){
-      var hosoku = "<br>補足事項｜"+shift_db["備考・補足"][db_key];}
-      else{var hosoku = null}
-      var shift_guide = "シフト時間｜　"+time1+time2+hosoku;
-
-      // データがあるときの表示設定
-      target.getElementsByClassName("sh-info")[0].innerHTML = shift_guide;
-      target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
-      target.getElementsByClassName("sh-info")[0].style["color"]="red";
-      target.getElementsByClassName("sch-info")[0].remove();
-      target.getElementsByClassName("day-box-swich")[0].remove();
-      }else{ //データがないときの表示設定　＊キーかつ講師回答のデータがない
-        target.getElementsByClassName("day-box-swich")[0].remove();
-        target.getElementsByClassName("sh-info")[0].remove();
-        target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-        target.style.display="none";
-      }}else{//データがないときの表示設定　＊データベースの情報が一つもない
-        target.getElementsByClassName("day-box-swich")[0].remove();
-        target.getElementsByClassName("sh-info")[0].remove();
-        target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-        target.remove();
-        target.style.display="none";
-      }
-      // 参考ボックスの非表示
-      target.getElementsByClassName("ajs-info")[0].remove();
+        if(element ==key){
+          if(shift_db["ステータス"][index]=="講師回答前"){
+            var time1 = shift_db["開始時刻"][index];
+            console.log(time1);
+            var time2 = shift_db["終了時刻"][index];
+            if(shift_db["備考・補足"][index] !=null){
+            var hosoku = "<br>補足事項｜"+shift_db["備考・補足"][index];}
+            else{var hosoku = null}
+            var shift_guide = "シフト時間｜　"+time1+time2+hosoku;
+      
+            // データがあるときの表示設定
+            target.getElementsByClassName("sh-info")[0].innerHTML = shift_guide;
+            target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
+            target.getElementsByClassName("sh-info")[0].style["color"]="red";
+            target.getElementsByClassName("sch-info")[0].remove();
+            target.getElementsByClassName("day-box-swich")[0].remove();
+            }else{ //データがないときの表示設定　＊キーかつ講師回答のデータがない
+            target.getElementsByClassName("day-box-swich")[0].remove();
+            target.getElementsByClassName("sh-info")[0].remove();
+            target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+            target.style.display="none";
+            }
+        }else{ //データがないときの表示設定　＊キーかつ講師回答のデータがない
+          target.getElementsByClassName("day-box-swich")[0].remove();
+          target.getElementsByClassName("sh-info")[0].remove();
+          target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+          target.style.display="none";
+      }});
+    }  //データがないときの表示設定　＊キーかつ講師回答のデータがない
+    target.getElementsByClassName("day-box-swich")[0].remove();
+    target.getElementsByClassName("sh-info")[0].remove();
+    target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+    target.style.display="none";null){
+    
+    // 参考ボックスの非表示
+    target.getElementsByClassName("ajs-info")[0].remove();
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成④　送信部分の作成 　10min
