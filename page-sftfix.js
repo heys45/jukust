@@ -186,7 +186,7 @@ forms.forEach((element,index) =>{
             if(shift_db["備考・補足"][index] !=null){
             var hosoku = "<br>補足事項｜"+shift_db["備考・補足"][index];}
             else{var hosoku = ""}
-            var shift_guide = "シフト時間｜　"+time1+time2+hosoku;
+            var shift_guide = "シフト依頼　｜"+time1+"〜"+time2+hosoku;
             // データがあるときの表示設定
             target.getElementsByClassName("sh-info")[0].innerHTML = shift_guide;
             target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
