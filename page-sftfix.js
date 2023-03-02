@@ -84,7 +84,7 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
     });
     var datas = check_db.querySelectorAll("tbody tr");
     datas.forEach(element =>{
-      var datas = datas.querySelectorAll("td")
+      var datas = element.querySelectorAll("td");
       for (let i = 0; i< datas.length; i++) {
         if(datas[i].querySelectorAll("span")[0] !=null){
           if(datas[i].querySelectorAll("span span")[0] !=null){
