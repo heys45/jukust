@@ -169,14 +169,38 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成③　シフト情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // データベースの存在を確認する
+  var check_area = document.getElementById("申請が来たシフト一覧").nextElementSibling.nextElementSibling;
+  if(document.getElementsByClassName("notion-collection-table")[0] !=null){
+    var check_db =document.getElementsByClassName("notion-collection-table") [0];
+
+    // データベースの値を取得する
+    var make_db ={};
+    var headers = check_db.querySelectorAll("thead th");
+    headers.forEach(element =>{
+      make_db[element.innerHTML]=[];
+    });
+    var datas = check_db.querySelectorAll("tr:nth-child(n + 2) ");
+    datas.forEach(element =>{
+      for (let i = 0; i < headers.length; i++) {
+        if(element.getElementsByTagName("span") !=null){
+          if(element.getElementsByTagName("span").getElementsByTagName("span") !=null){
+            var data =element.getElementsByTagName("span").getElementsByTagName("span").innerHTML;
+          }
+          else{
+            var data =element.getElementsByTagName("span").innerHTML;
+          }}
+        else{
+          var data=null;
+        }
+        make_db[headers[i].innerHTML].push(data);
+      }
+    });
+
+    console.log(make_db);
+  }
 
 
-  // // データベースの存在を確認する
-  // var area_target = document.getElementById("シフト確定の回答はこちらから");
-  // var form_area = document.getElementsByTagName("form")[0];
-  // console.log(form_area.id);
-  // form_area.setAttribute("id","form");
-  // area_target.after(form_area);  
 
 
 
