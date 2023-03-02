@@ -173,7 +173,6 @@ forms.forEach((element,index) =>{
 
     // シフト情報で、キー（日付）のデータが存在するかを確認する。
     if(shift_db !=null){
-      var db_key = null;
       shift_db["日付"].forEach((element,index) =>{
         if(element ==key){
           if(shift_db["ステータス"][index]=="講師回答前"){
@@ -192,22 +191,22 @@ forms.forEach((element,index) =>{
             target.getElementsByClassName("sch-info")[0].remove();
             target.getElementsByClassName("day-box-swich")[0].remove();
             }else{ //データがないときの表示設定　＊キーかつ講師回答のデータがない
-            target.getElementsByClassName("day-box-swich")[0].remove();
-            target.getElementsByClassName("sh-info")[0].remove();
-            target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-            target.style.display="none";
+            // target.getElementsByClassName("day-box-swich")[0].remove();
+            // target.getElementsByClassName("sh-info")[0].remove();
+            // target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+            // target.style.display="none";
             }
         }else{ //データがないときの表示設定　＊キーかつ講師回答のデータがない
-          target.getElementsByClassName("day-box-swich")[0].remove();
-          target.getElementsByClassName("sh-info")[0].remove();
-          target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-          target.style.display="none";
+      //     target.getElementsByClassName("day-box-swich")[0].remove();
+      //     target.getElementsByClassName("sh-info")[0].remove();
+      //     target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+      //     target.style.display="none";
       }});
     }  //データがないときの表示設定　＊キーかつ講師回答のデータがない
-    target.getElementsByClassName("day-box-swich")[0].remove();
-    target.getElementsByClassName("sh-info")[0].remove();
-    target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
-    target.style.display="none";
+    // target.getElementsByClassName("day-box-swich")[0].remove();
+    // target.getElementsByClassName("sh-info")[0].remove();
+    // target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
+    // target.style.display="none";
     
     // 参考ボックスの非表示
     target.getElementsByClassName("ajs-info")[0].remove();
@@ -218,8 +217,6 @@ forms.forEach((element,index) =>{
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     target.getElementsByClassName("day-box-form")[0].appendChild(element);
-
-
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "依頼への回答｜";
     time_guide.style["font-weight"]="bold";
