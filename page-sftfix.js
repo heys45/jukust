@@ -86,8 +86,8 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
     datas.forEach(element =>{
       for (let i = 0; i < headers.length; i++) {
         if(element.querySelectorAll("span")[i] !=null){
-          if(element.querySelectorAll("span span")[i] !=null){
-            var data =element.querySelectorAll("span span")[i].innerHTML;}
+          if(element.querySelectorAll("span")[i].querySelectorAll("span")[0] !=null){
+            var data =element.querySelectorAll("span")[i].querySelectorAll("span")[0].innerHTML;}
           else{
             var data =element.querySelectorAll("span")[i].innerHTML;}}
         else{
