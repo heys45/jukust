@@ -178,7 +178,7 @@ forms.forEach((element,index) =>{
         if(element ==key){db_key = index;}
       });
       // キー（日付）かつ講師回答前のデータが存在すれば情報を取得。
-      console.log(shift_db["ステータス"][db_key]);
+      console.log(shift_db["ステータス"][7]);
       if(shift_db["ステータス"][db_key]=="講師回答前"){
       var time1 = shift_db["開始時刻"][db_key];
       console.log(time1);
