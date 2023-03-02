@@ -26,8 +26,6 @@ for (let i=0; i< prop_wrap.length; i++){
     if(check !=null){
     var prop_value = prop_wrap[i].getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
     }
-    console.log(prop_name); 
-    console.log(prop_value); 
     prop_object[prop_name] = prop_value;
 }
 console.log(prop_object);
@@ -39,8 +37,7 @@ for (let i=0; i< qblock_wrap.length; i++){
     const qblock_name = qblock_wrap[i].getElementsByTagName("strong")[0].innerHTML;
     qblock_wrap[i].setAttribute("id",qblock_name);
     const qblock_value = document.getElementById(qblock_name);
-    console.log(qblock_name); 
-    console.log(qblock_value); 
+
     qblock_object[qblock_name] = qblock_value;
 }
 console.log(qblock_object);
