@@ -16,14 +16,15 @@ function reload2() {
   }
 
 
-
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 //プロパティの連想配列を作成する。
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 var prop_object = {};
 const prop_wrap = document.querySelectorAll('.notion-page__property');
 for (let i=0; i< prop_wrap.length; i++){
     const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
     var prop_value = null;
-        if(prop_wrap[i].querySelectorAll("checked")[0] !=null){
+        if(prop_wrap[i].querySelectorAll(".checked")[0] !=null){
             prop_value = 1;
         }
         else if(prop_wrap[i].getElementsByTagName("span")[1] !=null){
@@ -38,7 +39,9 @@ for (let i=0; i< prop_wrap.length; i++){
 console.log("プロパティリスト");
 console.log(prop_object);
 
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // テキストブロックの連想配列を作成する。
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 var qblock_object = {};
 const qblock_wrap = document.querySelectorAll('.notion-quote');
 for (let i=0; i< qblock_wrap.length; i++){
