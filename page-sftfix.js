@@ -82,19 +82,16 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
     headers.forEach(element =>{
       make_db[element.innerHTML]=[];
     });
-    var datas = check_db.querySelectorAll("tbody tr ");
+    var datas = check_db.querySelectorAll("tbody tr");
     datas.forEach(element =>{
-      for (let i = 0; i < headers.length; i++) {
-        if(element.querySelectorAll("td>span")[i] !=null){
-          console.log(element.querySelectorAll("td>span")[i]);
-          if(element.querySelectorAll("td>span")[i].querySelectorAll("span")[0] !=null){
-            var data =element.querySelectorAll("td>span")[i].querySelectorAll("span")[0].innerHTML;}
+      var datas = datas.querySelectorAll("td")
+      for (let i = 0; i< datas.length; i++) {
+        if(datas[i].querySelectorAll("span")[0] !=null){
+          if(datas[i].querySelectorAll("span span")[0] !=null){
+            var data = datas[i].querySelectorAll("span span")[0].innerHTML;}
           else{
-            var data =element.querySelectorAll("td>span")[i].innerHTML;}}
-        else{
-          var data=null;}
-        console.log(data);
-        console.log(headers[i]);
+            var data = datas[i].querySelectorAll("span")[0].innerHTML;}
+        }else{var data=null;}
         make_db[headers[i].innerHTML].push(data);}
     });
     console.log(make_db);}
