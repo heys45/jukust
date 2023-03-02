@@ -85,19 +85,17 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
     var datas = check_db.querySelectorAll("tr:nth-child(n + 2) ");
     datas.forEach(element =>{
       for (let i = 0; i < headers.length; i++) {
-        if(element.querySelectorAll("span")[0] !=null){
-          if(element.querySelectorAll("span span")[0] !=null){
-            var data =element.querySelectorAll("span span")[0].innerHTML;}
+        if(element.querySelectorAll("td span")[0] !=null){
+          if(element.querySelectorAll("td span span")[0] !=null){
+            var data =element.querySelectorAll("td span span")[0].innerHTML;}
           else{
-            var data =element.getElementsByTagName("span").innerHTML;}}
+            var data =element.getElementsByTagName("td span").innerHTML;}}
         else{
           var data=null;}
         make_db[headers[i].innerHTML].push(data);}
     });
     console.log(make_db);}
 // #endregion
-
-
 var shift_db = make_db;
 // これで、shift_db[カラム名]で回答の配列を取得可能。
 console.log(shift_db["ステータス"][0]);
