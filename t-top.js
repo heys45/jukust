@@ -272,23 +272,23 @@ kintai_db["日付"].forEach((element,index)=>{
     time_guide.innerHTML = "実際の出勤時間｜";
     target1.getElementsByClassName("wh")[0].before(time_guide);
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "<br>↑勤務開始時間が早まった or 遅刻した場合に記入など";
+    time_guide.innerHTML = "<br>↑勤務開始時間変更 or 遅刻した場合のみ記入";
     target1.getElementsByClassName("wm")[0].after(time_guide);
 
 
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "実際の休憩時間｜";
-    time_guide.style["font-weight"]="bold";
     target1.getElementsByClassName("bh")[0].before(time_guide);
+
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合に記入";
+    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合など記入";
     target1.getElementsByClassName("bm")[0].after(time_guide);
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "補足・備考｜<br>";
+    time_guide.innerHTML = "補足・備考｜*勤務時間変更時などは説明<br>";
     time_guide.style["font-weight"]="bold";
     target1.getElementsByClassName("hosoku")[0].before(time_guide);
-    target1.getElementsByClassName("hosoku")[0].style.width = "calc(100% - 115px)";
+    target1.getElementsByClassName("hosoku")[0].style.width = "calc(100%)";
 
 
     // --------------------------------
