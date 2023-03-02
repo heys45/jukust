@@ -183,9 +183,9 @@ forms.forEach((element,index) =>{
     var datas = check_db.querySelectorAll("tr:nth-child(n + 2) ");
     datas.forEach(element =>{
       for (let i = 0; i < headers.length; i++) {
-        if(element.getElementsByTagName("span") !=null){
-          if(element.getElementsByTagName("span").getElementsByTagName("span") !=null){
-            var data =element.getElementsByTagName("span").getElementsByTagName("span").innerHTML;
+        if(element.querySelectorAll("span")[0] !=null){
+          if(element.querySelectorAll("span span")[0] !=null){
+            var data =element.querySelectorAll("span span")[0].innerHTML;
           }
           else{
             var data =element.getElementsByTagName("span").innerHTML;
