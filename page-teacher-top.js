@@ -243,6 +243,8 @@ console.log(kintai_db["日付"]);
 kintai_db["日付"].forEach((element,index)=>{
   console.log(kintai_db["開始報告フラグ"][index])
   if(kintai_db["開始報告フラグ"][index]==1){
+
+    
     // フォームデザインのフォーマットを用意
     form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
     var target1 = form_area.lastChild;
