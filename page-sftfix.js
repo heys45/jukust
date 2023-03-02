@@ -72,32 +72,33 @@ if(prop_object["ページ表示名"]==="講師シフト確定"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベースの番号づけ 何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region データベース共通処理
-  //DBをまとめて取得しIDを付与する 
-  const dbs = document.querySelectorAll('.notion-collection-table');
-  for( var i=0; i<dbs.length; i++) {
-  var name = "db-"+(i+1);
-  dbs[i].setAttribute("id",name); 
-    //行をまとめて取得しIDを付与する 
-    const rows = dbs[i].getElementsByTagName("tr")
-    for( var j=0; j<rows.length; j++) {
-    if(j != 0){
-    var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-    rows[j].setAttribute("name",name);}
-    var name = "db-"+(i+1)+"-"+(j+1);
-    rows[j].setAttribute("id",name);
-    //列をまとめて取得しIDを付与する 
-    const columns =rows[j].getElementsByTagName("td")
-    const columnhs =rows[j].getElementsByTagName("th");
-    for( var k=0; k<columns.length; k++) {
-    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    columns[k].setAttribute("id",name);}//列の設定１
-    for( var k=0; k<columnhs.length; k++) {
-    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    columnhs[k].setAttribute("id",name);}//列の設定2
-    }//行の設定完了
-  }
+
+var check_area = document.getElementById("申請が来たシフト一覧").nextElementSibling.nextElementSibling;
+// #region データベース個別処理
+  if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
+    var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
+    var make_db ={};
+    var headers = check_db.querySelectorAll("thead th");
+    headers.forEach(element =>{
+      make_db[element.innerHTML]=[];
+    });
+    var datas = check_db.querySelectorAll("tr:nth-child(n + 2) ");
+    datas.forEach(element =>{
+      for (let i = 0; i < headers.length; i++) {
+        if(element.querySelectorAll("span")[0] !=null){
+          if(element.querySelectorAll("span span")[0] !=null){
+            var data =element.querySelectorAll("span span")[0].innerHTML;}
+          else{
+            var data =element.getElementsByTagName("span").innerHTML;}}
+        else{
+          var data=null;}
+        make_db[headers[i].innerHTML].push(data);}
+    });
+    console.log(make_db);}
 // #endregion
+var shift_db = make_db;
+// これで、shift_db[カラム名]で回答の配列を取得可能。
+console.log(shift_db["ステータス"])；
 
 
 //     //DB書き換え処理
@@ -169,37 +170,7 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの作成③　シフト情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // データベースの存在を確認する
-  var check_area = document.getElementById("申請が来たシフト一覧").nextElementSibling.nextElementSibling;
-  if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
 
-    var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
-
-    // データベースの値を取得する
-    var make_db ={};
-    var headers = check_db.querySelectorAll("thead th");
-    headers.forEach(element =>{
-      make_db[element.innerHTML]=[];
-    });
-    var datas = check_db.querySelectorAll("tr:nth-child(n + 2) ");
-    datas.forEach(element =>{
-      for (let i = 0; i < headers.length; i++) {
-        if(element.querySelectorAll("span")[0] !=null){
-          if(element.querySelectorAll("span span")[0] !=null){
-            var data =element.querySelectorAll("span span")[0].innerHTML;
-          }
-          else{
-            var data =element.getElementsByTagName("span").innerHTML;
-          }}
-        else{
-          var data=null;
-        }
-        make_db[headers[i].innerHTML].push(data);
-      }
-    });
-
-    console.log(make_db);
-  }
 
 
 
