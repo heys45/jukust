@@ -404,8 +404,6 @@ kintai_db["日付"].forEach((element,index)=>{
 
 
 
-}//maindbがあればの処理完了
-
 
 document.querySelectorAll("#form>.in-dg").forEach(element => {
   element.remove();
