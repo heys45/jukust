@@ -4,6 +4,31 @@ setTimeout(timefunc,300);
 function timefunc(){
 if(prop_object["ページ表示名"]==="教室講師確認"){
 
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// DB表示設定代項目 1min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region データベースフィルター設定　★まとめページは変更？
+    // 教室or講師IDによるDBフィルタ
+    // 前提：データベースはグループ化しておく
+    const groups = document.querySelectorAll('.notion-collection-group__section');
+    groups.forEach(element =>{
+        var group_id = element.getElementsByTagName("span")[1].innerHTML;
+        element.classList.add("x"+ group_id);
+    });
+
+    var research_id = prop_object["教室ID"];
+    var research_class =".x"+research_id
+
+    document.querySelectorAll(research_class).forEach(element =>{
+      element.style.display = "block" ;  });
+    document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
+      element.remove();  });
+// #endregion
+
+
+
+
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // テーブルの番号づけ
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -136,23 +161,6 @@ for( var i=0; i<tables.length; i++) {
   // 教室or講師IDによるDBフィルタ
   // 前提：データベースはグループ化しておく
 
-  const groups = document.querySelectorAll('.notion-collection-group__section');
-  groups.forEach(element =>{
-      var group_id = element.getElementsByTagName("span")[1].innerHTML;
-      element.classList.add("t"+ group_id);
-  });
-
-  var teacher_id = prop_object["教室ID"];
-  var teacher_class =".t"+teacher_id
-  var test = document.querySelectorAll(teacher_class);
-  var test2 = document.querySelectorAll(".notion-collection-group__section:not("+teacher_class+")");
-
-  test.forEach(element =>{
-  element.style.display = "block" ;
-  });
-  test2.forEach(element =>{
-    element.remove();
-    });
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
