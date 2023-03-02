@@ -103,13 +103,8 @@ for( var i=0; i<tables.length; i++) {
   var slide_guide = document.createElement("p");
   slide_guide.innerHTML = "表を左にスライドしてください";
   slide_guide.style.color="red";
-  var user =document.getElementById("ユーザープロフィール");
-  console.log(user);
-  user.after(slide_guide);
-  var slide_guide = document.createElement("p");
-  slide_guide.textContent = "表を左にスライドしてください";
-  slide_guide.style.color="red";
-  document.getElementById("指導可能科目").after(slide-guide);
+  document.getElementById("ユーザープロフィール").after(slide_guide);
+  document.getElementById("指導可能科目").after(slide_guide);
 
 
 
