@@ -93,7 +93,7 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
         else{
           var data=null;}
         console.log(data);
-        console.log(header[i]);
+        console.log(header[i].innerHTML);
         make_db[headers[i].innerHTML].push(data);}
     });
     console.log(make_db);}
