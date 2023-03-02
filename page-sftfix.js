@@ -171,8 +171,9 @@ forms.forEach((element,index) =>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // データベースの存在を確認する
   var check_area = document.getElementById("申請が来たシフト一覧").nextElementSibling.nextElementSibling;
-  if(document.getElementsByClassName("notion-collection-table")[0] !=null){
-    var check_db =document.getElementsByClassName("notion-collection-table") [0];
+  if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
+
+    var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
 
     // データベースの値を取得する
     var make_db ={};
