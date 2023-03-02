@@ -197,7 +197,7 @@ forms.forEach((element,index) =>{
             }
       }});
     }  //データがないときの表示設定　＊キーかつ講師回答のデータがない
-    if(ex_checker ==true){
+    if(ex_checker ==false){
     target.getElementsByClassName("day-box-swich")[0].remove();
     target.getElementsByClassName("sh-info")[0].remove();
     target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
