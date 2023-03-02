@@ -177,6 +177,7 @@ forms.forEach((element,index) =>{
       shift_db["日付"].forEach((element,index) =>{
         db_key =null;
         console.log(element);
+        console.log(key)
         if(element ==key){ db_key = index;}
         console.log(db_key);
       });
