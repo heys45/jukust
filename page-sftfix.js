@@ -96,12 +96,9 @@ var check_area = document.getElementById("申請が来たシフト一覧").nextE
     });
     console.log(make_db);}
 // #endregion
-var shift_db = make_db;
-// これで、shift_db[カラム名]で回答の配列を取得可能。
-console.log(shift_db["ステータス"][0]);
-console.log(shift_db["ステータス"][1]);
-console.log(shift_db["ステータス"][2]);
-console.log(shift_db["ステータス"]);
+if(make_db !=null){
+var shift_db = make_db;}
+console.log(shift_db);
 
 
 //     //DB書き換え処理
@@ -174,41 +171,33 @@ forms.forEach((element,index) =>{
 // フォームボックスの作成③　シフト情報挿入 　10min
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
+    // シフト情報で、キー（日付）のデータが存在するかを確認する。
+    if(shift_db !=null){
+      var db_key = null
+      shift_db["日付"].forEach((element,index) =>{
+        if(element ==key){ db_key = index;}
+      });
+      // キー（日付）かつ講師回答前のデータが存在すれば情報を取得。
+      if(shift_db["ステータス"][db_key]=="講師回答前"){
+      var time1 = shift_db["開始時刻"][db_key];
+      var time2 = shift_db["終了時刻"][db_key];
+      if(shift_db["備考・補足"][db_key] !=null){
+      var hosoku = "<br>補足事項｜"+shift_db["備考・補足"][db_key];}
+      else{var hosoku = null}
 
+      var shift_guide = "シフト時間｜　"+time1+time2+hosoku;
 
-
-
-
-
-    // シフト申請or確定シフトがあればシフト情報を入れる　依頼フォームは非表示にする
-    if(document.getElementById("db-3") !=null){
-      if(document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0] !=null){
-        var db_id =document.getElementById("db-3").querySelectorAll("[name='"+key+"']")[0].getAttribute('id');
-        if(document.getElementById(db_id+"-2").getElementsByTagName("span")[0] =="講師回答前"){
-        var status = document.getElementById(db_id+"-2").getElementsByTagName("span")[0].innerHTML;
-        if(document.getElementById(db_id+"-3").getElementsByTagName("span")[0]!=null){
-        var time1 = document.getElementById(db_id+"-3").getElementsByTagName("span")[0].innerHTML;}
-        else{var time1="" }
-        if(document.getElementById(db_id+"-4").getElementsByTagName("span")[0]!=null){
-          var time2 = document.getElementById(db_id+"-4").getElementsByTagName("span")[0].innerHTML;}
-        else{var time2="" }
-        if(document.getElementById(db_id+"-5").getElementsByTagName("span")[0]!=null){
-        var hosoku = "<br>補足事項｜"+document.getElementById(db_id+"-5").getElementsByTagName("span")[0].innerHTML;}
-        else{var hosoku="" }
-
-        var db_info ="シフト時間　｜"+time1+"〜"+time2+hosoku;
-        target.getElementsByClassName("sh-info")[0].innerHTML = db_info;
-        target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
-        target.getElementsByClassName("sh-info")[0].style["color"]="red";
-        target.getElementsByClassName("sch-info")[0].remove();
-        target.getElementsByClassName("day-box-swich")[0].remove();
-      }  
-      }else{
+      target.getElementsByClassName("sh-info")[0].innerHTML = shift_guide;
+      target.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
+      target.getElementsByClassName("sh-info")[0].style["color"]="red";
+      target.getElementsByClassName("sch-info")[0].remove();
+      target.getElementsByClassName("day-box-swich")[0].remove();
+      }else{ //キーかつ講師回答のデータがない
         target.getElementsByClassName("day-box-swich")[0].remove();
         target.getElementsByClassName("sh-info")[0].remove();
         target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
         target.style.display="none";
-      }}else{
+      }}else{//データベースの情報が一つもない
         target.getElementsByClassName("day-box-swich")[0].remove();
         target.getElementsByClassName("sh-info")[0].remove();
         target.getElementsByClassName("sch-info")[0].before(target.getElementsByClassName("day-box-form")[0]);
