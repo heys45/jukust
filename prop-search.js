@@ -10,6 +10,7 @@ if (old_url !=new_url){
 
 var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
 reload_btn.addEventListener('click', reload2);
+
 function reload2() {
   window.location.reload();
   }
@@ -22,9 +23,12 @@ const prop_wrap = document.querySelectorAll('.notion-page__property');
 for (let i=0; i< prop_wrap.length; i++){
     const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
     var prop_value = null;
-    var check = prop_wrap[i].getElementsByTagName("span")[1];
-    if(check !=null){
-    var prop_value = prop_wrap[i].getElementsByTagName("span")[1].getElementsByTagName("span")[0].innerHTML;
+    if(prop_wrap[i].getElementsByTagName("span")[1]){
+        if(prop_wrap[i].querySelectorAll("span span")[0]){
+            prop_wrap[i].querySelectorAll("span span")[0].innerHTML;
+        }else{
+            var prop_value = prop_wrap[i].getElementsByTagName("span")[1].innerHTML;
+        }
     }
     prop_object[prop_name] = prop_value;
 }
