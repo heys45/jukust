@@ -292,10 +292,12 @@ kintai_db["日付"].forEach((element,index)=>{
     time_guide.style["font-size"]="14px"
     time_guide.style["color"]="#34675C"
     target1.getElementsByClassName("bm")[0].after(time_guide);
-
+    time_guide.style["font-size"]="14px"
+    time_guide.style["color"]="#34675C"
     var time_guide = document.createElement("span");
     time_guide.innerHTML = "補足・備考｜*勤務時間変更時などは説明<br>";
-    time_guide.style["font-weight"]="bold";
+    
+
     target1.getElementsByClassName("hosoku")[0].before(time_guide);
     target1.getElementsByClassName("hosoku")[0].style.width = "calc(100%)";
 
