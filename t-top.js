@@ -344,7 +344,7 @@ kintai_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("btnbtn")[0].style.width ="100%";
     target1.getElementsByClassName("btnbtn")[0].style.margin ="5px 0";
 
-    var trigger1 = target1.getElementsByClassName("btn")[0];
+    var trigger1 = target1.getElementsByClassName("btnbtn")[0];
     trigger1.addEventListener('click',function(){
       target1.getElementsByClassName("flag")[0].innerHTML="出勤報告あり";
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
