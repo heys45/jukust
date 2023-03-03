@@ -239,10 +239,10 @@ for( var i=0; i<tables.length; i++) {
 
 
 
-    <form id="wr-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcJDQfvYup36rYH80HUvZ3OB_sq2kjzINjUY4FHZBsbNr7nw/formResponse"></form>
-    <input type="text" name="entry.1194399256" class="" id="schid"> <input type="text" name="entry.1896770762" class="" id="teaid">
-    <textarea name="entry.2088308727" class="message"></textarea>
-    </form>
+    // <form id="wr-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcJDQfvYup36rYH80HUvZ3OB_sq2kjzINjUY4FHZBsbNr7nw/formResponse"></form>
+    // <input type="text" name="entry.1194399256" class="" id="schid"> <input type="text" name="entry.1896770762" class="" id="teaid">
+    // <textarea name="entry.2088308727" class="message"></textarea>
+    // </form>
 
     
     const view_form = wr_form;          //ページによって変更する
