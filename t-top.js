@@ -288,7 +288,7 @@ kintai_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("bh")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合など記入<br>";
+    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合など記入<br><br>";
     time_guide.style["font-size"]="14px"
     time_guide.style["color"]="#34675C"
     target1.getElementsByClassName("bm")[0].after(time_guide);
@@ -387,7 +387,7 @@ kintai_db["日付"].forEach((element,index)=>{
 
 
   var timelag = document.createElement("p");
-  timelag.innerHTML="データの反映には2分ほど時間がかかります。<br>";
+  timelag.innerHTML="＊データの反映には2分ほど時間がかかります。最新のデータを確認する際は、しばらく待ってからページを更新してください。<br><br>";
   timelag.style.color="red";
   form_button.after(timelag);
 
