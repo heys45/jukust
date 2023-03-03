@@ -75,9 +75,6 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
 
     var research_id = prop_object["講師ID"];
     var research_class =".x"+research_id
-
-    var research_id = prop_object["講師ID"];
-    var research_class =".x"+research_id
     
     document.querySelectorAll(research_class).forEach(element =>{
       element.style.display = "block" ;  });
