@@ -234,6 +234,12 @@ console.log(kintai_db);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベース由来のフォーム作成
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// フォームデザインのフォーマットを用意
+const formss =document.querySelectorAll(".dg");
+formss.forEach(element =>{
+  element.style.display="none";
+});
+
 
 // 過去の日付で勤怠報告未完了のものを取得
 console.log(kintai_db["日付"]);
