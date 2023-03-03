@@ -166,7 +166,6 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
   form_area.setAttribute("id","form");
   area_target.after(form_area);  
 
-  const forms = document.querySelectorAll('.dg');
 
   // フォーム初期値の設定 講師ID、教室ID、勤務IDの存在を確認。
   document.getElementById("teaid").value = prop_object["講師ID"];
@@ -235,10 +234,11 @@ console.log(kintai_db);
 // データベース由来のフォーム作成
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームデザインのフォーマットを用意
-const formss =document.querySelectorAll(".dg");
-formss.forEach(element =>{
+const forms =document.querySelectorAll(".dg, .dg input");
+forms.forEach(element =>{
   element.style.display="none";
 });
+
 
 
 // 過去の日付で勤怠報告未完了のものを取得
@@ -269,6 +269,7 @@ kintai_db["日付"].forEach((element,index)=>{
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     var shift_form = document.getElementsByClassName("dg")[0];
     shift_form.style.display ="flex";
+
     target1.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
     target1.getElementsByClassName("fd")[0].innerHTML=element;
 
