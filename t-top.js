@@ -268,7 +268,7 @@ kintai_db["日付"].forEach((element,index)=>{
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
     var shift_form = document.getElementsByClassName("dg")[0];
-    shift_form.style.display ="flex";
+    shift_form.style.display ="block";
 
     target1.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
     target1.getElementsByClassName("fd")[0].innerHTML=element;
