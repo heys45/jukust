@@ -5,10 +5,10 @@ function timefunc(){
 if(prop_object["ページ表示名"]==="講師教室確認リスト"){
 
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // プログレスバーの変更
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// プログレスバーの変更 2min
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region プログレスバー設定　個別
     // 表示位置の設定
     var quote_name = "スポットバイトの流れ";
     var progressbar = document.getElementsByClassName("progressbar")[0];
@@ -17,9 +17,10 @@ if(prop_object["ページ表示名"]==="講師教室確認リスト"){
 
     //プログレスバー書き換え処理
     document.getElementById('li-schedule').setAttribute("class","complete");
-    document.getElementById('li-request').setAttribute("class","active");
+    document.getElementById('li-request').setAttribute("class","complete");
+    document.getElementById('li-confirm').setAttribute("class","active");
     // document.getElementById('db-2-1-4').setAttribute("class",complete);
-
+// #endregion
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     // DB表示設定代項目
@@ -33,18 +34,20 @@ if(prop_object["ページ表示名"]==="講師教室確認リスト"){
         element.classList.add("t"+ group_id);
     });
 
-    var teacher_id = prop_object["教室ID"];
+    var teacher_id = prop_object["会員ID"];
     var teacher_class =".t"+teacher_id
+    console.log(teacher_class);
     var test = document.querySelectorAll(teacher_class);
+    console.log(test);
     var test2 = document.querySelectorAll(".notion-collection-group__section:not("+teacher_class+")");
 
 
     test.forEach(element =>{
     element.style.display = "block" ;
     });
-    test2.forEach(element =>{
-      element.remove();
-      });
+    // test2.forEach(element =>{
+    //   element.remove();
+    //   });
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

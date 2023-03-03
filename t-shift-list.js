@@ -34,7 +34,7 @@ if(prop_object["ページ表示名"]==="講師シフト確定リスト"){
         element.classList.add("t"+ group_id);
     });
 
-    var teacher_id = prop_object["講師ID"];
+    var teacher_id = prop_object["会員ID"];
     var teacher_class =".t"+teacher_id
     console.log(teacher_class);
     var test = document.querySelectorAll(teacher_class);

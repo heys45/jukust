@@ -30,7 +30,7 @@ if(prop_object["ページ表示名"]==="講師スケジュール提出"){
         element.classList.add("x"+ group_id);
     });
 
-    var research_id = prop_object["講師ID"];
+    var research_id = prop_object["会員ID"];
     var research_class =".x"+research_id
 
     document.querySelectorAll(research_class).forEach(element =>{
