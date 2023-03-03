@@ -343,6 +343,8 @@ kintai_db["日付"].forEach((element,index)=>{
 
 });
 
+document.querySelectorAll("#form>.dg").remove();
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォームボックスの拡張①　送信機能＋送信後の設定　10min
