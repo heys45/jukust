@@ -1,6 +1,6 @@
 setTimeout(timefunc,300);
 function timefunc(){
-if(prop_object["ページ表示名"]==="スケジュール提出"){
+if(prop_object["ページ表示名"]==="講師スケジュール提出"){
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // プログレスバーの変更

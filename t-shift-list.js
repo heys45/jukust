@@ -2,7 +2,7 @@
 setTimeout(timefunc,300);
 
 function timefunc(){
-if(prop_object["ページ表示名"]==="シフト確定まとめ"){
+if(prop_object["ページ表示名"]==="講師シフト確定リスト"){
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

@@ -2,7 +2,7 @@
 setTimeout(timefunc,300);
 
 function timefunc(){
-if(prop_object["ページ表示名"]==="講師プロフィール"){
+if(prop_object["ページ表示名"]==="教室勤怠管理"){
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // テーブルの番号づけ

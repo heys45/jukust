@@ -2,7 +2,7 @@
 setTimeout(timefunc,300);
 
 function timefunc(){
-if(prop_object["ページ表示名"]==="シフト管理"){
+if(prop_object["ページ表示名"]==="教室連絡確認リスト"){
 
 
     //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
