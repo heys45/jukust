@@ -303,6 +303,12 @@ forms.forEach((element,index) =>{
   form_comfirm.style.display="none";
   form_wrapper.appendChild(form_comfirm);
 
+  var timelag = document.createElement("p");
+  timelag.innerHTML="＊データの反映には2分ほど時間がかかります。最新のデータを確認する際は、しばらく待ってからページを更新してください。<br><br>";
+  timelag.style.color="red";
+  form_button.after(timelag);
+
+
   // フォーム送信後の画面遷移の設定
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");

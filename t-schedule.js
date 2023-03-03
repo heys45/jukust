@@ -309,6 +309,11 @@ forms.forEach((element,index) =>{
   form_button.style.color="white";
   form_wrapper.appendChild(form_button);
   var form_button = document.getElementById("form_button")
+
+  var timelag = document.createElement("p");
+  timelag.innerHTML="＊データの反映には2分ほど時間がかかります。最新のデータを確認する際は、しばらく待ってからページを更新してください。<br><br>";
+  timelag.style.color="red";
+  form_button.after(timelag);
   
   // フォーム送信ボタン送信後の表示設定
   var form_comfirm= document.createElement("div");
