@@ -335,7 +335,6 @@ kintai_db["日付"].forEach((element,index)=>{
     // 出勤、退勤ボタンを用意する
     const swich= '<div class="btn">出勤報告する</div>';
     target1.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
-
     var trigger1 = target1.getElementsByClassName("btn")[0];
     trigger1.addEventListener('click',function(){
       target1.getElementsByClassName("flag")[0].innerHTML="出勤報告あり"
@@ -347,8 +346,6 @@ kintai_db["日付"].forEach((element,index)=>{
   }
 
 });
-
-document.querySelectorAll("#form>.dg").remove();
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
