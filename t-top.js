@@ -277,7 +277,9 @@ kintai_db["日付"].forEach((element,index)=>{
     time_guide.innerHTML = "実際の出勤時間｜";
     target1.getElementsByClassName("wh")[0].before(time_guide);
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "<br>↑勤務開始時間変更 or 遅刻した場合のみ記入";
+    time_guide.innerHTML = "<br>↑勤務開始時間変更 or 遅刻した場合のみ記入<br>";
+    time_guide.style["font-size"]="14px"
+    time_guide.style["color"]="#34675C"
     target1.getElementsByClassName("wm")[0].after(time_guide);
 
 
@@ -286,7 +288,9 @@ kintai_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("bh")[0].before(time_guide);
 
     var time_guide = document.createElement("span");
-    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合など記入";
+    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合など記入<br>";
+    time_guide.style["font-size"]="14px"
+    time_guide.style["color"]="#34675C"
     target1.getElementsByClassName("bm")[0].after(time_guide);
 
     var time_guide = document.createElement("span");
@@ -333,11 +337,14 @@ kintai_db["日付"].forEach((element,index)=>{
     target1.getElementsByClassName("day-box-form")[0].style.display="none";
 
     // 出勤、退勤ボタンを用意する
-    const swich= '<div class="btn">出勤報告する</div>';
+    const swich= '<div class="btnbtn">出勤報告する</div>';
     target1.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
+    target1.getElementsByClassName("btnbtn")[0].style.width ="100%";
+    target1.getElementsByClassName("btnbtn")[0].style.margin ="5px 0";
+
     var trigger1 = target1.getElementsByClassName("btn")[0];
     trigger1.addEventListener('click',function(){
-      target1.getElementsByClassName("flag")[0].innerHTML="出勤報告あり"
+      target1.getElementsByClassName("flag")[0].innerHTML="出勤報告あり";
       target1.getElementsByClassName("day-box-form")[0].style.display="block";
       trigger1.style["background-color"]="#34675c";
       trigger1.style["color"]="white";
