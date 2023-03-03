@@ -376,7 +376,7 @@ kintai_db["日付"].forEach((element,index)=>{
   var form_button = document.createElement("button");
   form_button.setAttribute("id","form_button");
   form_button.setAttribute("type","submit");
-  form_button.innerHTML="▶︎ 勤怠報告を完了する";
+  form_button.innerHTML="勤務報告を完了する";
   form_button.style["background-color"] ="#34675c";
   form_button.style["border-radius"] = "5px";
   form_button.style["padding"] = "8px";
@@ -384,6 +384,14 @@ kintai_db["日付"].forEach((element,index)=>{
   form_button.style.color="white";
   form_wrapper.appendChild(form_button);
   var form_button = document.getElementById("form_button")
+
+
+  var timelag = document.createElement("p");
+  timelag.innerHTML="データの反映には2分ほど時間がかかります。<br>";
+  timelag.style.color="red";
+  form_button.after(timelag);
+
+
   
   // フォーム送信ボタン送信後の表示設定
   var form_comfirm= document.createElement("div");
