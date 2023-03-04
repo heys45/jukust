@@ -9,6 +9,7 @@ function timefunc(){
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
 
 // 判定＋判定による処理
+filter_prop ="null"
 if(targets.includes(prop_object["ページ表示名"])){
   document.getElementsByClassName("super-navbar")[0].style["background-color"]="green";
   var filter_prop ="教室ID";
