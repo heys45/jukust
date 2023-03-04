@@ -108,7 +108,7 @@ sp_header.appendChild(copy_btn);
 // 教室ページか講師ページかの判定
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
 if(targets.includes(prop_object["ページ表示名"])){
-  document.getElementsByClassName("super-navbar").style["background-color"]="green";
+  document.getElementsByClassName("super-navbar")[0].style["background-color"]="green";
 }
 
 
