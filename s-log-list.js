@@ -10,28 +10,29 @@ var targets = ["教室トップページ","教室シフト管理リスト","教�
 
 // 判定＋判定による処理
 filter_prop ="null"
+var pc_logo = document.createElement('img');
+var sp_logo = document.createElement('img');
 if(targets.includes(prop_object["ページ表示名"])){
   document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
   var filter_prop ="教室ID";
 
-
-  // img要素を作成
-  var img_element = document.createElement('img');
-  img_element.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
-  img_element.style.width="100%";
-  var img_area=  document.querySelectorAll(".super-navbar__content span")[0];
-  document.querySelectorAll(".super-navbar__content img")[0].remove();
-  img_area.appendChild(img_element);
-
-
-
-
-
-
-
+  // 教室用のロゴ設定
+  pc_logo.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
+  sp_logo.src = 'https://heys45.github.io/jukust/logo02.png'; // 画像パス
 }else{
   var filter_prop ="会員ID";
+  // ユーザー用のロゴ設定
+  pc_logo.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
+  sp_logo.src = 'https://heys45.github.io/jukust/logo01.png'; // 画像パス
 }
+
+// ロゴの表示設定
+pc_logo.style.width="100%";pc_logo.setAttribute("id","pc_logo");
+pc_logo.style.width="100%";pc_logo.setAttribute("id","sp_logo");
+var img_area=  document.querySelectorAll(".super-navbar__content span")[0];
+document.querySelectorAll(".super-navbar__content img")[0].remove();
+img_area.appendChild(pc_logo);
+img_area.appendChild(sp_logo);
 
 // DBのグループにグループ番号を表示（CSSで事前にフィルタリングしておく）
 const dbgs = document.querySelectorAll('.notion-collection-group__section');
