@@ -22,10 +22,6 @@ if(targets.includes(prop_object["ページ表示名"])){
   img_area.appendChild(img_element);
 
 
-  // 指定した要素にimg要素を挿入
-  let content_area = document.getElementById("content_area");
-  content_area.appendChild(img_element);
-
 
 
 
