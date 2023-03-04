@@ -13,13 +13,14 @@ filter_prop ="null"
 var pc_logo = document.createElement('img');
 var sp_logo = document.createElement('img');
 if(targets.includes(prop_object["ページ表示名"])){
-  document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
+  // 教室用のフィルター設定
   var filter_prop ="教室ID";
-
   // 教室用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo02.png'; // 画像パス
+  document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
 }else{
+  // 講師用のフィルター設定
   var filter_prop ="会員ID";
   // ユーザー用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
@@ -50,9 +51,9 @@ remove_dbg.forEach(element =>{element.remove();});
 
 
 
-// var header_title = document.getElementsByClassName("notion-header__title")[0];
-// document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
-// header_title.after(prop_object["会員ID"]);
+var header_title = document.getElementsByClassName("notion-header__title")[0];
+document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
+header_title.after(prop_object["会員ID"]);
 
 
 // DBの一つ目＝ページリストをSP用に複製。
