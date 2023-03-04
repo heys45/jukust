@@ -1,5 +1,5 @@
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* レスポンシブの設定 */
+/* #region レスポンシブの設定 */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* 方針　900px 以上でサイドバー　*/
 
@@ -50,8 +50,15 @@
   padding-top:0 !important;
 }
 
+
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* ヘッダーの設定 */
+/* #endregion レスポンシブの設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region ヘッダーの設定 */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
 .super-navbar__logo-image{width: 100% !important;}
@@ -61,6 +68,94 @@
 #pc_logo{display: none;}
 #sp_logo{display: inline-block;}
 }
+
+  /*ナビバー、カバー画像、プロパティ非表示*/
+  .super-navbar{
+    align-items: start !important;
+  }
+
+    .super-navbar__logo{
+        padding-right: 0;
+    }
+
+  .super-navbar__content{
+    justify-content: flex-start;
+    z-index: 1000;
+  }
+
+  
+
+
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #endregion ヘッダーの設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+  .super-navbar__actions {
+    margin-left:auto ;
+  }
+  
+  .super-navbar__cta{
+    padding: 5px 15px;
+  }
+
+  
+  .notion-header__title{
+    font-size: 1.2rem;
+    font-weight:600;
+    color: #777777;
+  }
+  .notion-header__title::before{
+    content: "｜";
+  }
+
+  .notion-header, .notion-page__properties{
+    display: none;
+  }
+  
+  #tbc-list {
+	  display: none;
+	}
+  
+  #tbc-list.active {
+	  display: block;
+	  background-color: white;
+	}
+	
+	#tbc-btn, #sp-header{
+	  display: none;
+	}
+	
+	
+@media (max-width: 680px) { 
+  .super-navbar .notion-header__title,
+  .super-navbar .super-navbar__actions {
+    display: none;
+    
+  }
+  
+  
+ #tbc-list
+  {
+  display: none;
+}
+  #tbc-btn{
+    margin-left:auto ;
+    display: inline-block;
+  }
+  #sp-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding:0;
+  background-color: rgb(256,256,256,0.8);
+  }
+}
+
+
+
 
 
 
@@ -268,86 +363,7 @@ body{
     color:white;
   }
   
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* ヘッダー設定 */
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-  
-  /*ナビバー、カバー画像、プロパティ非表示*/
-  .super-navbar{
-    align-items: start !important;
-  }
 
-    .super-navbar__logo{
-        padding-right: 0;
-    }
-
-  .super-navbar__content{
-    justify-content: flex-start;
-    z-index: 1000;
-  }
-  
-
-  .super-navbar__actions {
-    margin-left:auto ;
-  }
-  
-  .super-navbar__cta{
-    padding: 5px 15px;
-  }
-
-  
-  .notion-header__title{
-    font-size: 1.2rem;
-    font-weight:600;
-    color: #777777;
-  }
-  .notion-header__title::before{
-    content: "｜";
-  }
-
-  .notion-header, .notion-page__properties{
-    display: none;
-  }
-  
-  #tbc-list {
-	  display: none;
-	}
-  
-  #tbc-list.active {
-	  display: block;
-	  background-color: white;
-	}
-	
-	#tbc-btn, #sp-header{
-	  display: none;
-	}
-	
-	
-@media (max-width: 680px) { 
-  .super-navbar .notion-header__title,
-  .super-navbar .super-navbar__actions {
-    display: none;
-    
-  }
-  
-  
- #tbc-list,.notion-column:first-child
-  {
-  display: none;
-}
-  #tbc-btn{
-    margin-left:auto ;
-    display: inline-block;
-  }
-  #sp-header {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding:0;
-  background-color: rgb(256,256,256,0.8);
-  }
-}
   
   
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
