@@ -17,7 +17,7 @@ if(targets.includes(prop_object["ページ表示名"])){
 
   // img要素を作成
   var img_element = document.createElement('img');
-  img_element.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
+  img_element.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
   img_element.style.width="100%";
   var img_area=  document.querySelectorAll(".super-navbar__content span")[0];
   document.querySelectorAll(".super-navbar__content img")[0].remove();
