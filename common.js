@@ -138,16 +138,13 @@ if(document.getElementById("スポットバイトの流れ")!=null){
     document.getElementsByClassName("progressbar")[0].style.display="flex";
     document.getElementById('li-schedule').setAttribute("class","complete");
     document.getElementById('li-request').setAttribute("class","active");
-    document.getElementById('li-confirm').setAttribute("class","complete");
-    document.getElementById('li-attendance').setAttribute("class","active");
   }
-  var targets = ["講師勤怠確認リスト","講師勤怠確認"];
+  var targets = ["講師シフト確定リスト","講師シフト確定"];
   if(targets.includes(prop_object["ページ表示名"])){
     document.getElementsByClassName("progressbar")[0].style.display="flex";
     document.getElementById('li-schedule').setAttribute("class","complete");
     document.getElementById('li-request').setAttribute("class","complete");
-    document.getElementById('li-confirm').setAttribute("class","complete");
-    document.getElementById('li-attendance').setAttribute("class","active");
+    document.getElementById('li-confirm').setAttribute("class","active");
   }
   var targets = ["教室トップページ","教室勤怠確認リスト","教室勤怠確認","講師トップページ","講師勤怠確認リスト","講師勤怠確認"];
   if(targets.includes(prop_object["ページ表示名"])){
