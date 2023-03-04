@@ -28,8 +28,8 @@ if(targets.includes(prop_object["ページ表示名"])){
 }
 
 // ロゴの表示設定
-pc_logo.style.width="100%";pc_logo.setAttribute("id","pc_logo");pc_logo.style.height="32px";pc_logo.style.position="relative";
-sp_logo.style.width="100%";sp_logo.setAttribute("id","sp_logo");sp_logo.style.height="32px";sp_logo.style.position="relative";
+pc_logo.style.width="151px";pc_logo.setAttribute("id","pc_logo");pc_logo.style.height="32px";pc_logo.style.position="relative";
+sp_logo.style.width="32px";sp_logo.setAttribute("id","sp_logo");sp_logo.style.height="32px";sp_logo.style.position="relative";
 var img_area=  document.querySelectorAll(".super-navbar__logo-image")[0];
 document.querySelectorAll(".super-navbar__logo-image span")[0].remove();
 img_area.appendChild(pc_logo);
