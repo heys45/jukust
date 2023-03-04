@@ -12,7 +12,7 @@ var targets = ["教室トップページ","教室シフト管理リスト","教�
 filter_prop ="null"
 var pc_logo = document.createElement('img');
 var sp_logo = document.createElement('img');
-var header_text_color="#555555"; var header_text="講師用｜";
+var header_text_color="#555555"; var header_text="｜";
 if(targets.includes(prop_object["ページ表示名"])){
   // 教室用のフィルター設定
   var filter_prop ="教室ID";
@@ -20,7 +20,7 @@ if(targets.includes(prop_object["ページ表示名"])){
   pc_logo.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo02.png'; // 画像パス
   document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
-  header_text_color="white"; header_text="教室用｜";
+  header_text_color="white"; header_text="｜";
 }else{
   // 講師用のフィルター設定
   var filter_prop ="会員ID";
@@ -68,11 +68,6 @@ remove_dbg.forEach(element =>{element.remove();});
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
-
-
-
-
-
 // DBの一つ目＝ページリストをSP用に複製。
 var page_list_pc = document.getElementsByClassName("notion-collection")[0];
 page_list_pc.setAttribute("id","page_list_pc");
@@ -87,8 +82,8 @@ header.after(page_list_sp);
 // SP用ページリスト表示ボタンを作成。
 let page_list_btn = document.createElement("button");
 page_list_btn.innerHTML = "ページ一覧";page_list_btn.setAttribute("id","tbc-btn");
-page_list_btn.style.backgroundColor="#17837c";
-page_list_btn.style.borderRadius="20px";
+page_list_btn.style.backgroundColor="#17837c";page_list_btn.style.color="white";
+page_list_btn.style.borderRadius="20px";page_list_btn.style.padding="3px 7px";
 var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
 header_reload.after(page_list_btn);
 header_reload.remove();
