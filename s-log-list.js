@@ -3,7 +3,7 @@ function timefunc(){
 
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region　教室 or 講師共通処理　＊フィルタリング　ナビバー
+// #region　教室 or 講師　共通処理の準備（変数指定）
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // 判定用リストの作成
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
@@ -29,6 +29,13 @@ if(targets.includes(prop_object["ページ表示名"])){
   sp_logo.src = 'https://heys45.github.io/jukust/logo01.png'; // 画像パス
 }
 
+
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #endregion
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region　教室 or 講師　共通処理の実施（ナビバー、フィルタリング）
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // ロゴの表示設定
 pc_logo.style.width="151px";pc_logo.setAttribute("id","pc_logo");pc_logo.style.height="32px";pc_logo.style.position="relative";
 sp_logo.style.width="32px";sp_logo.setAttribute("id","sp_logo");sp_logo.style.height="32px";sp_logo.style.position="relative";
@@ -62,9 +69,10 @@ var remove_dbg = document.querySelectorAll(".notion-collection-group__section:no
 remove_dbg.forEach(element =>{element.remove();});
 
 
-
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #endregion
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region　共通UIレスポンス設定
+// #region　ページリストのレスポンス設定
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
@@ -86,12 +94,11 @@ page_list_sp.style["top"] = "51px";
 let page_list_btn = document.createElement("button");
 page_list_btn.innerHTML = "ページ一覧";page_list_btn.setAttribute("id","tbc-btn");
 page_list_btn.style.backgroundColor="#17837c";page_list_btn.style.color="white";
-page_list_btn.style.borderRadius="20px";page_list_btn.style.padding="3px 7px";
+page_list_btn.style.borderRadius="5px";page_list_btn.style.padding="3px 12px";
+page_list_btn.style.fontSize="14px";
 var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
 header_reload.after(page_list_btn);
 header_reload.remove();
-
-
 
 
 // SP用ページリスト表示ボタンタップ時の設定
