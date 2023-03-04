@@ -76,7 +76,10 @@ page_list_sp.setAttribute("id","page_list_sp")
 var header = document.getElementsByClassName("super-navbar")[0];
 header.after(page_list_sp);
 
-
+page_list_sp.setAttribute("id","tbc-list");
+page_list_sp.style["z-index"] = "999";
+page_list_sp.style["position"] = "fixed";
+page_list_sp.style["top"] = "51px";
 
 
 // SP用ページリスト表示ボタンを作成。
@@ -97,13 +100,6 @@ function page_list_view() {
     page_list_sp.classList.toggle('active');
     page_list_btn.classList.toggle('active');
 }
-
-
-page_list_sp.setAttribute("id","tbc-list");
-page_list_sp.style["z-index"] = "999";
-page_list_sp.style["position"] = "fixed";
-page_list_sp.style["top"] = "51px";
-header.after(copy_tbc);
 
 
 
