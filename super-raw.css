@@ -1,37 +1,258 @@
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* レスポンシブの設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* 方針　900px 以上でサイドバー　*/
+
+/* 900px以上でサイドバーを表示にする */
+.super-content{
+  max-width: 1030px;
+  margin-right:max(calc((100% - 1030px)/2),35px);
+  margin-left:max(calc((100% - 1030px)/2),35px);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.notion-column:first-child{
+  position: -webkit-sticky;
+  position: sticky;
+  width:200px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.notion-column:nth-child(2){
+  width: calc(100% - 230px) !important;
+  max-width:800px;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-left:30px !important;
+}
+
+/* 900px以下でサイドバーを非表示にする */
+@media (max-width: 900px) {
+  .super-content{
+    max-width: 800px;
+    margin-right:max(calc((100% - 800px)/2),10px);
+    margin-left:max(calc((100% - 800px)/2),10px);
+  }
+  .notion-column:first-child{
+    display: none;
+  }
+  .notion-column:nth-child(2){
+    width: 100% !important;
+    max-width:800px;
+    margin: 0 !important;
+  }
+}
+
+/*2col内の2colは上にpaddingを作らない*/
+.notion-column{
+  padding-top:0 !important;
+}
+
+
+
+
+
+
+
+.notion-callout{
+  background-color: #FFFF90;
+}
+
+
+
+
+
+
+
+.day-box{
+  border:solid 2px #34675c;
+  margin-bottom: 15px;
+}
+.day-box-r{
+  padding:3px 10px;
+  width: 100%;
+}
+
+
+.day-box-swich {
+  display:flex;
+}
+
+.day-box-swich div{
+  border:solid 2px gray;
+  border-radius: 5px;
+  padding:3px 6px;
+  margin: 4px 6px 4px 0px;
+  font-size: 14px;
+  text-align: center;
+  width:150px;
+  
+}
+
+
+@media (max-width: 680px) { 
+.day-box{
+  flex-direction:column;
+}
+.day-box-l{
+  width:100% ;
+}
+  }
+
+
+
+
+
+.day-box:first-child{
+  display: none;
+}
+.day-box-l{
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color:#34675c;
+  color: white;
+}
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* 
+  background-color:#2BA415 ;
+  background-color:#17837c ;
+  background-color:#34675c ;
+ */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.in-wr-formbox{
+  border:solid;
+  padding:5px 5px;
+  display: flex;
+}
+.in-day-label, .out-day-label{
+  display: inline-block;
+  padding: 10px;
+  background-color:#34675c ;
+}
+.in-buttons, .out-buttons{
+  display: flex;
+}
+.in-buttons span, .out-buttons span{
+ font-size: 14px;
+ text-align: center;
+ padding: 3px 6px;
+ width: 90px;
+ margin: 0 5px;
+ border: solid 1px #34675c ;
+ border-radius:5px ;
+}
+
+
+
+
+
+.wrb-box{
+  display:flex;
+  font-size: 14px ;
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin:3px 3px;
+  justify-content: center;
+  color: white;
+  background-color:#555555;
+  align-items: center;
+}
+.wrb-1{
+  display: flex;
+  text-align:center;
+  align-items:stretch;
+}
+.wrb-1 .wrb-box:first-child{
+  background-color:#2BA415 ;
+  background-color:#17837c ;
+  background-color:#34675c ;
+}
+.wrb-box:nth-child(2){
+  background-color:#2BA415 ;
+  background-color:#17837c ;
+
+}
+.wrb-2{
+  padding:3px;
+  text-align: start;
+  
+  
+}
+.wrb-2 span{
+  display:inline-block;
+  padding:5px 3px;
+  justify-content: flex-start;
+  
+  
+}
+
+
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* 全体、サイドバー設定 */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 body{
     color:#393f42;
+    font-weight: 600px;
   }
 
-.super-content{
-padding-bottom: 20px;
-}
+
   
-.notion-column{
-    padding-top:65px;
-  }
-  
-.notion-column:first-child{
-position: -webkit-sticky;
-position: sticky;
-top: 0;
-height: 100%;
-}
+
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* フォーム設定 */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-  form{
+  #shift-form,#schedule-form,#wr-form,#form,.day-box,.select-term,#schid,#teaid,#worid {
       display:none;
   }
   .select-term{
       display: none;
   }
+  
+  select{
+    border-radius: 5px;
+    padding: 4px 5px;
+    margin: 3px  0;
+    border: solid 3px #17837c;
+    color:#34675C;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  input{
+    border-radius: 6px;
+    padding: 0 5px;
+    margin: 3px  0;
+    border: solid 2px #aaaaaa;
+    font-weight: 600;
+    font-size: 14px;
+    color:#393f42;
+  }
 
-  .hosoku{
-    width: auto;
+  
+
+  .dg p{
+  background-color: #f5f5f5;
+  width:100%;
+  }
+  
+  form button{
+    border-radius: 6px;
+    margin:20px 0;
+    padding: 5px 30px;
+    font-weight: 600;
+    background-color: #17837c;
+    border:none;
+    color:white;
   }
   
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
@@ -39,6 +260,9 @@ height: 100%;
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
   
   /*ナビバー、カバー画像、プロパティ非表示*/
+  .super-navbar{
+    align-items: start !important;
+  }
 
     .super-navbar__logo{
         padding-right: 0;
@@ -46,10 +270,16 @@ height: 100%;
 
   .super-navbar__content{
     justify-content: flex-start;
+    z-index: 1000;
   }
+  
 
   .super-navbar__actions {
     margin-left:auto ;
+  }
+  
+  .super-navbar__cta{
+    padding: 5px 15px;
   }
 
   
@@ -66,15 +296,54 @@ height: 100%;
     display: none;
   }
   
+  #tbc-list {
+	  display: none;
+	}
   
+  #tbc-list.active {
+	  display: block;
+	  background-color: white;
+	}
+	
+	#tbc-btn, #sp-header{
+	  display: none;
+	}
+	
+	
+@media (max-width: 680px) { 
+  .super-navbar .notion-header__title,
+  .super-navbar .super-navbar__actions {
+    display: none;
+    
+  }
+  
+  
+ #tbc-list,.notion-column:first-child
+  {
+  display: none;
+}
+  #tbc-btn{
+    margin-left:auto ;
+    display: inline-block;
+  }
+  #sp-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding:0;
+  background-color: rgb(256,256,256,0.8);
+  }
+}
   
   
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* クオートセクション */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
   .notion-quote{
-    border-left: #17837C solid 4px;
-    background-color: #d7f5f2;
+    border-left: #2BA415 solid 4px;
+    padding:7px ;
+    background-color: #fafafa;
     margin-bottom:1rem ;
   }
   
@@ -105,11 +374,10 @@ height: 100%;
 /* プログレスバー */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
   .progressbar {
-    display: none;
     position: relative;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -164,7 +432,7 @@ height: 100%;
 
 /* 装飾 */
 ul{
-  margin: 40px 0 !important;
+  margin: 0px 0 20px 0 !important;
 }
   
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
