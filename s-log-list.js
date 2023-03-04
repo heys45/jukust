@@ -27,8 +27,8 @@ if(targets.includes(prop_object["ページ表示名"])){
 }
 
 // ロゴの表示設定
-pc_logo.style.width="100%";pc_logo.setAttribute("id","pc_logo");
-pc_logo.style.width="100%";pc_logo.setAttribute("id","sp_logo");
+pc_logo.style.width="100%";pc_logo.setAttribute("id","pc_logo");pc_logo.style.height="32px";
+pc_logo.style.width="100%";pc_logo.setAttribute("id","sp_logo");pc_logo.style.height="32px";
 var img_area=  document.querySelectorAll(".super-navbar__content span")[0];
 document.querySelectorAll(".super-navbar__content img")[0].remove();
 img_area.appendChild(pc_logo);
