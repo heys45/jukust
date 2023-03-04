@@ -91,6 +91,7 @@ page_list_btn.style.backgroundColor="#17837c";
 page_list_btn.style.borderRadius="20px";
 var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
 header_reload.after(page_list_btn);
+header_reload.remove();
 
 
 
