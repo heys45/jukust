@@ -74,42 +74,26 @@ header.after(page_list_sp);
 
 
 // SP用ページリスト表示ボタンを作成。
-let tbc_btn = document.createElement("button");
-tbc_btn.innerHTML = "ページ一覧";
-tbc_btn.setAttribute("id","tbc-btn");
+let page_list_btn = document.createElement("button");
+page_list_btn.innerHTML = "ページ一覧";
+page_list_btn.setAttribute("id","tbc-btn");
 var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
-header_reload.after(tbc_btn);
+header_reload.after(page_list_btn);
 
 // SP用ページリスト表示ボタンタップ時の設定
-tbc_btn.addEventListener('click', tbc_view);
-function tbc_view() {
-    copy_tbc.classList.toggle('active');
-    tbc_btn.classList.toggle('active');
+page_list_btn.addEventListener('click', page_list_view);
+function page_list_view() {
+    page_list_sp.classList.toggle('active');
+    page_list_btn.classList.toggle('active');
 }
 
 
-
-
-
-copy_tbc.setAttribute("id","tbc-list");
-copy_tbc.style["z-index"] = "999";
-copy_tbc.style["position"] = "fixed";
-copy_tbc.style["top"] = "51px";
+page_list_sp.setAttribute("id","tbc-list");
+page_list_sp.style["z-index"] = "999";
+page_list_sp.style["position"] = "fixed";
+page_list_sp.style["top"] = "51px";
 header.after(copy_tbc);
 
-let sp_header = document.createElement("div");
-sp_header.setAttribute("id","sp-header");
-sp_header.style["z-index"] = "999";
-sp_header.style["position"] = "fixed";
-sp_header.style["top"] = "51px";
-header.after(sp_header);
-
-var copy_title = header_title.cloneNode(true);
-copy_title.setAttribute("id","copy-title");
-sp_header.appendChild(copy_title);
-var copy_btn = reload_btn.cloneNode(true);
-copy_btn.setAttribute("id","copy-btn");
-sp_header.appendChild(copy_btn);
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
