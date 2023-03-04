@@ -33,10 +33,10 @@ remove_dbg.forEach(element =>{element.remove();});
 
 
 
-var header_title = document.getElementsByClassName("notion-header__title")[0];
-document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
+// var header_title = document.getElementsByClassName("notion-header__title")[0];
+// document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
+// header_title.after(prop_object["会員ID"]);
 
-header_title.after(prop_object["会員ID"]);
 
 // DBの一つ目＝ページリストをSP用に複製。
 var page_list_pc = document.getElementsByClassName("notion-collection")[0];
@@ -45,6 +45,9 @@ var page_list_sp = page_list_pc.cloneNode(true);
 page_list_sp.setAttribute("id","page_list_sp")
 var header = document.getElementsByClassName("super-navbar")[0];
 header.after(page_list_sp);
+
+
+
 
 // SP用ページリスト表示ボタンを作成。
 let tbc_btn = document.createElement("button");
@@ -63,8 +66,7 @@ function tbc_view() {
 
 
 
-var header = document.getElementsByClassName("super-navbar")[0];
-var copy_tbc = page_list.cloneNode(true);
+
 copy_tbc.setAttribute("id","tbc-list");
 copy_tbc.style["z-index"] = "999";
 copy_tbc.style["position"] = "fixed";
