@@ -86,10 +86,14 @@ header.after(page_list_sp);
 
 // SP用ページリスト表示ボタンを作成。
 let page_list_btn = document.createElement("button");
-page_list_btn.innerHTML = "ページ一覧";
-page_list_btn.setAttribute("id","tbc-btn");
+page_list_btn.innerHTML = "ページ一覧";page_list_btn.setAttribute("id","tbc-btn");
+page_list_btn.style.backgroundColor="#17837c";
+page_list_btn.style.borderRadius="20px";
 var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
 header_reload.after(page_list_btn);
+
+
+
 
 // SP用ページリスト表示ボタンタップ時の設定
 page_list_btn.addEventListener('click', page_list_view);
