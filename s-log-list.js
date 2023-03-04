@@ -60,8 +60,10 @@ remove_dbg.forEach(element =>{element.remove();});
 var header_info = document.createElement("span");
 header_info.innerHTML=header_text+document.getElementsByClassName("notion-header__title")[0].innerHTML;
 header_info.style.color=header_text_color;header_info.style.position="relative";header_info.style.zIndex="1000";
-header_info.style.paddingBottom="2px";header_info.style.paddingLeft="10px";document.querySelectorAll(".super-navbar__logo-image")[0].style["align-items"]= "end";
+header_info.style.paddingBottom="2px";header_info.style.paddingLeft="10px";
+document.querySelectorAll(".super-navbar__logo")[0].href="";document.querySelectorAll(".super-navbar__logo-image")[0].style["align-items"]= "end";
 img_area.appendChild(header_info);
+
 
 
 
