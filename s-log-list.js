@@ -39,7 +39,6 @@ remove_dbg.forEach(element =>{element.remove();});
 
 
 
-
 if(prop_object["ページ表示名"]==="教室勤怠確認リスト"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // プログレスバーの変更
