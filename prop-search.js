@@ -107,6 +107,7 @@ sp_header.appendChild(copy_btn);
 
 
 
+
 // // フッターの設定
 
 // var footer = document.getElementsByTagName("footer")[0];
