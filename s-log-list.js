@@ -57,7 +57,7 @@ remove_dbg.forEach(element =>{element.remove();});
 
 var header_info = document.createElement("span");
 header_info.innerHTML="教室版｜"+document.getElementsByClassName("notion-header__title")[0].innerHTML;
-header_info.style.color="white";header_info.style.position="relative";
+header_info.style.color="white";header_info.style.position="relative";header_info.style.zIndex="1000";
 img_area.appendChild(header_info);
 
 

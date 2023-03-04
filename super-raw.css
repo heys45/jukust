@@ -50,6 +50,19 @@
   padding-top:0 !important;
 }
 
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* ヘッダーの設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+#pc_logo{display: inline-block;}
+#sp_logo{display: none;}
+@media (max-width: 700px) {
+#pc_logo{display: none;}
+#sp_logo{display: inline-block;}
+
+}
+
+
 
 
 
