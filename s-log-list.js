@@ -5,31 +5,31 @@ function timefunc(){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region　教室 or 講師共通処理　＊フィルタリング　ナビバー
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// 判定用リストの作成
-var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
+// // 判定用リストの作成
+// var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
 
-// 判定＋判定による処理
-filter_prop ="null"
-if(targets.includes(prop_object["ページ表示名"])){
-  document.getElementsByClassName("super-navbar")[0].style["background-color"]="green";
-  var filter_prop ="教室ID";
-}else{
-  var filter_prop ="会員ID";
-}
+// // 判定＋判定による処理
+// filter_prop ="null"
+// if(targets.includes(prop_object["ページ表示名"])){
+//   document.getElementsByClassName("super-navbar")[0].style["background-color"]="green";
+//   var filter_prop ="教室ID";
+// }else{
+//   var filter_prop ="会員ID";
+// }
 
-// DBのグループにグループ番号を表示（CSSで事前にフィルタリングしておく）
-const dbgs = document.querySelectorAll('.notion-collection-group__section');
-dbgs.forEach(element =>{
-    var group_id = element.getElementsByTagName("span")[1].innerHTML;
-    element.classList.add("dbg-"+ group_id);
-});
+// // DBのグループにグループ番号を表示（CSSで事前にフィルタリングしておく）
+// const dbgs = document.querySelectorAll('.notion-collection-group__section');
+// dbgs.forEach(element =>{
+//     var group_id = element.getElementsByTagName("span")[1].innerHTML;
+//     element.classList.add("dbg-"+ group_id);
+// });
 
-// 指定したIDでDBのグループをフィルタリング
-var dbg_class =".dbg-"+prop_object[ filter_prop];
-var view_dbg = document.querySelectorAll(dbg_class);
-view_dbg.forEach(element =>{element.style.display = "block" ;});
-var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
-remove_dbg.forEach(element =>{element.remove();});
+// // 指定したIDでDBのグループをフィルタリング
+// var dbg_class =".dbg-"+prop_object[ filter_prop];
+// var view_dbg = document.querySelectorAll(dbg_class);
+// view_dbg.forEach(element =>{element.style.display = "block" ;});
+// var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
+// remove_dbg.forEach(element =>{element.remove();});
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
