@@ -11,8 +11,26 @@ var targets = ["教室トップページ","教室シフト管理リスト","教�
 // 判定＋判定による処理
 filter_prop ="null"
 if(targets.includes(prop_object["ページ表示名"])){
-  document.getElementsByClassName("super-navbar")[0].style["background-color"]="green";
+  document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
   var filter_prop ="教室ID";
+
+
+  // img要素を作成
+  var img_element = document.createElement('img');
+  img_element.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
+  var img_area=  document.querySelectorAll(".super-navbar__content span")[0];
+  img_area.appendChild(img_element);
+
+
+  // 指定した要素にimg要素を挿入
+  let content_area = document.getElementById("content_area");
+  content_area.appendChild(img_element);
+
+
+
+
+
+
 }else{
   var filter_prop ="会員ID";
 }
