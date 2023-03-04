@@ -1,34 +1,34 @@
 setTimeout(timefunc,300);
 function timefunc(){
 
-// 教室ページか講師ページか判定　＊フィルタリングも設定
-var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
-if(targets.includes(prop_object["ページ表示名"])){
-  // ナビバーのカラーを緑に
-  document.getElementsByClassName("super-navbar")[0].style["background-color"]="green";
-  // DBのフィルタリングに使うプロパティ
-  var filter_prop ="教室ID";
-}else{
-  // DBのフィルタリングに使うプロパティ
-  var filter_prop ="会員ID";
-}
+// // 教室ページか講師ページか判定　＊フィルタリングも設定
+// var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
+// if(targets.includes(prop_object["ページ表示名"])){
+//   // ナビバーのカラーを緑に
+//   document.getElementsByClassName("super-navbar")[0].style["background-color"]="green";
+//   // DBのフィルタリングに使うプロパティ
+//   var filter_prop ="教室ID";
+// }else{
+//   // DBのフィルタリングに使うプロパティ
+//   var filter_prop ="会員ID";
+// }
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// DBのフィルタリング
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// DBのグループにグループ番号を表示（CSSで事前にフィルタリングしておく）
-const dbgs = document.querySelectorAll('.notion-collection-group__section');
-dbgs.forEach(element =>{
-    var group_id = element.getElementsByTagName("span")[1].innerHTML;
-    element.classList.add("dbg-"+ group_id);
-});
+// //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// // DBのフィルタリング
+// //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// // DBのグループにグループ番号を表示（CSSで事前にフィルタリングしておく）
+// const dbgs = document.querySelectorAll('.notion-collection-group__section');
+// dbgs.forEach(element =>{
+//     var group_id = element.getElementsByTagName("span")[1].innerHTML;
+//     element.classList.add("dbg-"+ group_id);
+// });
 
-// 指定したIDでDBのグループをフィルタリング
-var dbg_class =".dbg-"+prop_object[ filter_prop];
-var view_dbg = document.querySelectorAll(dbg_class);
-view_dbg.forEach(element =>{element.style.display = "block" ;});
-var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
-remove_dbg.forEach(element =>{element.remove();});
+// // 指定したIDでDBのグループをフィルタリング
+// var dbg_class =".dbg-"+prop_object[ filter_prop];
+// var view_dbg = document.querySelectorAll(dbg_class);
+// view_dbg.forEach(element =>{element.style.display = "block" ;});
+// var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
+// remove_dbg.forEach(element =>{element.remove();});
 
 
 
