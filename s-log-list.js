@@ -12,6 +12,7 @@ var targets = ["教室トップページ","教室シフト管理リスト","教�
 filter_prop ="null"
 var pc_logo = document.createElement('img');
 var sp_logo = document.createElement('img');
+var header_text_color="#555555"
 if(targets.includes(prop_object["ページ表示名"])){
   // 教室用のフィルター設定
   var filter_prop ="教室ID";
@@ -19,6 +20,7 @@ if(targets.includes(prop_object["ページ表示名"])){
   pc_logo.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo02.png'; // 画像パス
   document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
+  var header_text_color="white"
 }else{
   // 講師用のフィルター設定
   var filter_prop ="会員ID";
@@ -56,9 +58,12 @@ remove_dbg.forEach(element =>{element.remove();});
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 var header_info = document.createElement("span");
-header_info.innerHTML="教室版｜"+document.getElementsByClassName("notion-header__title")[0].innerHTML;
-header_info.style.color="white";header_info.style.position="relative";header_info.style.zIndex="1000";
+header_info.innerHTML="教室用｜"+document.getElementsByClassName("notion-header__title")[0].innerHTML;
+header_info.style.color=header_text_color;header_info.style.position="relative";header_info.style.zIndex="1000";
+header_info.style.paddingBottom="2px";header_info.style.paddingLeft="10px";document.querySelectorAll(".super-navbar__logo-image")[0].style[align-items]= "end";
 img_area.appendChild(header_info);
+
+
 
 
 
