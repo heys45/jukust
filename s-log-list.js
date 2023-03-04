@@ -51,9 +51,15 @@ remove_dbg.forEach(element =>{element.remove();});
 
 
 
-var header_title = document.getElementsByClassName("notion-header__title")[0];
-document.getElementsByClassName("super-navbar__logo")[0].after(header_title);
-header_title.after(prop_object["会員ID"]);
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region　共通UIレスポンス設定
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+var header_info = document.createElement("span");
+header_info.innerHTML="教室版｜"+document.getElementsByClassName("notion-header__title")[0].innerHTML;
+header_info.style.color="white";header_info.style.position="relative";
+img_area.appendChild(header_info);
+
 
 
 // DBの一つ目＝ページリストをSP用に複製。
