@@ -42,7 +42,8 @@ var header_info = document.createElement("span");
 header_info.innerHTML=header_text+document.getElementsByClassName("notion-header__title")[0].innerHTML;
 header_info.style.color=header_text_color;header_info.style.position="relative";header_info.style.zIndex="1000";
 header_info.style.paddingBottom="5px";header_info.style.paddingLeft="10px";header_info.style.display="inline-block";
-document.querySelectorAll(".super-navbar__logo")[0].href="";document.querySelectorAll(".super-navbar__logo-image")[0].style["align-items"]= "end";
+document.querySelectorAll(".super-navbar__logo-image")[0].style["display"]= "flex";
+document.querySelectorAll(".super-navbar__logo-image")[0].style["align-items"]= "end";
 img_area.appendChild(header_info);
 
 
