@@ -160,93 +160,73 @@ if(document.getElementById("スポットバイトの流れ")!=null){
 // #endregion
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-  // 使用するフォームの選択
-  const sh_form = document.getElementById("shift-form");
-  const sc_form = document.getElementById("schedule-form");
-  const wr_form = document.getElementById("wr-form");
+  // // 使用するフォームの選択
+  // const sh_form = document.getElementById("shift-form");
+  // const sc_form = document.getElementById("schedule-form");
+  // const wr_form = document.getElementById("wr-form");
 
-  sc_form.remove();
-  sh_form.remove();
-  wr_form.remove();
+  // sc_form.remove();
+  // sh_form.remove();
+  // wr_form.remove();
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region　データベースの番号づけ
+// データベースの番号づけ 何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-//テーブルをまとめて取得
-const dbs = document.querySelectorAll('.notion-collection-table');
-//テーブルにIDを付与する 
-for( var i=0; i<dbs.length; i++) {
+// #region データベース共通処理
+  //DBをまとめて取得しIDを付与する 
+  const dbs = document.querySelectorAll('.notion-collection-table');
+  for( var i=0; i<dbs.length; i++) {
   var name = "db-"+(i+1);
-  dbs[i].setAttribute("id",name);
-  
-  //行をまとめて取得
-  const rows = dbs[i].getElementsByTagName("tr")
-  //行にIDを付与する 
-  for( var j=0; j<rows.length; j++) {
-  var name = "db-"+(i+1)+"-"+(j+1);
-  rows[j].setAttribute("id",name);
-  
-  //列をまとめて取得
-  const columns =rows[j].getElementsByTagName("td")
-  const columnhs =rows[j].getElementsByTagName("th");
-  //列にIDを付与する 
-  for( var k=0; k<columns.length; k++) {
-  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-  columns[k].setAttribute("id",name);
+  dbs[i].setAttribute("id",name); 
+    //行をまとめて取得しIDを付与する 
+    const rows = dbs[i].getElementsByTagName("tr")
+    for( var j=0; j<rows.length; j++) {
+    if(j != 0){
+    var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+    rows[j].setAttribute("name",name);}
+    var name = "db-"+(i+1)+"-"+(j+1);
+    rows[j].setAttribute("id",name);
+    //列をまとめて取得しIDを付与する 
+    const columns =rows[j].getElementsByTagName("td")
+    const columnhs =rows[j].getElementsByTagName("th");
+    for( var k=0; k<columns.length; k++) {
+    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+    columns[k].setAttribute("id",name);}//列の設定１
+    for( var k=0; k<columnhs.length; k++) {
+    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+    columnhs[k].setAttribute("id",name);}//列の設定2
+    }//行の設定完了
   }
-  for( var k=0; k<columnhs.length; k++) {
-  var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-  columnhs[k].setAttribute("id",name);
+// #endregion
 
-  }
-  }
-}
-
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// テーブルの番号づけ
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-//テーブルをまとめて取得
-const tables = document.querySelectorAll('.notion-table');
-//テーブルにIDを付与する 
-for( var i=0; i<tables.length; i++) {
-  console.log(tables[i]);
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// テーブルの番号づけ 何もしなくてOK
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region テーブル共通処理
+  //テーブルを取得しIDを付与する
+  const tables = document.querySelectorAll('.notion-table');
+  for( var i=0; i<tables.length; i++) {
   var name = "table-"+(i+1);
-  console.log(name);
   tables[i].setAttribute("id",name);
-  //行をまとめて取得
-  const rows = tables[i].getElementsByTagName("tr");
-  //行にIDを付与する 
-  for( var j=0; j<rows.length; j++) {
-  console.log(rows[j]);
-  var name = "table-"+(i+1)+"-"+(j+1);
-  console.log(name);
-  rows[j].setAttribute("id",name);
-  
-  //列をまとめて取得
-  const columns =rows[j].getElementsByTagName("td");
-  const columnhs =rows[j].getElementsByTagName("th");
-  //列にIDを付与する 
-  for( var k=0; k<columns.length; k++) {
-  console.log(columns[k]);
-  var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-  console.log(name);
-  columns[k].setAttribute("id",name);
-  }
-  for( var k=0; k<columnhs.length; k++) {
-    console.log(columnhs[k]);
+    //行をまとめて取得しIDを付与する
+    const rows = tables[i].getElementsByTagName("tr");
+    for( var j=0; j<rows.length; j++) {
+    var name = "table-"+(i+1)+"-"+(j+1);
+    rows[j].setAttribute("id",name);
+    //列をまとめて取得しIDを付与する
+    const columns =rows[j].getElementsByTagName("td");
+    const columnhs =rows[j].getElementsByTagName("th");
+    for( var k=0; k<columns.length; k++) {
     var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    console.log(name);
-    columnhs[k].setAttribute("id",name);
-    }
+    columns[k].setAttribute("id",name);}//列の設定１
+    for( var k=0; k<columnhs.length; k++) {
+      var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+      columnhs[k].setAttribute("id",name);}//列の設定２
+    }//行の設定完了
   }
-}
+// #endregion
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #endregion　データベースの番号づけ
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
 }
