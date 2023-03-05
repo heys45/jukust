@@ -4,17 +4,6 @@ setTimeout(timefunc,1000);
 function timefunc(){
 if(prop_object["ページ表示名"]==="教室連絡確認"){
 
-
-// 使用するフォームの選択
-const sh_form = document.getElementById("shift-form");
-const sc_form = document.getElementById("schedule-form");
-const wr_form = document.getElementById("wr-form");
-
-sc_form.remove();
-sh_form.remove();
-wr_form.remove();
-
-
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // メッセージヘッダーとメッセージ出力欄の作成
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -127,7 +116,7 @@ if(db_areas[1].getElementsByClassName("notion-collection-table")[0] !=null){
         message_data_box.style.padding="10px";
         message_data_box.style.flexWrap="Wrap"
         var message_data1= document.createElement("span");
-        message_data1.innerHTML=dbs[1]["会員ID"][index]+"｜"+dbs[1]["送信時間"][index];
+        message_data1.innerHTML="会員ID"+dbs[1]["会員ID"][index]+"｜"+dbs[1]["送信時間"][index];
         message_data1.style.display="inline-box";
         message_data1.style.width="100%";
         message_data1.style.margin="3px 15px"
@@ -143,7 +132,7 @@ if(db_areas[1].getElementsByClassName("notion-collection-table")[0] !=null){
         message_data_box.appendChild(message_data2);
 
         if(dbs[1]["教室ID"][index]!=null){
-          message_data1.innerHTML=dbs[1]["教室ID"][index]+"｜"+dbs[1]["送信時間"][index];
+          message_data1.innerHTML="教室ID"+dbs[1]["教室ID"][index]+"｜"+dbs[1]["送信時間"][index];
           message_data_box.style.justifyContent="flex-end"
           message_data1.style.textAlign="right";
           message_data2.style.backgroundColor="rgb(23, 131, 124)";
