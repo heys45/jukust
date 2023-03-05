@@ -86,10 +86,9 @@ var submit_button = document.createElement("button");
 submit_button.setAttribute("type","submit");
 submit_button.setAttribute("form","message_form");
 var button_area= document.getElementsByClassName("notion-callout__icon")[1];
+console.log(button_area.children);
+var button_icon=button_area.children ;
 button_area.appendChild(submit_button);
-console.log(button_area.querySelectorAll("img")[1]);
-console.log(button_area.querySelectorAll("picture")[1]);
-var button_icon=button_area.querySelectorAll("img")[1];
 submit_button.appendChild(button_icon);
 
 // フォーム送信後の画面遷移の設定
