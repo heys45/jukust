@@ -92,12 +92,6 @@ dbs[2]["日付"].forEach((element,index)=>{
 
 
 
-
-
-
-
-
-
   // フォームの作成
   console.log(dbs[2]["終了報告フラグ"][index])
   if(dbs[2]["終了報告フラグ"][index]==1){
@@ -131,6 +125,21 @@ dbs[2]["日付"].forEach((element,index)=>{
 
 
   })
+
+
+// フォームスタイルの設定
+document.querySelectorAll(".houkoku_form").forEach(element=>{
+element.style.border="solid 2px";
+element.querySelectorAll(".houkoku_form").style.padding="6px 10px";
+element.querySelectorAll(".houkoku_form").style.margin="6px 0";
+})
+
+
+
+
+
+
+
 
 
   // フォーム不要項目の非表示
