@@ -1,7 +1,10 @@
 setTimeout(timefunc,400);
+
+var db_areas= document.querySelectorAll(".notion-collection");
+var dbs =[];
+
+
 function timefunc(){
-
-
 document.getElementsByClassName("notion-column")[0].setAttribute("id","first-column");
 document.getElementsByClassName("notion-column")[1].setAttribute("id","second-column");
 
@@ -59,8 +62,6 @@ var targets = ["教室トップページ","教室シフト管理リスト","教�
 var targets2 = ["教室連絡確認","講師連絡確認"];
 if(targets.includes(prop_object["ページ表示名"])){
 filter_prop="教室ID"}else{filter_prop="会員ID"}
-var db_areas= document.querySelectorAll(".notion-collection");
-var dbs =[];
 // #endregion 判定用リストの作成
 for (let index = 0; index < db_areas.length; index++) {
   console.log(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null);
