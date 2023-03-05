@@ -123,7 +123,7 @@
 /* #region データベース */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
-.notion-collection t-body tr{
+.notion-collection tbody tr{
   display: none;
 }
 
@@ -503,7 +503,7 @@ body{
   
   
   .s-top-db{
-    width:50% !importantimportant;
+    width:50% !important;
     padding:10px;
     margin: 0;
     
@@ -511,7 +511,7 @@ body{
   
   @media (max-width: 500px) {
   .s-top-db{
-    width:100% !importantimportant;
+    width:100% !important;
   }
   }
   
