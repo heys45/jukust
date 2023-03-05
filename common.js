@@ -1,4 +1,4 @@
-setTimeout(timefunc,300);
+setTimeout(timefunc,400);
 function timefunc(){
 
 
