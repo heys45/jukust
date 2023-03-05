@@ -156,11 +156,10 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
         var message_data_box = document.createElement("div");
         message_data_box.style.display="flex";
         message_data_box.style.padding="10px";
-        message_data_box.style.flexWrap="wrap"
+        message_data_box.style.flexDirection="column"
         var message_data1= document.createElement("span");
         message_data1.innerHTML=message_db["会員ID"][index]+"｜"+message_db["送信時間"][index];
         message_data1.style.display="inline-box";
-        message_data1.style.width="80%";
         message_data1.style.margin="3px 15px"
         message_data_box.appendChild(message_data1);
         var message_data2= document.createElement("div");
