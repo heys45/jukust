@@ -61,9 +61,11 @@ filter_prop="教室ID"}else{filter_prop="会員ID"}
 
 var db_areas= document.querySelectorAll(".notion-colleciton");
 var dbs =[];
+console.log(db_areas);
+console.log(db_areas[0].getElementsByClassName("notion-collection-table")[0] !=null);
 
 for (let index = 0; index < db_areas.length; index++) {
-  console.log(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null)
+  console.log(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null);
 // #region データベースの配列処理
   if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
     var check_db =db_areas[index].getElementsByClassName("notion-collection-table") [0];
