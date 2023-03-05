@@ -109,38 +109,6 @@ submit_button.addEventListener('click',function(){
 
 
 
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベース個別処理準備　　メッセージDBの情報を配列化　
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-var check_area = document.querySelectorAll(".notion-collection")[2];
-check_area.style.display="none";
-
-// #region 共通処理部分
-  if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
-    var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
-    var make_db ={};
-    var headers = check_db.querySelectorAll("thead th");
-    headers.forEach(element =>{
-      make_db[element.innerHTML]=[];
-    });
-    var datas = check_db.querySelectorAll("tbody tr");
-    datas.forEach(element =>{
-      var datas = element.querySelectorAll("td");
-      for (let i = 0; i< datas.length; i++) {
-        if(datas[i].querySelectorAll("span")[0] !=null){
-          if(datas[i].querySelectorAll("span span")[0] !=null){
-            var data = datas[i].querySelectorAll("span span")[0].innerHTML;}
-          else{
-            var data = datas[i].querySelectorAll("span")[0].innerHTML;}
-        }else{var data=null;}
-        make_db[headers[i].innerHTML].push(data);}
-    });
-    console.log(make_db);}
-// #endregion
-if(make_db !=null){
-  var message_db = make_db;
-console.log(message_db);}
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベース個別処理　メッセージDBからメッセージデータ出力
@@ -150,20 +118,19 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,index) =>{
-    console.log(message_db["応募ID"][index]!=prop_object["応募ID"])
-      if(message_db["応募ID"][index] ==prop_object["応募ID"]){
+      if(dbs[2]["応募ID"][index] ==prop_object["応募ID"]){
 
         var message_data_box = document.createElement("div");
         message_data_box.style.display="flex";
         message_data_box.style.padding="10px";
         message_data_box.style.flexDirection="column"
         var message_data1= document.createElement("span");
-        message_data1.innerHTML=message_db["会員ID"][index]+"｜"+message_db["送信時間"][index];
+        message_data1.innerHTML=dbs[2]["会員ID"][index]+"｜"+dbs[2]["送信時間"][index];
         message_data1.style.display="inline-box";
         message_data1.style.margin="3px 15px"
         message_data_box.appendChild(message_data1);
         var message_data2= document.createElement("div");
-        message_data2.innerHTML=message_db["メッセージ"][index]
+        message_data2.innerHTML=dbs[2]["メッセージ"][index]
         message_data2.style.width="80%"
         message_data2.style.margin="3px 15px"
         message_data2.style.padding="10px 5px"
@@ -172,8 +139,8 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
         message_data2.style.maxWidth="500px"
         message_data_box.appendChild(message_data2);
 
-        if(message_db["教室ID"][index]!=null){
-          message_data1.innerHTML=message_db["教室ID"][index]+"｜"+message_db["送信時間"][index];
+        if(dbs[2]["教室ID"][index]!=null){
+          message_data1.innerHTML=dbs[2]["教室ID"][index]+"｜"+dbs[2]["送信時間"][index];
           message_data_box.style.justifyContent="flex-end"
           message_data2.style.backgroundColor="rgb(23, 131, 124)";
           message_data2.style.color="white";
