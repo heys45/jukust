@@ -87,7 +87,6 @@ dbs[2]["日付"].forEach((element,index)=>{
   submit_button.addEventListener('click',function(){
   ele.style.display="none"
 
-
   });}
 
 
