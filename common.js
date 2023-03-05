@@ -59,14 +59,14 @@ var targets = ["教室トップページ","教室シフト管理リスト","教�
 if(targets.includes(prop_object["ページ表示名"])){
 filter_prop="教室ID"}else{filter_prop="会員ID"}
 
-var check_areas= document.querySelectorAll("notion-colleciton");
+var db_areas= document.querySelectorAll(".notion-colleciton");
 var dbs =[];
 
 for (let index = 0; index < check_areas.length; index++) {
-  console.log(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null)
+  console.log(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null)
 // #region データベースの配列処理
-  if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
-    var check_db =check_areas[index].getElementsByClassName("notion-collection-table") [0];
+  if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
+    var check_db =db_areas[index].getElementsByClassName("notion-collection-table") [0];
     var make_db ={};
     var headers = check_db.querySelectorAll("thead th");
     headers.forEach(element =>{
@@ -91,7 +91,7 @@ for (let index = 0; index < check_areas.length; index++) {
     
 // #region データベースの廃棄処理
 if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
-  var check_db =check_areas[index].getElementsByClassName("notion-collection-table") [0];
+  var check_db =db_areas[index].getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,i) =>{
     console.log(dbs[index]["教室ID"][i]!=prop_object[filter_prop])
