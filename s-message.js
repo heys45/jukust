@@ -58,6 +58,8 @@ document.getElementsByClassName("message")[0].style.padding="0 8px 0 0";
 
 
 var check_area = document.querySelectorAll(".notion-collection")[2];
+check_area.style.display="none";
+
 // #region データベース個別処理
   if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
     var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
