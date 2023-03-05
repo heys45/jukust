@@ -25,7 +25,7 @@ document.getElementsByClassName("notion-callout__content")[0].style.overflow="no
 
 
 var log_box =document.createElement("div");
-log_box.innerHTML='　過去のメッセージ　＊メッセージの反映には2分ほどかかります。';
+log_box.innerHTML='　過去のメッセージ';
 log_box.style.border="solid 2px #555555";
 log_box.style.height="calc(100% - 300px)";
 log_box.style.padding="10px 0";
@@ -61,7 +61,21 @@ death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementById("message_form").style.width="100%";
 document.getElementsByClassName("message")[0].style.width="100%";
 document.getElementsByClassName("message")[0].style.resize="vertical";
-document.getElementsByClassName("message")[0].style.margin="0 10px 0 5px";
+document.getElementsByClassName("message")[0].style.margin="0 20px 0 5px";
+// #endregion
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// メッセージ入力エリアの後ろ作成
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region
+var guide =document.createElement("p");
+guide.innerHTML="＊メッセージの反映には2分ほどかかります。"
+guide.style.color="white"
+guide.style.padding="5px"
+
+document.getElementById("message_form").appendChild(guide);
+
+
+
 // #endregion
 
 
