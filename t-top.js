@@ -55,7 +55,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
   var ele =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
   console.log(ele);
-  console.log(ele.getElementsByClassName(".teaid")[0]);
+  console.log(ele.getElementsByClassName("teaid")[0]);
   ele.getElementsByClassName("teaid")[0].setAttribute("value",prop_object["会員ID"]);
   ele.getElementsByClassName("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
   ele.getElementsByClassName("houkoku")[0].setAttribute("value","出勤");
