@@ -25,6 +25,7 @@ var log_box =document.createElement("div");
 log_box.innerHTML='メッセージのエリア';
 log_box.style.border="solid 2px #555555";
 log_box.style.height="calc(100% - 300px)";
+log_box.style.padding="10px 0";
 var area = document.getElementsByClassName("notion-callout")[0];
 area.style.backgroundColor="#999999"
 area.after(log_box);
@@ -104,6 +105,7 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
 
         var message_data_box = document.createElement("div");
         message_box.style.display="flex";
+        message_box.style.padding="10px";
         message_box.style.flexWrap="wrap"
         var message_data1= document.createElement("span");
         message_data1.innerHTML=message_db["送信時間"][index]+"｜"+message_db["教室ID"][index]+message_db["会員ID"][index];
