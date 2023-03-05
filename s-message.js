@@ -50,7 +50,7 @@ var message_form =''+
 '</form>';
 var area = document.getElementsByClassName("notion-callout")[1];
 document.getElementsByClassName("notion-callout__content")[1].remove()
-area.style.backgroundColor="#33A614";
+area.style.backgroundColor="rgb(23, 131, 124)";
 area.insertAdjacentHTML("afterbegin", message_form );
 
 document.getElementById("schid").value = prop_object["教室ID"];
@@ -61,7 +61,7 @@ death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementById("message_form").style.width="100%";
 document.getElementsByClassName("message")[0].style.width="100%";
 document.getElementsByClassName("message")[0].style.resize="vertical";
-document.getElementsByClassName("message")[0].style.padding="0 8px 0 0";
+document.getElementsByClassName("message")[0].style.margin="0 10px 0 5px";
 // #endregion
 
 
