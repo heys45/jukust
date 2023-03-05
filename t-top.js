@@ -121,6 +121,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力
+  kinmu_info.style.paddingBotom="5px";
   ele2.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓以下変更があった時のみ記入<br>出勤時間｜　" );
   ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時 " );
   ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", " 分 " );
@@ -129,6 +130,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   ele2.getElementsByClassName("ft4")[0].insertAdjacentHTML("afterend", " 分 " );
   ele2.getElementsByClassName("ft5")[0].insertAdjacentHTML("beforebegin", "休憩時間｜　" );
   ele2.getElementsByClassName("ft5")[0].insertAdjacentHTML("afterend", " 分 " );
+  ele2.getElementsByClassName("ft5")[0].style.paddingBotom="5px";
   ele2.getElementsByClassName("hosoku")[0].insertAdjacentHTML("beforebegin", "↓補足・備考欄変更があった場合は記入<br>" );
   ele2.getElementsByClassName("hosoku")[0].style.width="100%";
 
