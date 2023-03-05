@@ -123,7 +123,7 @@
 /* #region データベース */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
-tr{
+.notion-collection tbody tr{
   display: none;
 }
 
