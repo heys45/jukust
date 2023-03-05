@@ -11,17 +11,6 @@ topguide.style.fontWeight="bolder";
 
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// フォーム表示設定代項目　3分
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // 使用するフォームの選択
-  const sh_form = document.getElementById("shift-form");
-  const sc_form = document.getElementById("schedule-form");
-  const wr_form = document.getElementById("wr-form");
-
-  wr_form.remove();  
-  sc_form.remove();
-  sh_form.remove();
 
 // 出力する場所を用意（quoteを指定）
 var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;

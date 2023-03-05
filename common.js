@@ -195,7 +195,7 @@ if(document.getElementById("スポットバイトの流れ")!=null){
 // #endregion
 
 
-var targets = ["講師トップページ","教室シフト管理"];
+var targets = ["教室シフト管理","講師スケジュール提出"];
 
 if(targets.includes(prop_object["ページ表示名"])){}else{
 
