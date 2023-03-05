@@ -117,11 +117,11 @@ dbs[2]["日付"].forEach((element,index)=>{
   ele2.insertAdjacentHTML("afterbegin", kinmu_info );
 
   // 非表示プロパティの設定
-  const death_prop = ele2.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku, .boxxcheck");
+  const death_prop = ele2.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku, .bosscheck");
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力
-  ele2.getElementsByTagName("p")[0].style.paddingBottom="5px";
+  ele2.getElementsByTagName("p")[0].style.paddingBottom="10px";
   ele2.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓以下変更があった時のみ記入<br>出勤時間｜　" );
   ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時 " );
   ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", " 分 <br>" );
@@ -130,7 +130,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   ele2.getElementsByClassName("ft4")[0].insertAdjacentHTML("afterend", " 分 <br>" );
   ele2.getElementsByClassName("ft5")[0].insertAdjacentHTML("beforebegin", "休憩時間｜　" );
   ele2.getElementsByClassName("ft5")[0].insertAdjacentHTML("afterend", " 分 <br>" );
-  ele2.getElementsByClassName("ft5")[0].style.paddingBottom="5px";
+  ele2.getElementsByClassName("ft5")[0].style.marginBottom="10px";
   ele2.getElementsByClassName("hosoku")[0].insertAdjacentHTML("beforebegin", "↓補足・備考欄変更があった場合は記入<br>" );
   ele2.getElementsByClassName("hosoku")[0].style.width="100%";
 
@@ -146,7 +146,7 @@ dbs[2]["日付"].forEach((element,index)=>{
 // フォームスタイルの設定
 document.querySelectorAll(".houkoku_form").forEach(element=>{
 element.style.border="solid 2px";
-element.style.padding="10px 10px 0 10px";
+element.style.padding="14px 15px 0 15px";
 element.style.margin="6px 0";
 })
 
