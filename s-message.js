@@ -115,23 +115,23 @@ submit_button.addEventListener('click',function(){
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region 
 var db_areas= document.querySelectorAll(".notion-collection");
-if(db_areas[2].getElementsByClassName("notion-collection-table")[0] !=null){
-  var check_db =db_areas[2].getElementsByClassName("notion-collection-table") [0];
+if(db_areas[1].getElementsByClassName("notion-collection-table")[0] !=null){
+  var check_db =db_areas[1].getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,index) =>{
-      if(dbs[2]["応募ID"][index] ==prop_object["応募ID"]){
+      if(dbs[1]["応募ID"][index] ==prop_object["応募ID"]){
 
         var message_data_box = document.createElement("div");
         message_data_box.style.display="flex";
         message_data_box.style.padding="10px";
         message_data_box.style.flexDirection="column"
         var message_data1= document.createElement("span");
-        message_data1.innerHTML=dbs[2]["会員ID"][index]+"｜"+dbs[2]["送信時間"][index];
+        message_data1.innerHTML=dbs[1]["会員ID"][index]+"｜"+dbs[1]["送信時間"][index];
         message_data1.style.display="inline-box";
         message_data1.style.margin="3px 15px"
         message_data_box.appendChild(message_data1);
         var message_data2= document.createElement("div");
-        message_data2.innerHTML=dbs[2]["メッセージ"][index]
+        message_data2.innerHTML=dbs[1]["メッセージ"][index]
         message_data2.style.width="80%"
         message_data2.style.margin="3px 15px"
         message_data2.style.padding="10px 5px"
@@ -141,7 +141,7 @@ if(db_areas[2].getElementsByClassName("notion-collection-table")[0] !=null){
         message_data_box.appendChild(message_data2);
 
         if(dbs[2]["教室ID"][index]!=null){
-          message_data1.innerHTML=dbs[2]["教室ID"][index]+"｜"+dbs[2]["送信時間"][index];
+          message_data1.innerHTML=dbs[1]["教室ID"][index]+"｜"+dbs[1]["送信時間"][index];
           message_data_box.style.justifyContent="flex-end"
           message_data2.style.backgroundColor="rgb(23, 131, 124)";
           message_data2.style.color="white";
