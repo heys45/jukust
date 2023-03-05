@@ -36,7 +36,7 @@ var area = document.querySelectorAll(".notion-callout:first-child")[0];
 area.appendChild(message_box);
 
 
-var check_area = document.querySelectorAll(".notion-collection-group__table:nth-child(3)")[0];
+var check_area = document.querySelectorAll(".notion-collection:nth-child(3)")[0];
 // #region データベース個別処理
   if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
     var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
