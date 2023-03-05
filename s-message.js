@@ -60,7 +60,8 @@ document.getElementById("ouboid").value = prop_object["応募ID"];
 const death_prop = document.querySelectorAll("#schid,#ouboid,#teaid,.fd,.adj,.fs");
 death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementById("message_form").style.width="100%";
-document.getElementsByClassName("message")[0].style.width="calc(100% - 30px)";
+document.getElementsByClassName("message")[0].style.width="calc(100% - 20px)";
+document.getElementsByClassName("message")[0].style.padding="10px 5px";
 document.getElementsByClassName("message")[0].style.resize="vertical";
 // #endregion
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -71,6 +72,7 @@ var guide =document.createElement("p");
 guide.innerHTML="＊メッセージの反映には2分ほどかかります。"
 guide.style.color="white"
 guide.style.padding="5px"
+guide.style.fontSize="13px"
 
 document.getElementById("message_form").appendChild(guide);
 
