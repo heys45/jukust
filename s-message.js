@@ -51,7 +51,7 @@ var message_form =''+
 '</form>';
 var area = document.getElementsByClassName("notion-callout")[1];
 document.getElementsByClassName("notion-callout__content")[1].remove()
-area.style.backgroundColor="#aaaaaa";
+area.style.backgroundColor="#888888";
 area.insertAdjacentHTML("afterbegin", message_form );
 
 document.getElementById("schid").value = prop_object["教室ID"];
