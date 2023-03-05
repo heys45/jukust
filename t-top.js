@@ -55,7 +55,8 @@ dbs[2]["日付"].forEach((element,index)=>{
   console.log(dbs[2]["開始報告フラグ"][index])
   if(dbs[2]["開始報告フラグ"][index]==1){
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
-  var ele =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
+  var ele =document.getElementsByTagName("form")[document.getElementsByTagName("form").length-1];
+  console.log(ele);
   console.log(ele.getElementsByClassName("teaid")[0]);
   ele.getElementsByClassName("teaid")[0].setAttribute("value",prop_object["会員ID"]);
   ele.getElementsByClassName("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
