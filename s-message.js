@@ -114,8 +114,8 @@ submit_button.addEventListener('click',function(){
 // データベース個別処理　メッセージDBからメッセージデータ出力
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region 
-if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
-  var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
+if(db_areas[2].getElementsByClassName("notion-collection-table")[0] !=null){
+  var check_db =db_areas[2].getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,index) =>{
       if(dbs[2]["応募ID"][index] ==prop_object["応募ID"]){
