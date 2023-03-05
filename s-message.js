@@ -15,7 +15,10 @@ sh_form.remove();
 wr_form.remove();
 
 
-
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// メッセージヘッダーとメッセージ入力欄の作成
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region
 document.querySelectorAll(".notion-callout__content span")[0].style.display="none";
 document.getElementsByClassName("notion-callout__content")[0].innerHTML=document.getElementsByClassName("notion-header__title")[0].innerHTML;
 document.getElementsByClassName("notion-callout__content")[0].style.overflow="none";
@@ -30,23 +33,24 @@ var area = document.getElementsByClassName("notion-callout")[0];
 area.style.backgroundColor="#33A614"
 area.style.color="white"
 area.after(log_box);
+// #endregion
 
 
-
-
-var message_box =document.createElement("div");
-message_box.innerHTML=''+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// メッセージ入力エリアの作成
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region
+var message_form =''+
 '<form id="message_form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcJDQfvYup36rYH80HUvZ3OB_sq2kjzINjUY4FHZBsbNr7nw/formResponse" target="hidden_iframe3">'+
 '<input type="text" name="entry.1194399256" id="teaid">'+
 '<input type="text" name="entry.1896770762" id="schid">'+
 '<input type="text" name="entry.1711080326" id="ouboid">'+
 '<textarea name="entry.2088308727" class="message"></textarea>'+
 '</form>';
-console.log(document.getElementsByClassName("notion-callout")[1]);
 var area = document.getElementsByClassName("notion-callout")[1];
 document.getElementsByClassName("notion-callout__content")[1].remove()
-area.style.backgroundColor="#33A614"
-area.prepend(message_box);
+area.style.backgroundColor="#33A614";
+area.insertAdjacentHTML("afterbegin", message_form );
 
 document.getElementById("schid").value = prop_object["教室ID"];
 document.getElementById("ouboid").value = prop_object["応募ID"];
@@ -57,7 +61,7 @@ document.getElementById("message_form")[0].style.width="100%";
 document.getElementsByClassName("message")[0].style.width="100%";
 document.getElementsByClassName("message")[0].style.resize="vertical";
 document.getElementsByClassName("message")[0].style.padding="0 8px 0 0";
-
+// #endregion
 
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
