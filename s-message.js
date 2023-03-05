@@ -63,6 +63,7 @@ document.getElementById("message_form").style.width="100%";
 document.getElementsByClassName("message")[0].style.width="calc(100% - 20px)";
 document.getElementsByClassName("message")[0].style.padding="10px 5px";
 document.getElementsByClassName("message")[0].style.resize="vertical";
+document.getElementsByClassName("message")[0].required = true;
 // #endregion
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // メッセージ入力エリアの後ろ作成
@@ -132,7 +133,7 @@ if(db_areas[1].getElementsByClassName("notion-collection-table")[0] !=null){
         message_data1.style.margin="3px 15px"
         message_data_box.appendChild(message_data1);
         var message_data2= document.createElement("div");
-        message_data2.innerHTML=dbs[1]["メッセージ"][index]
+        message_data2.innerHTML=dbs[1]["メッセージ"][index];
         message_data2.style.width="80%"
         message_data2.style.margin="3px 15px"
         message_data2.style.padding="10px 5px"
