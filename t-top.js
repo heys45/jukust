@@ -147,7 +147,7 @@ dbs[2]["日付"].forEach((element,index)=>{
 document.querySelectorAll(".houkoku_form").forEach(element=>{
 element.style.border="solid 2px";
 element.style.padding="14px 15px 0 15px";
-element.style.margin="6px 0";
+element.style.margin="8px 0";
 })
 
 
