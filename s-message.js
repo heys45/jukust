@@ -25,7 +25,7 @@ document.getElementsByClassName("notion-callout__content")[0].style.overflow="no
 
 
 var log_box =document.createElement("div");
-log_box.innerHTML='　過去のメッセージ';
+log_box.innerHTML='　過去のメッセージ　＊メッセージの反映には2分ほどかかります。';
 log_box.style.border="solid 2px #555555";
 log_box.style.height="calc(100% - 300px)";
 log_box.style.padding="10px 0";
