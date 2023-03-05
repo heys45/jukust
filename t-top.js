@@ -151,8 +151,8 @@ element.style.margin="8px 0";
 })
 
 
-document.querySelectorAll(".notion-collection")[1].style.display="none";
 document.querySelectorAll(".notion-collection")[2].style.display="none";
+document.querySelectorAll(".notion-collection")[3].style.display="none";
 
 
 
