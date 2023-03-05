@@ -128,6 +128,7 @@ if(db_areas[1].getElementsByClassName("notion-collection-table")[0] !=null){
         var message_data1= document.createElement("span");
         message_data1.innerHTML=dbs[1]["会員ID"][index]+"｜"+dbs[1]["送信時間"][index];
         message_data1.style.display="inline-box";
+        message_data1.style.width="100%";
         message_data1.style.margin="3px 15px"
         message_data_box.appendChild(message_data1);
         var message_data2= document.createElement("div");
@@ -143,6 +144,7 @@ if(db_areas[1].getElementsByClassName("notion-collection-table")[0] !=null){
         if(dbs[1]["教室ID"][index]!=null){
           message_data1.innerHTML=dbs[1]["教室ID"][index]+"｜"+dbs[1]["送信時間"][index];
           message_data_box.style.justifyContent="flex-end"
+          message_data1.style.textAlign="right";
           message_data2.style.backgroundColor="rgb(23, 131, 124)";
           message_data2.style.color="white";
         }
