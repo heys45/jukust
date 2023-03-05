@@ -34,7 +34,8 @@ message_box.innerHTML=''+
 '</form>';
 console.log(document.getElementsByClassName("notion-callout")[1]);
 var area = document.getElementsByClassName("notion-callout")[1];
-area.appendChild(message_box);
+document.getElementsByClassName("notion-callout__content")[1].remove()
+area.prepend(message_box);
 
 
 var check_area = document.querySelectorAll(".notion-collection")[2];
