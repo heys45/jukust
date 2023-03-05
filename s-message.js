@@ -49,7 +49,7 @@ console.log(message_db);
 if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
-  datas.forEach(element =>{
+  datas.forEach((element,index) =>{
       if(message_db["教室ID"][index]!=prop_object["教室ID"]){
         element.style.display.none
       }
