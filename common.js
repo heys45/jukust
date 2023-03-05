@@ -204,6 +204,46 @@ for( var i=0; i<dbs.length; i++) {
   }
 }
 
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// テーブルの番号づけ
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+//テーブルをまとめて取得
+const tables = document.querySelectorAll('.notion-table');
+//テーブルにIDを付与する 
+for( var i=0; i<tables.length; i++) {
+  console.log(tables[i]);
+  var name = "table-"+(i+1);
+  console.log(name);
+  tables[i].setAttribute("id",name);
+  //行をまとめて取得
+  const rows = tables[i].getElementsByTagName("tr");
+  //行にIDを付与する 
+  for( var j=0; j<rows.length; j++) {
+  console.log(rows[j]);
+  var name = "table-"+(i+1)+"-"+(j+1);
+  console.log(name);
+  rows[j].setAttribute("id",name);
+  
+  //列をまとめて取得
+  const columns =rows[j].getElementsByTagName("td");
+  const columnhs =rows[j].getElementsByTagName("th");
+  //列にIDを付与する 
+  for( var k=0; k<columns.length; k++) {
+  console.log(columns[k]);
+  var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  console.log(name);
+  columns[k].setAttribute("id",name);
+  }
+  for( var k=0; k<columnhs.length; k++) {
+    console.log(columnhs[k]);
+    var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+    console.log(name);
+    columnhs[k].setAttribute("id",name);
+    }
+  }
+}
+
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #endregion　データベースの番号づけ
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
