@@ -65,8 +65,8 @@ dbgs.forEach(element =>{
 var dbg_class =".dbg-"+prop_object[ filter_prop];
 var view_dbg = document.querySelectorAll(dbg_class);
 view_dbg.forEach(element =>{element.style.display = "block" ;});
-// var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
-// remove_dbg.forEach(element =>{element.remove();});
+var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
+remove_dbg.forEach(element =>{element.remove();});
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
