@@ -121,7 +121,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力
-  ele2.getElementsByClassName
+  // ele2.getElementsByClassName
 
 
   // 提出後の処理
