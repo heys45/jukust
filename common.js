@@ -96,8 +96,8 @@ if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =db_areas[index].getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,i) =>{
-    console.log(dbs[index]["filter_prop"][i]!=prop_object[filter_prop])
-      if(dbs[index]["filter_prop"][i]==prop_object[filter_prop]){
+    console.log(dbs[index][filter_prop][i]!=prop_object[filter_prop])
+      if(dbs[index][filter_prop][i]==prop_object[filter_prop]){
         element.style.display="table-row";
       }else{element.remove()}
   });
