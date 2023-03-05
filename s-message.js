@@ -101,7 +101,7 @@ document.getElementById("message_form").setAttribute("method","post");
 document.getElementById("message_form").setAttribute("target","hidden_iframe");
 
 submit_button.addEventListener('click',function(){
-  document.getElementsByClassName("message")[0].innerHTML="";
+  document.getElementsByClassName("message")[0].value="";
 });
 
 // #endregion 
