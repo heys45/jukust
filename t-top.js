@@ -130,8 +130,8 @@ dbs[2]["日付"].forEach((element,index)=>{
 // フォームスタイルの設定
 document.querySelectorAll(".houkoku_form").forEach(element=>{
 element.style.border="solid 2px";
-element.querySelectorAll(".houkoku_form").style.padding="6px 10px";
-element.querySelectorAll(".houkoku_form").style.margin="6px 0";
+element.style.padding="6px 10px";
+element.style.margin="6px 0";
 })
 
 
