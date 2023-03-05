@@ -15,6 +15,15 @@ sh_form.remove();
 wr_form.remove();
 
 
+
+document.getElementsByClassName("notion-callout__content")[0].innerHTML.remove()
+document.getElementsByClassName("notion-callout__content")[0].innerHTML=document.getElementsByClassName("notion-header__title")[0].innerHTML;
+
+
+
+
+
+
 var log_box =document.createElement("div");
 log_box.innerHTML='メッセージのエリア';
 log_box.style.border="solid 2px #555555"
@@ -43,6 +52,7 @@ document.getElementById("ouboid").value = prop_object["応募ID"];
 const death_prop = document.querySelectorAll("#schid,#ouboid,#teaid,.fd,.adj,.fs");
 death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementsByClassName("message")[0].style.width="100%";
+document.getElementsByClassName("message")[0].style.padding="0 8px 0 0";
 
 
 
