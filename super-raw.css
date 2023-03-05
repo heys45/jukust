@@ -15,7 +15,7 @@
 }
 
 
-.notion-column:first-child{
+#first-column{
   position: -webkit-sticky;
   position: sticky;
   top:70px;
@@ -25,7 +25,8 @@
   padding: 0 !important;
   margin: 0 !important;
 }
-.notion-column:nth-child(2){
+
+#second-column{
   width: min(calc(95% - 200px),calc(100% - 230px)) !important;
   max-width:1000px;
   padding: 0 !important;
@@ -40,10 +41,10 @@
     margin-right:max(calc((100% - 800px)/2),10px);
     margin-left:max(calc((100% - 800px)/2),10px);
   }
-  .notion-column:first-child{
+#first-column{
     display: none;
   }
-  .notion-column:nth-child(2){
+#second-column{
     width: 100% !important;
     max-width:800px;
     margin: 0 !important;
@@ -121,12 +122,11 @@
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* #region データベース */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-.notion-collection-group__section-header{
- display: none; 
+
+.notion-collection tr{
+  display: none;
 }
-.notion-collection-group__section{
-  display:none;
-}
+
 .notion-collection-table__cell span{
   border: none !important;
 }
@@ -137,8 +137,8 @@
 }
 
 #page_list_pc .notion-property__title .notion-semantic-string::before{
-  content: ">  ";
-  padding-right: 3px;
+  content: "> ";
+  padding-right: 5px;
 }
 
 .notion-property__title__icon-wrapper{
@@ -496,6 +496,22 @@ body{
   }
   
 
+  
+  
+  .s-top-db{
+    width:50% !importantimportant;
+    padding:10px;
+    margin: 0;
+    
+  }
+  
+  @media (max-width: 500px) {
+  .s-top-db{
+    width:100% !importantimportant;
+  }
+  }
+  
+  
   
   
 
