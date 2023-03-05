@@ -104,9 +104,9 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
       if(message_db["応募ID"][index] ==prop_object["応募ID"]){
 
         var message_data_box = document.createElement("div");
-        message_box.style.display="flex";
-        message_box.style.padding="10px";
-        message_box.style.flexWrap="wrap"
+        message_data_box.style.display="flex";
+        message_data_box.style.padding="10px";
+        message_data_box.style.flexWrap="wrap"
         var message_data1= document.createElement("span");
         message_data1.innerHTML=message_db["送信時間"][index]+"｜"+message_db["教室ID"][index]+message_db["会員ID"][index];
         message_data1.style.display="inline-box";
@@ -120,7 +120,7 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
         message_data2.style.padding="10pxpx 10px"
         message_data2.style.backgroundColor="#cccccc";
         message_data2.style.borderRadius="5px"
-        message_box.appendChild(message_data2);
+        message_data_box.appendChild(message_data2);
         if(message_db["教室ID"][index]!=null){
           message_data2.style.justifyContent="flex-end"
           message_data2.style.backgroundColor="#aaaaaa";
