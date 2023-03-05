@@ -77,6 +77,12 @@ dbs[2]["日付"].forEach((element,index)=>{
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele.insertAdjacentHTML("afterbegin", kinmu_info );
 
+
+  // 非表示プロパティの設定
+  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku,.bosscheck,.ft1,.ft2,.ft3,.ft4,.ft5");
+  death_prop.forEach(element=>{  element.style.display = 'none'; });
+
+
   // 提出後の処理
   submit_button.addEventListener('click',function(){
   ele.style.display="none"
