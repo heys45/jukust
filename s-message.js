@@ -27,9 +27,9 @@ area.after(log_box);
 var message_box =document.createElement("div");
 message_box.innerHTML=''+
 '<form id="message_form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcJDQfvYup36rYH80HUvZ3OB_sq2kjzINjUY4FHZBsbNr7nw/formResponse" target="hidden_iframe3">'+
-'<input type="text" name="entry.1194399256" class="teaid">'+
-'<input type="text" name="entry.1896770762" class="schid">'+
-'<input type="text" name="entry.1711080326" class="ouboid">'+
+'<input type="text" name="entry.1194399256" id="teaid">'+
+'<input type="text" name="entry.1896770762" id="schid">'+
+'<input type="text" name="entry.1711080326" id="ouboid">'+
 '<textarea name="entry.2088308727" class="message"></textarea>'+
 '</form>';
 console.log(document.getElementsByClassName("notion-callout")[1]);
