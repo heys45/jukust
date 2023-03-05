@@ -10,26 +10,6 @@ topguide.innerHTML="講師用｜"+prop_object["姓"]+prop_object["名"]+"先生"
 topguide.style.fontWeight="bolder";
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// プログレスバーの変更
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-// // 表示位置の設定
-// var quote_name = "スポットバイトの流れ";
-// var progressbar = document.getElementsByClassName("progressbar")[0];
-// document.getElementById(quote_name).after(progressbar);
-// progressbar.style.display = 'flex';
-
-// //プログレスバー書き換え処理
-// document.getElementById('li-schedule').setAttribute("class","complete");
-// document.getElementById('li-request').setAttribute("class","complete");
-// document.getElementById('li-confirm').setAttribute("class","active");
-// // document.getElementById('db-2-1-4').setAttribute("class",complete);
-
-
-
-
-
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォーム表示設定代項目　3分
@@ -39,259 +19,179 @@ topguide.style.fontWeight="bolder";
   const sc_form = document.getElementById("schedule-form");
   const wr_form = document.getElementById("wr-form");
 
-  const view_form = wr_form;          //ページによって変更する
+  wr_form.remove();  
   sc_form.remove();
   sh_form.remove();
 
-  // 出力する場所を用意（quoteを指定）
-  var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
-  var form_area = document.getElementsByTagName("form")[0];
-  console.log(form_area.id);
-  form_area.setAttribute("id","form");
-  area_target.after(form_area);  
+// 出力する場所を用意（quoteを指定）
+var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
+var form_area = document.createElement("div")
+area_target.after(form_area);
+
+var houkoku_form =''+
+'<form class="houkoku_form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdLDyYrhBECVA8Qbw_8YATYgGjH7n4nsntWg-LSx3oQKi7H3A/formResponse"'+
+'<input type="text" name="entry.709565382" class="teaid">'+
+'<input type="text" name="entry.1479770506" class="schid">'+
+'<input type="text" name="entry.390570208" class="worid">'+
+'<input type="text" name="entry.858388200" class="fd">'+
+'<input type="text" name="entry.92160164" class="houkoku">'+
+'<textarea name="entry.1043875530" class="hosoku"></textarea>'+
+'<input type="text" name="entry.1236686027" class="bosscheck">'+
+'<select name="entry.1155261595" class="ft1"><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>'+
+'<select name="entry.437373386" class="ft2"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>'+
+'<select name="entry.419752739" class="ft3"><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>'+
+'<select name="entry.114545285" class="ft4"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select>'+
+'<select name="entry.780733668" class="ft5"><option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option><option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option><option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option><option value="61">61</option><option value="62">62</option><option value="63">63</option><option value="64">64</option><option value="65">65</option><option value="66">66</option><option value="67">67</option><option value="68">68</option><option value="69">69</option><option value="70">70</option><option value="71">71</option><option value="72">72</option><option value="73">73</option><option value="74">74</option><option value="75">75</option><option value="76">76</option><option value="77">77</option><option value="78">78</option><option value="79">79</option><option value="80">80</option><option value="81">81</option><option value="82">82</option><option value="83">83</option><option value="84">84</option><option value="85">85</option><option value="86">86</option><option value="87">87</option><option value="88">88</option><option value="89">89</option><option value="90">90</option><option value="91">91</option><option value="92">92</option><option value="93">93</option><option value="94">94</option><option value="95">95</option><option value="96">96</option><option value="97">97</option><option value="98">98</option><option value="99">99</option><option value="100">100</option><option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="105">105</option><option value="106">106</option><option value="107">107</option><option value="108">108</option><option value="109">109</option><option value="110">110</option><option value="111">111</option><option value="112">112</option><option value="113">113</option><option value="114">114</option><option value="115">115</option><option value="116">116</option><option value="117">117</option><option value="118">118</option><option value="119">119</option><option value="120">120</option><option value="121">121</option><option value="122">122</option><option value="123">123</option><option value="124">124</option><option value="125">125</option><option value="126">126</option><option value="127">127</option><option value="128">128</option><option value="129">129</option><option value="130">130</option><option value="131">131</option><option value="132">132</option><option value="133">133</option><option value="134">134</option><option value="135">135</option><option value="136">136</option><option value="137">137</option><option value="138">138</option><option value="139">139</option><option value="140">140</option><option value="141">141</option><option value="142">142</option><option value="143">143</option><option value="144">144</option><option value="145">145</option><option value="146">146</option><option value="147">147</option><option value="148">148</option><option value="149">149</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option><option value="171">171</option><option value="172">172</option><option value="173">173</option><option value="174">174</option><option value="175">175</option><option value="176">176</option><option value="177">177</option><option value="178">178</option><option value="179">179</option><option value="180">180</option></select>'+
+'</form>';
 
 
-  // フォーム初期値の設定 講師ID、教室ID、勤務IDの存在を確認。
-  document.getElementById("teaid").value = prop_object["講師ID"];
-  document.getElementById("schid").value = prop_object["教室ID"];
+// 過去の日付で勤怠報告未完了のものを取得
+console.log(dbs[2]["日付"]);
+dbs[2]["日付"].forEach((element,index)=>{
+
+
+
+  // フォームの作成
+  console.log(dbs[2]["開始報告フラグ"][index])
+  if(dbs[2]["開始報告フラグ"][index]==1){
+  form_area.insertAdjacentHTML("beforeend", houkoku_form );
+  var ele =document.querySelectorAll("form")[document.querySelectorAll(form).length-1];
+  ele.getElementsByClassName("teaid")[0].value=prop_object["会員ID"];
+  ele.getElementsByClassName("fd")[0].value=dbs[2]["日付"][index];
+  ele.getElementsByClassName("報告")[0].value="出勤";
+
+  var submit_button = document.createElement("button");
+  submit_button.setAttribute("type","submit");
+  submit_button.innerHTML="出勤報告する"
+  ele.appendChild(submit_button);
+
+  var form_iframe = document.createElement("iframe");
+  form_iframe.setAttribute("name","hidden_iframe");
+  form_iframe.setAttribute("id","hidden_iframe");
+  form_iframe.style.display="none";
+  ele.appendChild(form_iframe);
+  ele.setAttribute("method","post");
+  ele.setAttribute("target","hidden_iframe");
+
+  submit_button.addEventListener('click',function(){
+  ele.style.display="none"
+  });}
+
+  // フォームのラベル作成
+  var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時間"][index]+"〜"+dbs[2]["終了時間"][index]+"</p>";
+  ele.insertAdjacentHTML("beforebegin", kinmu_info );
+
+
+
+
+
+
+
+  // フォームの作成
+  console.log(dbs[2]["終了報告フラグ"][index])
+  if(dbs[2]["終了報告フラグ"][index]==1){
+  form_area.insertAdjacentHTML("beforeend", houkoku_form );
+  var ele =document.querySelectorAll("form")[document.querySelectorAll(form).length-1];
+  ele.getElementsByClassName("teaid")[0].value=prop_object["会員ID"];
+  ele.getElementsByClassName("fd")[0].value=dbs[2]["日付"][index];
+  ele.getElementsByClassName("報告")[0].value="退勤";
+
+  var submit_button = document.createElement("button");
+  submit_button.setAttribute("type","submit");
+  submit_button.innerHTML="退勤報告する"
+  ele.appendChild(submit_button);
+
+  var form_iframe = document.createElement("iframe");
+  form_iframe.setAttribute("name","hidden_iframe");
+  form_iframe.setAttribute("id","hidden_iframe");
+  form_iframe.style.display="none";
+  ele.appendChild(form_iframe);
+  ele.setAttribute("method","post");
+  ele.setAttribute("target","hidden_iframe");
+
+  submit_button.addEventListener('click',function(){
+    ele.style.display="none"
+  });}
+  // フォームのラベル作成
+  var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時間"][index]+"〜"+dbs[2]["終了時間"][index]+"</p>";
+  ele.insertAdjacentHTML("beforebegin", kinmu_info );
+
+  })
+
 
   // フォーム不要項目の非表示
   // const death_prop = document.querySelectorAll("");
   // death_prop.forEach(element=>{  element.style.display = 'none'; });
 
-  view_form.style.display = 'block';
+
+
+//     
 
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベースの値取得準備
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-var checks = document.querySelectorAll(".notion-checkbox.checked");
-checks.forEach(element =>{
-  var check = document.createElement("span");
-  check.innerHTML="1";
-  element.appendChild(check);
-})
-var checks = document.querySelectorAll(".notion-checkbox:not(.checked)");
-checks.forEach(element =>{
-  var check = document.createElement("span");
-  check.innerHTML="0";
-  element.appendChild(check);
-})
-
-
-var check_area = document.getElementById("これからの勤務予定").nextElementSibling.nextElementSibling;
-// #region データベース個別処理
-  if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
-    var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
-    var make_db ={};
-    var headers = check_db.querySelectorAll("thead th");
-    headers.forEach(element =>{
-      make_db[element.innerHTML]=[];
-    });
-    var datas = check_db.querySelectorAll("tbody tr");
-    datas.forEach(element =>{
-      var datas = element.querySelectorAll("td");
-      for (let i = 0; i< datas.length; i++) {
-        if(datas[i].querySelectorAll("span")[0] !=null){
-          if(datas[i].querySelectorAll("span span")[0] !=null){
-            var data = datas[i].querySelectorAll("span span")[0].innerHTML;}
-          else{
-            var data = datas[i].querySelectorAll("span")[0].innerHTML;}
-        }else{var data=null;}
-        make_db[headers[i].innerHTML].push(data);}
-    });
-    console.log(make_db);}
-// #endregion
-if(make_db !=null){
-var kintai_db = make_db;}
-console.log(kintai_db);
-
-
-//     //DB書き換え処理
-//     document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
-//     document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
 
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベース由来のフォーム作成
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// フォームデザインのフォーマットを用意
-const forms =document.querySelectorAll(".dg, .dg input");
-forms.forEach(element =>{
-  element.style.display="none";
-});
-
-
-
-// 過去の日付で勤怠報告未完了のものを取得
-console.log(kintai_db["日付"]);
-kintai_db["日付"].forEach((element,index)=>{
-  console.log(kintai_db["開始報告フラグ"][index])
-  if(kintai_db["開始報告フラグ"][index]==1){
 
     
-    // フォームデザインのフォーマットを用意
-    form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
-    var target1 = form_area.lastChild;
-    console.log(target1);
-    target1.style.display = "flex";
-    // 日付を入れ
-    var day_label =element;
-    target1.getElementsByClassName("day-label")[0].innerHTML = day_label;
-    var start = kintai_db["開始時刻"][index];
-    var end = kintai_db["終了時刻"][index];
-    db_info = "勤務時間｜" + start +"〜"+end;
+    // // フォームデザインのフォーマットを用意
+    // form_area.appendChild(document.getElementsByClassName("day-box")[0].cloneNode(true));
+    // var target1 = form_area.lastChild;
+    // console.log(target1);
+    // target1.style.display = "flex";
+    // // 日付を入れ
+    // var day_label =element.replace(".*\/","");
+    // target1.getElementsByClassName("day-label")[0].innerHTML = day_label;
+    // var start = kintai_db["開始時刻"][index];
+    // var end = kintai_db["終了時刻"][index];
+    // db_info = "勤務時間｜" + start +"〜"+end;
 
-    target1.getElementsByClassName("sh-info")[0].innerHTML = db_info;
-    target1.getElementsByClassName("sh-info")[0].style["font-weight"]="bold";
-    target1.getElementsByClassName("sh-info")[0].style["color"]="red";
-    target1.getElementsByClassName("sch-info")[0].remove();
-    target1.getElementsByClassName("ajs-info")[0].remove();
+    // target1.getElementsByClassName("sh-info")[0].innerHTML = db_info;
+    // target1.getElementsByClassName("sh-info")[0].style.fontWeight="bold";
+    // target1.getElementsByClassName("sh-info")[0].style.fontSize="18px";
+    // target1.getElementsByClassName("sch-info")[0].remove();
+    // target1.getElementsByClassName("ajs-info")[0].remove();
 
     // フォームを挿入して、解答欄のラベル（ガイド）をつけてあげる
-    var shift_form = document.getElementsByClassName("dg")[0];
-    shift_form.style.display ="block";
+    // var shift_form = document.getElementsByClassName("dg")[0];
+    // shift_form.style.display ="block";
+    // target1.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
+    // target1.getElementsByClassName("fd")[0].value=element;
 
-    target1.getElementsByClassName("day-box-form")[0].appendChild(shift_form);
-    target1.getElementsByClassName("fd")[0].innerHTML=element;
-
-    var time_guide = document.createElement("span");
-    time_guide.innerHTML = "実際の出勤時間｜";
-    target1.getElementsByClassName("wh")[0].before(time_guide);
-    var time_guide = document.createElement("span");
-    time_guide.innerHTML = "<br>↑勤務開始時間変更 or 遅刻した場合のみ記入<br>";
-    time_guide.style["font-size"]="14px"
-    time_guide.style["color"]="#34675C"
-    target1.getElementsByClassName("wm")[0].after(time_guide);
+    // var time_guide = document.createElement("span");
+    // time_guide.innerHTML = "実際の出勤時間｜";
+    // target1.getElementsByClassName("wh")[0].before(time_guide);
+    // var time_guide = document.createElement("span");
+    // time_guide.innerHTML = "<br>↓勤務開始時間変更 or 遅刻した場合のみ記入<br>";
+    // time_guide.style["font-size"]="14px"
+    // time_guide.style["color"]="#34675C"
+    // target1.getElementsByClassName("wm")[0].before(time_guide);
 
 
-    var time_guide = document.createElement("span");
-    time_guide.innerHTML = "実際の休憩時間｜";
-    target1.getElementsByClassName("bh")[0].before(time_guide);
+    // var time_guide = document.createElement("span");
+    // time_guide.innerHTML = "実際の休憩時間｜";
+    // target1.getElementsByClassName("bh")[0].before(time_guide);
 
-    var time_guide = document.createElement("span");
-    time_guide.innerHTML = "<br>↑休憩時間が減った or 増えた場合など記入<br><br>";
-    time_guide.style["font-size"]="14px"
-    time_guide.style["color"]="#34675C"
-    target1.getElementsByClassName("bm")[0].after(time_guide);
-    time_guide.style["font-size"]="14px"
-    time_guide.style["color"]="#34675C"
-    var time_guide = document.createElement("span");
-    time_guide.innerHTML = "補足・備考｜*勤務時間変更時などは説明<br>";
+    // var time_guide = document.createElement("span");
+    // time_guide.innerHTML = "<br>↓休憩時間が減った or 増えた場合など記入<br><br>";
+    // time_guide.style["font-size"]="14px"
+    // time_guide.style["color"]="#34675C"
+    // target1.getElementsByClassName("bm")[0].before(time_guide);
+    // time_guide.style["font-size"]="14px"
+    // time_guide.style["color"]="#34675C"
+    // var time_guide = document.createElement("span");
+    // time_guide.innerHTML = "補足・備考｜*勤務時間変更時などは説明<br>";
     
 
-    target1.getElementsByClassName("hosoku")[0].before(time_guide);
-    target1.getElementsByClassName("hosoku")[0].style.width = "calc(100%)";
+    // target1.getElementsByClassName("hosoku")[0].before(time_guide);
+    // target1.getElementsByClassName("hosoku")[0].style.width = "calc(100%)";
 
 
-    // --------------------------------
-    // フォームの回答と選択肢を設定する
-    // --------------------------------
-    var values = ["","8", "9","10","11", "12", "13", "14", "15","16", "17", "18", "19", "20", "21", "22"];
-    values.forEach(element =>{
-      var option = document.createElement('option');
-      option.setAttribute("value",element);
-      option.textContent = element;
-      target1.getElementsByClassName("wh")[0].appendChild(option);
-    });
-    var values = ["","00", "10", "20", "30", "40", "50"];
-    values.forEach(element =>{
-      var option = document.createElement('option');
-      option.setAttribute("value",element);
-      option.textContent = element;
-      target1.getElementsByClassName("wm")[0].appendChild(option);
-    });
-    var values = ["","8", "9","10","11", "12", "13", "14", "15","16", "17", "18", "19", "20", "21", "22"];
-    values.forEach(element =>{
-      var option = document.createElement('option');
-      option.setAttribute("value",element);
-      option.textContent = element;
-      target1.getElementsByClassName("bh")[0].appendChild(option);
-    });
-    var values = ["","00", "10", "20", "30", "40", "50"];
-    values.forEach(element =>{
-      var option = document.createElement('option');
-      option.setAttribute("value",element);
-      option.textContent = element;
-      target1.getElementsByClassName("bm")[0].appendChild(option);
-    });
 
+//   }
 
-    //依頼フォームのボックスを初期で非表示にする
-    target1.getElementsByClassName("day-box-form")[0].style.display="none";
+// });
 
-    // 出勤、退勤ボタンを用意する
-    const swich= '<div class="btnbtn">出勤報告する</div>';
-    target1.getElementsByClassName("day-box-swich")[0].innerHTML = swich;
-    target1.getElementsByClassName("btnbtn")[0].style.width ="100%";
-    target1.getElementsByClassName("btnbtn")[0].style.margin ="5px 0";
-
-    var trigger1 = target1.getElementsByClassName("btnbtn")[0];
-    trigger1.addEventListener('click',function(){
-      target1.getElementsByClassName("flag")[0].innerHTML="出勤報告あり";
-      target1.getElementsByClassName("day-box-form")[0].style.display="block";
-      trigger1.style["background-color"]="#34675c";
-      trigger1.style["color"]="white";
-    });
-
-  }
-
-});
-
-
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// フォームボックスの拡張①　送信機能＋送信後の設定　10min
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region フォーム関連の共通設定
-
-  // フォーム送信ボタンラッパーの作成
-  var form_button_wrapper = document.createElement("div");
-  form_button_wrapper.setAttribute("id","form_button_wrapper");
-  form_button_wrapper.style.display = "flex";
-  form_button_wrapper.style["flex-direction"]= "column";
-  form_button_wrapper.style["justify-content"] = "center";
-  form_button_wrapper.style["align-item"] = "center";
-  form_area.appendChild(form_button_wrapper);
-  var form_wrapper = document.getElementById("form_button_wrapper")
-
-  // フォーム送信ボタンの作成
-  var form_button = document.createElement("button");
-  form_button.setAttribute("id","form_button");
-  form_button.setAttribute("type","submit");
-  form_button.innerHTML="勤務報告を完了する";
-  form_button.style["background-color"] ="#34675c";
-  form_button.style["border-radius"] = "5px";
-  form_button.style["padding"] = "8px";
-  form_button.style["text-align"] = "center";
-  form_button.style.color="white";
-  form_wrapper.appendChild(form_button);
-  var form_button = document.getElementById("form_button")
-
-
-  var timelag = document.createElement("p");
-  timelag.innerHTML="＊データの反映には2分ほど時間がかかります。最新のデータを確認する際は、しばらく待ってからページを更新してください。<br><br>";
-  timelag.style.color="red";
-  form_button.after(timelag);
-
-
-  
-  // フォーム送信ボタン送信後の表示設定
-  var form_comfirm= document.createElement("div");
-  form_comfirm.style.display="none";
-  form_wrapper.appendChild(form_comfirm);
-
-  // フォーム送信後の画面遷移の設定
-  var form_iframe = document.createElement("iframe");
-  form_iframe.setAttribute("name","hidden_iframe");
-  form_iframe.setAttribute("id","hidden_iframe");
-  form_iframe.style.display="none";
-  form_area.appendChild(form_iframe);
-  form_area.setAttribute("method","post");
-  form_area.setAttribute("target","hidden_iframe");
-
-// #endregion 
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -299,11 +199,11 @@ kintai_db["日付"].forEach((element,index)=>{
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー  
 // #region 【個別】送信後のメッセージ作成
   //フォーム送信後の処理
-  form_button.addEventListener('click',function(){
-    form_comfirm.style.display="block";
-    form_button.style["background-color"]="gray";
-    form_button.innerHTML="送信完了";
-    form_comfirm.innerHTML='<p>勤怠報告が完了しました。データの反映には2分ほど時間がかかります。</p><p>送信内容</p><div id="re_content"></div>';
+  // form_button.addEventListener('click',function(){
+  //   form_comfirm.style.display="block";
+  //   form_button.style["background-color"]="gray";
+  //   form_button.innerHTML="送信完了";
+  //   form_comfirm.innerHTML='<p>勤怠報告が完了しました。データの反映には2分ほど時間がかかります。</p><p>送信内容</p><div id="re_content"></div>';
 
 
     // // 送信内容の作成
@@ -326,12 +226,9 @@ kintai_db["日付"].forEach((element,index)=>{
     //   }
     // });
 
-  });
+  // });
   
  //#endregion
-
-
-
 
 
 
