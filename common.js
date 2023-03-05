@@ -2,6 +2,8 @@ setTimeout(timefunc,300);
 function timefunc(){
 
 
+document.getElementsByClassName("notion-column")[0].setAttribute("id","first-column");
+
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region　教室 or 講師　共通処理の準備（変数指定）
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
