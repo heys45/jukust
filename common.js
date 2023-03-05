@@ -99,6 +99,7 @@ if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,i) =>{
     console.log(dbs[index][filter_prop][i]!=prop_object[filter_prop])
+      // データベースの再表示
       if(dbs[index][filter_prop][i]==prop_object[filter_prop]){
         if(index >= 1 && targets2.includes(prop_object["ページ表示名"])){
           }else{element.style.display="table-row";}
