@@ -84,7 +84,7 @@ if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=nul
 var target = document.getElementById("ショートカットリスト").nextElementSibling;
 target.getElementsByClassName("notion-column")[0].style.setProperty('width', '50%', 'important');
 target.getElementsByClassName("notion-column")[1].style.setProperty('width', '50%', 'important');
-target.getElementsByClassName("notion-column")[1].style.setProperty('margin', '50', 'important');
+target.getElementsByClassName("notion-column")[1].style.setProperty('margin', '0', 'important');
 
 var target = document.getElementById("ショートカットリスト").nextElementSibling.nextElementSibling;
 target.getElementsByClassName("notion-column")[0].style.setProperty('width', '50%', 'important');
