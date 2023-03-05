@@ -82,7 +82,6 @@ dbs[2]["日付"].forEach((element,index)=>{
   const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku,.bosscheck,.hosoku,.ft1,.ft2,.ft3,.ft4,.ft5");
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
-
   // 提出後の処理
   submit_button.addEventListener('click',function(){
   ele.style.display="none"
@@ -95,31 +94,31 @@ dbs[2]["日付"].forEach((element,index)=>{
   console.log(dbs[2]["終了報告フラグ"][index])
   if(dbs[2]["終了報告フラグ"][index]==1){
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
-  var ele =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
-  ele.getElementsByClassName("teaid")[0].setAttribute("value",prop_object["会員ID"]);
-  ele.getElementsByClassName("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
-  ele.getElementsByClassName("houkoku")[0].setAttribute("value","退勤");
+  var ele2 =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
+  ele2.getElementsByClassName("teaid")[0].setAttribute("value",prop_object["会員ID"]);
+  ele2.getElementsByClassName("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
+  ele2.getElementsByClassName("houkoku")[0].setAttribute("value","退勤");
 
   var submit_button = document.createElement("button");
   submit_button.setAttribute("type","submit");
   submit_button.innerHTML="退勤報告する"
-  ele.appendChild(submit_button);
+  ele2.appendChild(submit_button);
 
   var form_iframe = document.createElement("iframe");
   form_iframe.setAttribute("name","hidden_iframe");
   form_iframe.setAttribute("id","hidden_iframe");
   form_iframe.style.display="none";
-  ele.appendChild(form_iframe);
-  ele.setAttribute("method","post");
-  ele.setAttribute("target","hidden_iframe");
+  ele2.appendChild(form_iframe);
+  ele2.setAttribute("method","post");
+  ele2.setAttribute("target","hidden_iframe");
 
   // フォームのラベル作成
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
-  ele.insertAdjacentHTML("afterbegin", kinmu_info );
+  ele2.insertAdjacentHTML("afterbegin", kinmu_info );
 
   // 提出後の処理
   submit_button.addEventListener('click',function(){
-    ele.style.display="none"
+    ele2.style.display="none"
   });}
 
 
