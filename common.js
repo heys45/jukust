@@ -90,7 +90,7 @@ for (let index = 0; index < db_areas.length; index++) {
 // ここまでで dbs["index"]["カラム名"]["行数"]でデータ取得可能。
 
 if(index >= 2 && targets2.includes(prop_object["ページ表示名"])){
-  filter_prop="応募ID"}
+  filter_prop="応募ID"; console.log("応募ID")}
 // #region データベースの廃棄処理 復活処理
 if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =db_areas[index].getElementsByClassName("notion-collection-table") [0];
