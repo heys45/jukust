@@ -75,11 +75,14 @@ dbs[2]["日付"].forEach((element,index)=>{
 
   submit_button.addEventListener('click',function(){
   ele.style.display="none"
-  });}
 
   // フォームのラベル作成
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele.insertAdjacentHTML("beforebegin", kinmu_info );
+
+  });}
+
+
 
 
 
@@ -111,10 +114,13 @@ dbs[2]["日付"].forEach((element,index)=>{
 
   submit_button.addEventListener('click',function(){
     ele.style.display="none"
-  });}
+
   // フォームのラベル作成
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele.insertAdjacentHTML("beforebegin", kinmu_info );
+
+  });}
+
 
   })
 
