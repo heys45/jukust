@@ -16,7 +16,7 @@ wr_form.remove();
 
 
 
-document.getElementsByClassName("notion-callout__content")[0].innerHTML.remove()
+document.getElementsByClassName("notion-callout__content")[0].removeChild();
 document.getElementsByClassName("notion-callout__content")[0].innerHTML=document.getElementsByClassName("notion-header__title")[0].innerHTML;
 
 
