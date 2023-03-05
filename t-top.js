@@ -57,10 +57,10 @@ dbs[2]["日付"].forEach((element,index)=>{
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
   var ele =document.getElementsByTagName("form")[document.getElementsByTagName("form").length-1];
   console.log(ele);
-  console.log(ele.getElementsByClassName("teaid")[0]);
-  ele.getElementsByClassName("teaid")[0].setAttribute("value",prop_object["会員ID"]);
-  ele.getElementsByClassName("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
-  ele.getElementsByClassName("報告")[0].setAttribute("value","出勤");
+  console.log(ele.querySelectorAll(".teaid")[0]);
+  ele.querySelectorAll("teaid")[0].setAttribute("value",prop_object["会員ID"]);
+  ele.querySelectorAll("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
+  ele.querySelectorAll("houkoku")[0].setAttribute("value","出勤");
 
   var submit_button = document.createElement("button");
   submit_button.setAttribute("type","submit");
