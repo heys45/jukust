@@ -18,7 +18,7 @@ wr_form.remove();
 
 document.querySelectorAll(".notion-callout__content span")[0].style.display="none";
 document.getElementsByClassName("notion-callout__content")[0].innerHTML=document.getElementsByClassName("notion-header__title")[0].innerHTML;
-
+document.getElementsByClassName("notion-callout__content")[0].style.overflow="none";
 
 
 var log_box =document.createElement("div");
