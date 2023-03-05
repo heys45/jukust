@@ -61,6 +61,8 @@ dbgs.forEach(element =>{
     element.classList.add("dbg-"+ group_id);
 });
 
+
+
 // 指定したIDでDBのグループをフィルタリング
 var dbg_class =".dbg-"+prop_object[ filter_prop];
 var view_dbg = document.querySelectorAll(dbg_class);
