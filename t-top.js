@@ -121,7 +121,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力
-  kinmu_info.style.paddingBotom="5px";
+  ele2.getElementsByTagName("p")[0].style.paddingBotom="5px";
   ele2.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓以下変更があった時のみ記入<br>出勤時間｜　" );
   ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時 " );
   ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", " 分 " );
