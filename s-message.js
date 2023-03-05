@@ -60,9 +60,8 @@ document.getElementById("ouboid").value = prop_object["応募ID"];
 const death_prop = document.querySelectorAll("#schid,#ouboid,#teaid,.fd,.adj,.fs");
 death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementById("message_form").style.width="100%";
-document.getElementsByClassName("message")[0].style.width="100%";
+document.getElementsByClassName("message")[0].style.width="calc(100% - 30px)";
 document.getElementsByClassName("message")[0].style.resize="vertical";
-document.getElementsByClassName("message")[0].style.margin="0 50px 0 5px";
 // #endregion
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // メッセージ入力エリアの後ろ作成
