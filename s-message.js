@@ -37,6 +37,15 @@ var area = document.getElementsByClassName("notion-callout")[1];
 document.getElementsByClassName("notion-callout__content")[1].remove()
 area.prepend(message_box);
 
+document.getElementById("schid").value = prop_object["教室ID"];
+document.getElementById("ouboid").value = prop_object["応募ID"];
+
+const death_prop = document.querySelectorAll("#schid,#ouboid,#teaid,.fd,.adj,.fs");
+death_prop.forEach(element=>{  element.style.display = 'none'; });
+document.getElementsByClassName("message")[0].style.width="100%";
+
+
+
 
 var check_area = document.querySelectorAll(".notion-collection")[2];
 // #region データベース個別処理
@@ -114,8 +123,7 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
 
 // フォーム初期値設定
 // document.getElementById("teaid").value = prop_object["会員ID"];
-document.getElementById("schid").value = prop_object["教室ID"];
-document.getElementById("ouboid").value = prop_object["応募ID"];
+
 
 
 
