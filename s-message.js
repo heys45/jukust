@@ -32,7 +32,7 @@ message_box.innerHTML=''+
 '<textarea name="entry.2088308727" class="message"></textarea>'+
 '</form>';
 var area = document.querySelectorAll(".notion-callout:nth-child(2)")[0];
-area.appendchild(message_box);
+area.appendChild(message_box);
 
 
 
