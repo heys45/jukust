@@ -121,7 +121,14 @@ dbs[2]["日付"].forEach((element,index)=>{
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力
-  ele2.getElementsByClassName
+  ele2.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓変更があった時のみ記入<br>出勤時間｜" );
+  ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", "時" );
+  ele2.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", "分" );
+  ele2.getElementsByClassName("ft3")[0].insertAdjacentHTML("beforebegin", "退勤時間｜" );
+  ele2.getElementsByClassName("ft4")[0].insertAdjacentHTML("beforebegin", "時" );
+  ele2.getElementsByClassName("ft4")[0].insertAdjacentHTML("afterend", "分" );
+  ele2.getElementsByClassName("ft5")[0].insertAdjacentHTML("beforebegin", "休憩時間｜" );
+  ele2.getElementsByClassName("ft5")[0].insertAdjacentHTML("afterend", "分" );
 
 
   // 提出後の処理
