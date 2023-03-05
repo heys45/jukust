@@ -3,6 +3,7 @@ function timefunc(){
 
 
 document.getElementsByClassName("notion-column")[0].setAttribute("id","first-column");
+document.getElementsByClassName("notion-column")[1].setAttribute("id","second-column");
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region　教室 or 講師　共通処理の準備（変数指定）
