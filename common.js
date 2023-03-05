@@ -51,20 +51,13 @@ img_area.appendChild(header_info);
 
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region　教室 or 講師　共通処理の実施（ナビバー、フィルタリング）
+// 教室 or 講師　共通処理の実施（ナビバー、フィルタリング）
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 // 判定用リストの作成
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
-
-// 判定＋判定による処理
-
 if(targets.includes(prop_object["ページ表示名"])){
-filter_prop="教室ID"
-}else{
-filter_prop="会員ID"
-}
-
+filter_prop="教室ID"}else{filter_prop="会員ID"}
 
 var check_areas= document.querySelectorAll("notion-colleciton");
 var dbs =[];
