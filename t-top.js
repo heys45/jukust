@@ -77,6 +77,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele.insertAdjacentHTML("afterbegin", kinmu_info );
 
+  // 提出後の処理
   submit_button.addEventListener('click',function(){
   ele.style.display="none"
 
@@ -117,6 +118,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele.insertAdjacentHTML("afterbegin", kinmu_info );
 
+  // 提出後の処理
   submit_button.addEventListener('click',function(){
     ele.style.display="none"
   });}
