@@ -4,6 +4,19 @@ if(prop_object["ページ表示名"]==="教室トップページ"){
 
 
 
+var topguide =document.getElementById("スポットバイトへようこそ！").nextSibling.nextSibling;
+
+topguide.innerHTML="教室用"+prop_object["教室名"];
+topguide.style.fontWeight="bolder";
+
+
+
+
+
+
+
+
+
 
 
 
@@ -82,12 +95,12 @@ if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=nul
 }
 
 var target = document.getElementById("ショートカットリスト").nextElementSibling;
-target.getElementsByClassName("notion-column")[0].setAttribute("clsss","t-top-db");
-target.getElementsByClassName("notion-column")[1].setAttribute("clsss","t-top-db");
+target.getElementsByClassName("notion-column")[0].setAttribute("clsss","s-top-db");
+target.getElementsByClassName("notion-column")[1].setAttribute("clsss","s-top-db");
 
 var target = document.getElementById("ショートカットリスト").nextElementSibling.nextElementSibling;
-target.getElementsByClassName("notion-column")[0].setAttribute("clsss","t-top-db");
-target.getElementsByClassName("notion-column")[1].setAttribute("clsss","t-top-db");
+target.getElementsByClassName("notion-column")[0].setAttribute("clsss","s-top-db");
+target.getElementsByClassName("notion-column")[1].setAttribute("clsss","s-top-db");
 
 
 }}
