@@ -15,6 +15,14 @@ sh_form.remove();
 wr_form.remove();
 
 
+var log_box =document.createElement("div");
+log_box.innerHTML='メッセージのエリア';
+log_box.style.border="solid 2px #555555"
+var area = document.querySelectorAll(".notion-callout:first-child");
+area.appendchild(log_box);
+
+
+
 var message_box =document.createElement("div");
 message_box.innerHTML=''+
 '<form id="schedule-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcJDQfvYup36rYH80HUvZ3OB_sq2kjzINjUY4FHZBsbNr7nw/formResponse" target="hidden_iframe3">'+
