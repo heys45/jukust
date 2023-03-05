@@ -20,6 +20,13 @@ if(prop_object["ページ表示名"]==="教室トップページ"){
   wr_form.remove();
 
 
+
+  document.getElementsByClassName("notion-image")[0].style.maxWidth="400px";
+
+
+
+
+
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // DB表示設定代項目
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
