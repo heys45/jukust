@@ -62,7 +62,7 @@ death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementById("message_form").style.width="100%";
 document.getElementsByClassName("message")[0].style.width="100%";
 document.getElementsByClassName("message")[0].style.resize="vertical";
-document.getElementsByClassName("message")[0].style.margin="0 35px 0 5px";
+document.getElementsByClassName("message")[0].style.margin="0 50px 0 5px";
 // #endregion
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // メッセージ入力エリアの後ろ作成
