@@ -79,7 +79,7 @@ dbs[2]["日付"].forEach((element,index)=>{
 
 
   // 非表示プロパティの設定
-  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku,.bosscheck,.ft1,.ft2,.ft3,.ft4,.ft5");
+  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku,.bosscheck,.hosoku,.ft1,.ft2,.ft3,.ft4,.ft5");
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
 
