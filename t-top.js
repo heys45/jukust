@@ -29,7 +29,7 @@ var form_area = document.createElement("div")
 area_target.after(form_area);
 
 var houkoku_form =''+
-'<form class="houkoku_form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdLDyYrhBECVA8Qbw_8YATYgGjH7n4nsntWg-LSx3oQKi7H3A/formResponse"'+
+'<form class="houkoku_form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdLDyYrhBECVA8Qbw_8YATYgGjH7n4nsntWg-LSx3oQKi7H3A/formResponse">'+
 '<input type="text" name="entry.709565382" class="teaid">'+
 '<input type="text" name="entry.1479770506" class="schid">'+
 '<input type="text" name="entry.390570208" class="worid">'+
@@ -48,8 +48,6 @@ var houkoku_form =''+
 // 過去の日付で勤怠報告未完了のものを取得
 console.log(dbs[2]["日付"]);
 dbs[2]["日付"].forEach((element,index)=>{
-
-
 
   // フォームの作成
   console.log(dbs[2]["開始報告フラグ"][index])
