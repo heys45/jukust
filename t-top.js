@@ -1,5 +1,5 @@
 
-setTimeout(timefunc,1000);
+setTimeout(timefunc,300);
 function timefunc(){
 if(prop_object["ページ表示名"]==="講師トップページ"){
 
@@ -78,7 +78,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   });}
 
   // フォームのラベル作成
-  var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時間"][index]+"〜"+dbs[2]["終了時間"][index]+"</p>";
+  var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele.insertAdjacentHTML("beforebegin", kinmu_info );
 
 
@@ -113,7 +113,7 @@ dbs[2]["日付"].forEach((element,index)=>{
     ele.style.display="none"
   });}
   // フォームのラベル作成
-  var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時間"][index]+"〜"+dbs[2]["終了時間"][index]+"</p>";
+  var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele.insertAdjacentHTML("beforebegin", kinmu_info );
 
   })
