@@ -116,6 +116,15 @@ dbs[2]["日付"].forEach((element,index)=>{
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
   ele2.insertAdjacentHTML("afterbegin", kinmu_info );
 
+  // 非表示プロパティの設定
+  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku");
+  death_prop.forEach(element=>{  element.style.display = 'none'; });
+
+  // フォームガイド出力
+  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku");
+  death_prop.forEach(element=>{  element.style.display = 'none'; });
+
+
   // 提出後の処理
   submit_button.addEventListener('click',function(){
     ele2.style.display="none"
@@ -128,7 +137,7 @@ dbs[2]["日付"].forEach((element,index)=>{
 // フォームスタイルの設定
 document.querySelectorAll(".houkoku_form").forEach(element=>{
 element.style.border="solid 2px";
-element.style.padding="6px 10px";
+element.style.padding="10px 10px 0 10px";
 element.style.margin="6px 0";
 })
 
