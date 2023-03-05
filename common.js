@@ -92,7 +92,7 @@ for (let index = 0; index < db_areas.length; index++) {
 // ここまでで dbs["index"]["カラム名"]["行数"]でデータ取得可能。
     
 // #region データベースの廃棄処理
-if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
+if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =db_areas[index].getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,i) =>{
