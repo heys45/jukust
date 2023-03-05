@@ -117,7 +117,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   ele2.insertAdjacentHTML("afterbegin", kinmu_info );
 
   // 非表示プロパティの設定
-  const death_prop = ele2.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku");
+  const death_prop = ele2.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku, .boxxcheck");
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力

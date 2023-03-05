@@ -461,12 +461,12 @@ body{
   
   select{
     border-radius: 5px;
-    padding: 4px 5px;
+    padding: 2px 5px;
     margin: 3px  0;
     border: solid 3px #17837c;
     color:#34675C;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
   }
   input{
     border-radius: 6px;
@@ -474,7 +474,7 @@ body{
     margin: 3px  0;
     border: solid 2px #aaaaaa;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     color:#393f42;
   }
 
