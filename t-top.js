@@ -1,5 +1,5 @@
 
-setTimeout(timefunc,500);
+setTimeout(timefunc,600);
 function timefunc(){
 if(prop_object["ページ表示名"]==="講師トップページ"){
 
