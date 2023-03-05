@@ -70,6 +70,7 @@ var check_areas= document.querySelectorAll("notion-colleciton");
 var dbs =[]
 
 for (let index = 0; index < check_areas.length; index++) {
+  console.log(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null)
 // #region データベースの配列処理
   if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
     var check_db =check_areas[index].getElementsByClassName("notion-collection-table") [0];
