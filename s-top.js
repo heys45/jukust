@@ -6,7 +6,7 @@ if(prop_object["ページ表示名"]==="教室トップページ"){
 
 var topguide =document.getElementById("スポットバイトへようこそ！").nextSibling.nextSibling;
 
-topguide.innerHTML="教室用"+prop_object["教室名"];
+topguide.innerHTML="教室用｜"+prop_object["教室名"];
 topguide.style.fontWeight="bolder";
 
 
