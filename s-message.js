@@ -16,7 +16,7 @@ wr_form.remove();
 
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// メッセージヘッダーとメッセージ入力欄の作成
+// メッセージヘッダーとメッセージ出力欄の作成
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region
 document.querySelectorAll(".notion-callout__content span")[0].style.display="none";
@@ -29,7 +29,8 @@ log_box.innerHTML='　過去のメッセージ';
 log_box.style.border="solid 2px #555555";
 log_box.style.height="calc(100% - 300px)";
 log_box.style.padding="10px 0";
-log_box.style.backgroundColor="#eeeeee"
+log_box.style.backgroundColor="#eeeeee";
+log_box.style.overflowY="scroll";
 var area = document.getElementsByClassName("notion-callout")[0];
 area.style.backgroundColor="#33A614"
 area.style.color="white"
@@ -50,7 +51,7 @@ var message_form =''+
 '</form>';
 var area = document.getElementsByClassName("notion-callout")[1];
 document.getElementsByClassName("notion-callout__content")[1].remove()
-area.style.backgroundColor="rgb(23, 131, 124)";
+area.style.backgroundColor="#aaaaaa";
 area.insertAdjacentHTML("afterbegin", message_form );
 
 document.getElementById("schid").value = prop_object["教室ID"];
