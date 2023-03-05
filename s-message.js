@@ -61,7 +61,7 @@ death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementById("message_form").style.width="100%";
 document.getElementsByClassName("message")[0].style.width="100%";
 document.getElementsByClassName("message")[0].style.resize="vertical";
-document.getElementsByClassName("message")[0].style.margin="0 20px 0 5px";
+document.getElementsByClassName("message")[0].style.margin="0 35px 0 5px";
 // #endregion
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // メッセージ入力エリアの後ろ作成
@@ -74,9 +74,39 @@ guide.style.padding="5px"
 
 document.getElementById("message_form").appendChild(guide);
 
-
-
 // #endregion
+
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// 送信部分の作成
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region フォーム関連の共通設定
+var submit_button = document.createElement("button");
+submit_button.setAttribute("type","submit");
+submit_button.setAttribute("form","message_form");
+var button_area= document.getElementsByClassName("notion-callout__icon")[1];
+button_area.appendChild(submit_button);
+var button_icon=button_area.getElementsByTagName("picture");
+submit_button.appendChild(button_icon);
+
+// フォーム送信後の画面遷移の設定
+var form_iframe = document.createElement("iframe");
+form_iframe.setAttribute("name","hidden_iframe");
+form_iframe.setAttribute("id","hidden_iframe");
+form_iframe.style.display="none";
+document.getElementById("message_form").appendChild(form_iframe);
+document.getElementById("message_form").setAttribute("method","post");
+document.getElementById("message_form").setAttribute("target","hidden_iframe");
+
+submit_button.addEventListener('click',function(){
+  document.getElementsByClassName("message")[0].innerHTML="";
+});
+
+// #endregion 
+
+
+
+
 
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
