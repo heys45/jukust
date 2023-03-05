@@ -56,6 +56,7 @@ img_area.appendChild(header_info);
 
 // #region 判定用リストと検索対象の準備
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
+var targets2 = ["教室連絡確認","講師連絡確認"];
 if(targets.includes(prop_object["ページ表示名"])){
 filter_prop="教室ID"}else{filter_prop="会員ID"}
 var db_areas= document.querySelectorAll(".notion-collection");
@@ -87,14 +88,16 @@ for (let index = 0; index < db_areas.length; index++) {
     console.log(dbs);
 // #endregion
 // ここまでで dbs["index"]["カラム名"]["行数"]でデータ取得可能。
-    
+
+if(index >= 2 && targets2.includes(prop_object["ページ表示名"])){
+  filter_prop="応募ID"}
 // #region データベースの廃棄処理 復活処理
 if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =db_areas[index].getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,i) =>{
-    console.log(dbs[index]["教室ID"][i]!=prop_object[filter_prop])
-      if(dbs[index]["教室ID"][i]==prop_object[filter_prop]){
+    console.log(dbs[index]["filter_prop"][i]!=prop_object[filter_prop])
+      if(dbs[index]["filter_prop"][i]==prop_object[filter_prop]){
         element.style.display="table-row";
       }else{element.remove()}
   });
