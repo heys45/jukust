@@ -25,10 +25,11 @@ document.getElementsByClassName("notion-callout__content")[0].style.overflow="no
 
 
 var log_box =document.createElement("div");
-log_box.innerHTML='メッセージのエリア';
+log_box.innerHTML='　過去のメッセージ';
 log_box.style.border="solid 2px #555555";
 log_box.style.height="calc(100% - 300px)";
 log_box.style.padding="10px 0";
+log_box.style.backgroundColor="#eeeeee"
 var area = document.getElementsByClassName("notion-callout")[0];
 area.style.backgroundColor="#33A614"
 area.style.color="white"
@@ -113,7 +114,7 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
         message_data_box.style.padding="10px";
         message_data_box.style.flexWrap="wrap"
         var message_data1= document.createElement("span");
-        message_data1.innerHTML=message_db["送信時間"][index]+"｜"+message_db["教室ID"][index]+message_db["会員ID"][index];
+        message_data1.innerHTML=message_db["会員ID"][index]+"｜"+message_db["送信時間"][index];
         message_data1.style.display="inline-box";
         message_data1.style.width="80%";
         message_data1.style.margin="3px 15px"
@@ -123,13 +124,15 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
         message_data2.style.width="80%"
         message_data2.style.margin="3px 15px"
         message_data2.style.padding="5px 5px"
-        message_data2.style.backgroundColor="#cccccc";
+        message_data2.style.backgroundColor="white";
         message_data2.style.borderRadius="5px"
         message_data_box.appendChild(message_data2);
 
         if(message_db["教室ID"][index]!=null){
+          message_data1.innerHTML=message_db["教室ID"][index]+"｜"+message_db["送信時間"][index];
           message_data_box.style.justifyContent="flex-end"
-          message_data2.style.backgroundColor="#aaaaaa";
+          message_data2.style.backgroundColor="rgb(23, 131, 124)";
+          message_data2.style.color="white";
         }
         log_box.appendChild(message_data_box);
       }
