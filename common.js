@@ -95,7 +95,7 @@ if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
   datas.forEach((element,i) =>{
     console.log(dbs[index]["教室ID"][i]!=prop_object[filter_prop])
       if(dbs[index]["教室ID"][i]==prop_object[filter_prop]){
-        element.style.display="table-cell";
+        element.style.display="table-row";
       }else{element.remove()}
   });
 } 
