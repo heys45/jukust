@@ -97,9 +97,9 @@ dbs[2]["日付"].forEach((element,index)=>{
   if(dbs[2]["終了報告フラグ"][index]==1){
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
   var ele =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
-  ele.getElementsByClassName("teaid")[0].setAttribute("value",prop_object["会員ID"]);
-  ele.getElementsByClassName("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
-  ele.getElementsByClassName("報告")[0].setAttribute("value","退勤");
+  ele.querySelectorAll(".teaid")[0].setAttribute("value",prop_object["会員ID"]);
+  ele.querySelectorAll(".fd")[0].setAttribute("value",dbs[2]["日付"][index]);
+  ele.querySelectorAll(".houkoku")[0].setAttribute("value","退勤");
 
   var submit_button = document.createElement("button");
   submit_button.setAttribute("type","submit");
