@@ -100,7 +100,7 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach((element,index) =>{
     console.log(message_db["応募ID"][index]!=prop_object["応募ID"])
-      if(message_db["応募ID"][index]!=prop_object["応募ID"]){
+      if(message_db["応募ID"][index] ==prop_object["応募ID"]){
 
         var message_data_box = document.createElement("div");
         message_box.style.display="flex";
