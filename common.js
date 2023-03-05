@@ -6,39 +6,29 @@ document.getElementsByClassName("notion-column")[0].setAttribute("id","first-col
 document.getElementsByClassName("notion-column")[1].setAttribute("id","second-column");
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region　教室 or 講師　共通処理の準備（変数指定）
+// 教室 or 講師　ナビバー周りの処理
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region　
+
 // 判定用リストの作成
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
 
 // 判定＋判定による処理
-filter_prop ="null"
 var pc_logo = document.createElement('img');
 var sp_logo = document.createElement('img');
 var header_text_color="#555555"; var header_text="｜";
 if(targets.includes(prop_object["ページ表示名"])){
-  // 教室用のフィルター設定
-  var filter_prop ="教室ID";
   // 教室用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo02.png'; // 画像パス
   document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
   header_text_color="white"; header_text="｜";
 }else{
-  // 講師用のフィルター設定
-  var filter_prop ="会員ID";
   // ユーザー用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo01.png'; // 画像パス
 }
 
-
-
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #endregion
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region　教室 or 講師　共通処理の実施（ナビバー、フィルタリング）
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // ロゴの表示設定
 pc_logo.style.width="151px";pc_logo.setAttribute("id","pc_logo");pc_logo.style.height="32px";pc_logo.style.position="relative";
 sp_logo.style.width="32px";sp_logo.setAttribute("id","sp_logo");sp_logo.style.height="32px";sp_logo.style.position="relative";
@@ -57,21 +47,91 @@ document.querySelectorAll(".super-navbar__logo-image")[0].style["align-items"]= 
 img_area.appendChild(header_info);
 
 
-// DBのグループにグループ番号を表示（CSSで事前にフィルタリングしておく）
-const dbgs = document.querySelectorAll('.notion-collection-group__section');
-dbgs.forEach(element =>{
-    var group_id = element.getElementsByTagName("span")[1].innerHTML;
-    element.classList.add("dbg-"+ group_id);
-});
+// #endregion　
+
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region　教室 or 講師　共通処理の実施（ナビバー、フィルタリング）
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// 判定用リストの作成
+var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認"];
+
+// 判定＋判定による処理
+
+if(targets.includes(prop_object["ページ表示名"])){
+filter_prop="教室ID"
+}else{
+filter_prop="会員ID"
+}
+
+
+var check_areas= document.querySelectorAll("notion-colleciton");
+var dbs =[]
+
+for (let index = 0; index < check_areas.length; index++) {
+// #region データベースの配列処理
+  if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
+    var check_db =check_areas[index].getElementsByClassName("notion-collection-table") [0];
+    var make_db ={};
+    var headers = check_db.querySelectorAll("thead th");
+    headers.forEach(element =>{
+      make_db[element.innerHTML]=[];
+    });
+    var datas = check_db.querySelectorAll("tbody tr");
+    datas.forEach(element =>{
+      var datas = element.querySelectorAll("td");
+      for (let i = 0; i< datas.length; i++) {
+        if(datas[i].querySelectorAll("span")[0] !=null){
+          if(datas[i].querySelectorAll("span span")[0] !=null){
+            var data = datas[i].querySelectorAll("span span")[0].innerHTML;}
+          else{
+            var data = datas[i].querySelectorAll("span")[0].innerHTML;}
+        }else{var data=null;}
+        make_db[headers[i].innerHTML].push(data);}
+    });
+    dbs.push(make_db);}
+    console.log(dbs);
+// #endregion
+// ここまでで dbs["index"]["カラム名"]["行数"]でデータ取得可能。
+    
+// #region データベースの廃棄処理
+if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
+  var check_db =check_areas[index].getElementsByClassName("notion-collection-table") [0];
+  var datas = check_db.querySelectorAll("tbody tr");
+  datas.forEach((element,i) =>{
+    console.log(dbs[index]["教室ID"][i]!=prop_object[filter_prop])
+      if(dbs[index]["教室ID"][i]!=prop_object[filter_prop]){
+        element.style.display="none"
+      }
+  });
+} 
+// #endregion
+// ここまでで 不要なデータベースの削除完了
+}
 
 
 
-// 指定したIDでDBのグループをフィルタリング
-var dbg_class =".dbg-"+prop_object[ filter_prop];
-var view_dbg = document.querySelectorAll(dbg_class);
-view_dbg.forEach(element =>{element.style.display = "block" ;});
-var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
-remove_dbg.forEach(element =>{element.remove();});
+// // DBのグループにグループ番号を表示（CSSで事前にフィルタリングしておく）
+// const dbgs = document.querySelectorAll('.notion-collection-group__section');
+// dbgs.forEach(element =>{
+//     var group_id = element.getElementsByTagName("span")[1].innerHTML;
+//     element.classList.add("dbg-"+ group_id);
+// });
+
+
+
+// // 指定したIDでDBのグループをフィルタリング
+// var dbg_class =".dbg-"+prop_object[ filter_prop];
+// var view_dbg = document.querySelectorAll(dbg_class);
+// view_dbg.forEach(element =>{element.style.display = "block" ;});
+// var remove_dbg = document.querySelectorAll(".notion-collection-group__section:not("+dbg_class+")");
+// remove_dbg.forEach(element =>{element.remove();});
+
+
+
+
+
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
