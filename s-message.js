@@ -50,10 +50,9 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
   datas.forEach(element =>{
-    var datas = element.querySelectorAll("td");
     for (let i = 0; i< datas.length; i++) {
       if(message_db["教室ID"][index]!=prop_object["教室ID"]){
-        datas.style.display.none
+        element.style.display.none
       }
     }
   });
