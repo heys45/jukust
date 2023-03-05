@@ -1,5 +1,5 @@
 
-setTimeout(timefunc,600);
+setTimeout(timefunc,400);
 
 function timefunc(){
 if(prop_object["ページ表示名"]==="教室連絡確認"){
