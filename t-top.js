@@ -55,7 +55,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   console.log(dbs[2]["開始報告フラグ"][index])
   if(dbs[2]["開始報告フラグ"][index]==1){
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
-  var ele =document.querySelectorAll("form")[document.querySelectorAll(form).length-1];
+  var ele =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
   ele.getElementsByClassName("teaid")[0].value=prop_object["会員ID"];
   ele.getElementsByClassName("fd")[0].value=dbs[2]["日付"][index];
   ele.getElementsByClassName("報告")[0].value="出勤";
@@ -94,7 +94,7 @@ dbs[2]["日付"].forEach((element,index)=>{
   console.log(dbs[2]["終了報告フラグ"][index])
   if(dbs[2]["終了報告フラグ"][index]==1){
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
-  var ele =document.querySelectorAll("form")[document.querySelectorAll(form).length-1];
+  var ele =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
   ele.getElementsByClassName("teaid")[0].value=prop_object["会員ID"];
   ele.getElementsByClassName("fd")[0].value=dbs[2]["日付"][index];
   ele.getElementsByClassName("報告")[0].value="退勤";
