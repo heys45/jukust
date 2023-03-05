@@ -21,9 +21,6 @@ document.getElementsByClassName("notion-callout__content")[0].innerHTML=document
 
 
 
-
-
-
 var log_box =document.createElement("div");
 log_box.innerHTML='メッセージのエリア';
 log_box.style.border="solid 2px #555555"
@@ -59,10 +56,14 @@ document.getElementsByClassName("message")[0].style.padding="0 8px 0 0";
 
 
 
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベース個別処理準備　　メッセージDBの情報を配列化　
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
 var check_area = document.querySelectorAll(".notion-collection")[2];
 check_area.style.display="none";
 
-// #region データベース個別処理
+// #region 共通処理部分
   if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
     var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
     var make_db ={};
@@ -85,9 +86,13 @@ check_area.style.display="none";
     console.log(make_db);}
 // #endregion
 if(make_db !=null){
-var message_db = make_db;}
-console.log(message_db);
+  var message_db = make_db;
+console.log(message_db);}
 
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// データベース個別処理　メッセージDBからメッセージデータ出力
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// #region 
 if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =check_area.getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
@@ -121,30 +126,7 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
   });
 }
 
-
-
-
-
-
-
-
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// DB表示設定代項目
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-  `<form id="schedule-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdcJDQfvYup36rYH80HUvZ3OB_sq2kjzINjUY4FHZBsbNr7nw/formResponse" target="hidden_iframe3"><input type="text" name="entry.1194399256" class="teaid"><input type="text" name="entry.1896770762" class="schid"><input type="text" name="entry.1711080326" class="ouboid"><textarea name="entry.2088308727" class="message"></textarea></form>`
-
-
-// フォーム初期値設定
-// document.getElementById("teaid").value = prop_object["会員ID"];
-
-
-
-
-
-
-
-
+// #endregion 
 
 
 }}
