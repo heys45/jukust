@@ -23,7 +23,8 @@ document.getElementsByClassName("notion-callout__content")[0].innerHTML=document
 
 var log_box =document.createElement("div");
 log_box.innerHTML='メッセージのエリア';
-log_box.style.border="solid 2px #555555"
+log_box.style.border="solid 2px #555555";
+log_box.style.height="calc(100% - 300px)";
 var area = document.getElementsByClassName("notion-callout")[0];
 area.style.backgroundColor="#999999"
 area.after(log_box);
