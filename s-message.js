@@ -52,8 +52,8 @@ document.getElementById("ouboid").value = prop_object["応募ID"];
 const death_prop = document.querySelectorAll("#schid,#ouboid,#teaid,.fd,.adj,.fs");
 death_prop.forEach(element=>{  element.style.display = 'none'; });
 document.getElementsByClassName("message")[0].style.width="100%";
+document.getElementsByClassName("message")[0].style.resize="vertical";
 document.getElementsByClassName("message")[0].style.padding="0 8px 0 0";
-
 
 
 
