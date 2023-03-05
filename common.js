@@ -227,30 +227,30 @@ if(document.getElementById("スポットバイトの流れ")!=null){
 // データベースの番号づけ 何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region データベース共通処理
-  //DBをまとめて取得しIDを付与する 
-  const dbs = document.querySelectorAll('.notion-collection-table');
-  for( var i=0; i<dbs.length; i++) {
-  var name = "db-"+(i+1);
-  dbs[i].setAttribute("id",name); 
-    //行をまとめて取得しIDを付与する 
-    const rows = dbs[i].getElementsByTagName("tr")
-    for( var j=0; j<rows.length; j++) {
-    if(j != 0){
-    var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-    rows[j].setAttribute("name",name);}
-    var name = "db-"+(i+1)+"-"+(j+1);
-    rows[j].setAttribute("id",name);
-    //列をまとめて取得しIDを付与する 
-    const columns =rows[j].getElementsByTagName("td")
-    const columnhs =rows[j].getElementsByTagName("th");
-    for( var k=0; k<columns.length; k++) {
-    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    columns[k].setAttribute("id",name);}//列の設定１
-    for( var k=0; k<columnhs.length; k++) {
-    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    columnhs[k].setAttribute("id",name);}//列の設定2
-    }//行の設定完了
-  }
+  // //DBをまとめて取得しIDを付与する 
+  // const dbs = document.querySelectorAll('.notion-collection-table');
+  // for( var i=0; i<dbs.length; i++) {
+  // var name = "db-"+(i+1);
+  // dbs[i].setAttribute("id",name); 
+  //   //行をまとめて取得しIDを付与する 
+  //   const rows = dbs[i].getElementsByTagName("tr")
+  //   for( var j=0; j<rows.length; j++) {
+  //   if(j != 0){
+  //   var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
+  //   rows[j].setAttribute("name",name);}
+  //   var name = "db-"+(i+1)+"-"+(j+1);
+  //   rows[j].setAttribute("id",name);
+  //   //列をまとめて取得しIDを付与する 
+  //   const columns =rows[j].getElementsByTagName("td")
+  //   const columnhs =rows[j].getElementsByTagName("th");
+  //   for( var k=0; k<columns.length; k++) {
+  //   var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  //   columns[k].setAttribute("id",name);}//列の設定１
+  //   for( var k=0; k<columnhs.length; k++) {
+  //   var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
+  //   columnhs[k].setAttribute("id",name);}//列の設定2
+  //   }//行の設定完了
+  // }
 // #endregion
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
