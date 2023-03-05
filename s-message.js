@@ -118,12 +118,13 @@ if(check_area.getElementsByClassName("notion-collection-table")[0] !=null){
         message_data2.innerHTML=message_db["メッセージ"][index]
         message_data2.style.width="80%"
         message_data2.style.margin="3px 15px"
-        message_data2.style.padding="10pxpx 10px"
+        message_data2.style.padding="5px 5px"
         message_data2.style.backgroundColor="#cccccc";
         message_data2.style.borderRadius="5px"
         message_data_box.appendChild(message_data2);
+
         if(message_db["教室ID"][index]!=null){
-          message_data2.style.justifyContent="flex-end"
+          message_data_box.style.justifyContent="flex-end"
           message_data2.style.backgroundColor="#aaaaaa";
         }
         log_box.appendChild(message_data_box);
