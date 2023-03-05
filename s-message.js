@@ -18,7 +18,7 @@ wr_form.remove();
 var log_box =document.createElement("div");
 log_box.innerHTML='メッセージのエリア';
 log_box.style.border="solid 2px #555555"
-var area = document.querySelectorAll(".notion-callout:first-child")[0];
+var area = document.getElementsByClassName("notion-callout:first-child")[0];
 area.after(log_box);
 
 
@@ -32,7 +32,7 @@ message_box.innerHTML=''+
 '<input type="text" name="entry.1711080326" class="ouboid">'+
 '<textarea name="entry.2088308727" class="message"></textarea>'+
 '</form>';
-var area = document.getElementsByClassName(".notion-callout:nth-child(2)")[0];
+var area = document.getElementsByClassName("notion-callout:nth-child(2)")[0];
 area.appendChild(message_box);
 
 
