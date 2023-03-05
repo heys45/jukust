@@ -87,7 +87,7 @@ submit_button.setAttribute("type","submit");
 submit_button.setAttribute("form","message_form");
 var button_area= document.getElementsByClassName("notion-callout__icon")[1];
 console.log(button_area.childNodes);
-var button_icon=button_area.childNodes ;
+var button_icon=button_area.childNodes.item(0) ;
 button_area.appendChild(submit_button);
 submit_button.appendChild(button_icon);
 
