@@ -102,9 +102,9 @@ document.getElementById("message_form").appendChild(form_iframe);
 document.getElementById("message_form").setAttribute("method","post");
 document.getElementById("message_form").setAttribute("target","hidden_iframe");
 
-submit_button.addEventListener('click',function(){
-  setTimeout(document.getElementsByClassName("message")[0].value="",100);
-});
+// submit_button.addEventListener('click',function(){
+//   setTimeout(document.getElementsByClassName("message")[0].value="",100);
+// });
 
 // #endregion 
 
