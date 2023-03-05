@@ -67,7 +67,7 @@ filter_prop="会員ID"
 
 
 var check_areas= document.querySelectorAll("notion-colleciton");
-var dbs =[]
+var dbs =[];
 
 for (let index = 0; index < check_areas.length; index++) {
   console.log(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=null)
