@@ -111,6 +111,9 @@ if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
 }
 
 
+プロトタイプ管理ページ
+
+
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // ページリストのレスポンス設定
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -196,15 +199,20 @@ if(document.getElementById("スポットバイトの流れ")!=null){
 // #endregion
 
 
-  // // 使用するフォームの選択
-  // const sh_form = document.getElementById("shift-form");
-  // const sc_form = document.getElementById("schedule-form");
-  // const wr_form = document.getElementById("wr-form");
+var targets = ["講師トップページ","教室シフト管理"];
 
-  // sc_form.remove();
-  // sh_form.remove();
-  // wr_form.remove();
+if(targets.includes(prop_object["ページ表示名"])){}else{
 
+  // 使用するフォームの選択
+  const sh_form = document.getElementById("shift-form");
+  const sc_form = document.getElementById("schedule-form");
+  const wr_form = document.getElementById("wr-form");
+
+  sc_form.remove();
+  sh_form.remove();
+  wr_form.remove();
+
+}
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // データベースの番号づけ 何もしなくてOK

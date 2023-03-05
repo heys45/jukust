@@ -1,150 +1,34 @@
 
 setTimeout(timefunc,300);
-
 function timefunc(){
 if(prop_object["ページ表示名"]==="講師トップページ"){
 
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // トップ情報の書き出し
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-  var top_position = document.getElementById("マイページへようこそ");
-  var top_div =document.createElement("div");
-  top_div.classList.add("top-content-wrapper");
-  top_position.after(top_div);
+var topguide =document.getElementById("マイページへようこそ").nextSibling.nextSibling;
 
-  var top_span1 = document.createElement("span");
-  top_span1.textContent = prop_object["姓"]+prop_object["名"];
-  top_span1.classList.add();
-  top_span1.style["font-size"] = "32px";
-  top_div.appendChild(top_span1);
-  var top_span1_1 = document.createElement("span");
-  top_span1_1.textContent = "先生";
-  top_span1_1.style["padding-right"] = "16px";
-  top_div.appendChild(top_span1_1);
-
-  var top_span2 = document.createElement("span");
-  top_span2.textContent = prop_object["ステータス！"];
-  top_span2.classList.add();
-  top_span2.style["background-color"] = "gray";
-  top_span2.style["color"] = "white";
-  top_span2.style["border-radius"] = "20px";
-  top_span2.style["padding"] = "3px 10px";
-  top_div.appendChild(top_span2);
-
-// 勤務情報集約
-  var top_p3 = document.createElement("p");
-  top_p3.textContent = "過去1ヶ月の勤務回数｜　X回";
-  top_p3.classList.add();
-  top_p3.style["padding-top"] = "30px";
-  top_div.appendChild(top_p3);
-  var top_p4 = document.createElement("p");
-  top_p4.textContent = "これから1ヶ月の勤務予定回数｜　X回";
-  top_p4.classList.add();
-  top_div.appendChild(top_p4);
-
-
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-  // プログレスバーの変更
-  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-  // // 表示位置の設定
-  // var quote_name = "スポットバイトの流れ";
-  // var progressbar = document.getElementsByClassName("progressbar")[0];
-  // document.getElementById(quote_name).after(progressbar);
-  // progressbar.style.display = 'flex';
-
-  // //プログレスバー書き換え処理
-  // document.getElementById('li-schedule').setAttribute("class","complete");
-  // document.getElementById('li-request').setAttribute("class","complete");
-  // document.getElementById('li-confirm').setAttribute("class","active");
-  // // document.getElementById('db-2-1-4').setAttribute("class",complete);
+topguide.innerHTML="講師用｜"+prop_object["姓"]+prop_object["名"]+"先生";
+topguide.style.fontWeight="bolder";
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// DB表示設定代項目 1min
+// プログレスバーの変更
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region データベースフィルター設定　★まとめページは変更？
-    // 教室or講師IDによるDBフィルタ
-    // 前提：データベースはグループ化しておく
-    const groups = document.querySelectorAll('.notion-collection-group__section');
-    groups.forEach(element =>{
-        var group_id = element.getElementsByTagName("span")[1].innerHTML;
-        element.classList.add("x"+ group_id);
-    });
 
-    var research_id = prop_object["会員ID"];
-    var research_class =".x"+research_id
-    
-    document.querySelectorAll(research_class).forEach(element =>{
-      element.style.display = "block" ;  });
-    document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
-      element.remove(); 
-     });
-// #endregion
+// // 表示位置の設定
+// var quote_name = "スポットバイトの流れ";
+// var progressbar = document.getElementsByClassName("progressbar")[0];
+// document.getElementById(quote_name).after(progressbar);
+// progressbar.style.display = 'flex';
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// テーブルの番号づけ 何もしなくてOK
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region テーブル共通処理
-  //テーブルを取得しIDを付与する
-  const tables = document.querySelectorAll('.notion-table');
-  for( var i=0; i<tables.length; i++) {
-  var name = "table-"+(i+1);
-  tables[i].setAttribute("id",name);
-    //行をまとめて取得しIDを付与する
-    const rows = tables[i].getElementsByTagName("tr");
-    for( var j=0; j<rows.length; j++) {
-    var name = "table-"+(i+1)+"-"+(j+1);
-    rows[j].setAttribute("id",name);
-    //列をまとめて取得しIDを付与する
-    const columns =rows[j].getElementsByTagName("td");
-    const columnhs =rows[j].getElementsByTagName("th");
-    for( var k=0; k<columns.length; k++) {
-    var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    columns[k].setAttribute("id",name);}//列の設定１
-    for( var k=0; k<columnhs.length; k++) {
-      var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-      columnhs[k].setAttribute("id",name);}//列の設定２
-    }//行の設定完了
-  }
-// #endregion
+// //プログレスバー書き換え処理
+// document.getElementById('li-schedule').setAttribute("class","complete");
+// document.getElementById('li-request').setAttribute("class","complete");
+// document.getElementById('li-confirm').setAttribute("class","active");
+// // document.getElementById('db-2-1-4').setAttribute("class",complete);
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// データベースの番号づけ 何もしなくてOK
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region データベース共通処理
-  //DBをまとめて取得しIDを付与する 
-  const dbs = document.querySelectorAll('.notion-collection-table');
-  for( var i=0; i<dbs.length; i++) {
-  var name = "db-"+(i+1);
-  dbs[i].setAttribute("id",name); 
-    //行をまとめて取得しIDを付与する 
-    const rows = dbs[i].getElementsByTagName("tr")
-    for( var j=0; j<rows.length; j++) {
-    if(j != 0){
-    var name = rows[j].getElementsByTagName("span")[0].getElementsByTagName("span")[0].innerHTML;
-    rows[j].setAttribute("name",name);}
-    var name = "db-"+(i+1)+"-"+(j+1);
-    rows[j].setAttribute("id",name);
-    //列をまとめて取得しIDを付与する 
-    const columns =rows[j].getElementsByTagName("td")
-    const columnhs =rows[j].getElementsByTagName("th");
-    for( var k=0; k<columns.length; k++) {
-    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    columns[k].setAttribute("id",name);}//列の設定１
-    for( var k=0; k<columnhs.length; k++) {
-    var name = "db-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    columnhs[k].setAttribute("id",name);}//列の設定2
-    }//行の設定完了
-  }
-// #endregion
 
 
-//     //DB書き換え処理
-//     document.getElementById('db-3-1-3').innerHTML = "勤務可能<br>開始時間";
-//     document.getElementById('db-3-1-4').innerHTML = "勤務可能<br>終了時間";
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
