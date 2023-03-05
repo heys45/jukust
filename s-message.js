@@ -140,7 +140,7 @@ if(db_areas[1].getElementsByClassName("notion-collection-table")[0] !=null){
         message_data2.style.maxWidth="500px"
         message_data_box.appendChild(message_data2);
 
-        if(dbs[2]["教室ID"][index]!=null){
+        if(dbs[1]["教室ID"][index]!=null){
           message_data1.innerHTML=dbs[1]["教室ID"][index]+"｜"+dbs[1]["送信時間"][index];
           message_data_box.style.justifyContent="flex-end"
           message_data2.style.backgroundColor="rgb(23, 131, 124)";
