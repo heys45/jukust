@@ -114,6 +114,7 @@ submit_button.addEventListener('click',function(){
 // データベース個別処理　メッセージDBからメッセージデータ出力
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region 
+var db_areas= document.querySelectorAll(".notion-collection");
 if(db_areas[2].getElementsByClassName("notion-collection-table")[0] !=null){
   var check_db =db_areas[2].getElementsByClassName("notion-collection-table") [0];
   var datas = check_db.querySelectorAll("tbody tr");
