@@ -41,8 +41,6 @@ check_areas.push(check_area)
 var check_area = document.getElementsByClassName("notion-collection")[5];
 check_areas.push(check_area)
 
-
-
 // #region データベース個別処理
 for (let index = 0; index < check_areas.length; index++) {
 
@@ -80,10 +78,17 @@ if(check_areas[index].getElementsByClassName("notion-collection-table")[0] !=nul
         element.style.display="none"
       }
   });
+}  
 }
 
-  
-}
+var target = document.getElementById("ショートカットリスト").nextElementSibling;
+target.getElementsByClassName("notion-column")[0].style.Width="50%"
+target.getElementsByClassName("notion-column")[1].style.Width="50%"
+
+var target = document.getElementById("ショートカットリスト").nextElementSibling.nextElementSibling;
+target.getElementsByClassName("notion-column")[0].style.Width="50%"
+target.getElementsByClassName("notion-column")[1].style.Width="50%"
+
 
 
 
