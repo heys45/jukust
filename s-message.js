@@ -63,7 +63,7 @@ document.getElementById("message_form").style.width="100%";
 document.getElementsByClassName("message")[0].style.width="calc(100% - 20px)";
 document.getElementsByClassName("message")[0].style.padding="10px 5px";
 document.getElementsByClassName("message")[0].style.resize="vertical";
-document.getElementsByClassName("message")[0].required = true;
+// document.getElementsByClassName("message")[0].required = true;
 // #endregion
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // メッセージ入力エリアの後ろ作成
@@ -102,9 +102,9 @@ document.getElementById("message_form").appendChild(form_iframe);
 document.getElementById("message_form").setAttribute("method","post");
 document.getElementById("message_form").setAttribute("target","hidden_iframe");
 
-// submit_button.addEventListener('click',function(){
-//   setTimeout(document.getElementsByClassName("message")[0].value="",100);
-// });
+submit_button.addEventListener('click',function(){
+  setTimeout(document.getElementsByClassName("message")[0].value="",100);
+});
 
 // #endregion 
 
