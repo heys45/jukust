@@ -27,7 +27,8 @@ log_box.style.border="solid 2px #555555";
 log_box.style.height="calc(100% - 300px)";
 log_box.style.padding="10px 0";
 var area = document.getElementsByClassName("notion-callout")[0];
-area.style.backgroundColor="#999999"
+area.style.backgroundColor="#33A614"
+area.style.color="white"
 area.after(log_box);
 
 
@@ -44,7 +45,7 @@ message_box.innerHTML=''+
 console.log(document.getElementsByClassName("notion-callout")[1]);
 var area = document.getElementsByClassName("notion-callout")[1];
 document.getElementsByClassName("notion-callout__content")[1].remove()
-area.style.backgroundColor="#999999"
+area.style.backgroundColor="#33A614"
 area.prepend(message_box);
 
 document.getElementById("schid").value = prop_object["教室ID"];
