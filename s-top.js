@@ -66,7 +66,7 @@ dbs[1]["日付"].forEach((element,index)=>{
   if(dbs[1]["終了時刻（変更申請）"][index]!=null)
   {var kinmu_info2 = "<br>終了時刻の変更申請｜"+dbs[1]["終了時刻"][index]+"　→　"+dbs[1]["終了時刻（変更申請）"][index]}else{var kinmu_info2 =""}
   if(dbs[1]["休憩時間（変更申請）"][index]!=null)
-  {var kinmu_info3 = "<br>休憩時間の変更申請｜"+dbs[1]["休憩時間"][index]+"　→　"+dbs[1]["休憩時間（変更申請）"][index]}else{var kinmu_info3 =""}
+  {var kinmu_info3 = "<br>休憩時間の変更申請｜"+dbs[1]["休憩時間"][index]+"　→　"+dbs[1]["休憩時間（変更申請）"][index]+"分"}else{var kinmu_info3 =""}
   if(dbs[1]["勤務報告時補足"][index]!=null)
   {var kinmu_info4 = "<br>勤務後の報告・補足<br>"+dbs[1]["勤務報告時補足"][index]}else{var kinmu_info4 =""}
 
