@@ -36,7 +36,7 @@ var houkoku_form =''+
 '</form>';
 
 // 過去の日付で勤怠報告未完了のものを取得
-console.log(dbs[1]["日付"]);
+console.log(dbs[2]["日付"]);
 dbs[1]["日付"].forEach((element,index)=>{
 
   // フォームの作成
