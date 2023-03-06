@@ -5,69 +5,6 @@ function timefunc(){
 if(prop_object["ページ表示名"]==="講師プロフィール"){
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// DB表示設定代項目 1min
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region データベースフィルター設定　★まとめページは変更？
-    // 教室or講師IDによるDBフィルタ
-    // 前提：データベースはグループ化しておく
-    const groups = document.querySelectorAll('.notion-collection-group__section');
-    groups.forEach(element =>{
-        var group_id = element.getElementsByTagName("span")[1].innerHTML;
-        element.classList.add("x"+ group_id);
-    });
-
-    var research_id = prop_object["会員ID"];
-    var research_class =".x"+research_id
-
-    document.querySelectorAll(research_class).forEach(element =>{
-      element.style.display = "block" ;  });
-    document.querySelectorAll(".notion-collection-group__section:not("+research_class+")").forEach(element =>{
-      element.remove();  });
-// #endregion
-
-
-
-
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// テーブルの番号づけ
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
-//テーブルをまとめて取得
-const tables = document.querySelectorAll('.notion-table');
-//テーブルにIDを付与する 
-for( var i=0; i<tables.length; i++) {
-  console.log(tables[i]);
-  var name = "table-"+(i+1);
-  console.log(name);
-  tables[i].setAttribute("id",name);
-  //行をまとめて取得
-  const rows = tables[i].getElementsByTagName("tr");
-  //行にIDを付与する 
-  for( var j=0; j<rows.length; j++) {
-  console.log(rows[j]);
-  var name = "table-"+(i+1)+"-"+(j+1);
-  console.log(name);
-  rows[j].setAttribute("id",name);
-  
-  //列をまとめて取得
-  const columns =rows[j].getElementsByTagName("td");
-  const columnhs =rows[j].getElementsByTagName("th");
-  //列にIDを付与する 
-  for( var k=0; k<columns.length; k++) {
-  console.log(columns[k]);
-  var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-  console.log(name);
-  columns[k].setAttribute("id",name);
-  }
-  for( var k=0; k<columnhs.length; k++) {
-    console.log(columnhs[k]);
-    var name = "table-"+(i+1)+"-"+(j+1)+"-"+(k+1);
-    console.log(name);
-    columnhs[k].setAttribute("id",name);
-    }
-  }
-}
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // テーブル埋め
