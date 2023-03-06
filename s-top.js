@@ -80,13 +80,14 @@ dbs[1]["日付"].forEach((element,index)=>{
   // フォームガイド出力
   ele.getElementsByTagName("p")[0].style.paddingBottom="10px";
   ele.getElementsByTagName("span")[0].style.fontWeight="bold";
+  ele.getElementsByTagName("span")[0].style.fontSize="18px";
   ele.getElementsByTagName("span")[0].style.display="inline-block";
   ele.getElementsByTagName("span")[0].style.paddingBottom="10px 0";
-  ele.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓以下変更があった場合のみ記入<br>出勤時間｜　" );
-  ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時 " );
+  ele.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓変更が必要な場合のみ記入<br>出勤時間｜　" );
+  ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時　" );
   ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", " 分 <br>" );
   ele.getElementsByClassName("ft3")[0].insertAdjacentHTML("beforebegin", "退勤時間｜　" );
-  ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("beforebegin", " 時 " );
+  ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("beforebegin", " 時　" );
   ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("afterend", " 分 <br>" );
   ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("beforebegin", "休憩時間｜　" );
   ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("afterend", " 分 <br>" );
