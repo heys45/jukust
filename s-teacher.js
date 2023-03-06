@@ -57,9 +57,7 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
     });
 
   // テーブルサイズなど個別調整
-  document.getElementById("table-7").classList.add("col-header,row-header");
-  document.getElementById("table-8").classList.add("col-header,row-header");
-  document.getElementById("table-9").classList.add("col-header,row-header");
+
   document.getElementById("table-10").style.width="100%";
   document.getElementById("table-11").style.width="100%";
 
