@@ -103,7 +103,9 @@ if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
       if(dbs[index][filter_prop][i]==prop_object[filter_prop]){
         if(index >= 1 && targets2.includes(prop_object["ページ表示名"])){
           }else{element.style.display="table-row";}
-      }else{element.remove()}
+      }else{
+        //element.remove()
+      }
   });
 } 
 // #endregion
