@@ -55,7 +55,7 @@ if(prop_object["ページ表示名"]==="講師プロフィール"){
     });
 
   // テーブルサイズなど個別調整
-zs
+
   document.getElementById("table-10").style.width="100%";
   document.getElementById("table-11").style.width="100%";
 
