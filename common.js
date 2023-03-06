@@ -110,7 +110,7 @@ if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
 } 
 // #endregion
 // ここまでで 不要なデータベースの削除完了
-}console.log(dbs[2]["日付"]);
+}
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // ページリストのレスポンス設定
