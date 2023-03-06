@@ -4,6 +4,8 @@ setTimeout(timefunc,500);
 function timefunc(){
 if(prop_object["ページ表示名"]==="教室講師確認"){
 
+  console.assertlog("ピンチ");
+
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // テーブル埋め
