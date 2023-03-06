@@ -42,7 +42,7 @@ img_area.appendChild(sp_logo);
 
 // ページタイトルの表示設定
 var header_info = document.createElement("span");
-header_info.innerHTML=header_text+document.getElementsByClassName("notion-header__title")[0].innerHTML+"｜"+header_text2;
+header_info.innerHTML=header_text+document.getElementsByClassName("notion-header__title")[0].innerHTML;
 header_info.style.color=header_text_color;header_info.style.position="relative";header_info.style.zIndex="1000";
 header_info.style.paddingBottom="3px";header_info.style.paddingLeft="10px";header_info.style.display="inline-block";
 document.querySelectorAll(".super-navbar__logo-image")[0].style["display"]= "flex";
@@ -104,7 +104,7 @@ if(db_areas[index].getElementsByClassName("notion-collection-table")[0] !=null){
         if(index >= 1 && targets2.includes(prop_object["ページ表示名"])){
           }else{element.style.display="table-row";}
       }else{
-        //element.remove()
+        element.remove()
       }
   });
 } 
@@ -145,6 +145,13 @@ function page_list_view() {
     page_list_btn.classList.toggle('active');
 }
 // #endregion
+
+
+
+
+
+
+
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

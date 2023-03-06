@@ -6,8 +6,8 @@ if(prop_object["ページ表示名"]==="講師トップページ"){
 
 var topguide =document.getElementById("マイページへようこそ").nextSibling.nextSibling;
 
-topguide.innerHTML="講師用｜"+prop_object["姓"]+prop_object["名"]+"先生";
-topguide.style.fontWeight="bolder";
+// topguide.innerHTML="講師用｜"+prop_object["姓"]+prop_object["名"]+"先生";
+// topguide.style.fontWeight="bolder";
 
 
 
