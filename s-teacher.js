@@ -58,8 +58,8 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
 
   // テーブルサイズなど個別調整
 
-  document.getElementById("table-10").style.width="100%";
-  document.getElementById("table-11").style.width="100%";
+  // document.getElementById("table-10").style.width="100%";
+  // document.getElementById("table-11").style.width="100%";
 
 
   var slide_guide = document.createElement("p");
