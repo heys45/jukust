@@ -15,6 +15,7 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
     var header = element.querySelectorAll("tr")[0].querySelectorAll("td");
     var target = element.querySelectorAll("tr")[1].querySelectorAll("td");
     for (let index = 0; index < header.length; index++) {
+      console.log(header[index].querySelectorAll("span")[0]);
       if(header[index].querySelectorAll("span")[0] !=null){ //空ヘッダーエラー処理
         var key = header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].innerHTML;
           if(prop_object[key] !=null){ //空バリュー（notion_prop）エラー処理
