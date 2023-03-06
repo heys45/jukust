@@ -11,7 +11,7 @@ topguide.style.fontWeight="bolder";
 
 
 document.getElementsByClassName("notion-image")[0].style.maxWidth="400px";
-
+document.querySelectorAll(".notion-collection")[1].style.display="none";
 
 
 // 出力する場所を用意（quoteを指定）
@@ -108,7 +108,7 @@ element.style.padding="14px 15px 0 15px";
 element.style.margin="8px 0";
 })
 
-document.querySelectorAll(".notion-collection")[1].style.display="none";
+
 // フォームここまで
 
 
