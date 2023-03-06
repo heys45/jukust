@@ -11,7 +11,7 @@ topguide.style.fontWeight="bolder";
 
 
 document.getElementsByClassName("notion-image")[0].style.maxWidth="400px";
-document.querySelectorAll(".notion-collection")[1].style.display="none";
+document.querySelectorAll(".notion-collection")[2].style.display="none";
 
 
 // 出力する場所を用意（quoteを指定）
