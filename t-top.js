@@ -12,6 +12,8 @@ var topguide =document.getElementById("マイページへようこそ").nextSibl
 
 
 
+
+
 // 出力する場所を用意（quoteを指定）
 var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
 var form_area = document.createElement("div")
@@ -39,8 +41,7 @@ console.log(dbs[2]["日付"]);
 dbs[2]["日付"].forEach((element,index)=>{
 
   // フォームの作成
-  console.log(dbs[2]["開始報告フラグ"][index])
-  if(dbs[2]["開始報告フラグ"][index]==1){
+  if(dbs[2]["開始報告フラグ"][index]==1 && dbs[2]["会員ID"][index]==prop_object["会員ID"] ){
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
   var ele =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
   console.log(ele);
@@ -81,7 +82,7 @@ dbs[2]["日付"].forEach((element,index)=>{
 
   // フォームの作成
   console.log(dbs[2]["終了報告フラグ"][index])
-  if(dbs[2]["終了報告フラグ"][index]==1){
+  if(dbs[2]["終了報告フラグ"][index]==1&& dbs[2]["会員ID"][index]==prop_object["会員ID"]){
   form_area.insertAdjacentHTML("beforeend", houkoku_form );
   var ele2 =document.querySelectorAll("form")[document.querySelectorAll("form").length-1];
   ele2.getElementsByClassName("teaid")[0].setAttribute("value",prop_object["会員ID"]);
