@@ -95,7 +95,11 @@ dbs[1]["日付"].forEach((element,index)=>{
 
   // 提出後の処理
   submit_button.addEventListener('click',function(){
-    ele.style.display="none"
+    ele.style.display="none";
+    var submit_guide =document.createElement("p");
+    submit_guide.innerHTML = "勤務の承認が完了しました。承認が反映されるまでには2分ほどかかります。";
+    submit_guide.style.padding="10px";
+    ele.after(submit_guide) ;
   });}
 
 })
