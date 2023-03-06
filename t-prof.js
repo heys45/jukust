@@ -190,21 +190,6 @@ for( var i=0; i<tables.length; i++) {
     // trigger.onchange=viewChange;
 
 
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    // フォーム表示設定大項目
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-    
-    const sh_form = document.getElementById("shift-form");
-    const sc_form = document.getElementById("schedule-form");
-    const wr_form = document.getElementById("wr-form");
-
-
-    var death_form = sc_form;         //ページによって変更する
-    death_form.remove();
-    var death_form = sh_form;         //ページによって変更する
-    death_form.remove();
-    var death_form = wr_form;         //ページによって変更する
-    death_form.remove();
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
