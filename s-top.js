@@ -61,9 +61,6 @@ dbs[1]["日付"].forEach((element,index)=>{
   ele.setAttribute("target","hidden_iframe");
 
   // フォームのラベル作成
-  var kinmugo_info ="<p>"+dbs[1]["日付"][index]+"</p>";
-  ele.insertAdjacentHTML("afterbegin", kinmugo_info );
-
   if(dbs[1]["開始時刻（変更申請）"][index]!=null)
   {var kinmu_info1 = "<br>開始時刻の変更申請｜"+dbs[1]["開始時刻"][index]+"　→　"+dbs[1]["開始時刻（変更申請）"][index]}else{var kinmu_info1 =""}
   if(dbs[1]["終了時刻（変更申請）"][index]!=null)
@@ -73,16 +70,17 @@ dbs[1]["日付"].forEach((element,index)=>{
   if(dbs[1]["勤務報告時補足"][index]!=null)
   {var kinmu_info4 = "<br>勤務後の報告・補足<br>"+dbs[1]["勤務報告時補足"][index]}else{var kinmu_info4 =""}
 
-  var kinmu_info ="<p>"+dbs[1]["日付"][index]+"｜"+dbs[1]["開始時刻"][index]+"〜"+dbs[1]["終了時刻"][index]+kinmu_info1 +kinmu_info2 +kinmu_info3+kinmu_info4 +"</p>";
+  var kinmu_info ="<p><span>"+dbs[1]["日付"][index]+"｜"+dbs[1]["開始時刻"][index]+"〜"+dbs[1]["終了時刻"][index]+"</span>"+kinmu_info1 +kinmu_info2 +kinmu_info3+kinmu_info4 +"</p>";
   ele.insertAdjacentHTML("afterbegin", kinmu_info );
 
   // 非表示プロパティの設定
-  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku, .bosscheck");
+  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku,.hosoku, .bosscheck");
   death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力
   ele.getElementsByTagName("p")[0].style.paddingBottom="10px";
-  ele.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓以下変更があった時のみ記入<br>出勤時間｜　" );
+  ele.getElementsByTagName("span")[0].style.fontWeight="bold";
+  ele.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓以下変更があった場合のみ記入<br>出勤時間｜　" );
   ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時 " );
   ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", " 分 <br>" );
   ele.getElementsByClassName("ft3")[0].insertAdjacentHTML("beforebegin", "退勤時間｜　" );
@@ -90,9 +88,7 @@ dbs[1]["日付"].forEach((element,index)=>{
   ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("afterend", " 分 <br>" );
   ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("beforebegin", "休憩時間｜　" );
   ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("afterend", " 分 <br>" );
-  ele.getElementsByClassName("ft5")[0].style.marginBottom="10px";
-  ele.getElementsByClassName("hosoku")[0].insertAdjacentHTML("beforebegin", "↓補足・備考欄変更があった場合は記入<br>" );
-  ele.getElementsByClassName("hosoku")[0].style.width="100%";
+
 
   // 提出後の処理
   submit_button.addEventListener('click',function(){
