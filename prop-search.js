@@ -3,10 +3,10 @@ var old_url = window.location.href;
 var url_interval = setInterval(()=>{
 var new_url = window.location.href;
 if (old_url !=new_url){
-    window.location.reload();
+    window.location.href = window.location.href;
 
     old_url = new_url;
-}},1000)
+}},500)
 
 var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
 reload_btn.addEventListener('click', reload2);
