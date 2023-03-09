@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<button onclick="pythonexe()">python実</button>
+
+<script type="text/javascript">
+function pythonexe() {
+console.log("test");
+var WshShell = new ActiveXObject("WScript.Shell");
+WshShell.run("\\nas\public\事務業務資料\100000管理部門\101000システム\事業部プログラム\講師求人部門\教室自動更新\自動更新RPA.exe");
+}
+</script>
+
+</body>
+</html>
