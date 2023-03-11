@@ -1,4 +1,5 @@
 setTimeout(timefunc,400);
+console.log("common.js")
 
 var db_areas= document.querySelectorAll(".notion-collection");
 var dbs =[];
