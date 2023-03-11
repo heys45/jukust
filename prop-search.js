@@ -10,6 +10,7 @@ if (old_url !=new_url){
 
 var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
 reload_btn.addEventListener('click', reload2);
+console.log("prop-search.js")
 
 function reload2() {
   window.location.reload();
