@@ -7,7 +7,8 @@ var dbs =[];
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認","講師トップページ","講師スケジュール提出","講師シフト確定リスト","講師勤怠確認リスト","講師教室確認リスト","講師連絡確認リスト","講師プロフィール","講師よくある質問","講師シフト確定","講師勤怠確認","講師教室確認","講師連絡確認"];
 
 function timefunc(){
-  console.log(prop_object);
+  console.log(prop_object["ページ表示名"]);
+  console.log(targets);
 if(targets.includes(prop_object["ページ表示名"])){
 document.getElementsByClassName("notion-column")[0].setAttribute("id","first-column");
 document.getElementsByClassName("notion-column")[1].setAttribute("id","second-column");
