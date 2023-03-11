@@ -1,7 +1,13 @@
+/* 上から書いていく */
+
+
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* #region レスポンシブの設定 */
+/* プロパティ｜｜サイドバー表示の設定 */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* 方針　900px 以上でサイドバー　*/
+/* #region */
+.notion-header, .notion-page__properties{
+  display: none;
+}
 
 /* 900px以上でサイドバーを表示にする */
 .super-content{
@@ -13,7 +19,6 @@
   padding-bottom: 20px;
   padding-top: 20px;
 }
-
 
 #first-column{
   position: -webkit-sticky;
@@ -57,15 +62,13 @@
 }
 
 
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* #endregion レスポンシブの設定 */
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-
+/* #endregion */
 
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* #region ヘッダーの設定 */
+/* ヘッダーの設定 */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region  */
 
 .super-navbar__logo-image{width: 100% !important;}
 #pc_logo{display: inline-block;}
@@ -93,11 +96,7 @@
   pointer-events: none;
   }
 
-
-
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* #endregion ヘッダーの設定 */
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
@@ -120,40 +119,9 @@
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* #region データベース */
+/* プログレスバー */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-
-.notion-collection tbody tr{
-  display: none;
-}
-
-.notion-collection-table__cell span{
-  border: none !important;
-}
-#page_list_pc .notion-property__title .notion-semantic-string{
-  font-size: 1rem !important;
-  font-weight: bolder !important;
-  padding: 5px 5px !important;
-}
-
-#page_list_pc .notion-property__title .notion-semantic-string::before{
-  content: "> ";
-  padding-right: 5px;
-}
-
-.notion-property__title__icon-wrapper{
-  display: none !important;
-}
-
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* #endregion データベース */
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-
-
-
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-/* #region プログレスバー */
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region */
 .progressbar {
   position: relative;
   margin: 0;
@@ -216,9 +184,42 @@ ul{
 margin: 0px 0 20px 0 !important;
 }
 
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* #endregion */
+
+
+
+
+ーーーーーーーーーーーーーーーーーー
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region データベース */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.notion-collection tbody tr{
+  display: none;
+}
+
+.notion-collection-table__cell span{
+  border: none !important;
+}
+#page_list_pc .notion-property__title .notion-semantic-string{
+  font-size: 1rem !important;
+  font-weight: bolder !important;
+  padding: 5px 5px !important;
+}
+
+#page_list_pc .notion-property__title .notion-semantic-string::before{
+  content: "> ";
+  padding-right: 5px;
+}
+
+.notion-property__title__icon-wrapper{
+  display: none !important;
+}
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #endregion データベース */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
 
 
 
@@ -243,9 +244,7 @@ margin: 0px 0 20px 0 !important;
     content: "｜";
   }
 
-  .notion-header, .notion-page__properties{
-    display: none;
-  }
+ 
   
   #tbc-list {
 	  display: none;
