@@ -1,6 +1,6 @@
 setTimeout(timefunc,1000);
 console.log("common.js")
-alert( "ページ名のリンク変更テスト1223" );
+alert( "ページ名のリンク変更テスト1231" );
 
 // データベースの集合と
 var dbs= document.querySelectorAll(".notion-collection");
@@ -65,10 +65,12 @@ img_area.appendChild(header_info);
 // page_listのデータ取得。
  var page_list_db = document.querySelectorAll(".notion-collection-table")[0];
  var page_list ={};
- var headers = page_list_db.querySelectorAll("thead th");
-  headers.forEach(element =>{
-    page_list[element.innerHTML]=[];
+ var headers0 = page_list_db.querySelectorAll("thead th");
+ var headers = []
+  headers0.forEach(element =>{
+    headers.push(element.innerHTML)
   })
+  console.log(headers);
 var rowdatas = page_list_db.querySelectorAll("tbody tr");
   rowdatas.forEach(element =>{
     datas = element.querySelectorAll("td");
@@ -81,7 +83,7 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
           var data= datas[i].querySelectorAll("span span")[0].innerHTML;
         } 
         // 配列にデータを追加
-        page_list[headers[i].innerHTML].push(data);
+        page_list[headers[i]].push(data);
       }
   })
   // ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
@@ -92,8 +94,14 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
       element.setAttribute("href","https://jukuspot.com/"+page_list["URL"][index].replace(/^.*\//,""));
     })
   // page_listの→OFFを非表示に
-  alert(page_list.indexOf("→OFF"));
-
-
-
+  alert(headers.indexOf("→OFF"));
+  // var rowdatas = page_list_db.querySelectorAll("tbody tr");
+  // var OFF_number = headers.indexOf("→OFF");
+  // rowdatas.forEach(element =>{
+  //   datas = element.querySelectorAll("td");
+  //     for (let i =OFF_number ; i< datas.length; i++) {
+  //       element.style.display="none"
+  //     }
+  // })
+  
 }}
