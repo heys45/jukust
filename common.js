@@ -1,8 +1,9 @@
 setTimeout(timefunc,600);
 console.log("common.js")
 
-var db_areas= document.querySelectorAll(".notion-collection");
-var dbs =[];
+// データベースの集合と
+var dbs= document.querySelectorAll(".notion-collection");
+var dbs_arrays =[];
 
 function timefunc(){
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認","講師トップページ","講師スケジュール提出","講師シフト確定リスト","講師勤怠確認リスト","講師教室確認リスト","講師連絡確認リスト","講師プロフィール","講師よくある質問","講師シフト確定","講師勤怠確認","講師教室確認","講師連絡確認"];
@@ -55,5 +56,39 @@ img_area.appendChild(header_info);
 // #endregion　
 
 
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// 教室 or 講師　DBのフィルタリング処理　＋DBの配列処理
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+// page_listのデータ取得。
+ var page_list_db = document.querySelectorAll(".notion-collection-table")[0];
+ var page_list ={};
+ var headers = page_list_db.querySelectorAll("thead th");
+  headers.forEach(element =>{
+    page_list[element.innerHTML]=[];
+  })
+var rowdatas = page_list_db.querySelectorAll("tbody tr");
+  rowdatas.forEach(element =>{
+    datas = element.querySelectorAll("td");
+      for (let i =0 ; i< datas.length; i++) {
+        // データがない場合の処理
+        if(datas[i] ==null){
+          var data= null
+        }else{
+        // 二重スパンの場合
+          var data= datas[i].querySelectorAll("span span")[0].innerHTML;
+        } 
+        // 配列にデータを追加
+        page_list[headers[i].innerHTML].push(data);
+      }
+  })
+  // ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
+
+// page_listのページ名にリンクを挿入
+var page_list_as = page_list_db.querySelectorAll("tbody tr a");
+  page_list_as.forEach((element,index) =>{
+    element.setAttribute("href",page_list["URL"][index]);
+  })
 
 }}
