@@ -104,5 +104,8 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
         datas[i].style.display="none"
       }
   })
+  for (let i =OFF_number ; i< datas.length; i++) {
+    headers0[i].style.display="none"
+  }
   
 }}
