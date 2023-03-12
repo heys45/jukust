@@ -69,6 +69,7 @@ img_area.appendChild(header_info);
  var headers = []
   headers0.forEach(element =>{
     headers.push(element.innerHTML)
+    page_list[element.innerHTML] =[];
   })
   console.log(headers);
 var rowdatas = page_list_db.querySelectorAll("tbody tr");
