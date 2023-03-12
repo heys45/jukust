@@ -47,18 +47,19 @@ dbs[1]["日付"].forEach((element,index)=>{
   ele.getElementsByClassName("fd")[0].setAttribute("value",dbs[1]["日付"][index]);
   ele.getElementsByClassName("houkoku")[0].setAttribute("value","承認");
 
-  var submit_button = document.createElement("button");
-  submit_button.setAttribute("type","submit");
-  submit_button.innerHTML="勤務を承認する"
-  ele.appendChild(submit_button);
 
-  var form_iframe = document.createElement("iframe");
-  form_iframe.setAttribute("name","hidden_iframe");
-  form_iframe.setAttribute("id","hidden_iframe");
-  form_iframe.style.display="none";
-  ele.appendChild(form_iframe);
-  ele.setAttribute("method","post");
-  ele.setAttribute("target","hidden_iframe");
+  // var submit_button = document.createElement("button");
+  // submit_button.setAttribute("type","submit");
+  // submit_button.innerHTML="勤務を承認する"
+  // ele.appendChild(submit_button);
+
+  // var form_iframe = document.createElement("iframe");
+  // form_iframe.setAttribute("name","hidden_iframe");
+  // form_iframe.setAttribute("id","hidden_iframe");
+  // form_iframe.style.display="none";
+  // ele.appendChild(form_iframe);
+  // ele.setAttribute("method","post");
+  // ele.setAttribute("target","hidden_iframe");
 
   // フォームのラベル作成
   if(dbs[1]["開始時刻（変更申請）"][index]!=null)
@@ -74,23 +75,23 @@ dbs[1]["日付"].forEach((element,index)=>{
   ele.insertAdjacentHTML("afterbegin", kinmu_info );
 
   // 非表示プロパティの設定
-  const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku,.hosoku, .bosscheck");
-  death_prop.forEach(element=>{  element.style.display = 'none'; });
+  // const death_prop = ele.querySelectorAll(".teaid, .schid, .worid, .fd, .houkoku,.hosoku, .bosscheck");
+  // death_prop.forEach(element=>{  element.style.display = 'none'; });
 
   // フォームガイド出力
-  ele.getElementsByTagName("p")[0].style.paddingBottom="10px";
-  ele.getElementsByTagName("span")[0].style.fontWeight="bold";
-  ele.getElementsByTagName("span")[0].style.fontSize="18px";
-  ele.getElementsByTagName("span")[0].style.display="inline-block";
-  ele.getElementsByTagName("span")[0].style.paddingBottom="10px 0";
-  ele.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓変更が必要な場合のみ記入<br>出勤時間｜　" );
-  ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時　" );
-  ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", " 分 <br>" );
-  ele.getElementsByClassName("ft3")[0].insertAdjacentHTML("beforebegin", "退勤時間｜　" );
-  ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("beforebegin", " 時　" );
-  ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("afterend", " 分 <br>" );
-  ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("beforebegin", "休憩時間｜　" );
-  ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("afterend", " 分 <br>" );
+  // ele.getElementsByTagName("p")[0].style.paddingBottom="10px";
+  // ele.getElementsByTagName("span")[0].style.fontWeight="bold";
+  // ele.getElementsByTagName("span")[0].style.fontSize="18px";
+  // ele.getElementsByTagName("span")[0].style.display="inline-block";
+  // ele.getElementsByTagName("span")[0].style.paddingBottom="10px 0";
+  // ele.getElementsByClassName("ft1")[0].insertAdjacentHTML("beforebegin", "↓変更が必要な場合のみ記入<br>出勤時間｜　" );
+  // ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("beforebegin", " 時　" );
+  // ele.getElementsByClassName("ft2")[0].insertAdjacentHTML("afterend", " 分 <br>" );
+  // ele.getElementsByClassName("ft3")[0].insertAdjacentHTML("beforebegin", "退勤時間｜　" );
+  // ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("beforebegin", " 時　" );
+  // ele.getElementsByClassName("ft4")[0].insertAdjacentHTML("afterend", " 分 <br>" );
+  // ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("beforebegin", "休憩時間｜　" );
+  // ele.getElementsByClassName("ft5")[0].insertAdjacentHTML("afterend", " 分 <br>" );
 
 
   // 提出後の処理
