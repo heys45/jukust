@@ -10,10 +10,6 @@ var topguide =document.getElementById("マイページへようこそ").nextSibl
 // topguide.style.fontWeight="bolder";
 
 
-
-
-
-
 // 出力する場所を用意（quoteを指定）
 var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
 var form_area = document.createElement("div")
