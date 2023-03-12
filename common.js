@@ -1,6 +1,6 @@
 setTimeout(timefunc,1000);
 console.log("common.js")
-alert( "ページ名のリンク変更テスト1240" );
+alert( "ページ名のリンク変更テスト1246" );
 
 // データベースの集合と
 var dbs= document.querySelectorAll(".notion-collection");
@@ -92,6 +92,7 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
   // page_listのページ名にリンクを挿入
   var page_list_as = page_list_db.querySelectorAll("tbody tr a");
     page_list_as.forEach((element,index) =>{
+      element.setAttribute("id","block-"+page_list["URL"][index].replace(/^.*\//,""));
       element.setAttribute("href","https://jukuspot.com/"+page_list["URL"][index].replace(/^.*\//,""));
     })
   // page_listの→OFFを非表示に
