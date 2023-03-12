@@ -191,6 +191,68 @@ margin: 0px 0 20px 0 !important;
 /* #endregion */
 
 
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* フォームデザイン */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.form-wrapper{
+  border: solid 2px #555555;
+  width: 100%;
+}
+.form-header{
+  background-color: #34675C;
+  color: white;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-status{
+  background-color: white;
+  color: red;
+  border-radius: 15px;
+  padding: 3px 10px;
+}
+.form-info{
+  width: 100%;
+  padding: 5px 15px;
+}
+.form-inline{
+  width: 50%;
+  padding: 5px 15px;
+}
+.form-inline{
+  width: 100%;
+  padding: 5px 15px;
+}
+.form-none{
+  width: 100%;
+  padding: 5px 15px;
+  background-color: #393f42;
+}
+.form-block button{
+  border-radius: 6px;
+  margin:5px 0;
+  padding: 5px 30px;
+  font-weight: 600;
+  border:3px solid #17837c;
+}
+form button{
+  border-radius: 6px;
+  margin:10px 0;
+  padding: 5px 30px;
+  font-weight: 600;
+  background-color: #17837c;
+  border:none;
+  color:white;
+}
+textarea{
+  width: 100%;
+}
+
+
+
+
 
 
 
