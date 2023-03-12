@@ -54,5 +54,3 @@ for (let i=0; i< qblock_wrap.length; i++){
 }
 console.log("quoteリスト");
 console.log(qblock_object);
-
-
