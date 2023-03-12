@@ -1,6 +1,6 @@
 setTimeout(timefunc,1000);
 console.log("common.js")
-alert( "ページ名のリンク変更テスト1231" );
+alert( "ページ名のリンク変更テスト1235" );
 
 // データベースの集合と
 var dbs= document.querySelectorAll(".notion-collection");
