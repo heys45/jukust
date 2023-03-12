@@ -75,7 +75,7 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
     datas = element.querySelectorAll("td");
       for (let i =0 ; i< datas.length; i++) {
         // データがない場合の処理
-        if(datas[i] ==null){
+        if(datas[i].querySelectorAll("span")[0] ==null){
           var data= null
         }else{
         // 二重スパンの場合
