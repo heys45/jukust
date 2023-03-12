@@ -1,5 +1,6 @@
 setTimeout(timefunc,600);
 console.log("common.js")
+alert( "ページ名のリンク変更テスト" );
 
 // データベースの集合と
 var dbs= document.querySelectorAll(".notion-collection");
@@ -90,5 +91,7 @@ var page_list_as = page_list_db.querySelectorAll("tbody tr a");
   page_list_as.forEach((element,index) =>{
     element.setAttribute("href",page_list["URL"][index]);
   })
+
+alert( "ページ名のリンク変更完了" );
 
 }}
