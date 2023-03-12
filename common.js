@@ -95,14 +95,13 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
       element.setAttribute("href","https://jukuspot.com/"+page_list["URL"][index].replace(/^.*\//,""));
     })
   // page_listの→OFFを非表示に
-  alert(headers.indexOf("→OFF"));
-  // var rowdatas = page_list_db.querySelectorAll("tbody tr");
-  // var OFF_number = headers.indexOf("→OFF");
-  // rowdatas.forEach(element =>{
-  //   datas = element.querySelectorAll("td");
-  //     for (let i =OFF_number ; i< datas.length; i++) {
-  //       element.style.display="none"
-  //     }
-  // })
+  var rowdatas = page_list_db.querySelectorAll("tbody tr");
+  var OFF_number = headers.indexOf("→OFF");
+  rowdatas.forEach(element =>{
+    datas = element.querySelectorAll("td");
+      for (let i =OFF_number ; i< datas.length; i++) {
+        element.style.display="none"
+      }
+  })
   
 }}
