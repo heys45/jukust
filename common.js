@@ -100,7 +100,7 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
   rowdatas.forEach(element =>{
     datas = element.querySelectorAll("td");
       for (let i =OFF_number ; i< datas.length; i++) {
-        element.style.display="none"
+        datas[i].style.display="none"
       }
   })
   
