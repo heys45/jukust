@@ -1,4 +1,4 @@
-setTimeout(timefunc,600);
+setTimeout(timefunc,1000);
 console.log("common.js")
 alert( "ページ名のリンク変更テスト1200" );
 
