@@ -1,12 +1,71 @@
-setTimeout(timefunc,1000);
-console.log("common.js")
-alert( "ページ名のリンク変更テスト1246" );
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//ページ更新用のJS
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var old_url = window.location.href;
+
+var url_interval = setInterval(()=>{
+var new_url = window.location.href;
+if (old_url !=new_url){
+    window.location.href = window.location.href;
+    old_url = new_url;
+}},500)
+
+var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
+reload_btn.addEventListener('click', reload2);
+console.log("prop-search.js")
+
+function reload2() {
+  window.location.reload();
+}
+
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//プロパティの連想配列を作成する。
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var prop_object = {};
+const prop_wrap = document.querySelectorAll('.notion-page__property');
+for (let i=0; i< prop_wrap.length; i++){
+    const prop_name = prop_wrap[i].getElementsByTagName("span")[0].innerHTML;
+    var prop_value = null;
+        if(prop_wrap[i].querySelectorAll(".checked")[0] !=null){
+            prop_value = 1;
+        }
+        else if(prop_wrap[i].getElementsByTagName("span")[1] !=null){
+        if(prop_wrap[i].querySelectorAll("span span")[0]){
+            prop_value = prop_wrap[i].querySelectorAll("span span")[0].innerHTML;
+        }else{
+            prop_value = prop_wrap[i].getElementsByTagName("span")[1].innerHTML;
+        }
+    }
+    prop_object[prop_name] = prop_value;
+}
+console.log("プロパティリスト");
+console.log(prop_object);
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// テキストブロックの連想配列を作成する。
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+var qblock_object = {};
+const qblock_wrap = document.querySelectorAll('.notion-quote');
+for (let i=0; i< qblock_wrap.length; i++){
+    const qblock_name = qblock_wrap[i].getElementsByTagName("strong")[0].innerHTML;
+    qblock_wrap[i].setAttribute("id",qblock_name);
+    const qblock_value = document.getElementById(qblock_name);
+
+    qblock_object[qblock_name] = qblock_value;
+}
+console.log("quoteリスト");
+console.log(qblock_object);
+
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// ページごとの処理（共通処理）
+//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 // データベースの集合と
 var dbs= document.querySelectorAll(".notion-collection");
 var dbs_arrays =[];
 
-function timefunc(){
 var targets = ["教室トップページ","教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","教室プロフィール","教室よくある質問","教室シフト管理","教室勤怠管理","教室講師確認","教室連絡確認","講師トップページ","講師スケジュール提出","講師シフト確定リスト","講師勤怠確認リスト","講師教室確認リスト","講師連絡確認リスト","講師プロフィール","講師よくある質問","講師シフト確定","講師勤怠確認","講師教室確認","講師連絡確認"];
 if(targets.includes(prop_object["ページ表示名"])){
 document.getElementsByClassName("notion-column")[0].setAttribute("id","first-column");
@@ -111,4 +170,4 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
     headers0[i].style.display="none"
   }
   
-}}
+}
