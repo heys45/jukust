@@ -92,8 +92,11 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
   // page_listのページ名にリンクを挿入
   var page_list_as = page_list_db.querySelectorAll("tbody tr a");
     page_list_as.forEach((element,index) =>{
-      element.setAttribute("id","block-"+page_list["URL"][index].replace(/^.*\//,""));
-      element.setAttribute("href","https://jukuspot.com/"+page_list["URL"][index].replace(/^.*\//,""));
+      element.style.display="none"
+      var replace_a = document.createElement("a");
+      replace_a.innerHTML= page_list["名前"][index]
+      replace_a.setAttribute("href","https://jukuspot.com/"+page_list["URL"][index].replace(/^.*\//,""));
+      element.after(replace_a);
     })
   // page_listの→OFFを非表示に
   var rowdatas = page_list_db.querySelectorAll("tbody tr");
