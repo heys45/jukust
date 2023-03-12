@@ -89,7 +89,7 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
 // page_listのページ名にリンクを挿入
 var page_list_as = page_list_db.querySelectorAll("tbody tr a");
   page_list_as.forEach((element,index) =>{
-    element.setAttribute("href",page_list["URL"][index]);
+    element.setAttribute("href","https://jukuspot.com"+page_list["URL"][index].replace(/^.*\//,""));
   })
 
 alert( "ページ名のリンク変更完了" );
