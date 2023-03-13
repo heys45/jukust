@@ -205,7 +205,7 @@ remove_button.forEach((element,index)=>{
         wrap.querySelectorAll(".info12")[0].innerHTML= "勤務依頼時間　："+ wrap.querySelectorAll("f-time1")[0]+":"+ wrap.querySelectorAll("f-time2")[0]+"　〜　"+wrap.querySelectorAll("f-time3")[0]+":"+ wrap.querySelectorAll("f-time4")[0];
         wrap.querySelectorAll(".info13")[0].innerHTML= "休憩時間　　　："+ wrap.querySelectorAll("f-time5")[0]+"　分　";
         if(wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
-        wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll("f-hosoku")[0].value;
+        wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
         }else{
         wrap.querySelectorAll(".info14")[0].nextSibling.remove()
         wrap.querySelectorAll(".info14")[0].style.display="none";
