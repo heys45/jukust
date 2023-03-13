@@ -2,7 +2,6 @@ setTimeout(timefunc,500);
 
 function timefunc(){
 if(prop_object["ページ表示名"]==="講師シフト確定"){
-  alert("001")
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // シフトDBの情報取得  sf_list
