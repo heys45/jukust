@@ -94,6 +94,8 @@ days.forEach(element=>{
       wrap.querySelectorAll(".info4")[0].style.display="none";
       }
       wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
+      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
+      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
       wrap.querySelectorAll(".form-block")[0].style.display="block";
       wrap.querySelectorAll(".form-block")[1].style.display="block";
       wrap.querySelectorAll("form")[0].style.display="none";
@@ -142,6 +144,8 @@ days.forEach(element=>{
         wrap.querySelectorAll(".info4")[0].style.display="none";
       }
       wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
+      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
+      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
       wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
       wrap.querySelectorAll("form")[0].style.display="none";
     })

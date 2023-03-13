@@ -198,7 +198,7 @@ margin: 0px 0 20px 0 !important;
 .form-wrapper{
   border: solid 2px #555555;
   width: 100%;
-  margin: 5px 0 10px 0;
+  margin: 10px 0 15px 0;
 }
 .form-header{
   background-color: #17837c;
@@ -212,8 +212,8 @@ margin: 0px 0 20px 0 !important;
 .header-status{
   background-color: white;
   color: red;
-  border-radius: 15px;
-  padding: 3px 10px;
+  border-radius: 12px;
+  padding: 0px 15px;
 }
 .form-info{
   width: 100%;
@@ -229,7 +229,7 @@ form{
   width: 50%;
   padding: 5px 15px;
 }
-@media (max-width: 680px) { 
+@media (max-width: 1000px) { 
 .form-inline{
   width: 100%;
   padding: 5px 15px;
