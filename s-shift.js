@@ -115,7 +115,6 @@ days.forEach(element=>{
   wrap.querySelectorAll(".form-block")[1].style.display="none";
   wrap.querySelectorAll(".form-block")[2].style.display="none";
   wrap.querySelectorAll(".form-none")[0].style.display="none";
-  wrap.querySelectorAll("form .form-inline")[1].style.display="none";
 
   // スケジュールデータがあった場合の処理
   for (let index = 0; index < sc_list["日付"].length; index++) {
