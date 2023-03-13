@@ -104,7 +104,7 @@ days.forEach(element=>{
   form_area.insertAdjacentHTML("beforeend",form_copy);
   var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
   wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
-  wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
+  wrap.querySelectorAll(".header-status")[0].innerHTML= "シフト未申請" ;
   wrap.querySelectorAll("form .f-day")[0].value= element ;
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
   wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
