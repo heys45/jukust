@@ -40,16 +40,16 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
        // データがない場合の処理
        if(datas[i].querySelectorAll("span")[0] ==null){
          var data= null
+       }else if(datas[i].querySelectorAll("span span")[0] ==null){
+        var data= datas[i].querySelectorAll("span")[0].innerHTML;
        }else{
        // 二重スパンの場合
          var data= datas[i].querySelectorAll("span span")[0].innerHTML;
-       } 
+       }
        // 配列にデータを追加
        sc_list[headers[i]].push(data);
-     }
- })
+ }})
  console.log(sc_list);
- console.log("teest");
  // ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
 
 
