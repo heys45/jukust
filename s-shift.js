@@ -168,6 +168,16 @@ days.forEach((element,index)=>{
     }
 }) 
 
+// 変更ボタンプッシュ時の動作設定
+var change_button =document.querySelectorAll(".form-wrapper .change")
+change_button.forEach((element,index)=>{
+  element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index];
+      wrap.querySelectorAll("form")[0].style.display="flex";
+      wrap.querySelectorAll(".form-block")[2].style.display="none";
+  })
+})
+
 // 補足ボタンプッシュ時の動作設定
 var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
 form_button.forEach((element,index)=>{
@@ -178,15 +188,7 @@ form_button.forEach((element,index)=>{
   })
 })
 
-// 変更ボタンプッシュ時の動作設定
-  var change_button =document.querySelectorAll(".form-wrapper .change")
-  change_button.forEach((element,index)=>{
-    element.addEventListener('click',function(){
-        var wrap = document.querySelectorAll(".form-wrapper")[index];
-        wrap.querySelectorAll("form")[0].style.display="flex";
-        wrap.querySelectorAll(".form-block")[2].style.display="none";
-    })
-  })
+
 
 
 
