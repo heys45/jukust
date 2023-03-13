@@ -112,7 +112,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
   var submit_button = document.querySelectorAll("form button");
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
-      document.querySelectorAll(".form-wrapper .form-block:first-child")[index].insertAdjacentHTML("afterbegin",'<p>スケジュールの提出が完了しました</p><br>')
+      document.querySelectorAll(".info1")[index].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
       document.querySelectorAll(".info1")[index].innerHTML= "提出中のスケジュール："+ document.querySelectorAll(".f-kinmukahi")[index].innerHTML;
       if(document.querySelectorAll(".f-kinmukahi")[index].innerHTML == "一部勤務可能"){
         document.querySelectorAll(".info2")[index].innerHTML= "勤務可能時間：　"+ document.querySelectorAll(".f-time1")[index].innerHTML+"　〜　"+document.querySelectorAll(".f-time2")[index].innerHTML;
