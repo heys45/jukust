@@ -263,6 +263,7 @@ form{
 form button{
   border-radius: 6px;
   margin:10px 0;
+  margin-left: auto;
   padding: 5px 30px;
   font-weight: 600;
   background-color: #17837c;
