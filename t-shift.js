@@ -42,7 +42,7 @@ var rowdatas = sf_list_db.querySelectorAll("tbody tr");
 
 
 // 出力する場所を用意（quoteを指定）
-var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">X月X日(〜)</span><span class="header-status">ステータス</span></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeuyJMJUvwq_mNtJs-idijDrDUl8ko0zYcYVgkQ2ZPXsPErgA/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.463774100" class="f-day"><input type="text" name="entry.1985960195" class="f-oubo"><input type="text" name="entry.1904757408" class="f-kaiin"><input type="text" name="entry.1386472612" class="f-kaiin-name"><input type="text" name="entry.2090898669" class="f-school"><input type="text" name="entry.1323446715" class="f-school-name"></div><div class="form-inline"><span class="info11">依頼が来たシフト：講師回答前</span><br><span class="info14">補足備考：</span><br><p class="info15">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><div class="form-inline form-flex"><select name="entry.1776705296" class="f-kinmukahi"><option value="要選択">要選択</option><option value="勤務確定">勤務確定</option><option value="勤務不可">勤務不可</option><option value="調整希望">調整希望</option></select><button class="hosokukinyuu">補足記入</button><button type="submit">シフト依頼を確定</button></div><div class="form-block"><span>補足備考：</span><br><textarea name="entry.108034819" class="f-hosoku"></textarea></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
+var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">X月X日(〜)</span><span class="header-status">ステータス</span></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeuyJMJUvwq_mNtJs-idijDrDUl8ko0zYcYVgkQ2ZPXsPErgA/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.463774100" class="f-day"><input type="text" name="entry.1985960195" class="f-oubo"><input type="text" name="entry.1904757408" class="f-kaiin"><input type="text" name="entry.1386472612" class="f-kaiin-name"><input type="text" name="entry.2090898669" class="f-school"><input type="text" name="entry.1323446715" class="f-school-name"></div><div class="form-inline"><span class="info11">依頼が来たシフト：講師回答前</span><br><span class="info14">補足備考：</span><br><p class="info15">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><div class="form-inline form-flex"><select name="entry.1776705296" class="f-kinmukahi"><option value="要選択">要選択</option><option value="勤務確定">勤務確定</option><option value="勤務不可">勤務不可</option><option value="調整希望">調整希望</option></select><button class="hosokukinyuu">補足記入</button><button type="submit">シフト確定</button></div><div class="form-block"><span>補足備考：</span><br><textarea name="entry.108034819" class="f-hosoku"></textarea></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
 var area_target = document.getElementById("シフト確定の回答はこちらから").nextElementSibling;
 var form_area = document.createElement("div");
 area_target.after(form_area );
@@ -90,7 +90,7 @@ form_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
       var wrap = document.querySelectorAll(".form-wrapper")[index];
       element.style.display="none";
-      wrap.querySelectorAll("form .form-block")[2].style.display="block";
+      wrap.querySelectorAll("form .form-block")[0].style.display="block";
       element.style.display="none"
   })
 })
