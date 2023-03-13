@@ -123,11 +123,13 @@ days.forEach(element=>{
       if(sc_list["勤務可否"][index] == "一部勤務可能"){
       wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ sc_list["勤務可能時刻｜開始"][index]+"　〜　"+sc_list["勤務可能時刻｜終了"][index];
       }else{
+        wrap.querySelectorAll(".info2")[0].nextSibling.remove();
       wrap.querySelectorAll(".info2")[0].style.display="none";
       }
       if(sc_list["備考・補足"][index] !=null ){
       wrap.querySelectorAll(".info4")[0].innerHTML= sc_list["備考・補足"][index];
       }else{
+        wrap.querySelectorAll(".info3")[0].nextSibling.remove()
       wrap.querySelectorAll(".info3")[0].style.display="none";
       wrap.querySelectorAll(".info4")[0].style.display="none";
       }
@@ -150,6 +152,7 @@ days.forEach(element=>{
             if(sf_list["備考補足　シフト提出時"][index] !=null ){
             wrap.querySelectorAll(".info15")[0].innerHTML= sf_list["備考補足　シフト提出時"][index];
             }else{
+            wrap.querySelectorAll(".info14")[0].nextSibling.remove()
             wrap.querySelectorAll(".info14")[0].style.display="none";
             wrap.querySelectorAll(".info15")[0].style.display="none";
             }
