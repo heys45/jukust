@@ -172,9 +172,9 @@ days.forEach((element,index)=>{
 var change_button =document.querySelectorAll(".form-wrapper .change")
 change_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
-      var wrap = document.querySelectorAll(".form-wrapper")[index];
-      wrap.querySelectorAll("form")[0].style.display="flex";
-      wrap.querySelectorAll(".form-block")[2].style.display="none";
+      var wrap1 = document.querySelectorAll(".form-wrapper")[index];
+      wrap1.querySelectorAll("form")[0].style.display="flex";
+      wrap1.querySelectorAll(".form-block")[2].style.display="none";
   })
 })
 
@@ -182,9 +182,9 @@ change_button.forEach((element,index)=>{
 var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
 form_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
-      var wrap = document.querySelectorAll(".form-wrapper")[index];
-      wrap.querySelectorAll(".form-block")[2].style.display="none";
-      wrap.querySelectorAll("form .form-block")[0].style.display="block";
+      var wrap2 = document.querySelectorAll(".form-wrapper")[index];
+      wrap2.querySelectorAll(".form-block")[2].style.display="none";
+      wrap2.querySelectorAll("form .form-block")[0].style.display="block";
       element.style.display="none"
   })
 })
@@ -194,11 +194,11 @@ form_button.forEach((element,index)=>{
 var remove_button =document.querySelectorAll(".form-wrapper .remove")
 remove_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
-      var wrap = document.querySelectorAll(".form-wrapper")[index];
-      wrap.querySelectorAll("form")[0].style.display="flex";
-      wrap.querySelectorAll(".f-torikeshi")[0].value="true";
-      wrap.querySelectorAll("form .form-inline")[0].style.display="none";
-      wrap.querySelectorAll("form button")[1].innerHTML="シフト依頼を取り消す"
+      var wrap3 = document.querySelectorAll(".form-wrapper")[index];
+      wrap3.querySelectorAll("form")[0].style.display="flex";
+      wrap3.querySelectorAll(".f-torikeshi")[0].value="true";
+      wrap3.querySelectorAll("form .form-inline")[0].style.display="none";
+      wrap3.querySelectorAll("form button")[1].innerHTML="シフト依頼を取り消す"
   })
 })
 
@@ -206,18 +206,18 @@ remove_button.forEach((element,index)=>{
   var submit_button = document.querySelectorAll("form button");
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
-      var wrap = document.querySelectorAll(".form-wrapper")[index]  
-        wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+ wrap.querySelectorAll(".f-time1")[0]+":"+ wrap.querySelectorAll(".f-time2")[0]+" 〜 "+wrap.querySelectorAll(".f-time3")[0]+":"+ wrap.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap.querySelectorAll(".f-time5")[0]+" 分 ";
-        if(wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
-        wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
+      var wrap4 = document.querySelectorAll(".form-wrapper")[index]  
+        wrap4.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+ wrap4.querySelectorAll(".f-time1")[0]+":"+ wrap4.querySelectorAll(".f-time2")[0]+" 〜 "+wrap4.querySelectorAll(".f-time3")[0]+":"+ wrap4.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap4.querySelectorAll(".f-time5")[0]+" 分 ";
+        if(wrap4.querySelectorAll(".f-hosoku")[0].value !=null ){
+        wrap4.querySelectorAll(".info15")[0].innerHTML= wrap4.querySelectorAll(".f-hosoku")[0].value;
         }else{
-        wrap.querySelectorAll(".info14")[0].nextSibling.remove()
-        wrap.querySelectorAll(".info14")[0].style.display="none";
-        wrap.querySelectorAll(".info15")[0].style.display="none";
+        wrap4.querySelectorAll(".info14")[0].nextSibling.remove()
+        wrap4.querySelectorAll(".info14")[0].style.display="none";
+        wrap4.querySelectorAll(".info15")[0].style.display="none";
         }
-        wrap.querySelectorAll(".header-status")[0].innerHTML= "シフト依頼済み" ;
-      wrap.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
-      wrap.querySelectorAll("form")[0].style.display="none";
+        wrap4.querySelectorAll(".header-status")[0].innerHTML= "シフト依頼済み" ;
+      wrap4.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
+      wrap4.querySelectorAll("form")[0].style.display="none";
     })
   })
 
