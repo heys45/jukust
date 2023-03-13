@@ -16,7 +16,7 @@ for (let index = 0; index < 30; index++) {
   var day = formdate.getDate();
   var yobi= new Array("日","月","火","水","木","金","土");
   var key = year+"/"+month+"/"+day;//+"("+yobi[week]+")"
-  var key2 = month+"/"+day+"("+yobi[week]+")";
+  var key2 = month+"月"+day+"日("+yobi[week]+")";
   days.push(key);  days2.push(key2);
 }
 // #endregion
