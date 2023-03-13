@@ -112,7 +112,7 @@ days.forEach(element=>{
   wrap.querySelectorAll("form .f-school")[0].value= prop_object["教室ID"];
   wrap.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
   wrap.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
-  wrap.querySelectorAll(".form-block")[0].style.display="none";
+  wrap.querySelectorAll(".info1")[0].innerHTML= "講師スケジュール｜未回答"
   wrap.querySelectorAll(".form-block")[1].style.display="none";
   wrap.querySelectorAll(".form-block")[2].style.display="none";
   wrap.querySelectorAll(".form-none")[0].style.display="none";
@@ -129,7 +129,7 @@ days.forEach(element=>{
       if(sc_list["備考・補足"][index] !=null ){
       wrap.querySelectorAll(".info4")[0].innerHTML= sc_list["備考・補足"][index];
       }else{
-        wrap.querySelectorAll(".info3")[0].nextSibling.remove()
+      wrap.querySelectorAll(".info3")[0].nextSibling.remove()
       wrap.querySelectorAll(".info3")[0].style.display="none";
       wrap.querySelectorAll(".info4")[0].style.display="none";
       }
@@ -202,11 +202,6 @@ remove_button.forEach((element,index)=>{
       wrap.querySelectorAll("form .form-block")[1].style.display="none";
       wrap.querySelectorAll("form button")[0].innerHTML="シフト依頼を取り消す"
   })
-
-
-
-
-
 })
 
 // フォーム提出時の動作設定
