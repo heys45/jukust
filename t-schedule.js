@@ -125,6 +125,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
   var submit_button = document.querySelectorAll("form button");
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index]  
       document.querySelectorAll(".info1")[index].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
       document.querySelectorAll(".info1")[index].innerHTML= "提出中のスケジュール："+ document.querySelectorAll(".f-kinmukahi")[index].innerHTML;
       if(document.querySelectorAll(".f-kinmukahi")[index].innerHTML == "一部勤務可能"){
@@ -139,12 +140,8 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
         document.querySelectorAll(".info4")[index].style.display="none";
       }
       document.querySelectorAll(".form-wrapper .header-status")[index].innerHTML= "提出済" ;
-      document.querySelectorAll(".form-wrapper .form-block:first-child")[index].style.display="block";
+      wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
       document.querySelectorAll("form")[0].style.display="none";
-
-      document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
-      document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
-      document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
     })
 
 
