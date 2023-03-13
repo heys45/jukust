@@ -41,7 +41,7 @@ var rowdatas = sf_list_db.querySelectorAll("tbody tr");
 
 
 // 出力する場所を用意（quoteを指定）
-var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">X月X日(〜)</span><span class="header-status">ステータス</span></div><div class="form-block"><span class="info11">依頼が来たシフト：講師回答前</span><br><span class="info14">補足備考：</span><br><p class="info15">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeuyJMJUvwq_mNtJs-idijDrDUl8ko0zYcYVgkQ2ZPXsPErgA/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.463774100" class="f-day"><input type="text" name="entry.1985960195" class="f-oubo"><input type="text" name="entry.1904757408" class="f-kaiin"><input type="text" name="entry.1386472612" class="f-kaiin-name"><input type="text" name="entry.2090898669" class="f-school"><input type="text" name="entry.1323446715" class="f-school-name"></div><div class="form-inline form-flex"><select name="entry.1776705296" class="f-kinmukahi"><option value="要選択">要選択</option><option value="勤務確定">勤務確定</option><option value="勤務不可">勤務不可</option><option value="調整希望">調整希望</option></select><button class="hosokukinyuu">補足記入</button><button type="submit">シフト依頼を確定</button></div><div class="form-block"><span>補足備考：</span><br><textarea name="entry.108034819" class="f-hosoku"></textarea></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
+var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">X月X日(〜)</span><span class="header-status">ステータス</span></div><div class="form-block"><span class="info11">依頼が来たシフト：講師回答前</span><br><span class="info14">補足備考：</span><br><p class="info15">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeuyJMJUvwq_mNtJs-idijDrDUl8ko0zYcYVgkQ2ZPXsPErgA/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.463774100" class="f-day"><input type="text" name="entry.1985960195" class="f-oubo"><input type="text" name="entry.1904757408" class="f-kaiin"><input type="text" name="entry.1386472612" class="f-kaiin-name"><input type="text" name="entry.2090898669" class="f-school"><input type="text" name="entry.1323446715" class="f-school-name"></div><div class="form-block form-flex"><select name="entry.1776705296" class="f-kinmukahi"><option value="要選択">要選択</option><option value="勤務確定">勤務確定</option><option value="勤務不可">勤務不可</option><option value="調整希望">調整希望</option></select><button class="hosokukinyuu">補足記入</button><button type="submit">シフト依頼を確定</button></div><div class="form-block"><span>補足備考：</span><br><textarea name="entry.108034819" class="f-hosoku"></textarea></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
 var area_target = document.getElementById("シフト確定の回答はこちらから").nextElementSibling;
 var form_area = document.createElement("div");
 area_target.after(form_area );
@@ -65,13 +65,12 @@ sf_list["日付"].forEach((element,index)=>{
     wrap.querySelectorAll("form .form-block")[0].style.display="none";
     }else{
     // 回答済みの時
-    wrap.querySelectorAll(".info11")[0].innerHTML= "シフト依頼内容｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
+    wrap.querySelectorAll(".info11")[0].innerHTML=sf_list ["依頼への回答"][index]+ "シフト依頼内容｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
     wrap.querySelectorAll("form")[0].style.display="none";
     }
-
     if(sf_list["備考補足　シフト提出時"][index] !=null ){
     wrap.querySelectorAll(".info15")[0].innerHTML= sf_list["備考補足　シフト提出時"][index];
     }else{
@@ -83,35 +82,38 @@ sf_list["日付"].forEach((element,index)=>{
 })
 
 
-// // 補足ボタンプッシュ時の動作設定
-// var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
-// form_button.forEach((element,index)=>{
-//   element.addEventListener('click',function(){
-//       var wrap2 = document.querySelectorAll(".form-wrapper")[index];
-//       wrap2.querySelectorAll(".form-block")[2].style.display="none";
-//       wrap2.querySelectorAll("form .form-block")[0].style.display="block";
-//       element.style.display="none"
-//   })
-// })
+// 補足ボタンプッシュ時の動作設定
+var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
+form_button.forEach((element,index)=>{
+  element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index];
+      element.style.display="none";
+      wrap.querySelectorAll("form .form-block")[0].style.display="block";
+      element.style.display="none"
+  })
+})
 
-// // フォーム提出時の動作設定
-//   var submit_button = document.querySelectorAll("form").querySelectorAll("button")[1];
-//   submit_button.forEach((element,index)=>{
-//     element.addEventListener('click',function(){
-//       var wrap4 = document.querySelectorAll(".form-wrapper")[index]  
-//         wrap4.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+ wrap4.querySelectorAll(".f-time1")[0]+":"+ wrap4.querySelectorAll(".f-time2")[0]+" 〜 "+wrap4.querySelectorAll(".f-time3")[0]+":"+ wrap4.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap4.querySelectorAll(".f-time5")[0]+" 分 ";
-//         if(wrap4.querySelectorAll(".f-hosoku")[0].value !=null ){
-//         wrap4.querySelectorAll(".info15")[0].innerHTML= wrap4.querySelectorAll(".f-hosoku")[0].value;
-//         }else{
-//         wrap4.querySelectorAll(".info14")[0].nextSibling.remove()
-//         wrap4.querySelectorAll(".info14")[0].style.display="none";
-//         wrap4.querySelectorAll(".info15")[0].style.display="none";
-//         }
-//         wrap4.querySelectorAll(".header-status")[0].innerHTML= "シフト依頼済み" ;
-//       wrap4.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
-//       wrap4.querySelectorAll("form")[0].style.display="none";
-//     })
-//   })
+// フォーム提出時の動作設定
+  var submit_button = document.querySelectorAll("form").querySelectorAll("button")[1];
+  submit_button.forEach((element,index)=>{
+    element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index]  
+      // 回答済みの時
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("afterbegin", wrap.querySelectorAll(".f-kinmukahi")[0])+"｜";
+      wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
+      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
+      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
+      wrap.querySelectorAll("form")[0].style.display="none";
+      
+      if( wrap.querySelectorAll(".f-hosoku")[0] !=null ){
+      wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0];
+      }else{
+      wrap.querySelectorAll(".info14")[0].nextSibling.remove()
+      wrap.querySelectorAll(".info14")[0].style.display="none";
+      wrap.querySelectorAll(".info15")[0].style.display="none";
+      }
+      })
+  })
 
 
 
