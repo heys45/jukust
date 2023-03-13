@@ -141,7 +141,7 @@ days.forEach(element=>{
         wrap.querySelectorAll(".info3")[0].style.display="none";
         wrap.querySelectorAll(".info4")[0].style.display="none";
       }
-      wrap.querySelectorAll(".header-status")[index].innerHTML= "提出済" ;
+      wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
       wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
       wrap.querySelectorAll("form")[0].style.display="none";
     })
