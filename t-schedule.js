@@ -57,50 +57,51 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
 // フォーム表示設定代項目　3分
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-  // 出力する場所を用意（quoteを指定）
-  const form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">X月X日(〜)</span><span class="header-status">ステータス</span></div><div class="form-block"><span class="info1">提出中のスケジュール：勤務可否</span><br><span class="info2">勤務可能時間： 18:00〜22:00</span><br><span class="info3">補足備考：</span><br><p class="info4">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><div class="form-block"><button class="change">変更する</button></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerjsf4QByIyoK-hHQgZlY6j-7uKtvSylNAkc3AtFaBH0rlBw/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.747298616" class="f-day"><input type="text" name="entry.1173998301" class="f-kaiin"><input type="text" name="entry.372668424" class="f-kaiin-name"></div><div class="form-inline"><span>勤務可否：</span><select name="entry.1601652951" class="f-kinmukahi"><option value="要選択">要選択</option><option value="終日勤務可能">終日勤務可能</option><option value="一部勤務可能">一部勤務可能</option><option value="勤務不可">勤務不可</option><option value="調整中">調整中</option></select></div><div class="form-inline"><span>勤務可能時間：</span><select name="entry.1375913458" class="f-time1"><option value="要選択">要選択</option><option value="8:00">8:00</option><option value="8:30">8:30</option><option value="9:00">9:00</option><option value="9:30">9:30</option><option value="10:00">10:00</option><option value="10:30">10:30</option><option value="11:00">11:00</option><option value="11:30">11:30</option><option value="12:00">12:00</option><option value="12:30">12:30</option><option value="13:00">13:00</option><option value="13:30">13:30</option><option value="14:00">14:00</option><option value="14:30">14:30</option><option value="15:00">15:00</option><option value="15:30">15:30</option><option value="16:00">16:00</option><option value="16:30">16:30</option><option value="17:00">17:00</option><option value="17:30">17:30</option><option value="18:00">18:00</option><option value="18:30">18:30</option><option value="19:00">19:00</option><option value="19:30">19:30</option><option value="20:00">20:00</option><option value="20:30">20:30</option><option value="21:00">21:00</option><option value="21:30">21:30</option><option value="22:00">22:00</option></select><span>〜</span><select name="entry.988321615" class="f-time2"><option value="要選択">要選択</option><option value="8:00">8:00</option><option value="8:30">8:30</option><option value="9:00">9:00</option><option value="9:30">9:30</option><option value="10:00">10:00</option><option value="10:30">10:30</option><option value="11:00">11:00</option><option value="11:30">11:30</option><option value="12:00">12:00</option><option value="12:30">12:30</option><option value="13:00">13:00</option><option value="13:30">13:30</option><option value="14:00">14:00</option><option value="14:30">14:30</option><option value="15:00">15:00</option><option value="15:30">15:30</option><option value="16:00">16:00</option><option value="16:30">16:30</option><option value="17:00">17:00</option><option value="17:30">17:30</option><option value="18:00">18:00</option><option value="18:30">18:30</option><option value="19:00">19:00</option><option value="19:30">19:30</option><option value="20:00">20:00</option><option value="20:30">20:30</option><option value="21:00">21:00</option><option value="21:30">21:30</option><option value="22:00">22:00</option></select></div><div class="form-block"><span>補足備考：</span><br><textarea name="entry.1701006954" class="f-hosoku"></textarea></div><div class="form-block"><button type="submit">スケジュールを提出する</button></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
-  var area_target = document.getElementById("スケジュール提出はこちらから").nextElementSibling;
+// 出力する場所を用意（quoteを指定）
+const form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">X月X日(〜)</span><span class="header-status">ステータス</span></div><div class="form-block"><span class="info1">提出中のスケジュール：勤務可否</span><br><span class="info2">勤務可能時間： 18:00〜22:00</span><br><span class="info3">補足備考：</span><br><p class="info4">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><div class="form-block"><button class="change">変更する</button></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSerjsf4QByIyoK-hHQgZlY6j-7uKtvSylNAkc3AtFaBH0rlBw/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.747298616" class="f-day"><input type="text" name="entry.1173998301" class="f-kaiin"><input type="text" name="entry.372668424" class="f-kaiin-name"></div><div class="form-inline"><span>勤務可否：</span><select name="entry.1601652951" class="f-kinmukahi"><option value="要選択">要選択</option><option value="終日勤務可能">終日勤務可能</option><option value="一部勤務可能">一部勤務可能</option><option value="勤務不可">勤務不可</option><option value="調整中">調整中</option></select></div><div class="form-inline"><span>勤務可能時間：</span><select name="entry.1375913458" class="f-time1"><option value="要選択">要選択</option><option value="8:00">8:00</option><option value="8:30">8:30</option><option value="9:00">9:00</option><option value="9:30">9:30</option><option value="10:00">10:00</option><option value="10:30">10:30</option><option value="11:00">11:00</option><option value="11:30">11:30</option><option value="12:00">12:00</option><option value="12:30">12:30</option><option value="13:00">13:00</option><option value="13:30">13:30</option><option value="14:00">14:00</option><option value="14:30">14:30</option><option value="15:00">15:00</option><option value="15:30">15:30</option><option value="16:00">16:00</option><option value="16:30">16:30</option><option value="17:00">17:00</option><option value="17:30">17:30</option><option value="18:00">18:00</option><option value="18:30">18:30</option><option value="19:00">19:00</option><option value="19:30">19:30</option><option value="20:00">20:00</option><option value="20:30">20:30</option><option value="21:00">21:00</option><option value="21:30">21:30</option><option value="22:00">22:00</option></select><span>〜</span><select name="entry.988321615" class="f-time2"><option value="要選択">要選択</option><option value="8:00">8:00</option><option value="8:30">8:30</option><option value="9:00">9:00</option><option value="9:30">9:30</option><option value="10:00">10:00</option><option value="10:30">10:30</option><option value="11:00">11:00</option><option value="11:30">11:30</option><option value="12:00">12:00</option><option value="12:30">12:30</option><option value="13:00">13:00</option><option value="13:30">13:30</option><option value="14:00">14:00</option><option value="14:30">14:30</option><option value="15:00">15:00</option><option value="15:30">15:30</option><option value="16:00">16:00</option><option value="16:30">16:30</option><option value="17:00">17:00</option><option value="17:30">17:30</option><option value="18:00">18:00</option><option value="18:30">18:30</option><option value="19:00">19:00</option><option value="19:30">19:30</option><option value="20:00">20:00</option><option value="20:30">20:30</option><option value="21:00">21:00</option><option value="21:30">21:30</option><option value="22:00">22:00</option></select></div><div class="form-block"><span>補足備考：</span><br><textarea name="entry.1701006954" class="f-hosoku"></textarea></div><div class="form-block"><button type="submit">スケジュールを提出する</button></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
+var area_target = document.getElementById("スケジュール提出はこちらから").nextElementSibling;
 
-  var form_area = document.createElement("div");
-  area_target.after(form_area );
+var form_area = document.createElement("div");
+area_target.after(form_area );
 
-  // フォーム作成ループ
-  days.forEach(element=>{
-    form_area.insertAdjacentHTML("beforeend",form_copy);
-    var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
-    wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
-    wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
-    wrap.querySelectorAll("form .f-day")[0].value= element ;
-    wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
-    wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
-    wrap.querySelectorAll(".form-block")[0].style.display="none";
-    wrap.querySelectorAll(".form-block")[1].style.display="none";
-    wrap.querySelectorAll(".form-none")[0].style.display="none";
-    wrap.querySelectorAll("form .form-inline")[1].style.display="none";
+// フォーム作成ループ
+days.forEach(element=>{
+  form_area.insertAdjacentHTML("beforeend",form_copy);
+  var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
+  wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
+  wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
+  wrap.querySelectorAll("form .f-day")[0].value= element ;
+  wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
+  wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
+  wrap.querySelectorAll(".form-block")[0].style.display="none";
+  wrap.querySelectorAll(".form-block")[1].style.display="none";
+  wrap.querySelectorAll(".form-none")[0].style.display="none";
+  wrap.querySelectorAll("form .form-inline")[1].style.display="none";
 
-    // 提出データがあった場合の処理
-    for (let index = 0; index < sc_list["日付"].length; index++) {
-      if(sc_list["日付"][index] == element){
-        wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ sc_list["勤務可否"][index];
-        if(sc_list["勤務可否"][index] == "一部勤務可能"){
-        wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ sc_list["勤務可能時刻｜開始"][index]+"　〜　"+sc_list["勤務可能時刻｜終了"][index];
-        }else{
-        wrap.querySelectorAll(".info2")[0].style.display="none";
-        }
-        if(sc_list["備考・補足"][index] !=null ){
-        wrap.querySelectorAll(".info4")[0].innerHTML= sc_list["備考・補足"][index];
-        }else{
-        wrap.querySelectorAll(".info3")[0].style.display="none";
-        wrap.querySelectorAll(".info4")[0].style.display="none";
-        }
-        wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
-        wrap.querySelectorAll(".form-block")[0].style.display="block";
-        wrap.querySelectorAll(".form-block")[1].style.display="block";
-        wrap.querySelectorAll("form")[0].style.display="none";
+  // 提出データがあった場合の処理
+  for (let index = 0; index < sc_list["日付"].length; index++) {
+    if(sc_list["日付"][index] == element){
+      wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ sc_list["勤務可否"][index];
+      if(sc_list["勤務可否"][index] == "一部勤務可能"){
+      wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ sc_list["勤務可能時刻｜開始"][index]+"　〜　"+sc_list["勤務可能時刻｜終了"][index];
+      }else{
+      wrap.querySelectorAll(".info2")[0].style.display="none";
       }
+      if(sc_list["備考・補足"][index] !=null ){
+      wrap.querySelectorAll(".info4")[0].innerHTML= sc_list["備考・補足"][index];
+      }else{
+      wrap.querySelectorAll(".info3")[0].style.display="none";
+      wrap.querySelectorAll(".info4")[0].style.display="none";
+      }
+      wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
+      wrap.querySelectorAll(".form-block")[0].style.display="block";
+      wrap.querySelectorAll(".form-block")[1].style.display="block";
+      wrap.querySelectorAll("form")[0].style.display="none";
     }
-  })
+  }
+})
 
+// ステータスボタン変更時の動作設定
   var kinmukahi =document.querySelectorAll(".f-kinmukahi")
   kinmukahi.forEach((element,index)=>{
     element.addEventListener('change',function(){
@@ -113,6 +114,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     })
   })
 
+// 変更ボタンプッシュ時の動作設定
   var change_button =document.querySelectorAll(".form-wrapper .change")
   change_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
@@ -121,7 +123,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     })
   })
 
-
+// フォーム提出時の動作設定
   var submit_button = document.querySelectorAll("form button");
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
