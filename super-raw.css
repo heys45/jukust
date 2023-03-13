@@ -264,6 +264,7 @@ form button{
 .hosokukinyuu{
   background-color: #777777;
   font-size: 16px;
+  font-weight: normal;
 }
 textarea{
   width: 100%;
