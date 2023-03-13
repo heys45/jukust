@@ -14,7 +14,7 @@ document.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+pro
 document.querySelectorAll("form .f-school")[0].value= prop_object["教室ID"];
 document.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
 document.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
-document.querySelectorAll("form .f-day")[0].value= "日付自動";
+document.querySelectorAll("form .f-day")[0].value= "2023/3/23";
 document.querySelectorAll("form .f-torikeshi")[0].value= "取り消し情報";
 
 
