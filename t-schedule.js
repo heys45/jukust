@@ -19,6 +19,37 @@ for (let index = 0; index < 30; index++) {
   days.push(key)
 }
 
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// 教室 or 講師　DBのフィルタリング処理　＋DBの配列処理
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// sc_listのデータ取得。
+var sc_list_db = document.querySelectorAll(".notion-collection-table")[1];
+var sc_list ={};
+var headers0 = sc_list_db.querySelectorAll("thead th");
+var headers = []
+ headers0.forEach(element =>{
+   headers.push(element.innerHTML)
+   sc_list[element.innerHTML] =[];
+ })
+ console.log(headers);
+var rowdatas = sc_list_db.querySelectorAll("tbody tr");
+ rowdatas.forEach(element =>{
+   datas = element.querySelectorAll("td");
+     for (let i =0 ; i< datas.length; i++) {
+       // データがない場合の処理
+       if(datas[i].querySelectorAll("span")[0] ==null){
+         var data= null
+       }else{
+       // 二重スパンの場合
+         var data= datas[i].querySelectorAll("span span")[0].innerHTML;
+       } 
+       // 配列にデータを追加
+       sc_list[headers[i]].push(data);
+     }
+ })
+ console.log(sc_list);
+ // ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
+
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // フォーム表示設定代項目　3分
@@ -32,10 +63,14 @@ for (let index = 0; index < 30; index++) {
   area_target.after(form_area );
 
   days.forEach(element=>{
-    form_area.appendChild(form_copy);
+    form_area.insertAdjacentHTML("beforeend",form_copy);
     var wrap =document.querySelectorAll(".form-wrapper").slice(-1)[0];
     wrap.querySelectorAll("form .f-day")[0].value= element ;
+
   })
+
+
+
 
 
 
