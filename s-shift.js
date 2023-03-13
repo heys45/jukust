@@ -183,13 +183,11 @@ var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
 form_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
       var wrap = document.querySelectorAll(".form-wrapper")[index];
+      wrap.querySelectorAll(".form-block")[2].style.display="none";
       wrap.querySelectorAll("form .form-block")[0].style.display="block";
       element.style.display="none"
   })
 })
-
-
-
 
 
 // 変更ボタンプッシュ時の動作設定
@@ -199,9 +197,8 @@ remove_button.forEach((element,index)=>{
       var wrap = document.querySelectorAll(".form-wrapper")[index];
       wrap.querySelectorAll("form")[0].style.display="flex";
       wrap.querySelectorAll(".f-torikeshi")[0].value="true";
-      wrap.querySelectorAll("form .form-block")[0].style.display="none";
-      wrap.querySelectorAll("form .form-block")[1].style.display="none";
-      wrap.querySelectorAll("form button")[0].innerHTML="シフト依頼を取り消す"
+      wrap.querySelectorAll("form .form-inline")[0].style.display="none";
+      wrap.querySelectorAll("form button")[1].innerHTML="シフト依頼を取り消す"
   })
 })
 
