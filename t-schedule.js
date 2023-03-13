@@ -86,6 +86,7 @@ days.forEach(element=>{
       wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ sc_list["勤務可能時刻｜開始"][index]+"　〜　"+sc_list["勤務可能時刻｜終了"][index];
       }else{
       wrap.querySelectorAll(".info2")[0].style.display="none";
+      
       }
       if(sc_list["備考・補足"][index] !=null ){
       wrap.querySelectorAll(".info4")[0].innerHTML= sc_list["備考・補足"][index];
@@ -143,16 +144,21 @@ hosokukinyuu.forEach((element,index)=>{
   submit_button.forEach((element,index)=>{
 
     element.addEventListener('click',function(e){
+
+      // バリデーション処理
       e.preventDefault();
       var wrap = document.querySelectorAll(".form-wrapper")[index];
       console.log(wrap);
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "要選択"){
-        alert("必要な値を設定してください。");
-      }else {
-        document.querySelectorAll("form")[index].submit();}
+        alert("勤務可否を設定してください。");
+      }else if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"&&wrap.querySelectorAll(".f-time1")[0].value == "要選択"){
+        alert("勤務可能な時間を設定してください。");
+      }else if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"&&wrap.querySelectorAll(".f-time2")[0].value == "要選択"){
+        alert("勤務可能な時間を設定してください。");
+      }else{
+        document.querySelectorAll("form")[index].submit();
 
-
-
+      // そう申請講師の処理
       wrap.querySelectorAll(".info1")[0].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
       wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"){
@@ -171,7 +177,7 @@ hosokukinyuu.forEach((element,index)=>{
       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
       wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
       wrap.querySelectorAll("form")[0].style.display="none";
-    })
+    }})
   })
 
 
