@@ -68,14 +68,31 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     form_area.insertAdjacentHTML("beforeend",form_copy);
     var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
     wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
+    wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
     wrap.querySelectorAll("form .f-day")[0].value= element ;
+    wrap.querySelectorAll("form-block")[0].style.display="none";
+    wrap.querySelectorAll("form-block")[1].style.display="none";
 
-    var list_index =null;
     for (let index = 0; index < sc_list["日付"].length; index++) {
-      if(sc_list["日付"][index] == element){list_index = index}
+      if(sc_list["日付"][index] == element){
+        wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ sc_list["勤務可否"][index];
+        if(sc_list["勤務可否"][index] == "一部勤務可能"){
+        wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ sc_list["勤務可能時刻｜開始"][index]+"　〜　"+sc_list["勤務可能時刻｜終了"][index];
+        }else{
+        wrap.querySelectorAll(".info2")[0].style.display="none";
+        }
+        if(sc_list["備考・補足"][index] !=null ){
+        wrap.querySelectorAll(".info4")[0].innerHTML= sc_list["備考・補足"][index];
+        }else{
+        wrap.querySelectorAll(".info3")[0].style.display="none";
+        wrap.querySelectorAll(".info4")[0].style.display="none";
+        }
+        wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
+        wrap.querySelectorAll("form-block")[0].style.display="block";
+        wrap.querySelectorAll("form-block")[1].style.display="block";
+        wrap.querySelectorAll("form")[0].style.display="none";
+      }
     }
-    console.log(element);
-    console.log(list_index);
   
   })
 
