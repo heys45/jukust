@@ -204,7 +204,7 @@ remove_button.forEach((element,index)=>{
 })
 
 // フォーム提出時の動作設定
-  var submit_button = document.querySelectorAll("form button:nth-child(2)");
+  var submit_button = document.querySelectorAll("form").querySelectorAll("button")[1];
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
       var wrap4 = document.querySelectorAll(".form-wrapper")[index]  
