@@ -20,7 +20,7 @@ if(prop_object["ページ表示名"]==="講師スケジュール提出"){
     document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
     document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
     document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
-  });}
+  })
 
 
 // //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
