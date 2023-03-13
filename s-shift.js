@@ -144,9 +144,9 @@ days.forEach((element,index)=>{
     for (let index = 0; index < sf_list["日付"].length; index++) {
         if(sf_list["日付"][index] == element){
             if(sf_list["依頼への回答"][index]!=null){
-            wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+sf_list["依頼への回答"][index]+"｜"+ wrap.querySelectorAll(".f-time1")[0]+":"+ wrap.querySelectorAll(".f-time2")[0]+" 〜 "+wrap.querySelectorAll(".f-time3")[0]+":"+ wrap.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap.querySelectorAll(".f-time5")[0]+" 分 ";
+            wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+sf_list["依頼への回答"][index]+"｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
             }else{
-            wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+"講師回答前｜"+ wrap.querySelectorAll(".f-time1")[0]+":"+ wrap.querySelectorAll(".f-time2")[0]+" 〜 "+wrap.querySelectorAll(".f-time3")[0]+":"+ wrap.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap.querySelectorAll(".f-time5")[0]+" 分 ";
+            wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+"講師回答前｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
             }
             if(sf_list["備考補足　シフト提出時"][index] !=null ){
             wrap.querySelectorAll(".info15")[0].innerHTML= sf_list["備考補足　シフト提出時"][index];
