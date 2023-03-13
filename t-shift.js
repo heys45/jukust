@@ -88,7 +88,7 @@ form_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
       var wrap = document.querySelectorAll(".form-wrapper")[index];
       element.style.display="none";
-      wrap.querySelectorAll("form .form-block")[0].style.display="block";
+      wrap.querySelectorAll("form .form-block")[1].style.display="block";
       element.style.display="none"
   })
 })
