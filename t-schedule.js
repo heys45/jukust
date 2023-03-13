@@ -140,8 +140,9 @@ hosokukinyuu.forEach((element,index)=>{
 
   var submit_button = document.querySelectorAll("form button:nth-child(2)");
   submit_button.forEach((element,index)=>{
-    element.addEventListener('click',function(e){
 
+    element.addEventListener('click',function(e){
+      e.preventDefault();
       var wrap = document.querySelectorAll(".form-wrapper")[index];
       console.log(wrap);
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "要選択"){
