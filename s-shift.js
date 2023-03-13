@@ -61,7 +61,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region
 // sf_listのデータ取得。
-var sf_list_db = document.querySelectorAll(".notion-collection-table")[1];
+var sf_list_db = document.querySelectorAll(".notion-collection-table")[2];
 var sf_list ={};
 var headers0 = sf_list_db.querySelectorAll("thead th");
 var headers = []
