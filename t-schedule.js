@@ -142,8 +142,7 @@ hosokukinyuu.forEach((element,index)=>{
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(e){
       e.preventDefault();
-      var wrap = document.querySelectorAll(".form-wrapper")[index]  
-
+      var wrap = document.querySelectorAll(".form-wrapper")[index];
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "要選択"){
         alert("必要な値を設定してください。");
       }else {
