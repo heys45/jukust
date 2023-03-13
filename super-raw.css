@@ -218,10 +218,23 @@ margin: 0px 0 20px 0 !important;
   width: 100%;
   padding: 5px 15px;
 }
+
+.form{
+  display: flex !important;
+  flex-wrap:wrap;
+}
+
 .form-inline{
   width: 50%;
   padding: 5px 15px;
 }
+@media (max-width: 680px) { 
+.form-inline{
+  width: 100%;
+  padding: 5px 15px;
+}
+}
+
 .form-block{
   width: 100%;
   padding: 5px 15px;
