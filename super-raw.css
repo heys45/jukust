@@ -203,17 +203,21 @@ margin: 0px 0 20px 0 !important;
 .form-header{
   background-color: #17837c;
   color: white;
-  padding: 5px 15px;
+  padding: 7px 15px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+.header-day{
+  margin:0 20px ;
 }
 .header-status{
   background-color: white;
   color: red;
   border-radius: 12px;
   padding: 0px 15px;
+  margin:0 20px ;
 }
 .form-info{
   width: 100%;
