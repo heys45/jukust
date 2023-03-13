@@ -17,7 +17,8 @@ for (let index = 0; index < 30; index++) {
   var day = formdate.getDate();
   var yobi= new Array("日","月","火","水","木","金","土");
   var key = year+"/"+month+"/"+day;//+"("+yobi[week]+")"
-  days.push(key)
+  var key2 =month+"/"+day+"("+yobi[week]+")"
+  days.push(key);  days2.push(key2);
 }
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -64,10 +65,10 @@ var form_area = document.createElement("div");
 area_target.after(form_area );
 
 // フォーム作成ループ
-days.forEach(element=>{
+days.forEach((element,index)=>{
   form_area.insertAdjacentHTML("beforeend",form_copy);
   var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
-  wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
+  wrap.querySelectorAll(".header-day")[0].innerHTML= days2[index] ;
   wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
   wrap.querySelectorAll("form .f-day")[0].value= element ;
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
