@@ -29,10 +29,10 @@ for (let index = 0; index < 30; index++) {
   var area_target = document.getElementById("スケジュール提出はこちらから").nextElementSibling;
 
   var form_area = document.createElement("div");
-  area_target.insertAdjacentHTML("afterend", form_area );
+  area_target.after(form_area );
 
   days.forEach(element=>{
-    area_target.appendChild(form_copy)
+    form_area.appendChild(form_copy);
     var wrap =document.querySelectorAll(".form-wrapper").slice(-1)[0];
     wrap.querySelectorAll("form .f-day")[0].value= element ;
   })
