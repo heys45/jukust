@@ -138,7 +138,7 @@ hosokukinyuu.forEach((element,index)=>{
 // フォーム提出時の動作設定
 
 
-  var submit_button = document.querySelectorAll("form button:nth-child(2)");
+  var submit_button = document.querySelectorAll("form .form-block button");
   console.log(submit_button);
   submit_button.forEach((element,index)=>{
 
