@@ -204,7 +204,7 @@ remove_button.forEach((element,index)=>{
 })
 
 // フォーム提出時の動作設定
-  var submit_button = document.querySelectorAll("form")[0].querySelectorAll("button")[1];
+  var submit_button = document.querySelectorAll("form .form-flex button")[0];
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
       var wrap4 = document.querySelectorAll(".form-wrapper")[index]  
