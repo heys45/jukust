@@ -58,7 +58,7 @@ sf_list["日付"].forEach((element,index)=>{
   wrap.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
   wrap.querySelectorAll(".form-none")[0].style.display="none";
 
-  if(sf_list["依頼への回答"][index]!=null){
+  if(sf_list["依頼への回答"][index]==null){
     wrap.querySelectorAll(".info11")[0].innerHTML= "依頼がきたシフト｜"+sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
     wrap.querySelectorAll("form .form-block")[0].style.display="none";
