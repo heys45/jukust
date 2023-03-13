@@ -267,7 +267,9 @@ textarea{
   width: 100%;
 }
 
-
+.info1,.info11{
+  font-weight: bolder;
+}
 
 
 
