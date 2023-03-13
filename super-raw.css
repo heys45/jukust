@@ -273,6 +273,9 @@ form button{
   border:none;
   color:white;
 }
+.hosokukinyuu{
+  background-color: #777777;
+}
 textarea{
   width: 100%;
 }
