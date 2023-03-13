@@ -103,7 +103,7 @@ form_button.forEach((element,index)=>{
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "要選択"){
         alert("勤務可否を設定してください。");
       }else{
-      
+      document.querySelectorAll("form")[index].submit();
       // 回答済みの時
       wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("afterbegin", wrap.querySelectorAll(".f-kinmukahi")[0].value)+"｜";
       wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
