@@ -10,12 +10,10 @@ topguide.style.fontWeight="bolder";
 
 // 出力する場所を用意（quoteを指定）
 var kintai_area1 = document.createElement("div");
-kintai_area1.setAttribute("id","test");
 var kintai_area2 = document.createElement("div");
 var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
-area_target.insertAdjacentHTML("afterend", kintai_area1 );
-var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
-area_target.nextElementSibling.insertAdjacentHTML("afterend", kintai_area2 );
+area_target.after(kintai_area1);
+kintai_area1.after(kintai_area2);
 
 
 // 出勤フォームを挿入
