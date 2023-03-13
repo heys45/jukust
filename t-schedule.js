@@ -101,7 +101,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     }
   })
 
-  var kinmukahi =document.querySelectorAll(".kinmukahi")
+  var kinmukahi =document.querySelectorAll(".f-kinmukahi")
   kinmukahi.forEach((element,index)=>{
     element.addEventListener('change',function(){
       var wrap = document.querySelectorAll(".form-wrapper")[index]
