@@ -254,9 +254,10 @@ form{
 .form-block button{
   border-radius: 6px;
   margin:5px 20px 5px 0;
-  padding: 5px 30px;
+  padding: 3px 20px;
+  font-size: 14px;
   font-weight: 600;
-  border:3px solid #17837c;
+  border:2px solid #17837c;
 }
 form button{
   border-radius: 6px;
