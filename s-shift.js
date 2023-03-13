@@ -159,6 +159,7 @@ days.forEach(element=>{
             wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
             wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
             }
+            wrap.querySelectorAll(".form-block")[1].style.display="block";
             wrap.querySelectorAll(".form-block")[2].style.display="block";
             wrap.querySelectorAll("form")[0].style.display="none";
         }
