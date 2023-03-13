@@ -70,6 +70,8 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
     wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
     wrap.querySelectorAll("form .f-day")[0].value= element ;
+    wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
+    wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
     wrap.querySelectorAll(".form-block")[0].style.display="none";
     wrap.querySelectorAll(".form-block")[1].style.display="none";
 
@@ -101,8 +103,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
 
 
 
-  // wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
-  // wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
+
   var submit_button = document.querySelectorAll("form button")[0];
   submit_button.addEventListener('click',function(){
     if(document.querySelectorAll("form .f-kinmukahi")[0].value=="要選択"){
