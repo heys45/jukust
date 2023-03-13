@@ -160,11 +160,11 @@ hosokukinyuu.forEach((element,index)=>{
 
       // そう申請講師の処理
       wrap.querySelectorAll(".info1")[0].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
-      wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
+      wrap.querySelectorAll(".info1")[0].innerHTML= "提出スケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"){
-        wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ wrap.querySelectorAll(".f-time1")[0].value+"　〜　"+wrap.querySelectorAll(".f-time2")[0].value;
-      }else{
-        wrap.querySelectorAll(".info2")[0].style.display="none";
+        wrap.querySelectorAll(".info1")[0].innerHTML= "提出スケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value+"｜"+wrap.querySelectorAll(".f-time1")[0].value+"　〜　"+wrap.querySelectorAll(".f-time2")[0].value;
+      }else if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "終日勤務可能"){
+        wrap.querySelectorAll(".info1")[0].innerHTML= "提出スケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value+"｜8:00 〜 23:00";
       }
       if(wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
         wrap.querySelectorAll(".info4")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
