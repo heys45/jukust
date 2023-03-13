@@ -227,8 +227,10 @@ margin: 0px 0 20px 0 !important;
 }
 .form-none{
   width: 100%;
+  color:#aaaaaa;
   padding: 5px 15px;
-  background-color: #393f42;
+  background-color:#aaaaaa;
+  font-size: 12px;
 }
 .form-block button{
   border-radius: 6px;
