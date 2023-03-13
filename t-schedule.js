@@ -8,7 +8,7 @@ if(prop_object["ページ表示名"]==="講師スケジュール提出"){
 // //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region 【共通】スケ提出とシフト管理は同じ　直近30日のフォーム用意
 const formdate =new Date();
-var days = [];
+var days = [];var days2 = [];
 for (let index = 0; index < 30; index++) {
   formdate.setDate(formdate.getDate() + 1);
   var year = formdate.getFullYear();
