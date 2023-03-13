@@ -5,8 +5,6 @@ setTimeout(timefunc,500);
 function timefunc(){
 if(prop_object["ページ表示名"]==="教室講師確認"){
 
-  console.assertlog("ピンチ");
-
 
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   // テーブル埋め
@@ -47,9 +45,6 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
           var key = header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].innerHTML;
             if(prop_object[key] !=null){ //空バリュー（notion_prop）エラー処理
               var value =prop_object[key];
-              console.log(value);
-              var value = value.replace(/1/,"✅ 指導可"); 
-              var value = value.replace(/0/,"-"); 
               var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
               a_target.textContent = value;
             }//空バリュー（notion_prop）エラー処理
