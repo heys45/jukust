@@ -75,7 +75,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
     wrap.querySelectorAll(".form-block")[0].style.display="none";
     wrap.querySelectorAll(".form-block")[1].style.display="none";
-    wrap.querySelectorAll(".form-none")[1].style.display="none";
+    wrap.querySelectorAll(".form-none")[0].style.display="none";
 
     // 提出データがあった場合の処理
     for (let index = 0; index < sc_list["日付"].length; index++) {
