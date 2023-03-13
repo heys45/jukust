@@ -157,7 +157,7 @@ days.forEach(element=>{
             if(sf_list["依頼への回答"][index]=="勤務確定"){
             wrap.querySelectorAll(".header-status")[0].innerHTML= "シフト確定済み" ;
             wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
-            wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
+            wrap.querySelectorAll(".header-status")[0].style.color = "white" ;
             }
             wrap.querySelectorAll(".form-block")[1].style.display="block";
             wrap.querySelectorAll(".form-block")[2].style.display="block";
