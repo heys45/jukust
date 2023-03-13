@@ -85,18 +85,18 @@ dbs[2]["日付"].forEach((element,index)=>{
   ele2.getElementsByClassName("fd")[0].setAttribute("value",dbs[2]["日付"][index]);
   ele2.getElementsByClassName("houkoku")[0].setAttribute("value","退勤");
 
-  var submit_button = document.createElement("button");
-  submit_button.setAttribute("type","submit");
-  submit_button.innerHTML="退勤報告する"
-  ele2.appendChild(submit_button);
+  // var submit_button = document.createElement("button");
+  // submit_button.setAttribute("type","submit");
+  // submit_button.innerHTML="退勤報告する"
+  // ele2.appendChild(submit_button);
 
-  var form_iframe = document.createElement("iframe");
-  form_iframe.setAttribute("name","hidden_iframe");
-  form_iframe.setAttribute("id","hidden_iframe");
-  form_iframe.style.display="none";
-  ele2.appendChild(form_iframe);
-  ele2.setAttribute("method","post");
-  ele2.setAttribute("target","hidden_iframe");
+  // var form_iframe = document.createElement("iframe");
+  // form_iframe.setAttribute("name","hidden_iframe");
+  // form_iframe.setAttribute("id","hidden_iframe");
+  // form_iframe.style.display="none";
+  // ele2.appendChild(form_iframe);
+  // ele2.setAttribute("method","post");
+  // ele2.setAttribute("target","hidden_iframe");
 
   // フォームのラベル作成
   var kinmu_info ="<p>"+dbs[2]["日付"][index]+"｜"+dbs[2]["開始時刻"][index]+"〜"+dbs[2]["終了時刻"][index]+"</p>";
