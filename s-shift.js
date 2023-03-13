@@ -116,6 +116,7 @@ days.forEach(element=>{
   wrap.querySelectorAll(".form-block")[1].style.display="none";
   wrap.querySelectorAll(".form-block")[2].style.display="none";
   wrap.querySelectorAll(".form-none")[0].style.display="none";
+  wrap.querySelectorAll("form .form-block")[0].style.display="none";
 
   // スケジュールデータがあった場合の処理
   for (let index = 0; index < sc_list["日付"].length; index++) {
@@ -168,6 +169,16 @@ days.forEach(element=>{
     }
 }) 
 
+// 補足ボタンプッシュ時の動作設定
+var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
+form_button.forEach((element,index)=>{
+  element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index];
+      wrap.querySelectorAll("form .form-block")[0].style.display="block";
+      element.style.display="none"
+  })
+})
+
 // 変更ボタンプッシュ時の動作設定
   var change_button =document.querySelectorAll(".form-wrapper .change")
   change_button.forEach((element,index)=>{
@@ -177,6 +188,9 @@ days.forEach(element=>{
         wrap.querySelectorAll(".form-block")[2].style.display="none";
     })
   })
+
+
+
 // 変更ボタンプッシュ時の動作設定
 var remove_button =document.querySelectorAll(".form-wrapper .remove")
 remove_button.forEach((element,index)=>{
