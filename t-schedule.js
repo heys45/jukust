@@ -70,8 +70,8 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
     wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
     wrap.querySelectorAll("form .f-day")[0].value= element ;
-    wrap.querySelectorAll("form-block")[0].style.display="none";
-    wrap.querySelectorAll("form-block")[1].style.display="none";
+    wrap.querySelectorAll(".form-block")[0].style.display="none";
+    wrap.querySelectorAll(".form-block")[1].style.display="none";
 
     for (let index = 0; index < sc_list["日付"].length; index++) {
       if(sc_list["日付"][index] == element){
@@ -88,8 +88,8 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
         wrap.querySelectorAll(".info4")[0].style.display="none";
         }
         wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
-        wrap.querySelectorAll("form-block")[0].style.display="block";
-        wrap.querySelectorAll("form-block")[1].style.display="block";
+        wrap.querySelectorAll(".form-block")[0].style.display="block";
+        wrap.querySelectorAll(".form-block")[1].style.display="block";
         wrap.querySelectorAll("form")[0].style.display="none";
       }
     }
