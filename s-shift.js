@@ -8,8 +8,25 @@ var form_copy = '<div class="form-wrapper"><div class="form-header"><span class=
 var area_target = document.getElementById("シフト申請はこちらから").nextElementSibling;
 area_target.insertAdjacentHTML("afterend", form_copy );
 
+//基礎情報を入力
+document.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
+document.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
+document.querySelectorAll("form .f-school")[0].value= prop_object["教室ID"];
+document.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
+document.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
+document.querySelectorAll("form .f-day")[0].value= "日付自動";
+document.querySelectorAll("form .f-torikeshi")[0].value= "取り消し情報";
 
 
+var submit_button = document.querySelectorAll("form button")[0];
+submit_button.addEventListener('click',function(){
+  document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
+  document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
+  document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
+  document.querySelectorAll("form .f-time3")[0].selectedIndex = 0;
+  document.querySelectorAll("form .f-time4")[0].selectedIndex = 0;
+  document.querySelectorAll("form .f-time5")[0].selectedIndex = 0;
+})
 
 
 //     //DB書き換え処理
