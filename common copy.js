@@ -157,54 +157,7 @@ function page_list_view() {
 
 
 
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// プログレスバーの設定
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// #region　プログレスバーの設定
 
-if(document.getElementById("スポットバイトの流れ")!=null){
-  var progress_wrapper =document.createElement("div");
-  progress_wrapper.setAttribute("id","progress-wrapper")
-  document.getElementById("スポットバイトの流れ").after(progress_wrapper);
-  document.getElementById("progress-wrapper").innerHTML=''+
-  '<ul class="progressbar">'+
-  '<li id="li-schedule" class="">ｽｹｼﾞｭｰﾙ<br>提出</li>'+
-    '<li id="li-request" class="">シフト<br>ﾘｸｴｽﾄ</li>'+
-    '<li id="li-confirm" class="">シフト<br>確定</li>'+
-    '<li id="li-attendance" class="">勤務<br>報告</li>'+
-    '<li id="li-payment" class="">給与<br>振込</li>'+
-  '</ul>';
-  
-  var targets = ["講師スケジュール提出"];
-  if(targets.includes(prop_object["ページ表示名"])){
-    document.getElementsByClassName("progressbar")[0].style.display="flex";
-    document.getElementById('li-schedule').setAttribute("class","active");
-  }
-  var targets = ["教室シフト管理リスト","教室シフト管理"];
-  if(targets.includes(prop_object["ページ表示名"])){
-    document.getElementsByClassName("progressbar")[0].style.display="flex";
-    document.getElementById('li-schedule').setAttribute("class","complete");
-    document.getElementById('li-request').setAttribute("class","active");
-  }
-  var targets = ["講師シフト確定リスト","講師シフト確定"];
-  if(targets.includes(prop_object["ページ表示名"])){
-    document.getElementsByClassName("progressbar")[0].style.display="flex";
-    document.getElementById('li-schedule').setAttribute("class","complete");
-    document.getElementById('li-request').setAttribute("class","complete");
-    document.getElementById('li-confirm').setAttribute("class","active");
-  }
-  var targets = ["教室トップページ","教室勤怠確認リスト","教室勤怠確認","講師トップページ","講師勤怠確認リスト","講師勤怠確認"];
-  if(targets.includes(prop_object["ページ表示名"])){
-    document.getElementsByClassName("progressbar")[0].style.display="flex";
-    document.getElementById('li-schedule').setAttribute("class","complete");
-    document.getElementById('li-request').setAttribute("class","complete");
-    document.getElementById('li-confirm').setAttribute("class","complete");
-    document.getElementById('li-attendance').setAttribute("class","active");
-  }
-  }
-
-
-// #endregion
 
 
 var targets = ["教室シフト管理","講師スケジュール提出"];
