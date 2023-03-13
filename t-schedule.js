@@ -12,6 +12,7 @@ if(prop_object["ページ表示名"]==="講師スケジュール提出"){
   var area_target = document.getElementById("スケジュール提出はこちらから").nextElementSibling;
   area_target.insertAdjacentHTML("afterend", form_copy );
 
+  document.querySelectorAll("form .f-day")[0].value= "2023/3/23";
   document.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
   document.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
 
