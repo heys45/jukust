@@ -132,8 +132,8 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
       }else{
         document.querySelectorAll(".info2")[index].style.display="none";
       }
-      if(document.querySelectorAll(".hosoku")[index].innerHTML !=null ){
-        document.querySelectorAll(".info4")[index].innerHTML= document.querySelectorAll(".hosoku")[index].innerHTML;
+      if(document.querySelectorAll(".f-hosoku")[index].value !=null ){
+        document.querySelectorAll(".info4")[index].innerHTML= document.querySelectorAll(".f-hosoku")[index].value;
       }else{
         document.querySelectorAll(".info3")[index].style.display="none";
         document.querySelectorAll(".info4")[index].style.display="none";
