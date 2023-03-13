@@ -68,6 +68,14 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     form_area.insertAdjacentHTML("beforeend",form_copy);
     var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
     wrap.querySelectorAll("form .f-day")[0].value= element ;
+
+    var list_index =null;
+    for (let index = 0; index < sc_list["日付"].length; index++) {
+      if(sc_list["日付"][index] == element){list_index = index}
+    }
+    console.log(element);
+    console.log(list_index);
+  
   })
 
 
