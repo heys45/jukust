@@ -170,7 +170,7 @@ hosokukinyuu.forEach((element,index)=>{
       wrap.querySelectorAll(".info1")[0].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
       wrap.querySelectorAll(".info1")[0].innerHTML= "提出スケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"){
-        wrap.querySelectorAll(".info1")[0].innerHTML= "提出スケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value+"｜"+wrap.querySelectorAll(".f-time1")[0].value+"　〜　"+wrap.querySelectorAll(".f-time2")[0].value;
+        wrap.querySelectorAll(".info1")[0].innerHTML= "提出スケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value+"｜"+wrap.querySelectorAll(".f-time1")[0].value+" 〜 "+wrap.querySelectorAll(".f-time2")[0].value;
       }else if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "終日勤務可能"){
         wrap.querySelectorAll(".info1")[0].innerHTML= "提出スケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value+"｜8:00 〜 22:00";
       }
