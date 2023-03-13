@@ -190,14 +190,14 @@ form_button.forEach((element,index)=>{
 })
 
 
-// 変更ボタンプッシュ時の動作設定
+// 取り消しボタンプッシュ時の動作設定
 var remove_button =document.querySelectorAll(".form-wrapper .remove")
 remove_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
       var wrap3 = document.querySelectorAll(".form-wrapper")[index];
       wrap3.querySelectorAll("form")[0].style.display="flex";
       wrap3.querySelectorAll(".f-torikeshi")[0].value="true";
-      wrap1.querySelectorAll(".form-block")[2].style.display="none";
+      wrap3.querySelectorAll(".form-block")[2].style.display="none";
       wrap3.querySelectorAll("form .form-inline")[0].style.display="none";
       wrap3.querySelectorAll("form button")[1].innerHTML="シフト依頼を取り消す"
   })
