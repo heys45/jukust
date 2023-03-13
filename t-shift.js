@@ -61,12 +61,12 @@ sf_list["日付"].forEach((element,index)=>{
 
   if(sf_list["依頼への回答"][index]==null){
     // 未回答の時
-    wrap.querySelectorAll(".info11")[0].innerHTML= "シフト依頼内容｜"+sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
+    wrap.querySelectorAll(".info11")[0].innerHTML= "シフト内容｜"+sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
     wrap.querySelectorAll("form .form-block")[0].style.display="none";
     }else{
     // 回答済みの時
-    wrap.querySelectorAll(".info11")[0].innerHTML=sf_list ["依頼への回答"][index]+ "｜シフト依頼内容｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
+    wrap.querySelectorAll(".info11")[0].innerHTML=sf_list ["依頼への回答"][index]+ "｜シフト内容｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
