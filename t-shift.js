@@ -99,6 +99,7 @@ form_button.forEach((element,index)=>{
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(e){
       e.preventDefault();
+      var wrap = document.querySelectorAll(".form-wrapper")[index];
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "要選択"){
         alert("勤務可否を設定してください。");
       }else{
