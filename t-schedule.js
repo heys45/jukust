@@ -109,17 +109,36 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
   })
 
 
+  var submit_button = document.querySelectorAll("form button");
+  submit_button.forEach((element,index)=>{
+    element.addEventListener('click',function(){
+      document.querySelectorAll(".form-wrapper .form-block:first-child")[index].insertAdjacentHTML("afterbegin",'<p>スケジュールの提出が完了しました</p><br>')
+      document.querySelectorAll(".info1")[index].innerHTML= "提出中のスケジュール："+ document.querySelectorAll(".f-kinmukahi")[index].innerHTML;
+      if(document.querySelectorAll(".f-kinmukahi")[index].innerHTML == "一部勤務可能"){
+        document.querySelectorAll(".info2")[index].innerHTML= "勤務可能時間：　"+ document.querySelectorAll(".f-time1")[index].innerHTML+"　〜　"+document.querySelectorAll(".f-time2")[index].innerHTML;
+      }else{
+        document.querySelectorAll(".info2")[index].style.display="none";
+      }
+      if(document.querySelectorAll(".hosoku")[index].innerHTML !=null ){
+        document.querySelectorAll(".info4")[index].innerHTML= document.querySelectorAll(".hosoku")[index].innerHTML;
+      }else{
+        document.querySelectorAll(".info3")[index].style.display="none";
+        document.querySelectorAll(".info4")[index].style.display="none";
+      }
+      document.querySelectorAll(".form-wrapper .header-status")[index].innerHTML= "提出済" ;
+      document.querySelectorAll(".form-wrapper .form-block:first-child")[index].style.display="block";
+      document.querySelectorAll("form")[0].style.display="none";
+
+      document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
+      document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
+      document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
+    })
 
 
-  var submit_button = document.querySelectorAll("form button")[0];
-  submit_button.addEventListener('click',function(){
-    if(document.querySelectorAll("form .f-kinmukahi")[0].value=="要選択"){
-      document.querySelectorAll("form .f-kinmukahi")[0].after("選択してください")
-    }
-    document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
-    document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
-    document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
+
+
   })
+
 
 
 

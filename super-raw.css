@@ -204,6 +204,7 @@ margin: 0px 0 20px 0 !important;
   background-color: #34675C;
   color: white;
   padding: 5px 15px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -219,8 +220,8 @@ margin: 0px 0 20px 0 !important;
   padding: 5px 15px;
 }
 
-.form{
-  display: flex !important;
+form{
+  display: flex;
   flex-wrap:wrap;
 }
 
