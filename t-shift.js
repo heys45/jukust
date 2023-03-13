@@ -49,8 +49,7 @@ area_target.after(form_area );
 sf_list["日付"].forEach((element,index)=>{
   form_area.insertAdjacentHTML("beforeend",form_copy);
   var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
-
-  wrap.querySelectorAll(".header-day")[0].innerHTML= sf_list["日付"] ;
+  wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
   wrap.querySelectorAll("form .f-day")[0].value= element ;
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
   wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
@@ -64,7 +63,7 @@ sf_list["日付"].forEach((element,index)=>{
     wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
     wrap.querySelectorAll("form .form-block")[0].style.display="none";
     }else{
-    wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+"講師回答前｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
+    wrap.querySelectorAll(".info11")[0].innerHTML= "依頼がきたシフト｜"+"講師回答前｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
