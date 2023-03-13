@@ -7,7 +7,7 @@ if(prop_object["ページ表示名"]==="教室シフト管理"){
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region 【共通】スケ提出とシフト管理は同じ　直近30日のフォーム用意
 const formdate =new Date();
-var days = [];
+var days = [];var days2 = [];
 for (let index = 0; index < 30; index++) {
   formdate.setDate(formdate.getDate() + 1);
   var year = formdate.getFullYear();
@@ -16,7 +16,8 @@ for (let index = 0; index < 30; index++) {
   var day = formdate.getDate();
   var yobi= new Array("日","月","火","水","木","金","土");
   var key = year+"/"+month+"/"+day;//+"("+yobi[week]+")"
-  days.push(key)
+  var key2 = month+"/"+day;+"("+yobi[week]+")"
+  days.push(key);  days2.push(key2);
 }
 // #endregion
 
@@ -101,10 +102,10 @@ var form_area = document.createElement("div");
 area_target.after(form_area );
 
 // フォーム作成ループ
-days.forEach(element=>{
+days.forEach((element,index)=>{
   form_area.insertAdjacentHTML("beforeend",form_copy);
   var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
-  wrap.querySelectorAll(".header-day")[0].innerHTML= element ;
+  wrap.querySelectorAll(".header-day")[0].innerHTML= days2[index] ;
   wrap.querySelectorAll(".header-status")[0].innerHTML= "シフト未申請" ;
   wrap.querySelectorAll("form .f-day")[0].value= element ;
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
