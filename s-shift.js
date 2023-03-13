@@ -189,33 +189,33 @@ remove_button.forEach((element,index)=>{
       wrap.querySelectorAll("form .form-block")[1].style.display="none";
       wrap.querySelectorAll("form button")[0].innerHTML="シフト依頼を取り消す"
   })
+
+
+
+
+
 })
 
-// // フォーム提出時の動作設定
-//   var submit_button = document.querySelectorAll("form button");
-//   submit_button.forEach((element,index)=>{
-//     element.addEventListener('click',function(){
-//       var wrap = document.querySelectorAll(".form-wrapper")[index]  
-//       wrap.querySelectorAll(".info1")[0].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
-//       wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
-//       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"){
-//         wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ wrap.querySelectorAll(".f-time1")[0].value+"　〜　"+wrap.querySelectorAll(".f-time2")[0].value;
-//       }else{
-//         wrap.querySelectorAll(".info2")[0].style.display="none";
-//       }
-//       if(wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
-//         wrap.querySelectorAll(".info4")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
-//       }else{
-//         wrap.querySelectorAll(".info3")[0].style.display="none";
-//         wrap.querySelectorAll(".info4")[0].style.display="none";
-//       }
-//       wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
-//       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
-//       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
-//       wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
-//       wrap.querySelectorAll("form")[0].style.display="none";
-//     })
-//   })
+// フォーム提出時の動作設定
+  var submit_button = document.querySelectorAll("form button");
+  submit_button.forEach((element,index)=>{
+    element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index]  
+        wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト：";
+        wrap.querySelectorAll(".info12")[0].innerHTML= "勤務依頼時間　："+ wrap.querySelectorAll("f-time1")[0]+":"+ wrap.querySelectorAll("f-time2")[0]+"　〜　"+wrap.querySelectorAll("f-time3")[0]+":"+ wrap.querySelectorAll("f-time4")[0];
+        wrap.querySelectorAll(".info13")[0].innerHTML= "休憩時間　　　："+ wrap.querySelectorAll("f-time5")[0]+"　分　";
+        if(wrap.querySelectorAll("f-hosoku")[0].value !=null ){
+        wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll("f-hosoku")[0].value;
+        }else{
+        wrap.querySelectorAll(".info14")[0].nextSibling.remove()
+        wrap.querySelectorAll(".info14")[0].style.display="none";
+        wrap.querySelectorAll(".info15")[0].style.display="none";
+        }
+        wrap.querySelectorAll(".header-status")[0].innerHTML= "シフト依頼済み" ;
+      wrap.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
+      wrap.querySelectorAll("form")[0].style.display="none";
+    })
+  })
 
 
 
