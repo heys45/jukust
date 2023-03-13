@@ -234,13 +234,12 @@ form{
   width: 50%;
   padding: 5px 15px;
 }
-@media (max-width: 1000px) { 
+@media (max-width: 680px) { 
 .form-inline{
-  width: 100%;
+  display: inline-block;
   padding: 5px 15px;
 }
 }
-
 .form-block{
   width: 100%;
   padding: 5px 15px;
