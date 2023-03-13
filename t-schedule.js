@@ -141,7 +141,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
       }
       document.querySelectorAll(".form-wrapper .header-status")[index].innerHTML= "提出済" ;
       wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
-      document.querySelectorAll("form")[0].style.display="none";
+      wrap.querySelectorAll("form")[0].style.display="none";
     })
 
 
