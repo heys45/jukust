@@ -11,7 +11,7 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
   //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
   // 2行テーブルのデータ通常挿入
-  var row2_table = document.querySelectorAll("#table-1,#table-2,#table-3,#table-4,#table-10,#table-11");
+  var row2_table = document.querySelectorAll(".notion-table");
   row2_table.forEach(element=>{
     var header = element.querySelectorAll("tr")[0].querySelectorAll("td");
     var target = element.querySelectorAll("tr")[1].querySelectorAll("td");
