@@ -228,9 +228,10 @@ element.addEventListener('click',function(e){
 
 
 // フォーム提出時の動作設定
-  var submit_button = document.querySelectorAll("form .form-flex button")[0];
+  var submit_button = document.querySelectorAll("form .form-flex button");
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(e){
+      // バリデーション
       e.preventDefault();
       var wrap4 = document.querySelectorAll(".form-wrapper")[index]  
       if(wrap.querySelectorAll(".f-time1")[0].value == "--" ||wrap.querySelectorAll(".f-time2")[0].value == "--"||wrap.querySelectorAll(".f-time3")[0].value == "--" ||wrap.querySelectorAll(".f-time4")[0].value == "--"||wrap.querySelectorAll(".f-time1")[0].value == "--" ||wrap.querySelectorAll(".f-time5")[0].value == "--"){
@@ -238,10 +239,7 @@ element.addEventListener('click',function(e){
       }else{
         document.querySelectorAll("form")[index].submit();
       }
-
-
-
-
+      // 送信時処理
         wrap4.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+ wrap4.querySelectorAll(".f-time1")[0]+":"+ wrap4.querySelectorAll(".f-time2")[0]+" 〜 "+wrap4.querySelectorAll(".f-time3")[0]+":"+ wrap4.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap4.querySelectorAll(".f-time5")[0]+" 分 ";
         if(wrap4.querySelectorAll(".f-hosoku")[0].value !=null ){
         wrap4.querySelectorAll(".info15")[0].innerHTML= wrap4.querySelectorAll(".f-hosoku")[0].value;
