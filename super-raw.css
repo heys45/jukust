@@ -231,7 +231,7 @@ form{
 }
 
 .form-inline{
-  width: 50%;
+  display: inline-block;
   padding: 5px 15px;
 }
 @media (max-width: 680px) { 
@@ -261,7 +261,6 @@ form{
 }
 form button{
   border-radius: 6px;
-  margin:10px 0;
   margin-left: auto;
   padding: 5px 30px;
   font-weight: 600;
