@@ -2,6 +2,7 @@ setTimeout(timefunc,300);
 function timefunc(){
 if(prop_object["ページ表示名"]==="講師スケジュール提出"){
 
+
 // //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // // フォーム作成用の　日付ラ作成 　　何もしなくてOK
 // //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -48,6 +49,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
      }
  })
  console.log(sc_list);
+ console.log("teest");
  // ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
 
 
