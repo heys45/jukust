@@ -240,18 +240,6 @@ days.forEach(element=>{
 
 
 
-var submit_button = document.querySelectorAll("form button")[0];
-submit_button.addEventListener('click',function(){
-  document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
-  document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
-  document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
-  document.querySelectorAll("form .f-time3")[0].selectedIndex = 0;
-  document.querySelectorAll("form .f-time4")[0].selectedIndex = 0;
-  document.querySelectorAll("form .f-time5")[0].selectedIndex = 0;
-})
-
-
-
 
 
 
