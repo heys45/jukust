@@ -217,7 +217,7 @@ remove_button.forEach((element,index)=>{
       }else{
         document.querySelectorAll("form")[index].submit();
       // 送信時処理
-        wrap4.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+ wrap4.querySelectorAll(".f-time1")[0]+":"+ wrap4.querySelectorAll(".f-time2")[0]+" 〜 "+wrap4.querySelectorAll(".f-time3")[0]+":"+ wrap4.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap4.querySelectorAll(".f-time5")[0]+" 分 ";
+        wrap4.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+ wrap4.querySelectorAll(".f-time1")[0].value+":"+ wrap4.querySelectorAll(".f-time2")[0].value+" 〜 "+wrap4.querySelectorAll(".f-time3")[0].value+":"+ wrap4.querySelectorAll(".f-time4")[0].value+"｜休憩時間："+ wrap4.querySelectorAll(".f-time5")[0].value+" 分 ";
         if(wrap4.querySelectorAll(".f-hosoku")[0].value !=null ){
         wrap4.querySelectorAll(".info15")[0].innerHTML= wrap4.querySelectorAll(".f-hosoku")[0].value;
         }else{
