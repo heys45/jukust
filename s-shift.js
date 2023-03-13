@@ -226,6 +226,8 @@ remove_button.forEach((element,index)=>{
         wrap4.querySelectorAll(".info15")[0].style.display="none";
         }
         wrap4.querySelectorAll(".header-status")[0].innerHTML= "シフト依頼済み" ;
+        wrap4.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
+        wrap4.querySelectorAll(".header-status")[0].style.color = "white" ;
       wrap4.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
       wrap4.querySelectorAll("form")[0].style.display="none";}
     })
