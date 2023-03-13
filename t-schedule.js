@@ -27,8 +27,24 @@ if(prop_object["ページ表示名"]==="講師スケジュール提出"){
 // //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // // フォームボックスの作成①　日付ラベル作成 　　何もしなくてOK
 // //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// // #region 【共通】スケ提出とシフト管理は同じ　直近30日のフォーム用意
-// const formdate =new Date();
+// #region 【共通】スケ提出とシフト管理は同じ　直近30日のフォーム用意
+const formdate =new Date();
+var days = [];
+for (let index = 0; index < 30; index++) {
+  formdate.setDate(formdate.getDate() + 1);
+  var year = formdate.getFullYear();
+  var month = formdate.getMonth()+1;
+  var week = formdate.getDay();
+  var day = formdate.getDate();
+  var yobi= new Array("日","月","火","水","木","金","土");
+  var key = year+"/"+month+"/"+day+"("+yobi[week]+")";
+  days.push(key)
+}
+console.log(days)
+
+
+
+
 // forms.forEach((element,index) =>{
 //   // 挿入する日付を用意（明日以降）
 //   formdate.setDate(formdate.getDate() + 1);
