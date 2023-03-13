@@ -176,53 +176,53 @@ days.forEach(element=>{
     }
 })
 
-// ステータスボタン変更時の動作設定
-  var kinmukahi =document.querySelectorAll(".f-kinmukahi")
-  kinmukahi.forEach((element,index)=>{
-    element.addEventListener('change',function(){
-      var wrap = document.querySelectorAll(".form-wrapper")[index]
-      if(element.value=="一部勤務可能"){
-        wrap.querySelectorAll("form .form-inline")[1].style.display="inline-block";
-      }else{
-        wrap.querySelectorAll("form .form-inline")[1].style.display="none";
-      }
-    })
-  })
+// // ステータスボタン変更時の動作設定
+//   var kinmukahi =document.querySelectorAll(".f-kinmukahi")
+//   kinmukahi.forEach((element,index)=>{
+//     element.addEventListener('change',function(){
+//       var wrap = document.querySelectorAll(".form-wrapper")[index]
+//       if(element.value=="一部勤務可能"){
+//         wrap.querySelectorAll("form .form-inline")[1].style.display="inline-block";
+//       }else{
+//         wrap.querySelectorAll("form .form-inline")[1].style.display="none";
+//       }
+//     })
+//   })
 
-// 変更ボタンプッシュ時の動作設定
-  var change_button =document.querySelectorAll(".form-wrapper .change")
-  change_button.forEach((element,index)=>{
-    element.addEventListener('click',function(){
-      document.querySelectorAll(".form-wrapper form")[index].style.display="flex";
-      element.style.display="none";
-    })
-  })
+// // 変更ボタンプッシュ時の動作設定
+//   var change_button =document.querySelectorAll(".form-wrapper .change")
+//   change_button.forEach((element,index)=>{
+//     element.addEventListener('click',function(){
+//       document.querySelectorAll(".form-wrapper form")[index].style.display="flex";
+//       element.style.display="none";
+//     })
+//   })
 
-// フォーム提出時の動作設定
-  var submit_button = document.querySelectorAll("form button");
-  submit_button.forEach((element,index)=>{
-    element.addEventListener('click',function(){
-      var wrap = document.querySelectorAll(".form-wrapper")[index]  
-      wrap.querySelectorAll(".info1")[0].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
-      wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
-      if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"){
-        wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ wrap.querySelectorAll(".f-time1")[0].value+"　〜　"+wrap.querySelectorAll(".f-time2")[0].value;
-      }else{
-        wrap.querySelectorAll(".info2")[0].style.display="none";
-      }
-      if(wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
-        wrap.querySelectorAll(".info4")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
-      }else{
-        wrap.querySelectorAll(".info3")[0].style.display="none";
-        wrap.querySelectorAll(".info4")[0].style.display="none";
-      }
-      wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
-      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
-      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
-      wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
-      wrap.querySelectorAll("form")[0].style.display="none";
-    })
-  })
+// // フォーム提出時の動作設定
+//   var submit_button = document.querySelectorAll("form button");
+//   submit_button.forEach((element,index)=>{
+//     element.addEventListener('click',function(){
+//       var wrap = document.querySelectorAll(".form-wrapper")[index]  
+//       wrap.querySelectorAll(".info1")[0].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
+//       wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
+//       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"){
+//         wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ wrap.querySelectorAll(".f-time1")[0].value+"　〜　"+wrap.querySelectorAll(".f-time2")[0].value;
+//       }else{
+//         wrap.querySelectorAll(".info2")[0].style.display="none";
+//       }
+//       if(wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
+//         wrap.querySelectorAll(".info4")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
+//       }else{
+//         wrap.querySelectorAll(".info3")[0].style.display="none";
+//         wrap.querySelectorAll(".info4")[0].style.display="none";
+//       }
+//       wrap.querySelectorAll(".header-status")[0].innerHTML= "提出済" ;
+//       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
+//       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
+//       wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
+//       wrap.querySelectorAll("form")[0].style.display="none";
+//     })
+//   })
 
 
 
