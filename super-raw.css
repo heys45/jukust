@@ -244,6 +244,9 @@ form{
   width: 100%;
   padding: 5px 15px;
 }
+.form-flex{
+  display: flex;
+}
 .form-none{
   width: 100%;
   color:#aaaaaa;
