@@ -76,6 +76,7 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
     wrap.querySelectorAll(".form-block")[0].style.display="none";
     wrap.querySelectorAll(".form-block")[1].style.display="none";
     wrap.querySelectorAll(".form-none")[0].style.display="none";
+    wrap.querySelectorAll("form .form-inline")[1].style.display="none";
 
     // 提出データがあった場合の処理
     for (let index = 0; index < sc_list["日付"].length; index++) {
@@ -98,6 +99,18 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
         wrap.querySelectorAll("form")[0].style.display="none";
       }
     }
+  })
+
+  var kinmukahi =document.querySelectorAll(".kinmukahi")
+  kinmukahi.forEach((element,index)=>{
+    element.addEventListener('change',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index]
+      if(element.value=="一部勤務可能"){
+        wrap.querySelectorAll("form .form-inline")[1].style.display="inline-block";
+      }else{
+        wrap.querySelectorAll("form .form-inline")[1].style.display="none";
+      }
+    })
   })
 
   var change_button =document.querySelectorAll(".form-wrapper .change")
