@@ -139,6 +139,7 @@ hosokukinyuu.forEach((element,index)=>{
 
 
   var submit_button = document.querySelectorAll("form button:nth-child(2)");
+  console.log(submit_button);
   submit_button.forEach((element,index)=>{
 
     element.addEventListener('click',function(e){
