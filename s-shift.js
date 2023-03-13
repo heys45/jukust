@@ -216,7 +216,6 @@ remove_button.forEach((element,index)=>{
         alert("勤務時間、休憩時間を設定してください。");    
       }else{
         document.querySelectorAll("form")[index].submit();
-      }
       // 送信時処理
         wrap4.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+ wrap4.querySelectorAll(".f-time1")[0]+":"+ wrap4.querySelectorAll(".f-time2")[0]+" 〜 "+wrap4.querySelectorAll(".f-time3")[0]+":"+ wrap4.querySelectorAll(".f-time4")[0]+"｜休憩時間："+ wrap4.querySelectorAll(".f-time5")[0]+" 分 ";
         if(wrap4.querySelectorAll(".f-hosoku")[0].value !=null ){
@@ -228,7 +227,7 @@ remove_button.forEach((element,index)=>{
         }
         wrap4.querySelectorAll(".header-status")[0].innerHTML= "シフト依頼済み" ;
       wrap4.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
-      wrap4.querySelectorAll("form")[0].style.display="none";
+      wrap4.querySelectorAll("form")[0].style.display="none";}
     })
   })
 

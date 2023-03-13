@@ -109,7 +109,7 @@ form_button.forEach((element,index)=>{
       wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("afterbegin", wrap.querySelectorAll(".f-kinmukahi")[0])+"｜";
       wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
-      wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
+      wrap.querySelectorAll(".header-status")[0].style.color = "white" ;
       wrap.querySelectorAll("form .form-inline")[1].style.display="none";
       wrap.querySelectorAll("form .form-block")[0].style.display="none";
       
