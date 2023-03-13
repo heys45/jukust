@@ -164,7 +164,7 @@ days.forEach(element=>{
             wrap.querySelectorAll("form")[0].style.display="none";
         }
     }
-})
+}) 
 
 // // ステータスボタン変更時の動作設定
 //   var kinmukahi =document.querySelectorAll(".f-kinmukahi")
