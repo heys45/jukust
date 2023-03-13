@@ -175,6 +175,18 @@ days.forEach(element=>{
         wrap.querySelectorAll(".form-block")[2].style.display="none";
     })
   })
+// 変更ボタンプッシュ時の動作設定
+var remove_button =document.querySelectorAll(".form-wrapper .remove")
+remove_button.forEach((element,index)=>{
+  element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index];
+      wrap.querySelectorAll("form")[0].style.display="flex";
+      wrap.querySelectorAll(".torikeshi")[0].value="true";
+      wrap.querySelectorAll("form .form-block")[0].style.display="none";
+      wrap.querySelectorAll("form .form-block")[1].style.display="none";
+      wrap.querySelectorAll("form button")[0].innerHTML="シフト依頼を取り消す"
+  })
+})
 
 // // フォーム提出時の動作設定
 //   var submit_button = document.querySelectorAll("form button");
