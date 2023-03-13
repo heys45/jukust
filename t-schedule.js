@@ -66,9 +66,8 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
 
   days.forEach(element=>{
     form_area.insertAdjacentHTML("beforeend",form_copy);
-    var wrap =document.querySelectorAll(".form-wrapper").slice(-1)[0];
+    var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
     wrap.querySelectorAll("form .f-day")[0].value= element ;
-
   })
 
 
