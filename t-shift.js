@@ -63,15 +63,15 @@ sf_list["日付"].forEach((element,index)=>{
     // 未回答の時
     wrap.querySelectorAll(".info11")[0].innerHTML= "シフト依頼内容｜"+sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "未回答" ;
-    wrap.querySelectorAll("form .form-block")[2].style.display="none";
+    wrap.querySelectorAll("form .form-block")[0].style.display="none";
     }else{
     // 回答済みの時
     wrap.querySelectorAll(".info11")[0].innerHTML=sf_list ["依頼への回答"][index]+ "｜シフト依頼内容｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
     wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
-    wrap.querySelectorAll("form .form-block")[1].style.display="none";
-    wrap.querySelectorAll("form .form-block")[2].style.display="none";
+    wrap.querySelectorAll("form .form-inline")[1].style.display="none";
+    wrap.querySelectorAll("form .form-block")[0].style.display="none";
     }
     if(sf_list["備考補足　シフト提出時"][index] !=null ){
     wrap.querySelectorAll(".info15")[0].innerHTML= sf_list["備考補足　シフト提出時"][index];
@@ -105,8 +105,8 @@ form_button.forEach((element,index)=>{
       wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "white" ;
-      wrap.querySelectorAll("form .form-block")[1].style.display="none";
-      wrap.querySelectorAll("form .form-block")[2].style.display="none";
+      wrap.querySelectorAll("form .form-inline")[1].style.display="none";
+      wrap.querySelectorAll("form .form-block")[0].style.display="none";
       
       if( wrap.querySelectorAll(".f-hosoku")[0] !=null ){
       wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0];
