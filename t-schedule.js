@@ -85,12 +85,15 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
 
   // wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
   // wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
-  // var submit_button = document.querySelectorAll("form button")[0];
-  // submit_button.addEventListener('click',function(){
-  //   document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
-  //   document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
-  //   document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
-  // })
+  var submit_button = document.querySelectorAll("form button")[0];
+  submit_button.addEventListener('click',function(){
+    if(document.querySelectorAll("form .f-kinmukahi")[0].value=="要選択"){
+      document.querySelectorAll("form .f-kinmukahi")[0].after("選択してください")
+    }
+    document.querySelectorAll("form .f-kinmukahi")[0].selectedIndex = 0;
+    document.querySelectorAll("form .f-time1")[0].selectedIndex = 0;
+    document.querySelectorAll("form .f-time2")[0].selectedIndex = 0;
+  })
 
 
 
