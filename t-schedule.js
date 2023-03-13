@@ -126,27 +126,23 @@ var rowdatas = sc_list_db.querySelectorAll("tbody tr");
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(){
       var wrap = document.querySelectorAll(".form-wrapper")[index]  
-      document.querySelectorAll(".info1")[index].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
-      document.querySelectorAll(".info1")[index].innerHTML= "提出中のスケジュール："+ document.querySelectorAll(".f-kinmukahi")[index].innerHTML;
-      if(document.querySelectorAll(".f-kinmukahi")[index].innerHTML == "一部勤務可能"){
-        document.querySelectorAll(".info2")[index].innerHTML= "勤務可能時間：　"+ document.querySelectorAll(".f-time1")[index].innerHTML+"　〜　"+document.querySelectorAll(".f-time2")[index].innerHTML;
+      wrap.querySelectorAll(".info1")[0].insertAdjacentHTML("beforebegin",'<span class="info0">スケジュールの提出が完了しました</span><br>')
+      wrap.querySelectorAll(".info1")[0].innerHTML= "提出中のスケジュール："+ wrap.querySelectorAll(".f-kinmukahi")[0].value;
+      if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "一部勤務可能"){
+        wrap.querySelectorAll(".info2")[0].innerHTML= "勤務可能時間：　"+ wrap.querySelectorAll(".f-time1")[0].value+"　〜　"+wrap.querySelectorAll(".f-time2")[0].value;
       }else{
-        document.querySelectorAll(".info2")[index].style.display="none";
+        wrap.querySelectorAll(".info2")[0].style.display="none";
       }
-      if(document.querySelectorAll(".f-hosoku")[index].value !=null ){
-        document.querySelectorAll(".info4")[index].innerHTML= document.querySelectorAll(".f-hosoku")[index].value;
+      if(wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
+        wrap.querySelectorAll(".info4")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
       }else{
-        document.querySelectorAll(".info3")[index].style.display="none";
-        document.querySelectorAll(".info4")[index].style.display="none";
+        wrap.querySelectorAll(".info3")[0].style.display="none";
+        wrap.querySelectorAll(".info4")[0].style.display="none";
       }
-      document.querySelectorAll(".form-wrapper .header-status")[index].innerHTML= "提出済" ;
+      wrap.querySelectorAll(".header-status")[index].innerHTML= "提出済" ;
       wrap.querySelectorAll(".form-wrapper .form-block")[0].style.display="block";
       wrap.querySelectorAll("form")[0].style.display="none";
     })
-
-
-
-
   })
 
 
