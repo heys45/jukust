@@ -275,6 +275,7 @@ form button{
 }
 .hosokukinyuu{
   background-color: #777777;
+  font-size: 16px;
 }
 textarea{
   width: 100%;
@@ -319,12 +320,6 @@ textarea{
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* #endregion データベース */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
-
-
-
-
-
-
 
   .super-navbar__actions {
     margin-left:auto ;
@@ -391,73 +386,6 @@ textarea{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.day-box{
-  border:solid 2px #34675c;
-  margin-bottom: 15px;
-}
-.day-box-r{
-  padding:3px 10px;
-  width: 100%;
-}
-
-
-.day-box-swich {
-  display:flex;
-}
-
-.day-box-swich div{
-  border:solid 2px gray;
-  border-radius: 5px;
-  padding:3px 6px;
-  margin: 4px 6px 4px 0px;
-  font-size: 14px;
-  text-align: center;
-  width:150px;
-  
-}
-
-
-@media (max-width: 680px) { 
-.day-box{
-  flex-direction:column;
-}
-.day-box-l{
-  width:100% ;
-}
-  }
-
-
-
-
-
-.day-box:first-child{
-  display: none;
-}
-.day-box-l{
-  display: flex;
-  width: 100px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color:#34675c;
-  color: white;
-}
-
-
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /* 
   background-color:#2BA415 ;
@@ -466,74 +394,7 @@ textarea{
  */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 
-.in-wr-formbox{
-  border:solid;
-  padding:5px 5px;
-  display: flex;
-}
-.in-day-label, .out-day-label{
-  display: inline-block;
-  padding: 10px;
-  background-color:#34675c ;
-}
-.in-buttons, .out-buttons{
-  display: flex;
-}
-.in-buttons span, .out-buttons span{
- font-size: 14px;
- text-align: center;
- padding: 3px 6px;
- width: 90px;
- margin: 0 5px;
- border: solid 1px #34675c ;
- border-radius:5px ;
-}
 
-
-
-
-
-.wrb-box{
-  display:flex;
-  font-size: 14px ;
-  padding: 3px 7px;
-  border-radius: 5px;
-  margin:3px 3px;
-  justify-content: center;
-  color: white;
-  background-color:#555555;
-  align-items: center;
-}
-.wrb-1{
-  display: flex;
-  text-align:center;
-  align-items:stretch;
-}
-.wrb-1 .wrb-box:first-child{
-  background-color:#2BA415 ;
-  background-color:#17837c ;
-  background-color:#34675c ;
-}
-.wrb-box:nth-child(2){
-  background-color:#2BA415 ;
-  background-color:#17837c ;
-
-}
-.wrb-2{
-  padding:3px;
-  text-align: start;
-  
-  
-}
-.wrb-2 span{
-  display:inline-block;
-  padding:5px 3px;
-  justify-content: flex-start;
-  
-  
-}
-
-a
 
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
