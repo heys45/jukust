@@ -138,7 +138,7 @@ submit_button.forEach((element,index)=>{
         wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforeend","<br>"+text)
     }
           
-      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","【勤務の承認済み】");
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","【勤務の承認済み】<br>");
   })
 })
 
