@@ -135,7 +135,7 @@ submit_button.forEach((element,index)=>{
       wrap.querySelectorAll("form")[0].style.display="none"
       if(wrap.querySelectorAll(".f-time1")[0].value !=null ||wrap.querySelectorAll(".f-time1")[1].value !=null ||wrap.querySelectorAll(".f-time2")[0].value !=null||wrap.querySelectorAll(".f-time2")[1].value !=null ||wrap.querySelectorAll(".f-time2")[2].value !=null ){
         var text = innerHTML= "変更後のシフト時間｜"+wrap.querySelectorAll(".f-time1")[0].value+":"+wrap.querySelectorAll(".f-time2")[0].value+" 〜 "+wrap.querySelectorAll(".f-time1")[1].value+":"+wrap.querySelectorAll(".f-time2")[1].value +"｜休憩時間："+wrap.querySelectorAll(".f-time2")[2].value+" 分 ";
-        wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforend","<br>"+text)
+        wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforeend","<br>"+text)
     }
           
       wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","【勤務の承認済み】");
