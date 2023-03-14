@@ -117,7 +117,7 @@ wrap.querySelectorAll(".info13")[0].nextSibling.remove()
 wrap.querySelectorAll(".info13")[0].style.display="none";
 wrap.querySelectorAll(".info14")[0].style.display="none";
 }
-if(kt_list["講師入力開始時刻"][index] !=null ||kt_list["講師入力退勤時刻"][index] !=null||kt_list["講師入力休憩時間"][index] !=null){
+if(kt_list["講師入力開始時刻"][index] !=null ||kt_list["講師入力終了時刻"][index] !=null||kt_list["講師入力休憩時間"][index] !=null){
     wrap.querySelectorAll(".info11")[0].innerHTML= "シフト内容｜"+kt_list["勤務依頼時刻｜開始"][index]+"（"+kt_list["講師入力開始時刻"][index] +"）"+" 〜 "+kt_list["勤務依頼時刻｜終了"][index]+"（"+kt_list["講師入力終了時刻"][index] +"）"+"｜休憩時間："+ kt_list["休憩時間（依頼）"][index]+"（"+kt_list["講師休憩時間"][index] +"）"+" 分 ※()内は変更申請時間 <br>＊講師から勤務(休憩)時間変更の申請があります。";
     }
 
