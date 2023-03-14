@@ -20,6 +20,8 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
       if(header[index].querySelectorAll("span")[0] !=null){ //空ヘッダーエラー処理
         var key = header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].innerHTML;
 
+
+
         console.log(prop_object[key]);
 
           if(prop_object[key] !=null){ //空バリュー（notion_prop）エラー処理
@@ -28,6 +30,23 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
             var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
             a_target.textContent = value;
           }//空バリュー（notion_prop）エラー処理
+
+          if(key=="名前"){
+            var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
+            a_target.textContent = prop_object["姓"]+ prop_object["名"]
+          }
+          if(key=="フリガナ"){
+            var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
+            a_target.textContent = prop_object["姓（フリガナ）"]+ prop_object["名（フリガナ）"]
+          }
+          if(key=="携帯電話番号"){
+            var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
+            a_target.textContent = prop_object["電話番号"]
+          }
+
+
+
+
         var key = key.replace(/（.*?）/,""); 
         console.log(key);
         header[index].querySelectorAll("span")[0].querySelectorAll("span")[0].textContent = key;
