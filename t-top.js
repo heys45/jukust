@@ -8,28 +8,6 @@ var topguide =document.getElementById("スポットバイトへようこそ！")
 topguide.innerHTML="講師用｜"+prop_object["姓"]+prop_object["名"]+"先生";
 topguide.style.fontWeight="bolder";
 
-// 出力する場所を用意（quoteを指定）
-var kintai_area1 = document.createElement("div");
-var kintai_area2 = document.createElement("div");
-var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
-area_target.after(kintai_area1);
-kintai_area1.after(kintai_area2);
-
-
-// 出勤フォームを挿入
-var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">出勤報告フォーム｜X月X日(〜)</span></div><div class="form-block"><span class="info11">勤務予定のシフト：</span><br><span class="info13">教室からの補足備考：</span><br><p class="info14">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p><span class="info15">講師からの補足備考：</span><br><p class="info16">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfSYBbS4NOAjOGH1hafebiJVHKtUeHBfmvuQhjSZ5zjizfRUg/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.592475116" class="f-day"><input type="text" name="entry.1724347970" class="f-oubo"><input type="text" name="entry.978702857" class="f-kaiin"><input type="text" name="entry.1359978560" class="f-kaiin-name"><input type="text" name="entry.1735963854" class="f-school"><input type="text" name="entry.1636462857" class="f-school-name"></div><div class="form-block"><button type="submit">出勤報告する</button></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
-area_target.nextElementSibling.insertAdjacentHTML("afterbegin", form_copy);
-document.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
-document.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
-document.querySelectorAll("form .f-school")[0].value= "DBカラ取得";
-document.querySelectorAll("form .f-school-name")[0].value= "DBカラ取得";
-document.querySelectorAll("form .f-oubo")[0].value= "DBカラ取得";
-document.querySelectorAll("form .f-day")[0].value= "DBカラ取得";
-
-var submit_button = document.querySelectorAll("form button")[0];
-submit_button.addEventListener('click',function(){
-
-})
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // シフトDBの情報取得  sf_list
@@ -107,7 +85,7 @@ var rowdatas = kt_list_db.querySelectorAll("tbody tr");
 
 
 // 出力する場所を用意（quoteを指定）
-var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">X月X日(〜)</span><span class="header-status">ステータス</span></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeuyJMJUvwq_mNtJs-idijDrDUl8ko0zYcYVgkQ2ZPXsPErgA/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.463774100" class="f-day"><input type="text" name="entry.1985960195" class="f-oubo"><input type="text" name="entry.1904757408" class="f-kaiin"><input type="text" name="entry.1386472612" class="f-kaiin-name"><input type="text" name="entry.2090898669" class="f-school"><input type="text" name="entry.1323446715" class="f-school-name"></div><div class="form-inline"><span class="info11">依頼が来たシフト：講師回答前</span><br><span class="info14">補足備考：</span><br><p class="info15">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><div class="form-inline form-flex"><select name="entry.1776705296" class="f-kinmukahi"><option value="要選択">要選択</option><option value="勤務確定">勤務確定</option><option value="勤務不可">勤務不可</option><option value="調整希望">調整希望</option></select><button class="hosokukinyuu">補足記入</button><button class="submit" type="submit">シフト確定</button></div><div class="form-block"><span>補足備考：</span><br><textarea name="entry.108034819" class="f-hosoku"></textarea></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
+var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">出勤報告フォーム｜X月X日(〜)</span></div><div class="form-block"><span class="info11">勤務予定のシフト：</span><br><span class="info13">教室からの補足備考：</span><br><p class="info14">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p><span class="info15">講師からの補足備考：</span><br><p class="info16">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfSYBbS4NOAjOGH1hafebiJVHKtUeHBfmvuQhjSZ5zjizfRUg/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.592475116" class="f-day"><input type="text" name="entry.1724347970" class="f-oubo"><input type="text" name="entry.978702857" class="f-kaiin"><input type="text" name="entry.1359978560" class="f-kaiin-name"><input type="text" name="entry.1735963854" class="f-school"><input type="text" name="entry.1636462857" class="f-school-name"></div><div class="form-block"><button type="submit">出勤報告する</button></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
 var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
 var form_area = document.createElement("div");
 area_target.after(form_area );
@@ -161,7 +139,6 @@ kintai_button.forEach((element,index)=>{
 
 
 }}
-
 
 
 
