@@ -170,7 +170,7 @@ if(kt_list["備考補足　依頼への回答時"][index] !=null ){
     wrap.querySelectorAll(".info15")[0].style.display="none";
     wrap.querySelectorAll(".info16")[0].style.display="none";
     }
-
+ 
 }})
 
 // 勤怠ボタンプッシュ時の動作設定
