@@ -134,6 +134,54 @@ kintai_button.forEach((element,index)=>{
 })
 
 
+// 出力する場所を用意（quoteを指定）
+var form_copy = '<div class="form-wrapper"><div class="form-header"><span class="header-day">出勤報告フォーム｜X月X日(〜)</span></div><div class="form-block"><span class="info11">勤務予定のシフト：</span><br><span class="info13">教室からの補足備考：</span><br><p class="info14">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p><span class="info15">講師からの補足備考：</span><br><p class="info16">〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜</p></div><form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfSYBbS4NOAjOGH1hafebiJVHKtUeHBfmvuQhjSZ5zjizfRUg/formResponse" method="post" target="hidden_iframe"><div class="form-none"><input type="text" name="entry.592475116" class="f-day"><input type="text" name="entry.1724347970" class="f-oubo"><input type="text" name="entry.978702857" class="f-kaiin"><input type="text" name="entry.1359978560" class="f-kaiin-name"><input type="text" name="entry.1735963854" class="f-school"><input type="text" name="entry.1636462857" class="f-school-name"></div><div class="form-block"><button type="submit">出勤報告する</button></div><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe></form></div>';
+var area_target = document.getElementById("勤怠報告はこちらから").nextElementSibling;
+var form_area = document.createElement("div");
+area_target.after(form_area );
+
+kt_list["日付"].forEach((element,index)=>{
+if(kt_list["勤怠ステータス"][index]==null){
+
+  form_area.insertAdjacentHTML("beforeend",form_copy);
+  var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
+  wrap.querySelectorAll(".header-day")[0].innerHTML= element+"｜出勤報告フォーム" ;
+  wrap.querySelectorAll("form .f-day")[0].value= element ;
+  wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
+  wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
+  wrap.querySelectorAll("form .f-school")[0].value= prop_object["教室ID"];
+  wrap.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
+  wrap.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
+  wrap.querySelectorAll(".form-none")[0].style.display="none";
+ 
+wrap.querySelectorAll(".info11")[0].innerHTML= "シフト内容｜"+kt_list["勤務依頼時刻｜開始"][index]+" 〜 "+kt_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ kt_list["休憩時間（依頼）"][index]+" 分 ";
+
+if(kt_list["備考・補足　シフト提出時"][index] !=null ){
+wrap.querySelectorAll(".info14")[0].innerHTML= kt_list["備考補足　シフト提出時"][index];
+}else{
+wrap.querySelectorAll(".info13")[0].nextSibling.remove()
+wrap.querySelectorAll(".info13")[0].style.display="none";
+wrap.querySelectorAll(".info14")[0].style.display="none";
+}
+if(kt_list["備考補足　依頼への回答時"][index] !=null ){
+    wrap.querySelectorAll(".info16")[0].innerHTML= kt_list["備考補足　シフト提出時"][index];
+    }else{
+    wrap.querySelectorAll(".info15")[0].nextSibling.remove()
+    wrap.querySelectorAll(".info15")[0].style.display="none";
+    wrap.querySelectorAll(".info16")[0].style.display="none";
+    }
+
+}})
+
+// 勤怠ボタンプッシュ時の動作設定
+var kintai_button =document.querySelectorAll(".form-wrapper form button")
+kintai_button.forEach((element,index)=>{
+  element.addEventListener('click',function(){
+      var wrap = document.querySelectorAll(".form-wrapper")[index];
+      element.style.display="none";
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","勤怠報告が完了しました。");
+  })
+})
 
 
 
