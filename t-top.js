@@ -369,7 +369,7 @@ kintai_button.forEach((element,index)=>{
 // }
 
 
-}}
+
 
 
 
