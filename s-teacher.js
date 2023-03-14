@@ -57,9 +57,15 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
 
 
   // テーブルサイズなど個別調整
-
+  document.querySelectorAll(".notion-table")[2].style.width="100%";
+  document.querySelectorAll(".notion-table")[3].style.width="100%";
+  document.querySelectorAll(".notion-table")[4].style.width="100%";
+  document.querySelectorAll(".notion-table")[5].style.width="100%";
+  document.querySelectorAll(".notion-table")[6].style.width="100%";
+  document.querySelectorAll(".notion-table")[7].style.width="100%";
+  document.querySelectorAll(".notion-table")[8].style.width="100%";
+  document.querySelectorAll(".notion-table")[9].style.width="100%";
   document.querySelectorAll(".notion-table")[10].style.width="100%";
-  document.querySelectorAll(".notion-table")[11].style.width="100%";
 
 
   // var slide_guide = document.createElement("p");
