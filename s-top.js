@@ -123,6 +123,9 @@ if(kt_list["講師入力開始時刻"][index] !=null ||kt_list["講師入力退�
 
 }})
 
+document.querySelectorAll(".notion-collection-table")[1].style.width="100%";
+
+
 
 
 
