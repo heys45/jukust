@@ -50,7 +50,7 @@ var rowdatas = sf_list_db.querySelectorAll("tbody tr");
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region
 // kt_listのデータ取得。
-var kt_list_db = document.querySelectorAll(".notion-collection-table").slice(-1)[0];
+var kt_list_db = document.querySelectorAll(".notion-collection-table").lastElementChild;
     kt_list_db.style.width="100%"
 var kt_list ={};
 var headers0 = kt_list_db.querySelectorAll("thead th");
