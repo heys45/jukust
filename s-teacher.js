@@ -43,6 +43,10 @@ if(prop_object["ページ表示名"]==="教室講師確認"){
             var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
             a_target.textContent = prop_object["電話番号"]
           }
+          if(key=="電話面談の結果"){
+            var a_target =target[index].querySelectorAll("span")[0].querySelectorAll("span")[0];
+            a_target.textContent = prop_object["コメント｜電話面談評価"]
+          }
 
 
 
