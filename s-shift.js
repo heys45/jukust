@@ -212,7 +212,8 @@ remove_button.forEach((element,index)=>{
       // バリデーション
       e.preventDefault();
       var wrap4 = document.querySelectorAll(".form-wrapper")[index]  
-      if(wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time2")[0].value == "--"||wrap4.querySelectorAll(".f-time3")[0].value == "--" ||wrap4.querySelectorAll(".f-time4")[0].value == "--"||wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time5")[0].value == "--"){
+      if(wrap4.querySelectorAll(".f-torikeshi")[0].value !=null ){}
+      else if(wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time2")[0].value == "--"||wrap4.querySelectorAll(".f-time3")[0].value == "--" ||wrap4.querySelectorAll(".f-time4")[0].value == "--"||wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time5")[0].value == "--"){
         alert("勤務時間、休憩時間を設定してください。");    
       }else{
         document.querySelectorAll("form")[index].submit();
