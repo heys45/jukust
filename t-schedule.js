@@ -162,6 +162,8 @@ hosokukinyuu.forEach((element,index)=>{
       }else{
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "終日勤務可能"){
         wrap.querySelectorAll(".f-time1")[0].value="8:00"; wrap.querySelectorAll(".f-time2")[0].value="22:00";
+      }else if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "調整中"||wrap.querySelectorAll(".f-kinmukahi")[0].value == "勤務不可"){
+        wrap.querySelectorAll(".f-time1")[0].value=""; wrap.querySelectorAll(".f-time2")[0].value="";
       }
 
       document.querySelectorAll("form")[index].submit();
