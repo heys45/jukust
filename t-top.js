@@ -8,13 +8,15 @@ var topguide =document.getElementById("スポットバイトへようこそ！")
 topguide.innerHTML="講師用｜"+prop_object["姓"]+prop_object["名"]+"先生";
 topguide.style.fontWeight="bolder";
 
+
+if(prop_object["口座番号（半角数字）"] ==null){
 var kojinform_wrapper = document.createElement("div")
 topguide.after(kojinform_wrapper);
 var kojinform = document.createElement("a")
 kojinform_wrapper.appendChild(kojinform)
 kojinform.setAttribute("href", "https://docs.google.com/forms/d/e/1FAIpQLSdshC5GsKHZhps40FNkEShsnnat6-B4Y_EQdRHk0XlXpwV9mg/viewform?usp=pp_url&entry.1339375578="+prop_object["会員ID"])
 kojinform.innerHTML="個人情報、給与振り込み口座の情報を提出してください"
-
+}
 
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
