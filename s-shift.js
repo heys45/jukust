@@ -114,6 +114,7 @@ days.forEach((element,index)=>{
   wrap.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
   wrap.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
   wrap.querySelectorAll(".info1")[0].innerHTML= "講師スケジュール｜未回答"
+  wrap.querySelectorAll(".form-block")[0].style.display="none";
   wrap.querySelectorAll(".form-block")[1].style.display="none";
   wrap.querySelectorAll(".form-block")[2].style.display="none";
   wrap.querySelectorAll(".form-none")[0].style.display="none";
