@@ -162,6 +162,12 @@ days.forEach((element,index)=>{
             wrap.querySelectorAll("form")[0].style.display="none";
 
 
+            if(sf_list["依頼への回答"][index]=="調整希望"){
+              wrap.querySelectorAll(".header-status")[0].innerHTML= "調整希望あり" ;
+              wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+"講師回答前｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 <br>講師から勤務時間の調整の希望が届いています。必要に応じ再度シフト申請をしてください。";
+
+              }
+
             if(sf_list["依頼への回答"][index]=="勤務確定"){
             wrap.querySelectorAll(".header-status")[0].innerHTML= "シフト確定済み" ;
             wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
