@@ -108,7 +108,7 @@ form_button.forEach((element,index)=>{
       }else {
       document.querySelectorAll("form")[index].submit();
       // 回答済みの時
-      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("afterbegin", wrap.querySelectorAll(".f-kinmukahi")[0].value)+"｜";
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("afterbegin", wrap.querySelectorAll(".f-kinmukahi")[0].value+"｜");
       wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
       wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
       wrap.querySelectorAll(".header-status")[0].style.color = "white" ;
