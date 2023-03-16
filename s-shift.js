@@ -122,7 +122,7 @@ days.forEach((element,index)=>{
   // スケジュールデータがあった場合の処理
   for (let index = 0; index < sc_list["日付"].length; index++) {
     if(sc_list["日付"][index] == element){
-      if(sc_list["勤務可否"][index] == "一部勤務可能"){
+      if(sc_list["勤務可否"][index] == "一部勤務可能"||sc_list["勤務可否"][index] == "終日勤務可能"){
       wrap.querySelectorAll(".info1")[0].innerHTML= "講師スケジュール｜"+ sc_list["勤務可否"][index]+"｜"+ sc_list["勤務可能時刻｜開始"][index]+" 〜 "+sc_list["勤務可能時刻｜終了"][index];
       }else{
         wrap.querySelectorAll(".info1")[0].innerHTML= "講師スケジュール｜"+ sc_list["勤務可否"][index];
