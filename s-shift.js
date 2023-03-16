@@ -212,8 +212,7 @@ remove_button.forEach((element,index)=>{
       // バリデーション
       e.preventDefault();
       var wrap4 = document.querySelectorAll(".form-wrapper")[index]  
-      if(wrap4.querySelectorAll(".f-torikeshi")[0].value !=null ){}
-      else if(wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time2")[0].value == "--"||wrap4.querySelectorAll(".f-time3")[0].value == "--" ||wrap4.querySelectorAll(".f-time4")[0].value == "--"||wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time5")[0].value == "--"){
+      if(wrap4.querySelectorAll(".f-torikeshi")[0].value ==null &&wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time2")[0].value == "--"||wrap4.querySelectorAll(".f-time3")[0].value == "--" ||wrap4.querySelectorAll(".f-time4")[0].value == "--"||wrap4.querySelectorAll(".f-time1")[0].value == "--" ||wrap4.querySelectorAll(".f-time5")[0].value == "--"){
         alert("勤務時間、休憩時間を設定してください。");    
       }else{
         document.querySelectorAll("form")[index].submit();
@@ -229,8 +228,8 @@ remove_button.forEach((element,index)=>{
         wrap4.querySelectorAll(".header-status")[0].innerHTML= "シフト依頼済み" ;
         wrap4.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
         wrap4.querySelectorAll(".header-status")[0].style.color = "white" ;
-      wrap4.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
-      wrap4.querySelectorAll("form")[0].style.display="none";}
+        wrap4.querySelectorAll(".form-wrapper .form-block")[1].style.display="block";
+        wrap4.querySelectorAll("form")[0].style.display="none";}
     })
   })
 
