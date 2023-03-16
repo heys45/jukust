@@ -68,7 +68,7 @@ sf_list["日付"].forEach((element,index)=>{
     // 回答済みの時
     wrap.querySelectorAll(".info11")[0].innerHTML=sf_list ["依頼への回答"][index]+ "｜シフト内容｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 ";
     wrap.querySelectorAll(".header-status")[0].innerHTML= "回答済み" ;
-    wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ;
+    wrap.querySelectorAll(".header-status")[0].style.backgroundColor = "#34675C" ; 
     wrap.querySelectorAll(".header-status")[0].style.color = "white" ;
     wrap.querySelectorAll("form .form-inline")[1].style.display="none";
     wrap.querySelectorAll("form .form-block")[0].style.display="none";
