@@ -111,7 +111,7 @@ if(kt_list["勤怠ステータス"][index]==null){
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
   wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
   wrap.querySelectorAll("form .f-school")[0].value= prop_object["教室ID"];
-  wrap.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
+  wrap.querySelectorAll("form .f-school-name")[0].value= kt_list["教室名（グループ名）"][index];
   wrap.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
   wrap.querySelectorAll(".form-none")[0].style.display="none";
  
@@ -161,7 +161,7 @@ if(kt_list["勤怠ステータス"][index]=="出勤報告済み"){
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
   wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
   wrap.querySelectorAll("form .f-school")[0].value= prop_object["教室ID"];
-  wrap.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
+  wrap.querySelectorAll("form .f-school-name")[0].value= kt_list["教室名（グループ名）"][index];
   wrap.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
   wrap.querySelectorAll(".form-none")[0].style.display="none";
  
