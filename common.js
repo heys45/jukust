@@ -2,7 +2,7 @@
 //ページ更新用のJS
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 var old_url = window.location.href+"?juku-cr";
-history.pushState('', document.getElementsByClassName("notion-header__title")[0].innerHTML, page[0].url+"?juku-cr");
+history.pushState('', document.getElementsByClassName("notion-header__title")[0].innerHTML, window.location.href+"?juku-cr");
 
 var url_interval = setInterval(()=>{
 var new_url = window.location.href;
