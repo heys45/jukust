@@ -238,5 +238,4 @@ if(document.getElementById("スポットバイトの流れ")!=null){
 
 
 
-
 }
