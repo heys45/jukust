@@ -97,14 +97,14 @@ img_area.appendChild(header_info);
 
 //ページ更新用のJS
 
-var old_url = window.location.href+last_url;
+var old_url = window.location.href;
 if(window.location.href.indexOf(last_url) == -1){
 history.pushState('', document.getElementsByClassName("notion-header__title")[0].innerHTML, window.location.href+last_url);}
 
 var url_interval = setInterval(()=>{
 var new_url = window.location.href;
 if (old_url !=new_url){
-  old_url = new_url+last_url;;
+  old_url = new_url+last_url;
   window.location.href = window.location.href+last_url;
 }},500)
 
