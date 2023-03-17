@@ -1,13 +1,14 @@
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 //ページ更新用のJS
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-var old_url = window.location.href;
+var old_url = window.location.href+"?juku-cr";
+history.pushState('', document.getElementsByClassName("notion-header__title")[0].innerHTML, page[0].url+"?juku-cr");
 
 var url_interval = setInterval(()=>{
 var new_url = window.location.href;
 if (old_url !=new_url){
-    window.location.href = window.location.href;
-    old_url = new_url;
+    window.location.href = window.location.href+"?juku-cr";
+    old_url = new_url+"?juku-cr";
 }},500)
 
 var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
