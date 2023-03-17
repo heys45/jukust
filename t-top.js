@@ -157,8 +157,8 @@ kt_list["日付"].forEach((element,index)=>{
 if(kt_list["勤怠ステータス"][index]=="出勤報告済み"){
 
   form_area.insertAdjacentHTML("beforeend",form_copy);
-  var wrap =document.querySelectorAll(".form-wrapper2:last-child")[0];
-  wrap.querySelectorAll(".header-day")[0].innerHTML= element+"｜退勤報告フォーム" ;
+  var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
+  wrap.querySelectorAll(".header-day")[0].innerHTML= element+"｜出勤報告フォーム" ;
   wrap.querySelectorAll("form .f-day")[0].value= element ;
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
   wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
@@ -186,18 +186,6 @@ if(kt_list["備考補足　依頼への回答時"][index] !=null ){
  
 }})
 
-// 勤怠ボタンプッシュ時の動作設定
-var kintai_button =document.querySelectorAll(".form-wrapper2 form button")
-kintai_button.forEach((element,index)=>{
-  element.addEventListener('click',function(){
-      var wrap = document.querySelectorAll(".form-wrapper2")[index];
-      element.style.display="none";
-      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","勤怠報告が完了しました。");
-  })
-})
-
-
-
 
 // フォーム提出時の動作設定
 var submit_button = document.querySelectorAll("form .form-block button");
@@ -218,7 +206,7 @@ submit_button.forEach((element,index)=>{
       document.querySelectorAll("form")[index].submit();
     }
     else{
-      alert("勤務時間、休憩時間を正しく設定してください。");    
+      alert("勤務時間、休憩時間を正しく設定してください。");   
     }
   })
 })
