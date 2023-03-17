@@ -104,7 +104,7 @@ form_button.forEach((element,index)=>{
       if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "要選択"){
         alert("勤務可否を設定してください。");
       }else if(wrap.querySelectorAll(".f-kinmukahi")[0].value == "調整希望"&&wrap.querySelectorAll(".f-hosoku")[0].value == ""){
-        alert("調整希望の内容を補足に記入してください");
+        alert("調整希望の内容を補足に記入してください<br>何時から何時までなら入れますなど");
       }else {
       document.querySelectorAll("form")[index].submit();
       // 回答済みの時
@@ -115,10 +115,10 @@ form_button.forEach((element,index)=>{
       wrap.querySelectorAll("form .form-inline")[1].style.display="none";
       wrap.querySelectorAll("form .form-block")[0].style.display="none";
       
-      if( wrap.querySelectorAll(".f-hosoku")[0] !=null ){
-      wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0];
+      if( wrap.querySelectorAll(".f-hosoku")[0].value !=null ){
+      wrap.querySelectorAll(".info15")[0].innerHTML= wrap.querySelectorAll(".f-hosoku")[0].value;
       }else{
-      wrap.querySelectorAll(".info14")[0].nextSibling.remove()
+      wrap.querySelectorAll(".info14")[0].nextSibling.remove();
       wrap.querySelectorAll(".info14")[0].style.display="none";
       wrap.querySelectorAll(".info15")[0].style.display="none";
       }}
@@ -126,13 +126,9 @@ form_button.forEach((element,index)=>{
   })
 
 
-
-
   if(document.querySelectorAll(".form-wrapper")[0] ==null){
     area_target.style.display="block";
   }
-
-
 
 }}
 

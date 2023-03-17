@@ -1,26 +1,4 @@
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-//ページ更新用のJS
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-var old_url = window.location.href+"?juku-cr";
-history.pushState('', document.getElementsByClassName("notion-header__title")[0].innerHTML, window.location.href+"?juku-cr");
-
-var url_interval = setInterval(()=>{
-var new_url = window.location.href;
-if (old_url !=new_url){
-    window.location.href = window.location.href+"?juku-cr";
-    old_url = new_url+"?juku-cr";
-}},500)
-
-var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
-reload_btn.addEventListener('click', reload2);
-console.log("prop-search.js")
-
-function reload2() {
-  window.location.reload();
-}
-
-
-//ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 //プロパティの連想配列を作成する。
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 var prop_object = {};
@@ -43,6 +21,7 @@ for (let i=0; i< prop_wrap.length; i++){
 console.log("プロパティリスト");
 console.log(prop_object);
 
+
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // テキストブロックの連想配列を作成する。
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -57,6 +36,7 @@ for (let i=0; i< qblock_wrap.length; i++){
 }
 console.log("quoteリスト");
 console.log(qblock_object);
+
 
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -84,6 +64,7 @@ var targets = ["教室トップページ","教室シフト管理リスト","教�
 var pc_logo = document.createElement('img');
 var sp_logo = document.createElement('img');
 var header_text_color="#555555"; var header_text="｜";var header_text2=prop_object["教室名"];
+var last_url ="?juku-cr"
 if(targets.includes(prop_object["ページ表示名"])){
   // 教室用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
@@ -94,6 +75,7 @@ if(targets.includes(prop_object["ページ表示名"])){
   // ユーザー用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo01.png'; // 画像パス
+  var last_url ="?koushi"
 }
 
 // ロゴの表示設定
@@ -112,6 +94,27 @@ header_info.style.paddingBottom="3px";header_info.style.paddingLeft="10px";heade
 document.querySelectorAll(".super-navbar__logo-image")[0].style["display"]= "flex";
 document.querySelectorAll(".super-navbar__logo-image")[0].style["align-items"]= "end";
 img_area.appendChild(header_info);
+
+//ページ更新用のJS
+
+var old_url = window.location.href+last_url;
+if(window.location.href.indexOf(last_url) == -1){
+history.pushState('', document.getElementsByClassName("notion-header__title")[0].innerHTML, window.location.href+last_url);}
+
+var url_interval = setInterval(()=>{
+var new_url = window.location.href;
+if (old_url !=new_url){
+    window.location.href = window.location.href+last_url;
+    old_url = new_url+last_url;
+}},500)
+
+// var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
+// reload_btn.addEventListener('click', reload2);
+// console.log("prop-search.js")
+
+// function reload2() {
+//   window.location.reload();
+// }
 
 
 // #endregion　
