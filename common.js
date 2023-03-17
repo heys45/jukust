@@ -104,8 +104,8 @@ history.pushState('', document.getElementsByClassName("notion-header__title")[0]
 var url_interval = setInterval(()=>{
 var new_url = window.location.href;
 if (old_url !=new_url){
-  old_url = new_url+last_url;
-  window.location.href = window.location.href+last_url;
+  old_url = new_url;
+  window.location.href = window.location.href;
 }},500)
 
 // var reload_btn = document.getElementsByClassName("super-navbar__actions")[0];
