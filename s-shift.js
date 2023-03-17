@@ -164,7 +164,7 @@ days.forEach((element,index)=>{
 
             if(sf_list["依頼への回答"][index]=="調整希望"){
               wrap.querySelectorAll(".header-status")[0].innerHTML= "調整希望あり" ;
-              wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+"講師回答前｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 <br>講師から勤務時間の調整の希望が届いています。必要に応じ再度シフト申請をしてください。";
+              wrap.querySelectorAll(".info11")[0].innerHTML= "依頼中のシフト｜"+"講師回答前｜"+ sf_list["勤務依頼時刻｜開始"][index]+" 〜 "+sf_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ sf_list["休憩時間（依頼）"][index]+" 分 <br>講師から勤務時間の調整の希望が届いています。必要に応じ再度シフト申請をしてください。<br>【調整希望の内容】<br>"+sf_list["備考補足　依頼への回答時"][index];
 
               }
 
