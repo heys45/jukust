@@ -157,7 +157,7 @@ kt_list["日付"].forEach((element,index)=>{
 if(kt_list["勤怠ステータス"][index]=="出勤報告済み"){
 
   form_area.insertAdjacentHTML("beforeend",form_copy);
-  var wrap =document.querySelectorAll(".form-wrapper:last-child")[0];
+  var wrap =document.querySelectorAll(".form-wrapper2:last-child")[0];
   wrap.querySelectorAll(".header-day")[0].innerHTML= element+"｜出勤報告フォーム" ;
   wrap.querySelectorAll("form .f-day")[0].value= element ;
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
