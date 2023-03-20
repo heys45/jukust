@@ -160,6 +160,16 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
   })
 // ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
 
+// page_listのページ名にリンクを挿入
+var page_list_as = page_list_db.querySelectorAll("tbody tr a");
+  page_list_as.forEach((element,index) =>{
+    element.style.display="none"
+    var replace_a = document.createElement("a");
+    replace_a.innerHTML= page_list["名前"][index]
+    replace_a.setAttribute("href","https://jukuspot.com/"+page_list["URL"][index].replace(/^.*\//,""));
+    element.after(replace_a);
+  })
+
 // #region　DBの一つ目＝ページリストをSP用に複製。
 var page_list_pc = document.getElementsByClassName("notion-collection")[0];
 page_list_pc.setAttribute("id","page_list_pc");
@@ -193,15 +203,7 @@ function page_list_view() {
 
 
 
-  // page_listのページ名にリンクを挿入
-  var page_list_as = page_list_db.querySelectorAll("tbody tr a");
-    page_list_as.forEach((element,index) =>{
-      element.style.display="none"
-      var replace_a = document.createElement("a");
-      replace_a.innerHTML= page_list["名前"][index]
-      replace_a.setAttribute("href","https://jukuspot.com/"+page_list["URL"][index].replace(/^.*\//,""));
-      element.after(replace_a);
-    })
+
   // page_listの→OFFを非表示に
   var rowdatas = page_list_db.querySelectorAll("tbody tr");
   var OFF_number = headers.indexOf("→OFF");
