@@ -42,7 +42,6 @@ console.log(qblock_object);
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // ページごとの処理（共通処理）
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
 // データベースの集合と
 var dbs= document.querySelectorAll(".notion-collection");
 var dbs_arrays =[];
@@ -106,8 +105,6 @@ list_label.style.lineHeight="20px"
 
 
 
-
-
 //ページ更新用のJS
 var old_url = window.location.href;
 if(window.location.href.indexOf(last_url) == -1){
@@ -136,7 +133,6 @@ if (old_url !=new_url){
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // 教室 or 講師　DBのフィルタリング処理　＋DBの配列処理
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
 // page_listのデータ取得。
  var page_list_db = document.querySelectorAll(".notion-collection-table")[0];
  var page_list ={};
@@ -162,7 +158,40 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
         page_list[headers[i]].push(data);
       }
   })
-  // ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
+// ここまでで page_list["カラム名"]["行数"]でデータ取得可能。
+
+// #region　DBの一つ目＝ページリストをSP用に複製。
+var page_list_pc = document.getElementsByClassName("notion-collection")[0];
+page_list_pc.setAttribute("id","page_list_pc");
+var page_list_sp = page_list_pc.cloneNode(true);
+page_list_sp.setAttribute("id","page_list_sp")
+var notion_header = document.getElementsByClassName("super-navbar")[0];
+notion_header.after(page_list_sp);
+
+page_list_sp.setAttribute("id","tbc-list");
+page_list_sp.style["z-index"] = "999";
+page_list_sp.style["position"] = "fixed";
+page_list_sp.style["top"] = "51px";
+// #endregion
+
+// #region SP用ページリスト表示ボタンを作成。
+let page_list_btn = document.createElement("button");
+page_list_btn.innerHTML = "ページ一覧";page_list_btn.setAttribute("id","tbc-btn");
+page_list_btn.style.backgroundColor="#17837c";page_list_btn.style.color="white";
+page_list_btn.style.borderRadius="5px";page_list_btn.style.padding="3px 12px";
+page_list_btn.style.fontSize="14px";
+var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
+header_reload.after(page_list_btn);
+header_reload.remove();
+// SP用ページリスト表示ボタンタップ時の設定
+page_list_btn.addEventListener('click', page_list_view);
+function page_list_view() {
+    page_list_sp.classList.toggle('active');
+    page_list_btn.classList.toggle('active');
+}
+// #endregion
+
+
 
   // page_listのページ名にリンクを挿入
   var page_list_as = page_list_db.querySelectorAll("tbody tr a");
@@ -188,6 +217,17 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
   // page_listを表示してあげる
   document.querySelectorAll(".notion-column-list .notion-column .notion-collection:first-child")[0].style.display="block";
   
+
+
+
+
+
+
+
+
+
+
+
 
 //リストページの一覧取得
 var targets = ["教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","講師シフト確定リスト","講師勤怠確認リスト","講師教室確認リスト","講師連絡確認リスト"];
