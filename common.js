@@ -177,6 +177,42 @@ var rowdatas = page_list_db.querySelectorAll("tbody tr");
   document.querySelectorAll(".notion-column-list .notion-column .notion-collection:first-child")[0].style.display="block";
   
 
+//リストページの一覧取得
+var targets = ["教室シフト管理リスト","教室勤怠確認リスト","教室講師確認リスト","教室連絡確認リスト","講師シフト確定リスト","講師勤怠確認リスト","講師教室確認リスト","講師連絡確認リスト"];
+
+if(targets.includes(prop_object["ページ表示名"])){
+
+// page_listの→OFFを非表示に
+var rowdatas = document.querySelectorAll(".notion-collection-table")[1].querySelectorAll("tbody tr");
+var headers0 = document.querySelectorAll(".notion-collection-table")[1].querySelectorAll("thead th");
+var headers = []
+ headers0.forEach(element =>{
+   headers.push(element.innerHTML)
+   page_list[element.innerHTML] =[];
+ })
+ console.log(headers);
+
+var OFF_number = headers.indexOf("→OFF");
+rowdatas.forEach(element =>{
+  datas = element.querySelectorAll("td");
+    for (let i =OFF_number ; i< datas.length; i++) {
+      datas[i].style.display="none"
+    }
+})
+for (let i =OFF_number ; i< datas.length; i++) {
+  headers0[i].style.display="none"
+}
+
+}
+
+
+
+
+
+
+
+
+
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // プログレスバーの設定
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
