@@ -78,7 +78,7 @@ if(targets.includes(prop_object["ページ表示名"])){
   pc_logo.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo01.png'; // 画像パス
   var last_url ="?koushi"
-  list_label_part=prop_object["講師名"]+"先生"
+  list_label_part=prop_object["姓"]+prop_object["名"]+"先生"
 }
 
 // ロゴの表示設定
