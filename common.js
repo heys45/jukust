@@ -101,6 +101,8 @@ img_area.appendChild(header_info);
 // ページリストの表示設定
 var list_label = document.querySelectorAll(".notion-collection__header span span")[0];
 list_label.innerHTML=list_label_part+"<br>ページリスト";
+list_label.style.fontSize="18px"
+list_label.style.lineHeight="20px"
 
 
 
