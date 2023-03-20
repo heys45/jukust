@@ -72,13 +72,13 @@ if(targets.includes(prop_object["ページ表示名"])){
   sp_logo.src = 'https://heys45.github.io/jukust/logo02.png'; // 画像パス
   document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
   header_text_color="white"; header_text="｜";var header_text2=prop_object["名"];
-  list_label_part=prop_object["教室名"]+"様"
+  list_label_part=prop_object["教室名"]+"様";
 }else{
   // ユーザー用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo01.png'; // 画像パス
   var last_url ="?koushi"
-  list_label_part=prop_object["姓"]+prop_object["名"]+"先生"
+  list_label_part=prop_object["姓"]+prop_object["名"]+"先生";
 }
 
 // ロゴの表示設定
