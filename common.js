@@ -185,36 +185,36 @@ for (let i =OFF_number ; i< datas.length; i++) {
 // page_listを表示してあげる
 document.querySelectorAll(".notion-column-list .notion-column .notion-collection:first-child")[0].style.display="block";
 
-// #region　DBの一つ目＝ページリストをSP用に複製。
-var page_list_pc = document.getElementsByClassName("notion-collection")[0];
-page_list_pc.setAttribute("id","page_list_pc");
-var page_list_sp = page_list_pc.cloneNode(true);
-page_list_sp.setAttribute("id","page_list_sp")
-var notion_header = document.getElementsByClassName("super-navbar")[0];
-notion_header.after(page_list_sp);
+// // #region　DBの一つ目＝ページリストをSP用に複製。
+// var page_list_pc = document.getElementsByClassName("notion-collection")[0];
+// page_list_pc.setAttribute("id","page_list_pc");
+// var page_list_sp = page_list_pc.cloneNode(true);
+// page_list_sp.setAttribute("id","page_list_sp")
+// var notion_header = document.getElementsByClassName("super-navbar")[0];
+// notion_header.after(page_list_sp);
 
-page_list_sp.setAttribute("id","tbc-list");
-page_list_sp.style["z-index"] = "999";
-page_list_sp.style["position"] = "fixed";
-page_list_sp.style["top"] = "51px";
-// #endregion
+// page_list_sp.setAttribute("id","tbc-list");
+// page_list_sp.style["z-index"] = "999";
+// page_list_sp.style["position"] = "fixed";
+// page_list_sp.style["top"] = "51px";
+// // #endregion
 
-// #region SP用ページリスト表示ボタンを作成。
-let page_list_btn = document.createElement("button");
-page_list_btn.innerHTML = "ページ一覧";page_list_btn.setAttribute("id","tbc-btn");
-page_list_btn.style.backgroundColor="#17837c";page_list_btn.style.color="white";
-page_list_btn.style.borderRadius="5px";page_list_btn.style.padding="3px 12px";
-page_list_btn.style.fontSize="14px";
-var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
-header_reload.after(page_list_btn);
-header_reload.remove();
-// SP用ページリスト表示ボタンタップ時の設定
-page_list_btn.addEventListener('click', page_list_view);
-function page_list_view() {
-    page_list_sp.classList.toggle('active');
-    page_list_btn.classList.toggle('active');
-}
-// #endregion
+// // #region SP用ページリスト表示ボタンを作成。
+// let page_list_btn = document.createElement("button");
+// page_list_btn.innerHTML = "ページ一覧";page_list_btn.setAttribute("id","tbc-btn");
+// page_list_btn.style.backgroundColor="#17837c";page_list_btn.style.color="white";
+// page_list_btn.style.borderRadius="5px";page_list_btn.style.padding="3px 12px";
+// page_list_btn.style.fontSize="14px";
+// var header_reload = document.getElementsByClassName("super-navbar__actions")[0];
+// header_reload.after(page_list_btn);
+// header_reload.remove();
+// // SP用ページリスト表示ボタンタップ時の設定
+// page_list_btn.addEventListener('click', page_list_view);
+// function page_list_view() {
+//     page_list_sp.classList.toggle('active');
+//     page_list_btn.classList.toggle('active');
+// }
+// // #endregion
 
 
 
