@@ -182,10 +182,6 @@ rowdatas.forEach(element =>{
 for (let i =OFF_number ; i< datas.length; i++) {
   headers0[i].style.display="none"
 }
-// page_listを表示してあげる
-document.querySelectorAll(".notion-column-list .notion-column .notion-collection:first-child")[1].style.display="block";
-
-
 
 // #region　DBの一つ目＝ページリストをSP用に複製。
 var page_list_pc = document.getElementsByClassName("notion-collection")[0];
@@ -218,7 +214,8 @@ function page_list_view() {
 }
 // #endregion
 
-
+// page_listを表示してあげる
+document.querySelectorAll(".notion-column-list .notion-column .notion-collection:first-child")[0].style.display="block";
 
 
 
