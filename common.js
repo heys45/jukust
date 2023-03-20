@@ -65,17 +65,20 @@ var pc_logo = document.createElement('img');
 var sp_logo = document.createElement('img');
 var header_text_color="#555555"; var header_text="｜";var header_text2=prop_object["教室名"];
 var last_url ="?juku-cr"
+var list_label_part =""
 if(targets.includes(prop_object["ページ表示名"])){
   // 教室用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo2.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo02.png'; // 画像パス
   document.getElementsByClassName("super-navbar")[0].style["background-color"]="#33A614";
   header_text_color="white"; header_text="｜";var header_text2=prop_object["名"];
+  list_label_part=prop_object["教室名"]+"様"
 }else{
   // ユーザー用のロゴ設定
   pc_logo.src = 'https://heys45.github.io/jukust/logo1.png'; // 画像パス
   sp_logo.src = 'https://heys45.github.io/jukust/logo01.png'; // 画像パス
   var last_url ="?koushi"
+  list_label_part=prop_object["講師名"]+"先生"
 }
 
 // ロゴの表示設定
@@ -95,8 +98,15 @@ document.querySelectorAll(".super-navbar__logo-image")[0].style["display"]= "fle
 document.querySelectorAll(".super-navbar__logo-image")[0].style["align-items"]= "end";
 img_area.appendChild(header_info);
 
-//ページ更新用のJS
+// ページリストの表示設定
+var list_label = document.querySelectorAll(".notion-collection__header span span")[0];
+list_label.innerHTML=list_label_part+"<br>ページリスト";
 
+
+
+
+
+//ページ更新用のJS
 var old_url = window.location.href;
 if(window.location.href.indexOf(last_url) == -1){
 history.pushState('', document.getElementsByClassName("notion-header__title")[0].innerHTML, window.location.href+last_url);}
