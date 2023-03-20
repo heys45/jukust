@@ -11,7 +11,6 @@ topguide.style.fontWeight="bolder";
 
 
 document.getElementsByClassName("notion-image")[0].style.maxWidth="400px";
-document.querySelectorAll(".notion-collection")[2].style.display="none";
 
 
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -19,7 +18,7 @@ document.querySelectorAll(".notion-collection")[2].style.display="none";
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region
 // sf_listのデータ取得。
-var sf_list_db = document.querySelectorAll(".notion-collection-table")[1];
+var sf_list_db = document.querySelectorAll(".notion-collection-table")[2];
 var sf_list ={};
 var headers0 = sf_list_db.querySelectorAll("thead th");
 var headers = []
@@ -56,6 +55,7 @@ var rowdatas = sf_list_db.querySelectorAll("tbody tr");
 // #region
 // kt_listのデータ取得。
 var kt_list_db = document.querySelectorAll(".notion-collection-table")[document.querySelectorAll(".notion-collection-table").length-1];
+kt_list.style.display="none";
 var kt_list ={};
 var headers0 = kt_list_db.querySelectorAll("thead th");
 var headers = []
@@ -122,9 +122,6 @@ if(kt_list["講師入力開始時刻"][index] !=null ||kt_list["講師入力終�
     }
 
 }})
-
-document.querySelectorAll(".notion-collection-table")[1].style.width="100%";
-
 
 // 勤怠ボタンプッシュ時の動作設定
 var submit_button =document.querySelectorAll(".form-wrapper form button")

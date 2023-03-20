@@ -25,7 +25,7 @@ for (let index = 0; index < 30; index++) {
 // 教室 or 講師　DBのフィルタリング処理　＋DBの配列処理
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // sc_listのデータ取得。
-var sc_list_db = document.querySelectorAll(".notion-collection-table")[1];
+var sc_list_db = document.querySelectorAll(".notion-collection-table")[2];
 var sc_list ={};
 var headers0 = sc_list_db.querySelectorAll("thead th");
 var headers = []

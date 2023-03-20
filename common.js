@@ -238,8 +238,8 @@ var targets = ["教室シフト管理リスト","教室勤怠確認リスト","�
 if(targets.includes(prop_object["ページ表示名"])){
 
 // page_listの→OFFを非表示に
-var rowdatas = document.querySelectorAll(".notion-collection-table")[1].querySelectorAll("tbody tr");
-var headers0 = document.querySelectorAll(".notion-collection-table")[1].querySelectorAll("thead th");
+var rowdatas = document.querySelectorAll(".notion-collection-table")[2].querySelectorAll("tbody tr");
+var headers0 = document.querySelectorAll(".notion-collection-table")[2].querySelectorAll("thead th");
 var headers = []
  headers0.forEach(element =>{
    headers.push(element.innerHTML)

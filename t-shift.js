@@ -8,7 +8,7 @@ if(prop_object["ページ表示名"]==="講師シフト確定"){
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region
 // sf_listのデータ取得。
-var sf_list_db = document.querySelectorAll(".notion-collection-table")[1];
+var sf_list_db = document.querySelectorAll(".notion-collection-table")[2];
 var sf_list ={};
 var headers0 = sf_list_db.querySelectorAll("thead th");
 var headers = []
