@@ -170,6 +170,21 @@ var page_list_as = page_list_db.querySelectorAll("tbody tr a");
     element.after(replace_a);
   })
 
+// page_listの→OFFを非表示に
+var rowdatas = page_list_db.querySelectorAll("tbody tr");
+var OFF_number = headers.indexOf("→OFF");
+rowdatas.forEach(element =>{
+  datas = element.querySelectorAll("td");
+    for (let i =OFF_number ; i< datas.length; i++) {
+      datas[i].style.display="none"
+    }
+})
+for (let i =OFF_number ; i< datas.length; i++) {
+  headers0[i].style.display="none"
+}
+// page_listを表示してあげる
+document.querySelectorAll(".notion-column-list .notion-column .notion-collection:first-child")[0].style.display="block";
+
 // #region　DBの一つ目＝ページリストをSP用に複製。
 var page_list_pc = document.getElementsByClassName("notion-collection")[0];
 page_list_pc.setAttribute("id","page_list_pc");
@@ -204,20 +219,7 @@ function page_list_view() {
 
 
 
-  // page_listの→OFFを非表示に
-  var rowdatas = page_list_db.querySelectorAll("tbody tr");
-  var OFF_number = headers.indexOf("→OFF");
-  rowdatas.forEach(element =>{
-    datas = element.querySelectorAll("td");
-      for (let i =OFF_number ; i< datas.length; i++) {
-        datas[i].style.display="none"
-      }
-  })
-  for (let i =OFF_number ; i< datas.length; i++) {
-    headers0[i].style.display="none"
-  }
-  // page_listを表示してあげる
-  document.querySelectorAll(".notion-column-list .notion-column .notion-collection:first-child")[0].style.display="block";
+
   
 
 
