@@ -1,0 +1,472 @@
+/* 上から書いていく */
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* プロパティ｜｜サイドバー表示の設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region */
+.notion-header, .notion-page__properties{
+  display: none;
+}
+
+/* 900px以上でサイドバーを表示にする */
+.super-content{
+  max-width: 1230px;
+  margin-right:max(calc((100% - 1230px)/2),35px);
+  margin-left:max(calc((100% - 1230px)/2),35px);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#first-column{
+  position: -webkit-sticky;
+  position: sticky;
+  top:70px;
+  left: 0px;
+  width: 200px !important;
+  height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#second-column{
+  width: min(calc(95% - 200px),calc(100% - 230px)) !important;
+  max-width:1000px;
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-left:max(5%, 30px) !important;
+}
+
+/* 900px以下でサイドバーを非表示にする */
+@media (max-width: 900px) {
+  .super-content{
+    max-width: 800px;
+    margin-right:max(calc((100% - 800px)/2),10px);
+    margin-left:max(calc((100% - 800px)/2),10px);
+  }
+#first-column{
+    display: none;
+  }
+#second-column{
+    width: 100% !important;
+    max-width:800px;
+    margin: 0 !important;
+  }
+}
+
+/*2col内の2colは上にpaddingを作らない*/
+.notion-column{
+  padding-top:0 !important;
+}
+
+.notion-column-list .notion-column .notion-collection:first-child{
+  display: none;
+}
+
+
+/* #endregion */
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* ヘッダーの設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region  */
+
+.super-navbar__logo-image{width: 100% !important;}
+#pc_logo{display: inline-block;}
+#sp_logo{display: none;}
+@media (max-width: 500px) {
+#pc_logo{display: none;}
+#sp_logo{display: inline-block;}
+}
+
+  /*ナビバー、カバー画像、プロパティ非表示*/
+  .super-navbar{
+    align-items: start !important;
+  }
+
+    .super-navbar__logo{
+        padding-right: 0;
+    }
+
+  .super-navbar__content{
+    justify-content: flex-start;
+    z-index: 1000;
+  }
+
+  .super-navbar__logo{
+  pointer-events: none;
+  }
+
+/* #endregion ヘッダーの設定 */
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/*  #region クオートセクション */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+.notion-quote{
+  font-size: 1.1rem !important;
+  border-left: #2BA415 solid 4px;
+  padding:7px ;
+  background-color: #fafafa;
+  margin-bottom:1rem ;
+}
+
+.notion-callout{
+  background-color: #FFFFc0;
+}
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/*  #endregion クオートセクション */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* プログレスバー */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region */
+.progressbar {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.progressbar li {
+  position: relative;
+  list-style-type: none;
+  text-align: center;
+  text-transform: uppercase;
+  width: 20%;
+  font-weight: 600;
+  counter-increment: steps;
+  line-height: 20px;
+}
+.progressbar li:before {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 7px auto 16px auto;
+  line-height: 26px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #F1F1F1;
+  content: counter(steps);
+}
+.progressbar li:after {
+  position: absolute;
+  z-index: -1;
+  top: 15px;
+  left: -50%;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: #F5F5F5;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active,
+.progressbar li.complete{
+  color: #0070BD;
+}
+.progressbar li.active:before,
+.progressbar li.complete:before {
+  background-color: #17837c;
+  color: #FFF;
+}
+.progressbar li.active:after,
+.progressbar li.complete:after {
+  background-color: #17837c;
+}
+
+/* 装飾 */
+ul{
+margin: 0px 0 20px 0 !important;
+}
+
+/* #endregion */
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* フォームデザイン */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.form-wrapper,.form-wrapper2{
+  border: solid 2px #555555;
+  width: 100%; margin: 10px 0 15px 0;
+}
+.form-header{
+  background-color: #17837c;  color: white;
+  padding: 7px 15px;  margin-bottom: 10px;
+  display: flex;  justify-content: space-between;
+  width: 100%;
+}
+.header-day{  margin:0 20px ;}
+.header-status{
+  background-color: white;  color: red;
+  border-radius: 12px;
+  padding: 0px 15px;  margin:0 20px ;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+form{
+  display: flex;
+  flex-wrap:wrap;
+  font-weight: bolder;
+}
+
+.form-inline{
+  display: inline-block;
+  padding: 5px 15px;
+}
+@media (max-width: 680px) { 
+.form-inline{
+  display: inline-block;
+  padding: 5px 15px;
+}
+}
+.form-block{
+  width: 100%;
+  padding: 5px 15px;
+}
+.form-flex{
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+}
+.form-none{
+  width: 100%;
+  color:#aaaaaa;
+  padding: 5px 15px;
+  background-color:#aaaaaa;
+  font-size: 12px;
+}
+.form-block button{
+  border-radius: 6px;
+  margin:0 20px 0 0;
+  padding: 3px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border:2px solid #17837c;
+}
+form button{
+  border-radius: 6px;
+  margin:3px 10px 3px;
+  padding: 0px 12px;
+  font-weight: 600;
+  background-color: #17837c;
+  border:none;
+  color:white;
+}
+.hosokukinyuu{
+  background-color: #777777;
+  font-size: 16px;
+  font-weight: normal;
+}
+textarea{
+  width: 100%;
+}
+
+.info1,.info11{
+  font-weight: bolder;
+}
+
+
+
+
+
+
+ーーーーーーーーーーーーーーーーーー
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #region データベース */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+.notion-collection tbody tr{
+  display: none;
+}
+
+.notion-collection-table__cell span{
+  border: none !important;
+}
+#page_list_pc .notion-property__title .notion-semantic-string{
+  font-size: 1rem !important;
+  font-weight: bolder !important;
+  padding: 5px 5px !important;
+}
+
+#page_list_pc .notion-property__title .notion-semantic-string::before{
+  content: "> ";
+  padding-right: 5px;
+}
+
+.notion-property__title__icon-wrapper{
+  display: none !important;
+}
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* #endregion データベース */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+  .super-navbar__actions {
+    margin-left:auto ;
+  }
+  
+  .super-navbar__cta{
+    padding: 5px 15px;
+  }
+
+  
+  .notion-header__title{
+    font-size: 1.2rem;
+    font-weight:600;
+    color: #777777;
+  }
+  .notion-header__title::before{
+    content: "｜";
+  }
+
+ 
+  
+  #tbc-list {
+	  display: none;
+	}
+  
+  #tbc-list.active {
+	  display: block;
+	  background-color: white;
+	}
+	
+	#tbc-btn, #sp-header{
+	  display: none;
+	}
+	
+	
+@media (max-width: 900px) { 
+  .super-navbar .notion-header__title,
+  .super-navbar .super-navbar__actions {
+    display: none;
+  }
+  
+  
+ #tbc-list
+  {
+  display: none;
+}
+  #tbc-btn{
+    margin-left:auto ;
+    display: inline-block;
+  }
+  #sp-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding:0;
+  background-color: rgb(256,256,256,0.8);
+  }
+}
+
+.super-navbar__actions a{
+  display: none;
+}
+
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* 
+  background-color:#2BA415 ;
+  background-color:#17837c ;
+  background-color:#34675c ;
+ */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+
+
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* 全体、サイドバー設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+body{
+    color:#393f42;
+    font-weight: 600px;
+  }
+
+
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* フォーム設定 */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+  #shift-form,#schedule-form,#wr-form,#form,.day-box,.select-term,#schid,#teaid,#worid {
+      display:none;
+  }
+  .select-term{
+      display: none;
+  }
+  
+  select{
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin: 3px  0;
+    border: solid 2px #17837c;
+    color:#34675C;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  input{
+    border-radius: 6px;
+    padding: 0 5px;
+    margin: 3px  0;
+    border: solid 2px #aaaaaa;
+    font-weight: 600;
+    font-size: 16px;
+    color:#393f42;
+  }
+
+  textarea{
+    font-size: 16px !important;
+  }
+
+
+
+  .dg p{
+  background-color: #f5f5f5;
+  width:100%;
+  }
+  
+
+  
+
+  
+  .s-top-db{
+    width:50% !important;
+    padding:10px;
+    margin: 0;
+    
+  }
+  
+  @media (max-width: 500px) {
+  .s-top-db{
+    width:100% !important;
+  }
+  }
+  
+
+  
+  
+
+  
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
+  
+  footer{
+    display:none;
+    background-color: #eeeeee;
+    padding: 20px 96px;
+  }
+  
+  
+  
+  
