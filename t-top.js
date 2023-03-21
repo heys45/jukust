@@ -188,7 +188,7 @@ if(kt_list["備考補足　依頼への回答時"][index] !=null ){
 
 
 // フォーム提出時の動作設定
-var submit_button = document.querySelectorAll(".form-wrapper form .form-block button");
+var submit_button = document.querySelectorAll(".form-wrapper2 form .form-block button");
 submit_button.forEach((element,index)=>{
   element.addEventListener('click',function(e){
     // バリデーション
