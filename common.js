@@ -137,7 +137,7 @@ if (old_url !=new_url){
  var page_list_db = document.querySelectorAll(".notion-collection-table")[0];
  var page_list ={};
  var headers0 = page_list_db.querySelectorAll("thead th");
- headers0.style.display="none";
+ page_list_db.querySelectorAll("thead")[0].style.display="none";
  var headers = []
   headers0.forEach(element =>{
     headers.push(element.innerHTML)
