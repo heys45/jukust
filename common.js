@@ -192,7 +192,7 @@ page_list_sp.setAttribute("id","page_list_sp")
 var notion_header = document.getElementsByClassName("super-navbar")[0];
 var notion_header_a = document.getElementsByClassName("super-navbar a")[0];
 notion_header_a.style.width="calc(100% - 100px)";
-notion_heade_a.overflowX="hidden";
+notion_heade_a.style.overflowX="hidden";
 notion_header.after(page_list_sp);
 
 page_list_sp.setAttribute("id","tbc-list");
