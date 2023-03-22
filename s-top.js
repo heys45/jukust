@@ -102,7 +102,7 @@ form_area.insertAdjacentHTML("beforeend",form_copy);
   wrap.querySelectorAll(".header-day")[0].innerHTML= element+"｜"+kt_list["名前（グループ名）"][index]+"先生｜勤怠承認フォーム" ;
   wrap.querySelectorAll("form .f-day")[0].value= element ;
   wrap.querySelectorAll("form .f-kaiin")[0].value= prop_object["会員ID"];
-  wrap.querySelectorAll("form .f-kaiin-name")[0].value= prop_object["姓"]+prop_object["名"];
+  wrap.querySelectorAll("form .f-kaiin-name")[0].value= kt_list["名前（グループ名）"][index];
   wrap.querySelectorAll("form .f-school")[0].value= prop_object["教室ID"];
   wrap.querySelectorAll("form .f-school-name")[0].value= prop_object["教室名"];
   wrap.querySelectorAll("form .f-oubo")[0].value= prop_object["応募ID"];
