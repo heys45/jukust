@@ -62,6 +62,7 @@ var rowdatas = sf_list_db.querySelectorAll("tbody tr");
 // kt_listのデータ取得。
 var kt_list_db = document.querySelectorAll(".notion-collection-table")[document.querySelectorAll(".notion-collection-table").length-1];
     kt_list_db.style.width="100%"
+    kt_list_db.style.display="none"
 var kt_list ={};
 var headers0 = kt_list_db.querySelectorAll("thead th");
 var headers = []
