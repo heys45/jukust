@@ -140,7 +140,7 @@ kintai_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
       var wrap = document.querySelectorAll(".form-wrapper")[index];
       element.style.display="none";
-      wrap.querySelectorAll("info11")[0].insertAdjacentHTML("beforebegin","勤怠報告が完了しました。");
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","勤怠報告が完了しました。");
   })
 })
 
