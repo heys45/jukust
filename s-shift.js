@@ -229,7 +229,7 @@ remove_button.forEach((element,index)=>{
 
 
 // フォーム提出時の動作設定
-  var submit_button = document.querySelectorAll("form .form-flex button");
+  var submit_button = document.querySelectorAll(".form-flex button");
   submit_button.forEach((element,index)=>{
     element.addEventListener('click',function(e){
       // バリデーション
