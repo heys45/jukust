@@ -190,6 +190,8 @@ page_list_pc.setAttribute("id","page_list_pc");
 var page_list_sp = page_list_pc.cloneNode(true);
 page_list_sp.setAttribute("id","page_list_sp")
 var notion_header = document.getElementsByClassName("super-navbar")[0];
+notion_header.style.width="calc(100% - 100px)";
+notion_header.overflowX="hidden";
 notion_header.after(page_list_sp);
 
 page_list_sp.setAttribute("id","tbc-list");
