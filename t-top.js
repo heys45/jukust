@@ -140,7 +140,7 @@ kintai_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
       var wrap = document.querySelectorAll(".form-wrapper")[index];
       element.style.display="none";
-      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","勤怠報告が完了しました。");
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","【出勤報告完了】");
   })
 })
 
@@ -196,12 +196,12 @@ submit_button.forEach((element,index)=>{
     var wrap = document.querySelectorAll(".form-wrapper2")[index]  
     // 通常
     if(wrap.querySelectorAll(".f-time1")[0].value != "" &&wrap.querySelectorAll(".f-time2")[0].value != ""&&wrap.querySelectorAll(".f-time1")[1].value != "" &&wrap.querySelectorAll(".f-time2")[1].value != ""&&wrap.querySelectorAll(".f-time1")[0].value != "" &&wrap.querySelectorAll(".f-time2")[2].value != ""){
-      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","勤怠報告が完了しました。");
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","【退勤報告完了】");
       wrap.querySelectorAll("form")[0].style.display="none";
       document.querySelectorAll("form")[index].submit();
     }
     if(wrap.querySelectorAll(".f-time1")[0].value == "" &&wrap.querySelectorAll(".f-time2")[0].value == ""&&wrap.querySelectorAll(".f-time1")[1].value == "" &&wrap.querySelectorAll(".f-time2")[1].value == ""&&wrap.querySelectorAll(".f-time1")[0].value == "" &&wrap.querySelectorAll(".f-time2")[2].value == ""){
-      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","勤怠報告が完了しました。");
+      wrap.querySelectorAll(".info11")[0].insertAdjacentHTML("beforebegin","【退勤報告完了】");
       wrap.querySelectorAll("form")[0].style.display="none";
       document.querySelectorAll("form")[index].submit();
     }
