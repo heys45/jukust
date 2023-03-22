@@ -205,6 +205,7 @@ change_button.forEach((element,index)=>{
 var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
 form_button.forEach((element,index)=>{
   element.addEventListener('click',function(){
+      e.preventDefault();
       var wrap2 = document.querySelectorAll(".form-wrapper")[index];
       wrap2.querySelectorAll(".form-block")[2].style.display="none";
       wrap2.querySelectorAll("form .form-block")[0].style.display="block";
