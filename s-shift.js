@@ -3,7 +3,7 @@ function timefunc(){
 if(prop_object["ページ表示名"]==="教室シフト管理"){
 
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-// フォーム作成用の　日付ラ作成 　　何もしなくてOK
+// フォーム作成用の　日付欄作成 　　何もしなくてOK
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 // #region 【共通】スケ提出とシフト管理は同じ　直近30日のフォーム用意
 const formdate =new Date();
@@ -201,17 +201,6 @@ change_button.forEach((element,index)=>{
   })
 })
 
-// 補足ボタンプッシュ時の動作設定
-var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
-form_button.forEach((element,index)=>{
-  element.addEventListener('click',function(){
-      var wrap2 = document.querySelectorAll(".form-wrapper")[index];
-      wrap2.querySelectorAll(".form-block")[2].style.display="none";
-      wrap2.querySelectorAll("form .form-block")[0].style.display="block";
-      element.style.display="none"
-  })
-})
-
 
 // 取り消しボタンプッシュ時の動作設定
 var remove_button =document.querySelectorAll(".form-wrapper .remove")
@@ -226,6 +215,17 @@ remove_button.forEach((element,index)=>{
   })
 })
 
+// 補足ボタンプッシュ時の動作設定
+var form_button =document.querySelectorAll(".form-wrapper .hosokukinyuu")
+form_button.forEach((element,index)=>{
+  element.addEventListener('click',function(e){
+      e.preventDefault();
+      var wrap2 = document.querySelectorAll(".form-wrapper")[index];
+      wrap2.querySelectorAll(".form-block")[2].style.display="none";
+      wrap2.querySelectorAll("form .form-block")[0].style.display="block";
+      element.style.display="none"
+  })
+})
 
 
 // フォーム提出時の動作設定
