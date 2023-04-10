@@ -126,7 +126,7 @@ wrap.querySelectorAll(".info13")[0].style.display="none";
 wrap.querySelectorAll(".info14")[0].style.display="none";
 }
 if(kt_list["備考補足　依頼への回答時"][index] !=null ){
-    wrap.querySelectorAll(".info16")[0].innerHTML= kt_list["備考補足　シフト提出時"][index];
+    wrap.querySelectorAll(".info16")[0].innerHTML= kt_list["備考補足　依頼への回答時"][index];
     }else{
     wrap.querySelectorAll(".info15")[0].nextSibling.remove()
     wrap.querySelectorAll(".info15")[0].style.display="none";
@@ -171,14 +171,14 @@ if(kt_list["勤怠ステータス"][index]=="出勤報告済み"){
 wrap.querySelectorAll(".info11")[0].innerHTML= "シフト内容｜"+kt_list["勤務依頼時刻｜開始"][index]+" 〜 "+kt_list["勤務依頼時刻｜終了"][index]+"｜休憩時間："+ kt_list["休憩時間（依頼）"][index]+" 分 ";
 
 if(kt_list["備考・補足　シフト提出時"][index] !=null ){
-wrap.querySelectorAll(".info14")[0].innerHTML= kt_list["備考補足　シフト提出時"][index];
-}else{
-wrap.querySelectorAll(".info13")[0].nextSibling.remove()
-wrap.querySelectorAll(".info13")[0].style.display="none";
-wrap.querySelectorAll(".info14")[0].style.display="none";
+  wrap.querySelectorAll(".info14")[0].innerHTML= kt_list["備考補足　シフト提出時"][index];
+  }else{
+  wrap.querySelectorAll(".info13")[0].nextSibling.remove()
+  wrap.querySelectorAll(".info13")[0].style.display="none";
+  wrap.querySelectorAll(".info14")[0].style.display="none";
 }
 if(kt_list["備考補足　依頼への回答時"][index] !=null ){
-    wrap.querySelectorAll(".info16")[0].innerHTML= kt_list["備考補足　シフト提出時"][index];
+    wrap.querySelectorAll(".info16")[0].innerHTML= kt_list["備考補足　依頼への回答時"][index];
     }else{
     wrap.querySelectorAll(".info15")[0].nextSibling.remove()
     wrap.querySelectorAll(".info15")[0].style.display="none";
