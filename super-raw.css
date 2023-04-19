@@ -116,7 +116,26 @@
 
 .notion-callout{
   background-color: #FFFFc0;
+  font-size: 14px;
 }
+
+.notion-callout .notion-table{
+  font-size: 13px;
+}
+.notion-callout .notion-table__wrapper td{
+  width: auto !important;
+  max-width: auto !important;
+  min-width: 95px !important;
+}
+.notion-callout .notion-table__wrapper td .notion-table__cell{
+  padding: 2px 5px;
+}
+
+
+
+
+
+
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーー */
 /*  #endregion クオートセクション */
